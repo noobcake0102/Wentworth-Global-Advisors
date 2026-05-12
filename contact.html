@@ -110,44 +110,23 @@
                 <input type="text" id="last-name" name="last-name" required autocomplete="family-name" />
               </div>
             </div>
-            <div class="form-group">
-              <label for="email">Business Email</label>
-              <input type="email" id="email" name="email" required autocomplete="email" />
-            </div>
             <div class="form-row">
               <div class="form-group">
-                <label for="company">Company</label>
-                <input type="text" id="company" name="company" required autocomplete="organization" />
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required autocomplete="email" />
               </div>
               <div class="form-group">
-                <label for="revenue">Annual Revenue (approx.)</label>
-                <select id="revenue" name="revenue">
-                  <option value="" disabled selected>Select range</option>
-                  <option>Under $10M</option>
-                  <option>$10M – $50M</option>
-                  <option>$50M – $150M</option>
-                  <option>$150M – $300M</option>
-                  <option>$300M – $600M</option>
-                  <option>Over $600M</option>
-                </select>
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" autocomplete="tel" />
               </div>
             </div>
             <div class="form-group">
-              <label for="service">Service of Interest</label>
-              <select id="service" name="service">
-                <option value="" disabled selected>Select a service</option>
-                <option>Fractional COO</option>
-                <option>Fractional CEO</option>
-                <option>M&amp;A Integration / PMI</option>
-                <option>Business Turnaround</option>
-                <option>Lean Six Sigma</option>
-                <option>Supply Chain Optimization</option>
-                <option>Not sure — need a diagnostic</option>
-              </select>
+              <label for="message">What's going on?</label>
+              <textarea id="message" name="message" placeholder="Tell us about your operational situation, the challenge you're facing, and what outcome you're trying to achieve." required></textarea>
             </div>
             <div class="form-group">
-              <label for="message">Describe Your Challenge</label>
-              <textarea id="message" name="message" placeholder="Tell us about your operational situation, the specific challenge you're facing, and what outcome you're trying to achieve." required></textarea>
+              <label for="referral">How did you hear about us?</label>
+              <input type="text" id="referral" name="referral" placeholder="Google, LinkedIn, referral, etc." />
             </div>
             <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center">Send Message</button>
           </form>
