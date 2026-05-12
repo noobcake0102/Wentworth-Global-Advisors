@@ -15,6 +15,290 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css" />
+  <style>
+    /* ── Carousel Section ──────────────────────────────── */
+    .carousel-section {
+      padding: 5rem 0 6rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .carousel-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 90% 50% at 50% 0%, rgba(201,168,76,.07), transparent 65%);
+      pointer-events: none;
+    }
+
+    .carousel-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 3rem;
+      gap: 1.5rem;
+    }
+
+    .carousel-label {
+      font-family: var(--sans);
+      font-size: .75rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: .875rem;
+    }
+
+    .carousel-heading {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 400;
+      color: var(--heading);
+      line-height: 1.15;
+      margin: 0;
+    }
+
+    .carousel-heading em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .carousel-controls {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-shrink: 0;
+    }
+
+    .carousel-btn {
+      width: 52px;
+      height: 52px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      transition: border-color .25s, color .25s, background .25s;
+      flex-shrink: 0;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+
+    .carousel-btn:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      background: rgba(201,168,76,.06);
+    }
+
+    .carousel-btn:disabled {
+      opacity: .25;
+      cursor: default;
+      pointer-events: none;
+    }
+
+    /* Track */
+    .carousel-track-wrap {
+      overflow: hidden;
+      cursor: grab;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .carousel-track-wrap.is-dragging {
+      cursor: grabbing;
+    }
+
+    .carousel-track {
+      display: flex;
+      gap: 1.5rem;
+      /* Left padding aligns first card with container; extra right padding for feel */
+      padding: 1rem max(2rem, calc((100vw - 1200px) / 2 + 2rem));
+      will-change: transform;
+      user-select: none;
+    }
+
+    /* Cards */
+    .insight-card {
+      flex: 0 0 360px;
+      height: 480px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--border);
+      padding: 2.25rem 2rem 2rem;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      transition: transform .35s cubic-bezier(.22,.68,0,1.2), box-shadow .35s ease, border-top-color .3s;
+    }
+
+    .insight-card::after {
+      content: '';
+      position: absolute;
+      top: -3px;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: var(--gold);
+      transition: width .45s ease;
+    }
+
+    .insight-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 64px rgba(0,0,0,.45);
+    }
+
+    .insight-card:hover::after {
+      width: 100%;
+    }
+
+    .insight-num {
+      font-family: var(--serif);
+      font-size: 5.5rem;
+      font-weight: 400;
+      color: rgba(201,168,76,.07);
+      line-height: 1;
+      margin-bottom: 1.25rem;
+      transition: color .35s;
+      letter-spacing: -.02em;
+    }
+
+    .insight-card:hover .insight-num {
+      color: rgba(201,168,76,.14);
+    }
+
+    .insight-tag {
+      display: inline-block;
+      font-family: var(--sans);
+      font-size: .6875rem;
+      font-weight: 500;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid rgba(201,168,76,.3);
+      padding: .25rem .75rem;
+      margin-bottom: 1.25rem;
+      align-self: flex-start;
+    }
+
+    .insight-card h3 {
+      font-family: var(--serif);
+      font-size: 1.375rem;
+      font-weight: 400;
+      line-height: 1.4;
+      color: var(--heading);
+      margin: 0 0 1rem;
+      flex: 1;
+    }
+
+    .insight-card p {
+      font-size: .875rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 1.75rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .insight-read {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      font-family: var(--sans);
+      font-size: .75rem;
+      font-weight: 500;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      transition: gap .2s;
+    }
+
+    .insight-read::after {
+      content: '→';
+      font-size: .875rem;
+    }
+
+    .insight-card:hover .insight-read {
+      gap: .875rem;
+    }
+
+    /* Progress bar + dots */
+    .carousel-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: var(--max-w);
+      margin: 2.5rem auto 0;
+      padding: 0 2rem;
+    }
+
+    .carousel-progress {
+      flex: 1;
+      max-width: 220px;
+      height: 1px;
+      background: var(--border);
+      position: relative;
+    }
+
+    .carousel-progress-fill {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      background: var(--gold);
+      transition: width .5s cubic-bezier(.25,.46,.45,.94);
+    }
+
+    .carousel-dots {
+      display: flex;
+      gap: .625rem;
+      align-items: center;
+    }
+
+    .carousel-dot {
+      width: 20px;
+      height: 2px;
+      background: var(--border);
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      transition: background .3s, width .3s;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .carousel-dot.active {
+      background: var(--gold);
+      width: 36px;
+    }
+
+    .carousel-counter {
+      font-family: var(--sans);
+      font-size: .75rem;
+      letter-spacing: .08em;
+      color: var(--text-dim);
+      white-space: nowrap;
+    }
+
+    .carousel-counter strong {
+      color: var(--gold);
+      font-weight: 500;
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .carousel-header { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+      .carousel-section { padding: 3.5rem 0 4rem; }
+      .insight-card { flex: 0 0 280px; height: 420px; padding: 1.75rem 1.5rem 1.5rem; }
+      .insight-num { font-size: 4rem; }
+      .carousel-track { padding: 1rem 1.25rem; gap: 1rem; }
+      .carousel-footer { padding: 0 1.25rem; }
+      .carousel-progress { max-width: 120px; }
+    }
+  </style>
 </head>
 <body>
 
@@ -46,41 +330,70 @@
     </div>
   </div>
 
-  <section>
-    <div class="container">
-      <div id="insights-grid" class="services-grid">
-        <!-- Articles inserted here -->
-        <a href="/insights/what-does-a-fractional-coo-do-for-a-manufacturing-company" class="service-card" style="text-decoration:none;display:block">
-          <div class="case-tag">Fractional COO</div>
+  <section class="carousel-section">
+    <div class="container carousel-header">
+      <div>
+        <p class="carousel-label">5 Articles Published</p>
+        <h2 class="carousel-heading">Field Intelligence.<br><em>Applied.</em></h2>
+      </div>
+      <div class="carousel-controls">
+        <button class="carousel-btn" id="prev-btn" aria-label="Previous article">←</button>
+        <button class="carousel-btn" id="next-btn" aria-label="Next article">→</button>
+      </div>
+    </div>
+
+    <div class="carousel-track-wrap" id="track-wrap">
+      <div class="carousel-track" id="carousel-track">
+
+        <a href="/insights/what-does-a-fractional-coo-do-for-a-manufacturing-company" class="insight-card">
+          <div class="insight-num">01</div>
+          <span class="insight-tag">Fractional COO</span>
           <h3>What Does a Fractional COO Do for a Manufacturing Company?</h3>
           <p>A detailed breakdown of scope, authority, day-to-day responsibilities, and how the fractional model delivers full-time operational impact at a fraction of the cost.</p>
-          <span class="arrow-link" style="margin-top:auto">Read Article</span>
+          <span class="insight-read">Read Article</span>
         </a>
-        <a href="/insights/fractional-ceo-vs-interim-ceo-for-manufacturing-companies" class="service-card" style="text-decoration:none;display:block">
-          <div class="case-tag">Fractional CEO</div>
+
+        <a href="/insights/fractional-ceo-vs-interim-ceo-for-manufacturing-companies" class="insight-card">
+          <div class="insight-num">02</div>
+          <span class="insight-tag">Fractional CEO</span>
           <h3>Fractional CEO vs Interim CEO: Which Does Your Manufacturing Company Need?</h3>
           <p>Two arrangements that fill a C-suite gap — but optimized for fundamentally different situations. A clear framework for choosing the right model for your company.</p>
-          <span class="arrow-link" style="margin-top:auto">Read Article</span>
+          <span class="insight-read">Read Article</span>
         </a>
-        <a href="/insights/5-signs-your-manufacturing-company-needs-a-fractional-coo" class="service-card" style="text-decoration:none;display:block">
-          <div class="case-tag">Fractional COO</div>
+
+        <a href="/insights/5-signs-your-manufacturing-company-needs-a-fractional-coo" class="insight-card">
+          <div class="insight-num">03</div>
+          <span class="insight-tag">Fractional COO</span>
           <h3>5 Signs Your Manufacturing Company Needs a Fractional COO</h3>
           <p>Most manufacturers wait too long to bring in operational leadership. Here are the five inflection points that signal it is time — and what to do about each one.</p>
-          <span class="arrow-link" style="margin-top:auto">Read Article</span>
+          <span class="insight-read">Read Article</span>
         </a>
-        <a href="/insights/post-merger-integration-first-100-days-manufacturing" class="service-card" style="text-decoration:none;display:block">
-          <div class="case-tag">M&amp;A Integration</div>
+
+        <a href="/insights/post-merger-integration-first-100-days-manufacturing" class="insight-card">
+          <div class="insight-num">04</div>
+          <span class="insight-tag">M&amp;A Integration</span>
           <h3>Post-Merger Integration: The First 100 Days in a Manufacturing Company</h3>
           <p>The first 100 days after a manufacturing acquisition determine whether the deal creates or destroys value. A phase-by-phase operational playbook for getting it right.</p>
-          <span class="arrow-link" style="margin-top:auto">Read Article</span>
+          <span class="insight-read">Read Article</span>
         </a>
-        <a href="/insights/why-private-equity-firms-use-fractional-coos-in-portfolio-companies" class="service-card" style="text-decoration:none;display:block">
-          <div class="case-tag">Private Equity</div>
+
+        <a href="/insights/why-private-equity-firms-use-fractional-coos-in-portfolio-companies" class="insight-card">
+          <div class="insight-num">05</div>
+          <span class="insight-tag">Private Equity</span>
           <h3>Why Private Equity Firms Use Fractional COOs in Portfolio Companies</h3>
           <p>PE value creation depends on operational execution — and most portfolio companies lack institutional-grade ops leadership. Here is why fractional wins on timeline, cost, and accountability.</p>
-          <span class="arrow-link" style="margin-top:auto">Read Article</span>
+          <span class="insight-read">Read Article</span>
         </a>
+
       </div>
+    </div>
+
+    <div class="carousel-footer">
+      <div class="carousel-progress">
+        <div class="carousel-progress-fill" id="progress-fill"></div>
+      </div>
+      <div class="carousel-dots" id="carousel-dots"></div>
+      <span class="carousel-counter"><strong id="counter-current">01</strong> / 05</span>
     </div>
   </section>
 
@@ -129,5 +442,142 @@
 </footer>
 
 <script src="/main.js"></script>
+<script>
+(function () {
+  const track = document.getElementById('carousel-track');
+  const wrap = document.getElementById('track-wrap');
+  const prevBtn = document.getElementById('prev-btn');
+  const nextBtn = document.getElementById('next-btn');
+  const dotsWrap = document.getElementById('carousel-dots');
+  const progressFill = document.getElementById('progress-fill');
+  const counterEl = document.getElementById('counter-current');
+
+  const cards = Array.from(track.querySelectorAll('.insight-card'));
+  const total = cards.length;
+  let current = 0;
+  let animating = false;
+
+  /* Build dots */
+  cards.forEach(function (_, i) {
+    var dot = document.createElement('button');
+    dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('aria-label', 'Go to article ' + (i + 1));
+    dot.addEventListener('click', function () { goTo(i); });
+    dotsWrap.appendChild(dot);
+  });
+
+  function getPadLeft() {
+    /* Read computed padding-left of the track for alignment */
+    return parseFloat(getComputedStyle(track).paddingLeft) || 32;
+  }
+
+  function getTranslateX() {
+    var m = new (window.DOMMatrix || window.WebKitCSSMatrix)(getComputedStyle(track).transform);
+    return m.m41;
+  }
+
+  function goTo(index) {
+    if (animating) return;
+    current = Math.max(0, Math.min(index, total - 1));
+    var card = cards[current];
+    var padLeft = getPadLeft();
+    var targetX = -(card.offsetLeft - padLeft);
+
+    /* Don't over-scroll past last card */
+    var maxScroll = -(track.scrollWidth - wrap.offsetWidth);
+    targetX = Math.max(maxScroll, Math.min(0, targetX));
+
+    animating = true;
+    track.style.transition = 'transform .55s cubic-bezier(.25,.46,.45,.94)';
+    track.style.transform = 'translateX(' + targetX + 'px)';
+
+    setTimeout(function () { animating = false; }, 560);
+    updateUI();
+  }
+
+  function updateUI() {
+    var dots = dotsWrap.querySelectorAll('.carousel-dot');
+    dots.forEach(function (d, i) { d.classList.toggle('active', i === current); });
+    prevBtn.disabled = current === 0;
+    nextBtn.disabled = current === total - 1;
+    /* Progress fill */
+    var pct = total > 1 ? (current / (total - 1)) * 100 : 100;
+    progressFill.style.width = pct + '%';
+    /* Counter */
+    counterEl.textContent = String(current + 1).padStart(2, '0');
+  }
+
+  prevBtn.addEventListener('click', function () { goTo(current - 1); });
+  nextBtn.addEventListener('click', function () { goTo(current + 1); });
+
+  /* Keyboard navigation */
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowLeft') goTo(current - 1);
+    if (e.key === 'ArrowRight') goTo(current + 1);
+  });
+
+  /* Drag / swipe */
+  var dragStartX = 0;
+  var dragStartTranslate = 0;
+  var isDragging = false;
+  var dragDelta = 0;
+
+  wrap.addEventListener('mousedown', function (e) {
+    isDragging = true;
+    dragStartX = e.clientX;
+    dragStartTranslate = getTranslateX();
+    dragDelta = 0;
+    wrap.classList.add('is-dragging');
+    track.style.transition = 'none';
+    e.preventDefault();
+  });
+
+  document.addEventListener('mousemove', function (e) {
+    if (!isDragging) return;
+    dragDelta = e.clientX - dragStartX;
+    track.style.transform = 'translateX(' + (dragStartTranslate + dragDelta) + 'px)';
+  });
+
+  document.addEventListener('mouseup', function () {
+    if (!isDragging) return;
+    isDragging = false;
+    wrap.classList.remove('is-dragging');
+    track.style.transition = '';
+    if (dragDelta < -60) goTo(current + 1);
+    else if (dragDelta > 60) goTo(current - 1);
+    else goTo(current);
+  });
+
+  /* Touch */
+  var touchStartX = 0;
+  var touchStartTranslate = 0;
+
+  wrap.addEventListener('touchstart', function (e) {
+    touchStartX = e.touches[0].clientX;
+    touchStartTranslate = getTranslateX();
+    track.style.transition = 'none';
+  }, { passive: true });
+
+  wrap.addEventListener('touchmove', function (e) {
+    var dx = e.touches[0].clientX - touchStartX;
+    track.style.transform = 'translateX(' + (touchStartTranslate + dx) + 'px)';
+  }, { passive: true });
+
+  wrap.addEventListener('touchend', function (e) {
+    track.style.transition = '';
+    var dx = e.changedTouches[0].clientX - touchStartX;
+    if (dx < -60) goTo(current + 1);
+    else if (dx > 60) goTo(current - 1);
+    else goTo(current);
+  });
+
+  /* Prevent link click after drag */
+  wrap.addEventListener('click', function (e) {
+    if (Math.abs(dragDelta) > 8) e.preventDefault();
+  }, true);
+
+  updateUI();
+})();
+</script>
 </body>
 </html>
