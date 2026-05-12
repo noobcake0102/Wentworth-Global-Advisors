@@ -1,0 +1,547 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Message Received | Wentworth Global Advisors</title>
+  <meta name="robots" content="noindex,nofollow" />
+  <link rel="icon" type="image/svg+xml" href="/wentworth-mark.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    /* ── Confirmation Hero ───────────────────────────── */
+    .confirm-hero {
+      padding: calc(var(--nav-h) + 5rem) 0 5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .confirm-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(201,168,76,.09), transparent 65%);
+      pointer-events: none;
+    }
+
+    .confirm-check {
+      width: 64px;
+      height: 64px;
+      border: 1.5px solid var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 2rem;
+      position: relative;
+    }
+
+    .confirm-check::after {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 11px;
+      border-left: 1.5px solid var(--gold);
+      border-bottom: 1.5px solid var(--gold);
+      transform: rotate(-45deg) translate(2px, -2px);
+    }
+
+    .confirm-hero h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      margin-bottom: 1.25rem;
+    }
+
+    .confirm-hero p {
+      color: var(--text-muted);
+      font-size: 1.125rem;
+      max-width: 520px;
+      margin: 0 auto 3rem;
+      line-height: 1.8;
+    }
+
+    /* ── What Happens Next ───────────────────────────── */
+    .next-steps {
+      padding: 4rem 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+    }
+
+    .next-steps .container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem;
+    }
+
+    .next-step {
+      text-align: center;
+    }
+
+    .step-num {
+      font-family: var(--serif);
+      font-size: 3rem;
+      font-weight: 400;
+      color: rgba(201,168,76,.2);
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+
+    .step-label {
+      font-family: var(--sans);
+      font-size: .75rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: .625rem;
+    }
+
+    .next-step h4 {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: var(--heading);
+      margin-bottom: .75rem;
+    }
+
+    .next-step p {
+      font-size: .875rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+    }
+
+    /* ── Schedule Section ────────────────────────────── */
+    .schedule-section {
+      padding: 5rem 0;
+      text-align: center;
+    }
+
+    .schedule-section .eyebrow {
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .schedule-section h2 {
+      font-size: clamp(2rem, 3.5vw, 2.75rem);
+      margin-bottom: 1rem;
+    }
+
+    .schedule-section p {
+      color: var(--text-muted);
+      max-width: 480px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.8;
+    }
+
+    .schedule-note {
+      margin-top: 1.5rem;
+      font-size: .8125rem;
+      color: var(--text-dim);
+      letter-spacing: .04em;
+    }
+
+    /* ── Case Studies ────────────────────────────────── */
+    .cs-section {
+      padding: 5rem 0 6rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .cs-section-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 2.5rem;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .cs-section-head h2 {
+      font-size: clamp(1.75rem, 3vw, 2.25rem);
+      margin: 0;
+    }
+
+    .cs-filters {
+      display: flex;
+      gap: .5rem;
+      flex-wrap: wrap;
+    }
+
+    .cs-filter {
+      font-family: var(--sans);
+      font-size: .75rem;
+      font-weight: 500;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      background: transparent;
+      border: 1px solid var(--border);
+      padding: .4rem 1rem;
+      cursor: pointer;
+      transition: border-color .2s, color .2s, background .2s;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .cs-filter:hover {
+      border-color: rgba(201,168,76,.4);
+      color: var(--text);
+    }
+
+    .cs-filter.active {
+      border-color: var(--gold);
+      color: var(--gold);
+      background: rgba(201,168,76,.06);
+    }
+
+    .cs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .cs-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--border);
+      padding: 2rem;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      position: relative;
+      transition: transform .3s, box-shadow .3s, border-top-color .3s;
+    }
+
+    .cs-card::after {
+      content: '';
+      position: absolute;
+      top: -3px;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: var(--gold);
+      transition: width .4s ease;
+    }
+
+    .cs-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 50px rgba(0,0,0,.4);
+    }
+
+    .cs-card:hover::after {
+      width: 100%;
+    }
+
+    .cs-card[data-cat].hidden {
+      display: none;
+    }
+
+    .cs-industry {
+      font-family: var(--sans);
+      font-size: .6875rem;
+      font-weight: 500;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid rgba(201,168,76,.3);
+      padding: .25rem .75rem;
+      align-self: flex-start;
+    }
+
+    .cs-card h3 {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: var(--heading);
+      line-height: 1.4;
+      margin: 0;
+    }
+
+    .cs-stat {
+      display: flex;
+      gap: 1.25rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border);
+      margin-top: auto;
+    }
+
+    .cs-stat-item {
+      flex: 1;
+    }
+
+    .cs-stat-val {
+      font-family: var(--serif);
+      font-size: 1.625rem;
+      font-weight: 400;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: .25rem;
+    }
+
+    .cs-stat-lbl {
+      font-size: .75rem;
+      color: var(--text-dim);
+      line-height: 1.4;
+    }
+
+    .cs-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .cs-read {
+      font-family: var(--sans);
+      font-size: .75rem;
+      font-weight: 500;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      transition: gap .2s;
+    }
+
+    .cs-read::after { content: '→'; }
+    .cs-card:hover .cs-read { gap: .875rem; }
+
+    @media (max-width: 900px) {
+      .cs-grid { grid-template-columns: repeat(2, 1fr); }
+      .next-steps .container { grid-template-columns: 1fr; gap: 2rem; }
+    }
+
+    @media (max-width: 600px) {
+      .cs-grid { grid-template-columns: 1fr; }
+      .cs-section-head { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a class="nav-brand" href="/"><img src="/wentworth-logo-dark.svg" alt="Wentworth Global Advisors" /></a>
+    <button class="nav-toggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/services">Services</a></li>
+      <li><a href="/case-studies">Case Studies</a></li>
+      <li><a href="/insights">Insights</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+    <a class="nav-cta" href="/contact">Schedule a Consultation</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- Confirmation -->
+  <div class="confirm-hero">
+    <div class="container">
+      <div class="confirm-check"></div>
+      <h1>Message<br><em>Received.</em></h1>
+      <p>A senior member of the Wentworth team will review your message and respond within one business day. No junior intake team — your message goes directly to leadership.</p>
+      <a href="https://calendly.com/YOUR-CALENDLY-LINK" target="_blank" rel="noopener" class="btn btn-gold">
+        Skip the Wait &mdash; Schedule Now
+      </a>
+      <p class="schedule-note">Opens a 30-minute diagnostic call directly on our calendar</p>
+    </div>
+  </div>
+
+  <!-- What Happens Next -->
+  <section class="next-steps">
+    <div class="container">
+      <div class="next-step reveal">
+        <div class="step-num">01</div>
+        <p class="step-label">Within 24 Hours</p>
+        <h4>We Review Your Message</h4>
+        <p>Your submission goes directly to Nick Bobay. We read every message in full before responding — no form letters, no junior intake.</p>
+      </div>
+      <div class="next-step reveal reveal-d1">
+        <div class="step-num">02</div>
+        <p class="step-label">First Call</p>
+        <h4>30-Minute Diagnostic</h4>
+        <p>A peer-to-peer conversation between your leadership and ours. We come prepared with industry context. No pitch deck, no slides, no selling.</p>
+      </div>
+      <div class="next-step reveal reveal-d2">
+        <div class="step-num">03</div>
+        <p class="step-label">If It's a Fit</p>
+        <h4>A Clear Engagement Plan</h4>
+        <p>Within one week of our diagnostic, you'll have a written engagement framework with scope, deliverables, timeline, and a fixed monthly retainer.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Schedule CTA -->
+  <section class="schedule-section reveal">
+    <div class="container">
+      <span class="eyebrow"><span>No Obligation</span></span>
+      <h2>Prefer to Schedule<br><em>Right Now?</em></h2>
+      <p>Select a time directly on our calendar. The 30-minute call is diagnostic — we ask the questions your situation requires and you leave with clarity, regardless of whether we work together.</p>
+      <a href="https://calendly.com/YOUR-CALENDLY-LINK" target="_blank" rel="noopener" class="btn btn-gold">
+        View Available Times
+      </a>
+      <p class="schedule-note">Replace the Calendly link above in thank-you.html with your actual scheduling URL</p>
+    </div>
+  </section>
+
+  <!-- Case Studies by Category -->
+  <section class="cs-section">
+    <div class="container">
+
+      <div class="cs-section-head reveal">
+        <div>
+          <span class="eyebrow" style="margin-bottom:.75rem"><span>While You Wait</span></span>
+          <h2>See What We've<br><em>Already Fixed.</em></h2>
+        </div>
+        <div class="cs-filters">
+          <button class="cs-filter active" data-filter="all">All</button>
+          <button class="cs-filter" data-filter="aerospace">Aerospace</button>
+          <button class="cs-filter" data-filter="satellite">Satellite</button>
+          <button class="cs-filter" data-filter="turnaround">Turnaround</button>
+        </div>
+      </div>
+
+      <div class="cs-grid reveal">
+
+        <!-- Card 1: Satellite -->
+        <a href="/case-studies" class="cs-card" data-cat="satellite">
+          <span class="cs-industry">Satellite &middot; Ground Station</span>
+          <h3>LEO/MEO Satellite Ground Station Recovery</h3>
+          <p style="font-size:.875rem;color:var(--text-muted);line-height:1.7;margin:0">A program 14 months behind schedule with $6M overrun and an active default discussion. Delivered on time with no liquidated damages.</p>
+          <div class="cs-stat">
+            <div class="cs-stat-item">
+              <div class="cs-stat-val">14 Mo.</div>
+              <div class="cs-stat-lbl">Schedule Deficit Recovered</div>
+            </div>
+            <div class="cs-stat-item">
+              <div class="cs-stat-val">$0</div>
+              <div class="cs-stat-lbl">Liquidated Damages</div>
+            </div>
+          </div>
+          <div class="cs-card-footer">
+            <span class="cs-read">Read Full Case</span>
+          </div>
+        </a>
+
+        <!-- Card 2: Aerospace -->
+        <a href="/case-studies" class="cs-card" data-cat="aerospace">
+          <span class="cs-industry">Aerospace &middot; Production Ramp</span>
+          <h3>Aerospace Metallurgy Production Ramp</h3>
+          <p style="font-size:.875rem;color:var(--text-muted);line-height:1.7;margin:0">Six months of runway to achieve AS9100 certification and full-rate production or lose the contract. Delivered with four months to spare.</p>
+          <div class="cs-stat">
+            <div class="cs-stat-item">
+              <div class="cs-stat-val">3&times;</div>
+              <div class="cs-stat-lbl">Throughput Increase</div>
+            </div>
+            <div class="cs-stat-item">
+              <div class="cs-stat-val">99.2%</div>
+              <div class="cs-stat-lbl">First-Pass Yield</div>
+            </div>
+          </div>
+          <div class="cs-card-footer">
+            <span class="cs-read">Read Full Case</span>
+          </div>
+        </a>
+
+        <!-- Card 3: Turnaround -->
+        <a href="/case-studies" class="cs-card" data-cat="turnaround">
+          <span class="cs-industry">Electronics &middot; Turnaround</span>
+          <h3>Silicon Valley Electronics Manufacturer Turnaround</h3>
+          <p style="font-size:.875rem;color:var(--text-muted);line-height:1.7;margin:0">PE-backed manufacturer burning $2M/month with on-time delivery at 54% and two major customers qualifying alternates. Back to EBITDA-positive in month 7.</p>
+          <div class="cs-stat">
+            <div class="cs-stat-item">
+              <div class="cs-stat-val">$2M</div>
+              <div class="cs-stat-lbl">Monthly Burn Eliminated</div>
+            </div>
+            <div class="cs-stat-item">
+              <div class="cs-stat-val">91%</div>
+              <div class="cs-stat-lbl">On-Time Delivery</div>
+            </div>
+          </div>
+          <div class="cs-card-footer">
+            <span class="cs-read">Read Full Case</span>
+          </div>
+        </a>
+
+      </div>
+
+      <div style="text-align:center;margin-top:3rem">
+        <a href="/case-studies" class="btn btn-outline">View All Case Studies</a>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="/wentworth-logo-light.svg" alt="Wentworth Global Advisors" />
+        <p>Fractional executive leadership for manufacturers pursuing world-class operational performance.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="/services">Fractional COO</a></li>
+          <li><a href="/services">Fractional CEO</a></li>
+          <li><a href="/services">M&amp;A Integration</a></li>
+          <li><a href="/services">Business Turnaround</a></li>
+          <li><a href="/services">Lean Six Sigma</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="/case-studies">Case Studies</a></li>
+          <li><a href="/insights">Insights</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="/contact">Schedule a Call</a></li>
+          <li><a href="mailto:info@wentworthglobaladvisors.com">Email Us</a></li>
+          <li><span style="color:var(--text-dim);font-size:.875rem">Marco Island, FL</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Wentworth Global Advisors. All rights reserved.</p>
+      <p>Fractional COO &amp; CEO Services for Manufacturing</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/main.js"></script>
+<script>
+(function () {
+  var filters = document.querySelectorAll('.cs-filter');
+  var cards = document.querySelectorAll('.cs-card[data-cat]');
+
+  filters.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var cat = btn.getAttribute('data-filter');
+
+      filters.forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+
+      cards.forEach(function (card) {
+        var match = cat === 'all' || card.getAttribute('data-cat') === cat;
+        card.classList.toggle('hidden', !match);
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>
