@@ -58,6 +58,26 @@ if (counters.length) {
   counters.forEach(el => cObs.observe(el));
 }
 
+// Image slot load handling
+// Hero/page-hero photos: toggle img-loaded on the <img> itself
+document.querySelectorAll('.hero-photo, .page-hero-photo').forEach(function(img) {
+  if (img.complete && img.naturalWidth > 0) {
+    img.classList.add('img-loaded');
+  } else {
+    img.addEventListener('load', function() { img.classList.add('img-loaded'); });
+  }
+});
+// Portrait + industry-break slots: toggle img-loaded on the wrapper
+document.querySelectorAll('.about-photo-slot, .industry-break').forEach(function(slot) {
+  var img = slot.querySelector('img');
+  if (!img) return;
+  if (img.complete && img.naturalWidth > 0) {
+    slot.classList.add('img-loaded');
+  } else {
+    img.addEventListener('load', function() { slot.classList.add('img-loaded'); });
+  }
+});
+
 // Accordion
 document.querySelectorAll('.accordion-trigger').forEach(trigger => {
   trigger.addEventListener('click', () => {

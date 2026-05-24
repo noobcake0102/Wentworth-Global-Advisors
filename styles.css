@@ -440,6 +440,128 @@ section{padding:6rem 0}
 }
 .footer-bottom p{font-size:.8125rem;color:var(--text-dim)}
 
+/* ─── Image Slot System ──────────────────────────────────────────
+   Slots maintain layout space and show a labeled placeholder until
+   the real photo is dropped into images/. No JS required for layout;
+   img-loaded class toggles visibility once the file exists.
+   ─────────────────────────────────────────────────────────────── */
+
+/* Hero background photo (homepage) */
+.hero-photo {
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  object-fit:cover;object-position:center 40%;
+  opacity:0;transition:opacity 1.2s ease;
+  mix-blend-mode:luminosity;
+  pointer-events:none;
+}
+.hero-photo.img-loaded { opacity:.16; }
+
+/* Page-hero background photo (inner pages) */
+.page-hero-photo {
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  object-fit:cover;object-position:center 30%;
+  opacity:0;transition:opacity .8s ease;
+  mix-blend-mode:luminosity;
+  pointer-events:none;
+}
+.page-hero-photo.img-loaded { opacity:.1; }
+
+/* Nick's portrait slot (about-frame rework) */
+.about-frame--photo {
+  padding:0;
+  background:var(--bg);
+}
+.about-frame--photo::before { display:none; }
+
+.about-photo-slot {
+  aspect-ratio:3/4;
+  min-height:360px;
+  position:relative;
+  overflow:hidden;
+  background:var(--bg);
+  border-radius:3px;
+}
+/* Placeholder label — visible until image loads */
+.about-photo-slot::after {
+  content:attr(data-slot-label);
+  position:absolute;inset:0;
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--sans);font-size:.625rem;font-weight:500;
+  letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(201,168,76,.38);text-align:center;
+  padding:2rem;white-space:pre-line;line-height:2;
+  border:1px dashed rgba(201,168,76,.2);border-radius:3px;
+  pointer-events:none;
+}
+.about-photo-slot.img-loaded::after { display:none; }
+
+.about-photo-slot img.about-photo {
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  object-fit:cover;object-position:top center;
+  display:block;
+  opacity:0;transition:opacity .5s ease;
+}
+.about-photo-slot.img-loaded img.about-photo { opacity:1; }
+
+.about-photo-overlay {
+  position:absolute;bottom:0;left:0;right:0;
+  padding:3rem 2.5rem 2rem;
+  background:linear-gradient(0deg,rgba(9,9,15,.97) 0%,rgba(9,9,15,.65) 55%,transparent 100%);
+}
+.about-photo-overlay .about-quote {
+  font-family:var(--serif);font-size:1.25rem;font-style:italic;
+  line-height:1.5;margin-bottom:1rem;color:var(--text);
+}
+.about-photo-overlay .about-attr {
+  font-size:.8125rem;color:var(--text-dim);letter-spacing:.06em;
+}
+
+/* Industry image break (full-width, between service blocks) */
+.industry-break {
+  position:relative;height:300px;overflow:hidden;
+  background:var(--surface);
+}
+.industry-break img {
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  object-fit:cover;object-position:center;
+  display:block;
+  filter:brightness(.28) saturate(.5);
+  opacity:0;transition:opacity .8s ease;
+}
+.industry-break.img-loaded img { opacity:1; }
+/* Placeholder label */
+.industry-break::before {
+  content:attr(data-slot-label);
+  position:absolute;inset:0;z-index:1;
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--sans);font-size:.625rem;font-weight:500;
+  letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(201,168,76,.3);text-align:center;
+  padding:2rem;white-space:pre-line;line-height:2;
+  border-top:1px dashed rgba(201,168,76,.15);
+  border-bottom:1px dashed rgba(201,168,76,.15);
+  pointer-events:none;
+}
+.industry-break.img-loaded::before { display:none; }
+/* Gradient overlay — active once image loads */
+.industry-break-overlay {
+  position:absolute;inset:0;z-index:2;
+  background:linear-gradient(
+    90deg,
+    rgba(9,9,15,.72) 0%,
+    transparent 35%,
+    transparent 65%,
+    rgba(9,9,15,.72) 100%
+  );
+  opacity:0;transition:opacity .8s ease;
+  pointer-events:none;
+}
+.industry-break.img-loaded .industry-break-overlay { opacity:1; }
+
 /* --- 404 --- */
 .not-found{
   min-height:100vh;display:flex;align-items:center;justify-content:center;

@@ -39,6 +39,13 @@
 <main>
 
   <div class="page-hero">
+    <img
+      src="/images/hero/services-hero.jpg"
+      alt=""
+      class="page-hero-photo"
+      aria-hidden="true"
+      onload="this.classList.add('img-loaded')"
+    />
     <div class="container">
       <span class="eyebrow">Our Services</span>
       <h1>Executive Capability,<br><em>Precisely Deployed.</em></h1>
@@ -119,6 +126,20 @@
       </div>
     </div>
   </section>
+
+  <!-- VISUAL BREAK -->
+  <div
+    class="industry-break"
+    data-slot-label="DROP PHOTO HERE&#10;images/industry/&#10;aerospace-manufacturing.jpg&#10;Wide landscape · 2000×800 px"
+    aria-hidden="true"
+  >
+    <img
+      src="/images/industry/aerospace-manufacturing.jpg"
+      alt=""
+      onload="this.closest('.industry-break').classList.add('img-loaded')"
+    />
+    <div class="industry-break-overlay"></div>
+  </div>
 
   <!-- SERVICE 04 -->
   <section class="service-detail">
