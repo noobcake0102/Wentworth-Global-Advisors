@@ -65,4 +65,14 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://www.wentworthglobaladvisors.com/insights/how-to-fix-on-time-delivery-defense-electronics-manufacturer</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.wentworthglobaladvisors.com/insights/what-to-do-when-manufacturing-acquisition-misses-margin-targets</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
