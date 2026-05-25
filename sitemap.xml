@@ -75,4 +75,14 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://www.wentworthglobaladvisors.com/insights/how-to-improve-gross-margin-aerospace-manufacturer</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.wentworthglobaladvisors.com/insights/what-does-an-interim-coo-do-first-30-days-manufacturing</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
