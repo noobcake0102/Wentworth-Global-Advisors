@@ -85,4 +85,14 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://www.wentworthglobaladvisors.com/insights/operational-due-diligence-checklist-defense-manufacturer-acquisition</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.wentworthglobaladvisors.com/insights/what-causes-ebitda-erosion-manufacturing-company-after-pe-acquisition</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
