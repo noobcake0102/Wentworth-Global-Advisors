@@ -95,4 +95,14 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://www.wentworthglobaladvisors.com/insights/how-to-fix-production-scheduling-high-mix-low-volume-manufacturer</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.wentworthglobaladvisors.com/insights/what-to-do-when-manufacturing-portfolio-company-misses-operating-plan</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
