@@ -201,6 +201,11 @@ const module1 = {
           ],
         },
         {
+          type: 'diagram' as const,
+          diagramId: 'lean-house',
+          title: 'The Toyota Production System House',
+        },
+        {
           type: 'paragraph' as const,
           text: 'Understanding TPS as a system — not a collection of tools — is the single most important insight for any Lean practitioner. Organizations that pick up individual tools like 5S or kanban without understanding the underlying philosophy rarely achieve lasting results. The tools work because of the thinking behind them.',
         },
@@ -544,6 +549,11 @@ const module3 = {
           title: 'The Most Common 5S Failure',
           text: 'Most 5S efforts succeed in their first event but fail within months. The culprit is almost always the fifth S — Sustain. Without management commitment, regular audits, and accountability, workplaces gradually return to their old state. Sustain requires cultural change, not just a one-time event.',
         },
+        {
+          type: 'diagram' as const,
+          diagramId: 'five-s-cycle',
+          title: '5S Implementation Cycle',
+        },
       ],
     },
     {
@@ -828,6 +838,11 @@ const module4 = {
           variant: 'tip' as const,
           title: 'Calculating Kanban Quantity',
           text: 'Basic kanban formula: Number of kanbans = (Daily demand × Replenishment lead time in days × Safety factor) ÷ Container quantity. Start with a generous safety factor and reduce it systematically as process stability improves.',
+        },
+        {
+          type: 'diagram' as const,
+          diagramId: 'kanban-flow',
+          title: 'Kanban Pull System Flow',
         },
       ],
     },

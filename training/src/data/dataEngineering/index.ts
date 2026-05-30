@@ -189,6 +189,7 @@ export const dataEngineeringCourse: Course = {
                 ['BI / Visualization', 'Build dashboards and reports', 'Looker, Tableau, Power BI'],
               ],
             },
+            { type: 'diagram' as const, diagramId: 'modern-data-stack', title: 'The Modern Data Stack' },
             {
               type: 'callout' as const,
               variant: 'example' as const,
@@ -479,6 +480,7 @@ export const dataEngineeringCourse: Course = {
                 'Notification: Alert on success or failure; update monitoring dashboards',
               ],
             },
+            { type: 'diagram' as const, diagramId: 'data-pipeline', title: 'Modern Data Pipeline Architecture' },
             {
               type: 'callout' as const,
               variant: 'info' as const,

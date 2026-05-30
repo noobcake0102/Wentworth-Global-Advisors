@@ -133,6 +133,7 @@ export const dataAnalysisCourse: Course = {
                 'Communicate: Present findings in a format appropriate for the audience',
               ],
             },
+            { type: 'diagram' as const, diagramId: 'analysis-workflow', title: 'The Data Analysis Workflow' },
             {
               type: 'callout' as const,
               variant: 'tip' as const,
@@ -602,6 +603,7 @@ export const dataAnalysisCourse: Course = {
                 ['Box Plot', 'Distribution summary with outliers', 'Audiences unfamiliar with statistics'],
               ],
             },
+            { type: 'diagram' as const, diagramId: 'chart-selection', title: 'Choosing the Right Chart Type' },
             {
               type: 'callout' as const,
               variant: 'warning' as const,

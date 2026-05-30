@@ -80,6 +80,12 @@ const module1 = {
           ],
         },
         {
+          type: 'chart' as const,
+          chartId: 'sigma-levels',
+          title: 'Sigma Levels & DPMO',
+          description: 'How sigma level correlates to defects per million opportunities',
+        },
+        {
           type: 'callout' as const,
           variant: 'warning' as const,
           title: 'The 1.5 Sigma Shift',
@@ -356,6 +362,12 @@ const module2 = {
           ],
         },
         {
+          type: 'chart' as const,
+          chartId: 'normal-distribution',
+          title: 'Process Variation & Normal Distribution',
+          description: 'Understanding how variation distributes around the mean',
+        },
+        {
           type: 'callout' as const,
           variant: 'example' as const,
           title: 'Cp vs. Cpk in Practice',
@@ -437,6 +449,11 @@ const module3 = {
       title: 'Define & Measure: Setting the Stage',
       estimatedMinutes: 18,
       content: [
+        {
+          type: 'diagram' as const,
+          diagramId: 'dmaic-phases',
+          title: 'The DMAIC Framework',
+        },
         {
           type: 'paragraph' as const,
           text: 'DMAIC is a disciplined, data-driven problem-solving roadmap. Unlike ad hoc improvement efforts, DMAIC demands evidence at every step. The first two phases — Define and Measure — ensure teams are solving the right problem with reliable data before any analysis or solution work begins.',

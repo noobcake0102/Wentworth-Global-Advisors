@@ -608,6 +608,7 @@ const module3 = {
             { term: 'Reinforcement', definition: 'Factors in place (rewards, recognition, consequences) that sustain the change over time' },
           ],
         },
+        { type: 'diagram' as const, diagramId: 'adkar-model', title: 'ADKAR Change Management Model' },
         {
           type: 'callout' as const,
           variant: 'info' as const,
@@ -831,6 +832,7 @@ const module4 = {
             ['Performing', 'High trust, self-managing, focused on results', 'Coach and challenge; remove organizational barriers'],
           ],
         },
+        { type: 'diagram' as const, diagramId: 'tuckman-model', title: 'Tuckman Team Development Model' },
         {
           type: 'callout' as const,
           variant: 'info' as const,

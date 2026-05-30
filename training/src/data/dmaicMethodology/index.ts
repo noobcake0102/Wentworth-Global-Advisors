@@ -41,6 +41,11 @@ const module1 = {
           ],
         },
         {
+          type: 'diagram' as const,
+          diagramId: 'dmaic-phases',
+          title: 'DMAIC Phase Overview',
+        },
+        {
           type: 'callout' as const,
           variant: 'info' as const,
           title: 'Why Sequence Matters',
@@ -372,6 +377,11 @@ const module2 = {
           text: 'Raw VOC data ("the forms are confusing") must be translated into Critical-to-Quality (CTQ) requirements—specific, measurable standards ("form completion time must be under 4 minutes with zero required fields left blank").',
         },
         {
+          type: 'diagram' as const,
+          diagramId: 'ctq-tree',
+          title: 'CTQ Tree: From Voice to Requirement',
+        },
+        {
           type: 'callout' as const,
           variant: 'tip' as const,
           text: 'Use a CTQ tree to drill down from a broad customer need to a measurable requirement. Start with the need, identify the drivers of that need, and then specify measurable performance standards for each driver.',
@@ -584,6 +594,12 @@ const module3 = {
             'Identify where data is collected (or should be)',
             'Flag steps with high error rates or frequent escalations',
           ],
+        },
+        {
+          type: 'chart' as const,
+          chartId: 'run-chart-example',
+          title: 'Run Chart: Tracking Process Over Time',
+          description: 'A run chart helps identify trends and shifts in process performance',
         },
         {
           type: 'callout' as const,

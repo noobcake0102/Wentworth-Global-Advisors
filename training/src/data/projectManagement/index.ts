@@ -79,6 +79,7 @@ const module1 = {
             'Close — Formally complete the project: obtain final acceptance, release resources, capture lessons learned, and archive documentation.',
           ],
         },
+        { type: 'diagram' as const, diagramId: 'pm-lifecycle', title: 'Project Management Lifecycle' },
         {
           type: 'callout' as const,
           variant: 'tip' as const,
@@ -664,6 +665,7 @@ const module4 = {
             ['Low (< 0.2)', 'Low', 'Accept and log; review periodically'],
           ],
         },
+        { type: 'diagram' as const, diagramId: 'risk-matrix', title: 'Risk Probability-Impact Matrix' },
         {
           type: 'callout' as const,
           variant: 'tip' as const,

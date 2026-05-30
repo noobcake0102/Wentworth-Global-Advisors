@@ -34,7 +34,7 @@ export const crmErpSystemsCourse: Course = {
           content: [
             {
               type: 'paragraph' as const,
-              text: 'Enterprise software refers to software designed to address the needs of large organizations rather than individual users. Two categories dominate: CRM (Customer Relationship Management) and ERP (Enterprise Resource Planning). Together, they form the operational backbone of most mid-to-large organizations, managing the data and workflows that run the business day-to-day.',
+              text: 'Enterprise software refers to software designed to address the needs of large organizations rather than individual users. Two categories dominate: CRM (Customer Relationship Management) and ERP (Enterprise Resource Planning). Together, they form the operational backbone of most mid-to-large organizations, managing the data and workflows that run the business day-to-day. Without these systems, companies at scale would struggle to maintain consistent records, enforce business rules, or coordinate across departments and geographies.',
             },
             {
               type: 'heading' as const,
@@ -43,7 +43,7 @@ export const crmErpSystemsCourse: Course = {
             },
             {
               type: 'paragraph' as const,
-              text: 'A CRM system tracks every interaction a company has with its current and potential customers — leads, contacts, sales opportunities, support cases, and marketing communications. The goal is to give every customer-facing employee a complete, shared view of the customer, eliminating information silos between sales, marketing, and service teams.',
+              text: 'A CRM system tracks every interaction a company has with its current and potential customers — leads, contacts, sales opportunities, support cases, and marketing communications. The goal is to give every customer-facing employee a complete, shared view of the customer, eliminating information silos between sales, marketing, and service teams. Before CRM existed, customer knowledge lived in individual sales reps\' heads or personal spreadsheets — when they left, that knowledge walked out the door with them. CRM institutionalizes customer relationships as a company asset, not a personal one. Modern CRM platforms also provide automation capabilities: email sequences, lead scoring, pipeline stage triggers, and AI-generated insights about deal risk.',
             },
             {
               type: 'heading' as const,
@@ -52,13 +52,41 @@ export const crmErpSystemsCourse: Course = {
             },
             {
               type: 'paragraph' as const,
-              text: 'An ERP system is an integrated suite of applications that manages core business processes — finance, accounting, supply chain, inventory, manufacturing, HR, and payroll — within a single platform. The defining characteristic of ERP is integration: when a purchase order is created, inventory levels update automatically, financial records adjust, and the vendor payment workflow triggers — all in one system.',
+              text: 'An ERP system is an integrated suite of applications that manages core business processes — finance, accounting, supply chain, inventory, manufacturing, HR, and payroll — within a single platform. The defining characteristic of ERP is integration: when a purchase order is created, inventory levels update automatically, financial records adjust, and the vendor payment workflow triggers — all in one system. This eliminates the double-entry and reconciliation overhead that plagues organizations running separate, disconnected tools. ERP is the system of record for operational truth: what the company owns, what it owes, who it employs, and what it has committed to customers.',
             },
             {
               type: 'callout' as const,
               variant: 'info' as const,
               title: 'CRM vs. ERP at a Glance',
               text: 'CRM faces outward — it manages the company\'s relationships with customers and prospects. ERP faces inward — it manages the company\'s internal resources and processes. A complete picture of a business requires both: ERP tells you what you have and what it costs; CRM tells you who is buying it and why.',
+            },
+            {
+              type: 'key-terms' as const,
+              terms: [
+                {
+                  term: 'CRM (Customer Relationship Management)',
+                  definition: 'Software that tracks all interactions between a company and its customers or prospects — contacts, accounts, opportunities, cases, and marketing communications — to provide a unified view of the customer relationship.',
+                },
+                {
+                  term: 'ERP (Enterprise Resource Planning)',
+                  definition: 'An integrated suite of applications managing core business operations — finance, supply chain, HR, manufacturing — in a single platform with a shared database, so changes in one module automatically update related records in others.',
+                },
+                {
+                  term: 'System of Record',
+                  definition: 'The authoritative source of truth for a specific type of data. CRM is typically the system of record for customer contacts and sales pipeline; ERP is typically the system of record for financial transactions and inventory.',
+                },
+              ],
+            },
+            {
+              type: 'table' as const,
+              headers: ['Dimension', 'CRM', 'ERP'],
+              rows: [
+                ['Primary orientation', 'Customer-facing (outward)', 'Internal operations (inward)'],
+                ['Core users', 'Sales, marketing, customer service', 'Finance, operations, HR, supply chain'],
+                ['Data it manages', 'Leads, contacts, accounts, opportunities, cases', 'Invoices, purchase orders, inventory, payroll, GL entries'],
+                ['Key question answered', '"Who are our customers and where are deals?"', '"What do we have, owe, and need to operate?"'],
+                ['Leading platforms', 'Salesforce, HubSpot, Microsoft Dynamics', 'SAP, Oracle ERP Cloud, NetSuite, Workday'],
+              ],
             },
           ],
         },
@@ -69,7 +97,7 @@ export const crmErpSystemsCourse: Course = {
           content: [
             {
               type: 'paragraph' as const,
-              text: 'Enterprise software did not emerge fully formed. It evolved over six decades, tracking the development of computing power and the changing needs of organizations as they scaled and globalized.',
+              text: 'Enterprise software did not emerge fully formed. It evolved over six decades, tracking the development of computing power and the changing needs of organizations as they scaled and globalized. Each wave of technology introduced new capabilities that redefined what was possible, while also raising new challenges around implementation complexity, vendor dependence, and change management. Understanding this history helps practitioners appreciate why modern enterprise systems are designed the way they are — many architectural decisions are direct responses to the painful lessons of previous generations.',
             },
             {
               type: 'table' as const,
@@ -88,7 +116,30 @@ export const crmErpSystemsCourse: Course = {
               type: 'callout' as const,
               variant: 'example' as const,
               title: 'Salesforce\'s 1999 Revolution',
-              text: 'When Marc Benioff founded Salesforce in 1999 with the motto "No Software," it was considered heretical. Enterprise software was sold as expensive on-premise packages. Salesforce proved that CRM could be delivered over the internet as a subscription service — launching the SaaS revolution that eventually transformed the entire enterprise software industry.',
+              text: 'When Marc Benioff founded Salesforce in 1999 with the motto "No Software," it was considered heretical. Enterprise software was sold as expensive on-premise packages requiring hardware, IT staff, and months of installation. Salesforce proved that CRM could be delivered over the internet as a subscription service — no hardware, no installation, and pricing that scaled with company size. This launched the SaaS revolution that eventually transformed the entire enterprise software industry. Today, SaaS is the default delivery model for new enterprise applications, and even legacy vendors like SAP and Oracle have spent billions migrating to cloud architectures.',
+            },
+            {
+              type: 'callout' as const,
+              variant: 'tip' as const,
+              title: 'Why History Matters for Practitioners',
+              text: 'Many organizations still run legacy ERP systems from the 1990s or early 2000s. Understanding their origins — designed before cloud, mobile, or modern APIs existed — explains why migrations are so complex. Legacy systems weren\'t built to be replaced; they were built to be permanent. Practitioners who understand this context can better manage stakeholder expectations during modernization projects.',
+            },
+            {
+              type: 'key-terms' as const,
+              terms: [
+                {
+                  term: 'MRP (Material Requirements Planning)',
+                  definition: 'The 1960s predecessor to ERP, focused on computerizing manufacturing inventory and production scheduling to ensure the right materials were available at the right time.',
+                },
+                {
+                  term: 'SaaS (Software as a Service)',
+                  definition: 'A software delivery model where applications are hosted in the cloud and accessed via a web browser on a subscription basis — no on-premise installation required. Pioneered for enterprise software by Salesforce in 1999.',
+                },
+                {
+                  term: 'On-Premise Software',
+                  definition: 'Software installed and run on servers owned and managed by the customer, as opposed to hosted in a vendor\'s cloud. The dominant enterprise software model before SaaS.',
+                },
+              ],
             },
           ],
         },
@@ -99,7 +150,7 @@ export const crmErpSystemsCourse: Course = {
           content: [
             {
               type: 'paragraph' as const,
-              text: 'No enterprise system is an island. A typical mid-size company might have a Salesforce CRM, a NetSuite ERP, a Workday HRIS, a Shopify e-commerce platform, and dozens of other SaaS tools — all generating business-critical data. The integration landscape refers to how these systems connect and share data.',
+              text: 'No enterprise system is an island. A typical mid-size company might have a Salesforce CRM, a NetSuite ERP, a Workday HRIS, a Shopify e-commerce platform, and dozens of other SaaS tools — all generating business-critical data. The integration landscape refers to how these systems connect and share data. Without integration, each system becomes a silo: customer data in CRM has no connection to payment history in ERP, and employee data in HRIS has no connection to the customer accounts they manage in CRM. The result is manual reconciliation, data inconsistency, and decisions made from incomplete information.',
             },
             {
               type: 'list' as const,
@@ -109,13 +160,25 @@ export const crmErpSystemsCourse: Course = {
                 'ESB (Enterprise Service Bus): Older on-premise middleware architecture for routing messages between systems',
                 'Native connectors: CRM/ERP vendors provide pre-built connectors to popular adjacent systems',
                 'Data warehouse: Centralizing data from all systems into an analytics layer, separate from operational integration',
+                'Event-driven integration: Systems publish events (e.g., "order placed") and other systems subscribe and react in real time',
+              ],
+            },
+            {
+              type: 'table' as const,
+              headers: ['Integration Pattern', 'Best For', 'Risk'],
+              rows: [
+                ['Point-to-point API', 'Simple, two-system connections', 'Becomes unmanageable as system count grows'],
+                ['iPaaS middleware', 'Complex multi-system environments', 'Vendor dependency; can become a bottleneck'],
+                ['Native connector', 'Vendor-certified, supported integrations between popular platform pairs', 'Less flexible for custom data models'],
+                ['Data warehouse sync', 'Analytics and reporting (not operational)', 'Latency — not real-time'],
+                ['Event-driven / Kafka', 'High-volume, real-time event streams', 'Complex to build and operate'],
               ],
             },
             {
               type: 'callout' as const,
               variant: 'warning' as const,
               title: 'Integration Sprawl',
-              text: 'Organizations that add SaaS tools without integration planning end up with data silos — customer data in CRM, financial data in ERP, HR data in HRIS — with no unified view of the business. Integration projects are frequently cited as the most expensive and risky aspect of enterprise software implementations.',
+              text: 'Organizations that add SaaS tools without integration planning end up with data silos — customer data in CRM, financial data in ERP, HR data in HRIS — with no unified view of the business. Integration projects are frequently cited as the most expensive and risky aspect of enterprise software implementations. A 50-system environment with point-to-point integrations has up to 1,225 potential connection pairs — impossible to manage without a deliberate integration architecture.',
             },
           ],
         },
@@ -200,7 +263,12 @@ export const crmErpSystemsCourse: Course = {
           content: [
             {
               type: 'paragraph' as const,
-              text: 'Every CRM system is built around a shared data model that tracks the customer lifecycle from first awareness through purchase and ongoing relationship. Understanding the core data objects and how they relate is fundamental to using any CRM effectively.',
+              text: 'Every CRM system is built around a shared data model that tracks the customer lifecycle from first awareness through purchase and ongoing relationship. Understanding the core data objects and how they relate is fundamental to using any CRM effectively. Whether you use Salesforce, HubSpot, Microsoft Dynamics, or Zoho, the same conceptual objects appear under slightly different names — the underlying model is consistent because it reflects the universal structure of how businesses acquire and retain customers.',
+            },
+            {
+              type: 'diagram' as const,
+              diagramId: 'crm-lifecycle',
+              title: 'CRM Customer Lifecycle',
             },
             {
               type: 'heading' as const,
@@ -223,18 +291,39 @@ export const crmErpSystemsCourse: Course = {
               type: 'callout' as const,
               variant: 'info' as const,
               title: 'Lead Conversion',
-              text: 'When a lead is deemed qualified — meaning they fit your ideal customer profile and have a genuine need — they are "converted" into a Contact associated with an Account, and optionally an Opportunity is created. This conversion is a key transition point that triggers handoffs between marketing and sales teams.',
+              text: 'When a lead is deemed qualified — meaning they fit your ideal customer profile and have a genuine need — they are "converted" into a Contact associated with an Account, and optionally an Opportunity is created. This conversion is a key transition point that triggers handoffs between marketing and sales teams. The qualification criteria for conversion should be explicitly defined and consistently applied; otherwise, "conversion" becomes meaningless and pipeline data becomes unreliable.',
+            },
+            {
+              type: 'key-terms' as const,
+              terms: [
+                {
+                  term: 'Lead',
+                  definition: 'An unqualified potential customer — someone who has expressed some interest (filled a form, attended a webinar) but has not yet been vetted for fit, budget, or intent. Leads are typically managed by marketing until qualified for sales.',
+                },
+                {
+                  term: 'Opportunity',
+                  definition: 'A qualified, active sales deal with a real prospect. An opportunity has a defined potential value, an expected close date, and a stage representing how far along the buying process has progressed.',
+                },
+                {
+                  term: 'Account',
+                  definition: 'A record representing a company or organization — either a current customer, an active prospect, or a former customer. In B2B CRM, accounts are the parent object that links to multiple contacts and opportunities.',
+                },
+                {
+                  term: 'Lead-to-Opportunity Conversion',
+                  definition: 'The process of qualifying a lead and transforming it into a Contact + Account + Opportunity. The conversion rate (what percentage of leads become opportunities) is a key marketing efficiency metric.',
+                },
+              ],
             },
           ],
         },
         {
           id: 'ce-m2-l2',
-          title: 'Pipeline Stages & Salesforce/HubSpot',
+          title: 'Pipeline Stages & CRM Platform Comparison',
           estimatedMinutes: 14,
           content: [
             {
               type: 'paragraph' as const,
-              text: 'A sales pipeline represents all the deals a sales team is working on, organized by their stage in the buying process. Pipeline stages vary by organization but typically reflect the progression from initial discovery to closed deal. The pipeline is the central tool for sales management and revenue forecasting.',
+              text: 'A sales pipeline represents all the deals a sales team is working on, organized by their stage in the buying process. Pipeline stages vary by organization but typically reflect the progression from initial discovery to closed deal. The pipeline is the central tool for sales management and revenue forecasting — a well-maintained pipeline allows leaders to project quarterly revenue with reasonable accuracy weeks or months in advance. Each stage typically has an associated probability of closing (e.g., "Proposal" = 60%), which is used to compute a probability-weighted forecast.',
             },
             {
               type: 'heading' as const,
@@ -254,25 +343,36 @@ export const crmErpSystemsCourse: Course = {
               ],
             },
             {
+              type: 'table' as const,
+              headers: ['Platform', 'Best For', 'Strengths', 'Limitations'],
+              rows: [
+                ['Salesforce', 'Mid-market to large enterprise', 'Highly customizable, massive ecosystem, deep reporting, Salesforce Einstein AI', 'Expensive, complex to implement and maintain, steep learning curve'],
+                ['HubSpot', 'SMB and mid-market', 'Tight CRM + marketing automation integration, fast to implement, user-friendly, free tier available', 'Less customizable than Salesforce, weaker for complex enterprise sales processes'],
+                ['Microsoft Dynamics 365', 'Microsoft-centric enterprises', 'Deep Office 365 / Teams integration, familiar Microsoft UX, strong ERP integration', 'Complex licensing, less intuitive for sales teams vs. Salesforce'],
+                ['Zoho CRM', 'Cost-sensitive SMBs', 'Very affordable, broad feature set, good AI assistant (Zia)', 'Less powerful ecosystem, lower brand recognition for credibility in enterprise deals'],
+                ['Pipedrive', 'Sales-led teams with simple pipelines', 'Visual pipeline, very easy to use, fast onboarding', 'Limited marketing automation, not suitable for complex enterprise CRM needs'],
+              ],
+            },
+            {
               type: 'callout' as const,
               variant: 'tip' as const,
-              title: 'Salesforce vs. HubSpot',
-              text: 'Salesforce is the enterprise market leader — highly customizable, deeply powerful, and accordingly complex and expensive. HubSpot is a strong choice for SMBs and mid-market companies, particularly those that want CRM tightly integrated with marketing automation. HubSpot is generally faster to implement and easier to use; Salesforce is more powerful for complex enterprise needs.',
+              title: 'Salesforce vs. HubSpot: How to Choose',
+              text: 'Salesforce is the enterprise market leader — highly customizable, deeply powerful, and accordingly complex and expensive. HubSpot is a strong choice for SMBs and mid-market companies, particularly those that want CRM tightly integrated with marketing automation. HubSpot is generally faster to implement and easier to use; Salesforce is more powerful for complex enterprise needs with large sales teams and multiple business units. A useful heuristic: if you need heavy customization or complex territory management, lean Salesforce. If your primary need is marketing+sales alignment at reasonable cost, lean HubSpot.',
             },
             {
               type: 'key-terms' as const,
               terms: [
                 {
-                  term: 'Win Rate',
-                  definition: 'Percentage of opportunities that result in a closed-won deal. Win Rate = Closed Won / (Closed Won + Closed Lost).',
+                  term: 'BANT',
+                  definition: 'A sales qualification framework: Budget (can they afford the solution?), Authority (does this person have decision-making power?), Need (do they have the problem you solve?), Timeline (when do they want to implement?). An opportunity that passes BANT is considered sales-qualified.',
                 },
                 {
-                  term: 'Average Deal Size',
-                  definition: 'The average revenue value of closed-won opportunities. Helps forecast revenue and identify trends in deal composition.',
+                  term: 'Pipeline Stage Probability',
+                  definition: 'A percentage assigned to each pipeline stage representing the historical likelihood of a deal at that stage closing. Used to compute a probability-weighted pipeline forecast.',
                 },
                 {
                   term: 'Sales Velocity',
-                  definition: 'How quickly revenue is generated: (# Opportunities × Win Rate × Average Deal Size) / Sales Cycle Length.',
+                  definition: 'A composite metric measuring how quickly revenue is being generated: (Number of Opportunities × Win Rate × Average Deal Size) / Average Sales Cycle Length. Higher velocity means the sales engine is generating more revenue per unit of time.',
                 },
               ],
             },
@@ -280,12 +380,12 @@ export const crmErpSystemsCourse: Course = {
         },
         {
           id: 'ce-m2-l3',
-          title: 'CRM Reporting & Key Metrics',
+          title: 'CRM Reporting, Metrics & Adoption',
           estimatedMinutes: 14,
           content: [
             {
               type: 'paragraph' as const,
-              text: 'A CRM system is only as valuable as the decisions it enables. Well-configured CRM reporting gives sales leaders real-time visibility into pipeline health, team performance, and revenue forecasts. Poor CRM hygiene — stale data, incomplete records, inconsistent stage usage — makes reports meaningless.',
+              text: 'A CRM system is only as valuable as the decisions it enables. Well-configured CRM reporting gives sales leaders real-time visibility into pipeline health, team performance, and revenue forecasts. Poor CRM hygiene — stale data, incomplete records, inconsistent stage usage — makes reports meaningless and erodes trust in the system entirely. The goal of CRM reporting is not to generate more spreadsheets; it is to give managers and executives the specific information they need to coach their teams, allocate resources, and forecast revenue with confidence.',
             },
             {
               type: 'heading' as const,
@@ -295,19 +395,31 @@ export const crmErpSystemsCourse: Course = {
             {
               type: 'list' as const,
               items: [
-                'Pipeline by stage: Total value of opportunities in each stage — identifies bottlenecks',
+                'Pipeline by stage: Total value of opportunities in each stage — identifies bottlenecks and forecasts revenue',
                 'Forecast: Weighted revenue expected to close this quarter, based on stage probabilities',
-                'Lead source analysis: Which marketing channels generate the most qualified leads?',
-                'Win/loss analysis: Why are deals won or lost? Against which competitors?',
-                'Activity reports: Are reps logging calls and emails? Is activity correlated with outcomes?',
-                'Sales rep performance: Individual rep pipeline, win rates, quota attainment',
+                'Lead source analysis: Which marketing channels generate the most qualified leads and closed revenue?',
+                'Win/loss analysis: Why are deals won or lost? Against which competitors? What deal characteristics predict wins?',
+                'Activity reports: Are reps logging calls and emails consistently? Is activity volume correlated with pipeline creation?',
+                'Sales rep performance: Individual rep pipeline, win rates, quota attainment, and average deal size',
+                'Conversion funnel: Drop-off rates at each stage from lead to closed-won, identifying where prospects disengage',
+              ],
+            },
+            {
+              type: 'table' as const,
+              headers: ['Metric', 'Formula', 'What It Signals'],
+              rows: [
+                ['Win Rate', 'Closed Won / (Closed Won + Closed Lost)', 'Sales effectiveness; how often qualified deals close'],
+                ['Average Deal Size', 'Total Closed Won Revenue / # Deals', 'Deal mix; whether strategy is up-market or down-market'],
+                ['Average Sales Cycle', 'Total Days to Close / # Deals', 'Complexity and friction in the buying process'],
+                ['Lead-to-Opp Rate', 'Opportunities Created / Leads Received', 'Marketing lead quality and sales qualification consistency'],
+                ['Quota Attainment', 'Actual Revenue / Quota Target', 'Individual and team performance vs. plan'],
               ],
             },
             {
               type: 'callout' as const,
               variant: 'warning' as const,
               title: 'CRM Adoption is the Hardest Part',
-              text: 'The biggest CRM failure mode is not technology — it\'s adoption. Sales reps view data entry as overhead, not benefit. CRM implementation must answer "what\'s in it for me?" for reps: better forecasting for their own pipeline, less time on status update meetings, commissions paid accurately. Leaders must inspect the CRM data themselves to signal that it matters.',
+              text: 'The biggest CRM failure mode is not technology — it\'s adoption. Sales reps view data entry as overhead, not benefit. CRM implementation must answer "what\'s in it for me?" for reps: better forecasting for their own pipeline, less time on status update meetings, commissions paid accurately. Leaders must inspect the CRM data themselves — in meetings, publicly — to signal that it matters. When reps see managers making decisions from CRM data, they update it; when they see decisions made from spreadsheets instead, they stop.',
             },
           ],
         },
@@ -387,7 +499,12 @@ export const crmErpSystemsCourse: Course = {
           content: [
             {
               type: 'paragraph' as const,
-              text: 'ERP systems are organized into functional modules, each managing a specific domain of business operations. The power of ERP comes from integration between modules — a transaction in one module automatically updates records in related modules, eliminating the need to manually re-enter data across systems.',
+              text: 'ERP systems are organized into functional modules, each managing a specific domain of business operations. The power of ERP comes from integration between modules — a transaction in one module automatically updates records in related modules, eliminating the need to manually re-enter data across systems. This integration is what distinguishes ERP from a collection of individual applications: it ensures consistency, enforces controls, and provides a real-time view of business operations across all functions simultaneously.',
+            },
+            {
+              type: 'diagram' as const,
+              diagramId: 'erp-modules',
+              title: 'ERP Module Architecture',
             },
             {
               type: 'table' as const,
@@ -406,18 +523,35 @@ export const crmErpSystemsCourse: Course = {
               type: 'callout' as const,
               variant: 'example' as const,
               title: 'ERP Integration in Action',
-              text: 'A customer places an order → Sales module creates a sales order. Warehouse management fulfills the order, updating inventory. Shipping triggers an invoice in accounts receivable. When the customer pays, cash is posted to the general ledger. The finance team sees real-time cash flow without any manual data entry. All from a single customer order.',
+              text: 'A customer places an order → Sales module creates a sales order. Warehouse management fulfills the order, updating inventory levels automatically. Shipping triggers an invoice in accounts receivable. When the customer pays, cash is posted to the general ledger and the receivable is cleared. The finance team sees real-time cash flow without any manual data entry — all from a single customer order flowing through integrated modules. This is ERP\'s core value proposition: one entry, every consequence handled automatically.',
+            },
+            {
+              type: 'key-terms' as const,
+              terms: [
+                {
+                  term: 'General Ledger (GL)',
+                  definition: 'The master record of all financial transactions in an organization, organized by account. Every financial event — sale, purchase, payroll, depreciation — ultimately posts to the general ledger. The GL is the foundation of all financial reporting.',
+                },
+                {
+                  term: 'Accounts Payable (AP)',
+                  definition: 'The ERP function tracking money a company owes to vendors — purchase invoices received, pending payments, and payment history. AP processes are automated in ERP through purchase order matching and payment runs.',
+                },
+                {
+                  term: 'Accounts Receivable (AR)',
+                  definition: 'The ERP function tracking money customers owe the company — invoices issued, payment received, and outstanding balances. High AR balances indicate a collections problem; Days Sales Outstanding (DSO) is the key AR metric.',
+                },
+              ],
             },
           ],
         },
         {
           id: 'ce-m3-l2',
-          title: 'Master Data & ERP Platforms',
+          title: 'Master Data & ERP Platform Comparison',
           estimatedMinutes: 14,
           content: [
             {
               type: 'paragraph' as const,
-              text: 'Master data refers to the core business entities that all ERP transactions reference: customers, vendors, employees, products/items, and chart of accounts. Unlike transactional data (individual orders, payments, timesheets), master data changes infrequently and must be managed with exceptional care — errors in master data propagate through every transaction that references it.',
+              text: 'Master data refers to the core business entities that all ERP transactions reference: customers, vendors, employees, products/items, and chart of accounts. Unlike transactional data (individual orders, payments, timesheets), master data changes infrequently and must be managed with exceptional care — errors in master data propagate through every transaction that references it. A vendor record with the wrong bank account number causes payments to go to the wrong place. A product record with the wrong unit cost makes every margin calculation wrong. Master data quality is not glamorous work, but it is foundational to ERP success.',
             },
             {
               type: 'heading' as const,
@@ -435,10 +569,38 @@ export const crmErpSystemsCourse: Course = {
               ],
             },
             {
+              type: 'table' as const,
+              headers: ['Platform', 'Target Company Size', 'Strengths', 'Typical Implementation Timeline'],
+              rows: [
+                ['SAP S/4HANA', 'Large enterprise (1,000+ employees)', 'Most comprehensive functionality, global compliance support, industry-specific modules', '18–36 months'],
+                ['Oracle ERP Cloud', 'Large enterprise', 'Strong financials, AI capabilities, deep analytics, global payroll', '12–24 months'],
+                ['NetSuite (Oracle)', 'Mid-market (50–1,000 employees)', 'Cloud-native, fast implementation, good CRM integration, lower cost', '3–9 months'],
+                ['Workday', 'Mid-to-large enterprise (HR + Finance)', 'Best-in-class HCM and HRIS, strong financial management, excellent UX', '6–18 months'],
+                ['Microsoft Dynamics 365', 'SMB to enterprise', 'Deep Office 365 integration, flexible licensing, strong for distribution and retail', '3–12 months'],
+              ],
+            },
+            {
               type: 'callout' as const,
-              variant: 'info' as const,
-              title: 'SAP vs. Oracle vs. NetSuite',
-              text: 'SAP S/4HANA and Oracle ERP Cloud are enterprise-grade platforms for very large, complex organizations — powerful but requiring significant implementation resources. NetSuite (owned by Oracle) is a cloud ERP targeting mid-market companies, offering faster implementation and lower cost. Workday has become dominant for HR and financials in mid-to-large enterprises. The right choice depends heavily on company size, industry, and existing systems.',
+              variant: 'tip' as const,
+              title: 'Choosing the Right ERP',
+              text: 'The right ERP depends on company size, industry, and the complexity of business processes — not on analyst rankings or vendor reputation alone. A 500-person professional services firm has very different needs than a 500-person manufacturer. Involve the teams who will actually use each module (finance, supply chain, HR) in the selection process; they surface requirements that IT cannot anticipate. Total cost of ownership — licenses, implementation services, training, ongoing customization — typically runs 5–10× the initial license cost over five years.',
+            },
+            {
+              type: 'key-terms' as const,
+              terms: [
+                {
+                  term: 'Master Data',
+                  definition: 'The stable, foundational business entities (customers, vendors, products, employees, chart of accounts) that transactional records reference. Unlike transactions, master data changes infrequently but when errors exist, they propagate across all referencing transactions.',
+                },
+                {
+                  term: 'Chart of Accounts (COA)',
+                  definition: 'The hierarchical list of every general ledger account used to categorize financial transactions — assets, liabilities, revenue, expenses, equity. The COA is the foundation of all financial reporting and must be designed carefully before ERP go-live.',
+                },
+                {
+                  term: 'Item Master',
+                  definition: 'The product catalog within ERP — each product or service a company sells or buys, with its SKU, description, unit of measure, standard cost, and pricing information. Inaccuracies in the item master cause incorrect inventory valuations and margin calculations.',
+                },
+              ],
             },
           ],
         },
@@ -449,7 +611,7 @@ export const crmErpSystemsCourse: Course = {
           content: [
             {
               type: 'paragraph' as const,
-              text: 'One of ERP\'s most important functions is enforcing financial controls — the policies and procedures that ensure financial transactions are authorized, accurate, and auditable. Well-configured ERP systems make it difficult (not impossible) to commit financial fraud or make unauthorized payments.',
+              text: 'One of ERP\'s most important functions is enforcing financial controls — the policies and procedures that ensure financial transactions are authorized, accurate, and auditable. Well-configured ERP systems make it difficult (not impossible) to commit financial fraud or make unauthorized payments. These controls are not bureaucratic overhead; they are the mechanism by which organizations protect shareholder assets, satisfy auditors, and comply with regulations like SOX (Sarbanes-Oxley) for public companies. Every publicly traded company in the US must attest that its internal financial controls are effective — ERP is the primary vehicle for implementing and documenting those controls.',
             },
             {
               type: 'heading' as const,
@@ -464,13 +626,65 @@ export const crmErpSystemsCourse: Course = {
                 'Approval workflows: Purchases above thresholds require manager or finance approval before proceeding',
                 'Audit trails: All changes to financial records are logged with user ID, timestamp, and before/after values',
                 'Period close controls: Books are locked for closed accounting periods, preventing retroactive changes',
+                'Spending limits: Individual users can only approve transactions up to their authorized spending level',
               ],
+            },
+            {
+              type: 'callout' as const,
+              variant: 'example' as const,
+              title: 'Three-Way Match in Practice',
+              text: 'A vendor sends an invoice for $10,000. The AP team\'s ERP automatically checks: (1) Is there a purchase order for these goods? (2) Was there a goods receipt confirming the items arrived? (3) Does the invoice amount match both? If all three match within tolerance, the invoice is auto-approved for payment. If there\'s a discrepancy — say the invoice is for 100 units but only 80 were received — the system flags it for human review, preventing overpayment automatically.',
             },
             {
               type: 'callout' as const,
               variant: 'warning' as const,
               title: 'The Chart of Accounts is the Foundation',
-              text: 'The chart of accounts (COA) defines every financial category your business tracks. A poorly designed COA is one of the most expensive ERP mistakes — it shapes every financial report for years. Investing time in COA design upfront, with input from finance, accounting, and executive stakeholders, pays dividends for the lifetime of the system.',
+              text: 'The chart of accounts (COA) defines every financial category your business tracks. A poorly designed COA is one of the most expensive ERP mistakes — it shapes every financial report for years. Investing time in COA design upfront, with input from finance, accounting, and executive stakeholders, pays dividends for the lifetime of the system. Common mistakes: too granular (hard to maintain), too broad (not useful for analysis), not aligned with how management actually thinks about the business.',
+            },
+          ],
+        },
+        {
+          id: 'ce-m3-l4',
+          title: 'Supply Chain & Inventory Management',
+          estimatedMinutes: 13,
+          content: [
+            {
+              type: 'paragraph' as const,
+              text: 'For manufacturing, distribution, and retail companies, the supply chain and inventory modules are often the most business-critical part of ERP. These modules manage the flow of goods from raw materials through production to finished goods to customer delivery. Getting inventory management right directly impacts customer service (avoiding stockouts), cash flow (avoiding overstocking), and profitability (minimizing obsolescence and shrinkage). The COVID-19 pandemic dramatically highlighted what happens when supply chains break — organizations with mature ERP-driven supply chain visibility fared significantly better than those relying on spreadsheets.',
+            },
+            {
+              type: 'list' as const,
+              items: [
+                'Purchase orders: Formal requests to vendors for goods or services, with quantity, price, and delivery date',
+                'Goods receipt: Recording when ordered items physically arrive, triggering inventory updates and AP processing',
+                'Inventory valuation: FIFO, LIFO, or weighted average cost methods tracked automatically per item',
+                'Reorder points: Automatic purchase order creation when inventory drops below minimum threshold',
+                'Demand forecasting: ERP calculates expected demand based on historical sales to inform procurement plans',
+                'Warehouse management: Bin locations, pick-and-pack workflows, barcode/RFID scanning integration',
+              ],
+            },
+            {
+              type: 'key-terms' as const,
+              terms: [
+                {
+                  term: 'Reorder Point',
+                  definition: 'The inventory level at which a replenishment order should be triggered to avoid stockout, calculated based on lead time and average demand. ERP can automate purchase order creation when inventory hits this threshold.',
+                },
+                {
+                  term: 'Bill of Materials (BOM)',
+                  definition: 'A structured list of all components and sub-assemblies required to manufacture a finished product, with quantities. ERP uses BOMs to calculate material requirements for production runs and cost finished goods.',
+                },
+                {
+                  term: 'Days Inventory Outstanding (DIO)',
+                  definition: 'A measure of how many days of inventory a company holds on average. Lower DIO indicates efficient inventory management; high DIO may signal overbuying or slow-moving product.',
+                },
+              ],
+            },
+            {
+              type: 'callout' as const,
+              variant: 'tip' as const,
+              title: 'Inventory Accuracy is Everything',
+              text: 'An ERP inventory balance is only as accurate as the physical count. Cycle counting — regularly counting a subset of inventory rather than one massive annual count — is the best practice for maintaining accuracy throughout the year. Organizations with 99%+ inventory accuracy in their ERP have dramatically better planning, fewer emergency purchases, and higher customer service levels.',
             },
           ],
         },
@@ -550,7 +764,7 @@ export const crmErpSystemsCourse: Course = {
           content: [
             {
               type: 'paragraph' as const,
-              text: 'Enterprise systems organize data as records and relationships. A record is a single instance of an object — one customer, one invoice, one employee. Relationships link records together: an Account record links to many Contact records and many Opportunity records. Understanding this relational structure helps users navigate the system and analysts query it effectively.',
+              text: 'Enterprise systems organize data as records and relationships. A record is a single instance of an object — one customer, one invoice, one employee. Relationships link records together: an Account record links to many Contact records and many Opportunity records. Understanding this relational structure helps users navigate the system and analysts query it effectively. Both CRM and ERP systems are fundamentally relational databases under the hood — the business-facing UI abstracts away the SQL tables, but the data model principles are the same. Knowing how data is structured makes you more effective at both using the system and extracting data from it for analysis.',
             },
             {
               type: 'heading' as const,
@@ -568,21 +782,48 @@ export const crmErpSystemsCourse: Course = {
               ],
             },
             {
+              type: 'table' as const,
+              headers: ['Relationship Type', 'Description', 'CRM Example'],
+              rows: [
+                ['One-to-Many (1:N)', 'One parent record has many child records', 'One Account has many Contacts'],
+                ['Many-to-Many (M:N)', 'Records on both sides can relate to many records on the other side', 'Contacts can belong to multiple Campaigns; Campaigns have multiple Contacts'],
+                ['Lookup Relationship', 'A loose link between objects — deleting the parent does not delete children', 'Contact linked to an Account (contact survives if account is deleted)'],
+                ['Master-Detail', 'A tight parent-child link — deleting the parent deletes all children', 'Opportunity Line Items tied to an Opportunity'],
+              ],
+            },
+            {
               type: 'callout' as const,
               variant: 'info' as const,
-              title: 'Custom Objects',
-              text: 'Both Salesforce and most ERP platforms allow organizations to create custom objects — new record types beyond the standard set — and define custom fields on existing objects. This extensibility is how enterprises adapt standard platforms to their unique business processes. However, heavy customization increases upgrade complexity and maintenance cost.',
+              title: 'Custom Objects and Fields',
+              text: 'Both Salesforce and most ERP platforms allow organizations to create custom objects — new record types beyond the standard set — and define custom fields on existing objects. This extensibility is how enterprises adapt standard platforms to their unique business processes. A professional services firm might create a "Project" object in Salesforce; a healthcare company might add a "Patient" custom object to their ERP. However, heavy customization increases upgrade complexity and maintenance cost — every custom object is code the organization now owns.',
+            },
+            {
+              type: 'key-terms' as const,
+              terms: [
+                {
+                  term: 'Object',
+                  definition: 'In CRM/ERP context, an object is a category of records — like a database table. Standard objects are built into the platform (Account, Contact, Invoice). Custom objects are created by administrators for business-specific needs.',
+                },
+                {
+                  term: 'Field',
+                  definition: 'A specific attribute stored on a record — like "Annual Revenue" on an Account or "Close Date" on an Opportunity. Fields have types: text, number, date, picklist, checkbox, lookup. Custom fields can be added to any standard object.',
+                },
+                {
+                  term: 'Record ID',
+                  definition: 'A unique identifier automatically assigned to every record in an enterprise system. Used in API integrations and database queries to reference specific records unambiguously.',
+                },
+              ],
             },
           ],
         },
         {
           id: 'ce-m4-l2',
-          title: 'KPIs, Dashboards & Reporting Limits',
+          title: 'KPIs, Dashboards & Reporting',
           estimatedMinutes: 13,
           content: [
             {
               type: 'paragraph' as const,
-              text: 'CRM and ERP systems include native reporting and dashboard capabilities designed for operational use — monitoring day-to-day performance metrics. These built-in tools are accessible without any external software and are used by operations managers, sales leaders, and finance teams on a daily basis.',
+              text: 'CRM and ERP systems include native reporting and dashboard capabilities designed for operational use — monitoring day-to-day performance metrics. These built-in tools are accessible without any external software and are used by operations managers, sales leaders, and finance teams on a daily basis. Native reporting is optimized for operational questions: "What is my pipeline this quarter?" or "Which invoices are past due?" For deeper analytical questions that span systems or require complex transformations, external BI tools are typically needed.',
             },
             {
               type: 'heading' as const,
@@ -615,10 +856,54 @@ export const crmErpSystemsCourse: Course = {
               ],
             },
             {
+              type: 'table' as const,
+              headers: ['KPI', 'System', 'Formula', 'Good vs. Bad Direction'],
+              rows: [
+                ['Days Sales Outstanding (DSO)', 'ERP', 'AR Balance / (Annual Revenue / 365)', 'Lower is better — faster collections'],
+                ['Inventory Turnover', 'ERP', 'COGS / Average Inventory', 'Higher is better — less capital tied up in stock'],
+                ['Win Rate', 'CRM', 'Closed Won / (Closed Won + Closed Lost)', 'Higher is better — sales effectiveness'],
+                ['Average Sales Cycle', 'CRM', 'Total Days to Close / # Deals', 'Lower is better — faster revenue'],
+                ['Budget Variance %', 'ERP', '(Actual - Budget) / Budget × 100', 'Depends — over budget is bad; under budget may indicate under-investment'],
+              ],
+            },
+            {
               type: 'callout' as const,
               variant: 'warning' as const,
               title: 'Limits of Native Reporting',
-              text: 'Native CRM/ERP reports are excellent for operational questions within the system but struggle with cross-system analysis, complex multi-year trends, and blending operational data with external data. For strategic analytics, organizations typically export or sync data into a data warehouse and use a dedicated BI tool like Tableau or Power BI.',
+              text: 'Native CRM/ERP reports are excellent for operational questions within the system but struggle with cross-system analysis, complex multi-year trends, and blending operational data with external data. For strategic analytics — like customer lifetime value combining CRM deal history with ERP payment history — organizations typically export or sync data into a data warehouse and use a dedicated BI tool like Tableau or Power BI.',
+            },
+          ],
+        },
+        {
+          id: 'ce-m4-l3',
+          title: 'Data Quality in Enterprise Systems',
+          estimatedMinutes: 13,
+          content: [
+            {
+              type: 'paragraph' as const,
+              text: 'Data quality is the silent killer of enterprise system value. A CRM with 40% of opportunities missing close dates cannot produce reliable forecasts. An ERP with vendor records containing wrong payment terms generates incorrect cash flow projections. Data quality degrades over time through inconsistent entry, incomplete fields, no validation rules, and lack of ownership. Unlike a data warehouse where a small team controls all data loading, CRM and ERP have hundreds or thousands of users entering data directly — making quality a people and process challenge as much as a technical one.',
+            },
+            {
+              type: 'list' as const,
+              items: [
+                'Completeness: Are required fields populated? What percentage of records have all key fields filled?',
+                'Accuracy: Does the data reflect reality? Is the "Close Date" on opportunities realistic or default-set to December 31?',
+                'Consistency: Is the same concept recorded the same way? Is "United States" sometimes "US" or "USA"?',
+                'Timeliness: How current is the data? Are deal stages updated as deals progress or only before forecast reviews?',
+                'Uniqueness: Are there duplicate records for the same customer or vendor?',
+              ],
+            },
+            {
+              type: 'callout' as const,
+              variant: 'example' as const,
+              title: 'The Cost of Duplicate Records',
+              text: 'A B2B company discovers that 15% of their CRM account records are duplicates — the same company entered multiple times under slightly different names ("Acme Corp," "Acme Corporation," "Acme Corp."). Marketing sends every email multiple times to the same contacts. Sales reps unknowingly call the same prospect as a colleague. Finance reconciles two revenue lines for the same customer. Deduplication projects — cleaning and merging these records — typically require weeks of manual review and are entirely preventable with proper validation rules at data entry.',
+            },
+            {
+              type: 'callout' as const,
+              variant: 'tip' as const,
+              title: 'Prevention Over Cleanup',
+              text: 'Preventing bad data is far less expensive than cleaning it after the fact. Invest early in validation rules (required fields, picklist standardization, duplicate detection at record creation), training on data entry standards, and regular data quality audits. Every hour spent on preventive data governance saves many hours of downstream cleanup and many bad decisions made from wrong data.',
             },
           ],
         },
@@ -698,12 +983,12 @@ export const crmErpSystemsCourse: Course = {
       lessons: [
         {
           id: 'ce-m5-l1',
-          title: 'Implementation Phases & Data Migration',
+          title: 'Implementation Phases & Project Structure',
           estimatedMinutes: 13,
           content: [
             {
               type: 'paragraph' as const,
-              text: 'Implementing a CRM or ERP system is a major business initiative, not just a technology project. Enterprise implementations routinely take 6–24 months, cost millions of dollars, and require significant participation from business stakeholders across the organization. The project phases are consistent across vendors and methodologies.',
+              text: 'Implementing a CRM or ERP system is a major business initiative, not just a technology project. Enterprise implementations routinely take 6–24 months, cost millions of dollars, and require significant participation from business stakeholders across the organization. The project phases are consistent across vendors and methodologies. Many organizations dramatically underestimate the business-side resource requirement — a common rule of thumb is that business stakeholder time requirements equal or exceed the implementation partner\'s time, because only the business knows what the system needs to do.',
             },
             {
               type: 'ordered-list' as const,
@@ -719,21 +1004,34 @@ export const crmErpSystemsCourse: Course = {
               ],
             },
             {
+              type: 'table' as const,
+              headers: ['Phase', 'Key Deliverables', 'Who Leads'],
+              rows: [
+                ['Discovery', 'Requirements document, project charter, team roster', 'Business sponsor + implementation partner'],
+                ['Design', 'Process flow diagrams, configuration workbook, integration specs', 'System integrator + business SMEs'],
+                ['Build', 'Configured system, integrations, custom code', 'Implementation partner + IT'],
+                ['Data Migration', 'Cleaned data loads, migration validation reports', 'Data team + business data owners'],
+                ['UAT', 'Test scripts, defect log, sign-off documentation', 'Business users'],
+                ['Training', 'Training materials, recorded sessions, job aids', 'Implementation partner + internal champions'],
+                ['Go-Live', 'Cutover plan, hypercare roster, rollback plan', 'Project manager + IT'],
+              ],
+            },
+            {
               type: 'callout' as const,
               variant: 'warning' as const,
               title: 'Data Migration is Never Easy',
-              text: 'Data migration is consistently one of the hardest parts of any implementation. Legacy systems contain decades of inconsistent, incomplete, and incorrectly formatted data. Migrating it requires extraction, extensive cleaning, transformation to the new schema, loading, and validation. Budget 30–40% of project time for data migration alone.',
+              text: 'Data migration is consistently one of the hardest parts of any implementation. Legacy systems contain decades of inconsistent, incomplete, and incorrectly formatted data — vendor records without tax IDs, customer records with wrong addresses, product records with missing costs. Migrating this data requires extraction, extensive cleaning and transformation, loading into the new schema, and rigorous validation. Budget 30–40% of project time for data migration alone, and run at least three migration rehearsals before go-live.',
             },
           ],
         },
         {
           id: 'ce-m5-l2',
-          title: 'User Adoption & Common Failure Modes',
+          title: 'User Adoption & Change Management',
           estimatedMinutes: 13,
           content: [
             {
               type: 'paragraph' as const,
-              text: 'A beautifully implemented CRM or ERP is worthless if employees don\'t use it. User adoption is the most frequently cited challenge in enterprise software implementations. Systems succeed when they make users\' jobs easier; they fail when they feel like an overhead burden imposed by management.',
+              text: 'A beautifully implemented CRM or ERP is worthless if employees don\'t use it. User adoption is the most frequently cited challenge in enterprise software implementations, and the consequences of low adoption compound over time — stale data, unreliable reports, and eventual calls to replace the system (which was really never the problem). Systems succeed when they make users\' jobs easier; they fail when they feel like an overhead burden imposed by management. The change management investment — communication, training, incentives, feedback loops — should be proportional to the size of the behavioral change required.',
             },
             {
               type: 'heading' as const,
@@ -749,13 +1047,59 @@ export const crmErpSystemsCourse: Course = {
                 'Quick wins: Surface obvious benefits early (e.g., automated pipeline reports that replace manual spreadsheets)',
                 'Measure and reinforce: Track adoption metrics; celebrate teams with high usage; coach laggards',
                 'Process, not just technology: Re-examine business processes, not just which buttons to click',
+                '"What\'s in it for me?" messaging: Show each user how the system makes their specific job easier',
               ],
             },
             {
               type: 'callout' as const,
               variant: 'example' as const,
-              title: 'Common Failure Modes',
-              text: 'The most common ERP/CRM implementation failures share consistent patterns: (1) Scope creep — requirements expanding mid-project until timelines and budgets collapse; (2) Under-resourced data migration — bad data migrated into the new system; (3) Insufficient training — users don\'t know how to use the system at go-live; (4) Lack of change management — business processes unchanged, new system bolted onto old habits; (5) Going live all at once — no phased approach, no fallback.',
+              title: 'Common Implementation Failure Modes',
+              text: 'The most common ERP/CRM implementation failures share consistent patterns: (1) Scope creep — requirements expanding mid-project until timelines and budgets collapse; (2) Under-resourced data migration — bad data migrated into the new system poisons reports from day one; (3) Insufficient training — users don\'t know how to use the system at go-live; (4) Lack of change management — business processes unchanged, new system bolted onto old habits; (5) Big bang go-live — launching all modules across all business units simultaneously, with no phased approach or fallback option.',
+            },
+            {
+              type: 'key-terms' as const,
+              terms: [
+                {
+                  term: 'User Acceptance Testing (UAT)',
+                  definition: 'The testing phase where actual business users — not IT — validate the configured system against their real-world requirements, ensuring it is ready for production before go-live.',
+                },
+                {
+                  term: 'Hypercare',
+                  definition: 'An intensive support period immediately following go-live, where implementation team members are on-site or on-call to resolve issues rapidly. Typically lasts 2–4 weeks and prevents the high-risk early days from becoming a crisis.',
+                },
+                {
+                  term: 'Scope Creep',
+                  definition: 'The gradual expansion of project requirements beyond the original scope, often without corresponding increases in budget or timeline. One of the most common causes of implementation delays and cost overruns.',
+                },
+              ],
+            },
+          ],
+        },
+        {
+          id: 'ce-m5-l3',
+          title: 'Post-Implementation Success',
+          estimatedMinutes: 13,
+          content: [
+            {
+              type: 'paragraph' as const,
+              text: 'Go-live is not the finish line — it is the beginning. The real value of a CRM or ERP system is realized over years as the organization uses it, generates data, and builds processes around it. Post-implementation success requires sustained investment in administration, training for new employees, governance to prevent data quality decay, and regular reviews of whether the system is configured optimally for current business needs. Organizations that treat go-live as the endpoint typically see system utilization decline over 12–18 months as initial enthusiasm fades and problems go unresolved.',
+            },
+            {
+              type: 'list' as const,
+              items: [
+                'System administration: Dedicated admin resources to manage user access, field updates, and workflow changes',
+                'Ongoing training: Onboarding programs for new employees and refresher training as the system evolves',
+                'Data governance: Regular audits of data quality; processes for resolving issues found in key fields',
+                'Continuous improvement: Quarterly reviews identifying configuration improvements based on user feedback',
+                'Adoption measurement: Tracking active user rates, feature utilization, and data completeness over time',
+                'Vendor relationship: Staying current on new releases, attending user conferences, participating in beta programs',
+              ],
+            },
+            {
+              type: 'callout' as const,
+              variant: 'tip' as const,
+              title: 'The Platform Team Model',
+              text: 'Leading organizations treat their CRM and ERP as internal products, not IT projects. They assign a dedicated "platform team" — typically 1–3 administrators and a business analyst per major system — responsible for ongoing improvement, user support, and governance. This team attends vendor conferences, trains on new features, and proactively brings improvements to business stakeholders. The cost of this team is small relative to the value of a well-utilized enterprise system.',
             },
           ],
         },
@@ -835,7 +1179,7 @@ export const crmErpSystemsCourse: Course = {
           content: [
             {
               type: 'paragraph' as const,
-              text: 'CRM and ERP systems are designed to solve complementary problems — CRM for customer-facing operations, ERP for internal operations. But the two systems constantly need to share data. When a sales rep closes a deal in the CRM, the ERP needs to create the customer record and generate an invoice. When finance updates payment terms in the ERP, the CRM should reflect that when the sales team views the account.',
+              text: 'CRM and ERP systems are designed to solve complementary problems — CRM for customer-facing operations, ERP for internal operations. But the two systems constantly need to share data. When a sales rep closes a deal in the CRM, the ERP needs to create the customer record and generate an invoice. When finance updates payment terms in the ERP, the CRM should reflect that when the sales team views the account. Without integration, sales reps quote incorrect pricing, finance teams manually re-enter customer data that already exists in CRM, and customer service has no visibility into payment status when handling a call.',
             },
             {
               type: 'heading' as const,
@@ -851,13 +1195,31 @@ export const crmErpSystemsCourse: Course = {
                 ['ERP → CRM', 'Invoice status', 'Payment received in ERP updates account status in CRM'],
                 ['ERP → CRM', 'Inventory availability', 'Sales rep sees real-time product availability when building a quote'],
                 ['ERP → CRM', 'Credit hold status', 'Customer on credit hold in ERP prevents new orders in CRM'],
+                ['Bidirectional', 'Customer contact info', 'Address changes in either system sync to the other within 15 minutes'],
               ],
             },
             {
               type: 'callout' as const,
               variant: 'tip' as const,
-              title: 'Native Connectors',
-              text: 'Salesforce and NetSuite, SAP and Salesforce, Microsoft Dynamics and Azure — major vendors offer pre-built native connectors or certified integration templates for common system pairs. These reduce integration project time significantly vs. building custom API integrations from scratch.',
+              title: 'Native Connectors Save Time',
+              text: 'Salesforce and NetSuite, SAP and Salesforce, Microsoft Dynamics and Azure — major vendors offer pre-built native connectors or certified integration templates for common system pairs. These reduce integration project time significantly vs. building custom API integrations from scratch, and they come with vendor support. For common integration scenarios, always check for native connectors before scoping custom development.',
+            },
+            {
+              type: 'key-terms' as const,
+              terms: [
+                {
+                  term: 'API (Application Programming Interface)',
+                  definition: 'A programmatic interface that allows two software systems to communicate. Enterprise systems expose REST or SOAP APIs that integration tools use to read and write records in real time.',
+                },
+                {
+                  term: 'Webhook',
+                  definition: 'An event-driven mechanism where a source system automatically sends data to another system when something happens — for example, a CRM sending a payload to the ERP the moment an opportunity is marked Closed Won.',
+                },
+                {
+                  term: 'Batch Integration',
+                  definition: 'An integration pattern where data is synchronized between systems on a schedule — nightly, hourly — rather than in real time. Simpler to build but results in a lag between when data changes in one system and when the other system sees it.',
+                },
+              ],
             },
           ],
         },
@@ -868,7 +1230,7 @@ export const crmErpSystemsCourse: Course = {
           content: [
             {
               type: 'paragraph' as const,
-              text: 'The "single source of truth" (SSOT) concept describes an organizational goal: every piece of data has one authoritative system of record, and all other systems derive from it. When a customer\'s address changes, it changes in one place and propagates everywhere else. The opposite — each system maintaining its own independent copy — leads to inconsistency, reconciliation overhead, and decision-making based on conflicting data.',
+              text: 'The "single source of truth" (SSOT) concept describes an organizational goal: every piece of data has one authoritative system of record, and all other systems derive from it. When a customer\'s address changes, it changes in one place and propagates everywhere else. The opposite — each system maintaining its own independent copy — leads to inconsistency, reconciliation overhead, and decision-making based on conflicting data. An organization where CRM shows a customer as active while ERP shows them on credit hold is an organization where the left hand doesn\'t know what the right hand is doing.',
             },
             {
               type: 'heading' as const,
@@ -878,18 +1240,69 @@ export const crmErpSystemsCourse: Course = {
             {
               type: 'list' as const,
               items: [
-                'AI-powered workflows: Generative AI built into CRM (Salesforce Einstein AI) and ERP (SAP Joule) for automated drafting, recommendations, and anomaly detection',
-                'Composable ERP: Breaking monolithic ERP into modular microservices that can be swapped independently',
+                'AI-powered workflows: Generative AI built into CRM (Salesforce Einstein AI, HubSpot AI) and ERP (SAP Joule) for automated drafting, deal risk assessment, and anomaly detection',
+                'Composable ERP: Breaking monolithic ERP into modular microservices that can be swapped independently without disrupting other modules',
                 'Unified customer data platforms (CDPs): Centralizing customer data from CRM, web analytics, and product usage for a true 360° customer view',
-                'Low-code/no-code customization: Business users building automations and custom apps without traditional development',
-                'Real-time ERP: Moving from nightly batch processing to event-driven, real-time inventory and financial data',
+                'Low-code/no-code customization: Business users building automations and custom apps within the platform without traditional IT development',
+                'Real-time ERP: Moving from nightly batch processing to event-driven, real-time inventory and financial data updates',
+                'Embedded analytics: AI-powered insights surfaced directly within the operational workflow — not in a separate BI tool',
               ],
             },
             {
               type: 'callout' as const,
               variant: 'info' as const,
               title: 'The Myth of Perfect SSOT',
-              text: 'In practice, true single source of truth is an aspiration, not a destination. Different systems are authoritative for different data — CRM owns contact info, ERP owns financial data, HRIS owns employee records. The realistic goal is clear ownership, documented authoritative systems, and robust integration — not a literal single system for everything.',
+              text: 'In practice, true single source of truth is an aspiration, not a destination. Different systems are authoritative for different data — CRM owns contact info, ERP owns financial data, HRIS owns employee records. The realistic goal is clear ownership, documented authoritative systems, and robust integration — not a literal single system for everything. A well-documented data ownership matrix — listing each data type, its system of record, and which systems consume it — is more practical and achievable than searching for a mythical unified platform.',
+            },
+            {
+              type: 'key-terms' as const,
+              terms: [
+                {
+                  term: 'Single Source of Truth (SSOT)',
+                  definition: 'The principle that each type of data has one authoritative system of record from which all other systems derive. In practice, this means clear data ownership across systems rather than literally one monolithic database.',
+                },
+                {
+                  term: 'Composable ERP',
+                  definition: 'An architectural approach that replaces monolithic ERP with modular, independently deployable microservices. Organizations can replace or upgrade individual modules (e.g., payroll) without disrupting the broader system.',
+                },
+                {
+                  term: 'Customer Data Platform (CDP)',
+                  definition: 'A platform that consolidates customer behavioral, transactional, and profile data from CRM, web analytics, product usage, and other sources into unified customer profiles for personalization, marketing, and analytics.',
+                },
+              ],
+            },
+          ],
+        },
+        {
+          id: 'ce-m6-l3',
+          title: 'Building the Business Case for Integration',
+          estimatedMinutes: 13,
+          content: [
+            {
+              type: 'paragraph' as const,
+              text: 'Integration projects are expensive — they require engineering time, middleware licensing, testing, and ongoing maintenance. They are also invisible when working correctly, making them difficult to justify to business stakeholders who only notice integration when it breaks. Building a credible business case for integration investment requires quantifying the cost of not integrating: manual re-entry hours, error rates from rekeying data, decisions delayed by waiting for reconciled reports, and revenue lost when sales reps don\'t have the information they need in front of them at the critical moment.',
+            },
+            {
+              type: 'table' as const,
+              headers: ['Integration Scenario', 'Without Integration', 'With Integration', 'Business Value'],
+              rows: [
+                ['CRM → ERP (closed deals)', 'Finance manually re-enters customer data from email; 1–2 day delay; rekeying errors', 'Customer auto-created in ERP within 15 minutes of deal close', 'Faster invoicing; reduced errors; finance headcount savings'],
+                ['ERP → CRM (credit holds)', 'Sales reps unknowingly quote new business to customers with unpaid balances', 'Credit hold status visible in CRM; sales manager alerted automatically', 'Reduced bad debt; better customer negotiations'],
+                ['ERP → CRM (inventory)', 'Sales reps promise delivery dates without knowing stock levels', 'Real-time inventory visible in CRM quote builder', 'Fewer broken delivery promises; better customer satisfaction'],
+                ['HRIS → CRM (territory)', 'Rep territory changes require manual CRM updates; delays of days to weeks', 'Territory assignments sync automatically from HRIS org changes', 'Sales coverage continuity; no orphaned accounts during transitions'],
+              ],
+            },
+            {
+              type: 'callout' as const,
+              variant: 'example' as const,
+              title: 'Quantifying the ROI',
+              text: 'A manufacturing company calculates that their sales and finance teams spend 20 combined hours per week manually moving data between Salesforce and their ERP. At a fully-loaded cost of $75/hour, that is $78,000 per year in labor — before accounting for errors, delays, and missed opportunities. An integration project costing $40,000 plus $10,000/year in middleware licensing pays back in under 8 months, with ongoing annual savings thereafter.',
+            },
+            {
+              type: 'callout' as const,
+              variant: 'tip' as const,
+              title: 'Start with the Highest-Value Integration',
+              text: 'Not all integrations are equal. The CRM → ERP handoff at deal close is almost universally the highest-value integration to build first — it directly impacts how fast new customers are activated and invoiced. Map the most painful data handoffs in your organization, quantify the cost of manual workarounds, and prioritize by ROI. A focused first integration that delivers clear value builds organizational appetite and budget for future integrations.',
             },
           ],
         },
