@@ -1,3 +1,4 @@
+import type { ReactElement } from 'react';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
@@ -12,7 +13,7 @@ import type { Course, CourseTrack } from '../types/course';
 // ── Custom SVG course icons keyed by course id ──
 function CourseIcon({ courseId, color, size = 40 }: { courseId: string; color: string; size?: number }) {
   const s = size;
-  const icons: Record<string, JSX.Element> = {
+  const icons: Record<string, ReactElement> = {
     'yellow-belt': (
       <svg width={s} height={s} viewBox="0 0 40 40" fill="none">
         <rect x="4" y="16" width="32" height="10" rx="5" fill={color} opacity="0.25" />
@@ -231,9 +232,6 @@ function CourseCard({ course, index }: { course: Course; index: number }) {
 
 export function CatalogPage() {
   const [activeTrack, setActiveTrack] = useState<'all' | CourseTrack>('all');
-
-  const visibleTracks = TRACKS.filter(t => t.id !== 'all')
-    .filter(t => activeTrack === 'all' || t.id === activeTrack);
 
   const allCoursesList = Object.values(coursesByTrack).flat();
   const filteredCourses = activeTrack === 'all' ? allCoursesList : (coursesByTrack[activeTrack as CourseTrack] ?? []);
