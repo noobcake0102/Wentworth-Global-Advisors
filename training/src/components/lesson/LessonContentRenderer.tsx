@@ -108,11 +108,13 @@ export function LessonContentRenderer({ content }: Props) {
 
           case 'list':
             return (
-              <ul key={i} className="mb-5 space-y-2">
+              <ul key={i} className="mb-6 space-y-2.5 pl-1">
                 {block.items.map((item, j) => (
                   <li key={j} className="flex items-start gap-3 text-muted text-sm leading-relaxed">
-                    <span className="text-gold mt-1 flex-shrink-0">›</span>
-                    <span>{item}</span>
+                    <span className="w-4 h-4 mt-0.5 flex-shrink-0 rounded-full border border-gold/40 flex items-center justify-center">
+                      <span className="w-1.5 h-1.5 rounded-full bg-gold/70" />
+                    </span>
+                    <span className="text-ink/80">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -120,11 +122,13 @@ export function LessonContentRenderer({ content }: Props) {
 
           case 'ordered-list':
             return (
-              <ol key={i} className="mb-5 space-y-2">
+              <ol key={i} className="mb-6 space-y-2.5 pl-1">
                 {block.items.map((item, j) => (
                   <li key={j} className="flex items-start gap-3 text-muted text-sm leading-relaxed">
-                    <span className="text-gold font-serif text-base flex-shrink-0 w-5">{j + 1}.</span>
-                    <span>{item}</span>
+                    <span className="w-6 h-6 mt-0 flex-shrink-0 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center text-[11px] font-sans font-medium text-gold">
+                      {j + 1}
+                    </span>
+                    <span className="text-ink/80 pt-0.5">{item}</span>
                   </li>
                 ))}
               </ol>
@@ -170,20 +174,26 @@ export function LessonContentRenderer({ content }: Props) {
             return (
               <div
                 key={i}
-                className="my-6 rounded-md border border-border-gold bg-card/30 divide-y divide-border-gold"
+                className="my-8 rounded-md border border-border-gold bg-card/50 overflow-hidden"
               >
-                <div className="px-5 py-3">
+                <div className="px-5 py-3 bg-gold/5 border-b border-border-gold flex items-center gap-2">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <circle cx="7" cy="7" r="6" stroke="#c9a84c" strokeWidth="1.2" />
+                    <path d="M7 5V7.5M7 9.5V10" stroke="#c9a84c" strokeWidth="1.2" strokeLinecap="round" />
+                  </svg>
                   <p className="text-xs font-sans font-medium tracking-widest uppercase text-gold">
                     Key Terms
                   </p>
                 </div>
-                {block.terms.map((t, j) => (
-                  <div key={j} className="px-5 py-3.5">
-                    <span className="font-serif text-base text-ink">{t.term}</span>
-                    <span className="text-muted mx-2">—</span>
-                    <span className="text-sm text-muted leading-relaxed">{t.definition}</span>
-                  </div>
-                ))}
+                <div className="divide-y divide-border-gold">
+                  {block.terms.map((t, j) => (
+                    <div key={j} className="px-5 py-4 group hover:bg-white/[0.02] transition-colors">
+                      <span className="font-serif text-base text-gold">{t.term}</span>
+                      <span className="text-dim mx-2">—</span>
+                      <span className="text-sm text-muted leading-relaxed">{t.definition}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             );
 

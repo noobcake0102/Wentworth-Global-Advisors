@@ -41,7 +41,7 @@ export interface Module {
 
 export type BeltLevel = 'yellow' | 'green' | 'black';
 export type CourseStatus = 'available' | 'coming-soon';
-export type CourseTrack = 'lss-certification' | 'lean-foundations' | 'leadership';
+export type CourseTrack = 'lss-certification' | 'lean-foundations' | 'leadership' | 'data-management';
 
 export interface Course {
   id: string;
