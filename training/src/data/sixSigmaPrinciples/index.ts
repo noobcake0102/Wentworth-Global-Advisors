@@ -11,7 +11,7 @@ const module1 = {
     'Describe the historical origins of Six Sigma at Motorola and its adoption by GE',
     'Explain what a sigma level means and how it relates to defects per million opportunities (DPMO)',
     'Articulate the core philosophy of Six Sigma: variation is the enemy, data drives decisions',
-    'Connect Deming\'s quality thinking to the modern Six Sigma methodology',
+    'Connect Deming's quality thinking to the modern Six Sigma methodology',
   ],
   lessons: [
     {
@@ -25,12 +25,12 @@ const module1 = {
         },
         {
           type: 'heading' as const,
-          text: 'Motorola\'s Quality Imperative',
+          text: 'Motorola's Quality Imperative',
           level: 2 as const,
         },
         {
           type: 'paragraph' as const,
-          text: 'In 1986, Motorola CEO Bob Galvin championed Smith\'s approach and formalized it into a company-wide initiative. The goal was ambitious: achieve quality levels of 3.4 defects per million opportunities by 1992. This target — Six Sigma performance — represented a ten-fold improvement over where most manufacturers operated at the time. Motorola won the inaugural Malcolm Baldrige National Quality Award in 1988, in large part because of this commitment to measurable quality.',
+          text: 'In 1986, Motorola CEO Bob Galvin championed Smith's approach and formalized it into a company-wide initiative. The goal was ambitious: achieve quality levels of 3.4 defects per million opportunities by 1992. This target — Six Sigma performance — represented a ten-fold improvement over where most manufacturers operated at the time. Motorola won the inaugural Malcolm Baldrige National Quality Award in 1988, in large part because of this commitment to measurable quality.',
         },
         {
           type: 'callout' as const,
@@ -45,7 +45,7 @@ const module1 = {
         },
         {
           type: 'paragraph' as const,
-          text: 'Six Sigma remained largely a manufacturing tool until Jack Welch made it the centerpiece of GE\'s strategy in 1995. Welch declared that all GE managers must become Six Sigma certified or forgo promotions. Within four years, GE reported over $2 billion in savings from Six Sigma projects. This high-profile success transformed Six Sigma from an engineering methodology into a global business discipline adopted across industries — from healthcare to financial services to software development.',
+          text: 'Six Sigma remained largely a manufacturing tool until Jack Welch made it the centerpiece of GE's strategy in 1995. Welch declared that all GE managers must become Six Sigma certified or forgo promotions. Within four years, GE reported over $2 billion in savings from Six Sigma projects. This high-profile success transformed Six Sigma from an engineering methodology into a global business discipline adopted across industries — from healthcare to financial services to software development.',
         },
         {
           type: 'list' as const,
@@ -104,12 +104,12 @@ const module1 = {
     },
     {
       id: 'ss-m1-l3',
-      title: 'Deming\'s Legacy and the Quality Philosophy',
+      title: 'Deming's Legacy and the Quality Philosophy',
       estimatedMinutes: 16,
       content: [
         {
           type: 'paragraph' as const,
-          text: 'W. Edwards Deming is arguably the most influential quality thinker of the 20th century. Although he worked decades before Six Sigma was named, the intellectual foundations of Six Sigma rest on Deming\'s core ideas: that quality must be measured, that variation must be understood statistically, and that most quality problems originate in the system — not individual workers.',
+          text: 'W. Edwards Deming is arguably the most influential quality thinker of the 20th century. Although he worked decades before Six Sigma was named, the intellectual foundations of Six Sigma rest on Deming's core ideas: that quality must be measured, that variation must be understood statistically, and that most quality problems originate in the system — not individual workers.',
         },
         {
           type: 'heading' as const,
@@ -141,11 +141,11 @@ const module1 = {
           type: 'callout' as const,
           variant: 'tip' as const,
           title: 'Deming in Japan',
-          text: 'Deming\'s ideas were largely ignored in post-WWII America but embraced enthusiastically in Japan, where they helped transform Japanese manufacturing into a global quality leader. The Japanese quality revolution eventually pressured American companies like Motorola to develop their own rigorous quality methodologies — leading directly to Six Sigma.',
+          text: 'Deming's ideas were largely ignored in post-WWII America but embraced enthusiastically in Japan, where they helped transform Japanese manufacturing into a global quality leader. The Japanese quality revolution eventually pressured American companies like Motorola to develop their own rigorous quality methodologies — leading directly to Six Sigma.',
         },
         {
           type: 'paragraph' as const,
-          text: 'Six Sigma operationalizes Deming\'s vision by providing specific tools, project structures, and statistical methods that make quality improvement systematic and repeatable. Where Deming provided the philosophy, Six Sigma provides the engineering.',
+          text: 'Six Sigma operationalizes Deming's vision by providing specific tools, project structures, and statistical methods that make quality improvement systematic and repeatable. Where Deming provided the philosophy, Six Sigma provides the engineering.',
         },
       ],
     },
