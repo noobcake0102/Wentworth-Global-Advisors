@@ -56,6 +56,25 @@ const module1 = {
             'Many companies combine Six Sigma with Lean Manufacturing, creating Lean Six Sigma',
           ],
         },
+        { type: 'heading' as const, text: 'Real-World Application', level: 2 as const },
+        {
+          type: 'callout' as const,
+          variant: 'example' as const,
+          title: 'Case Study: Motorola Pager Manufacturing, 1987–1991',
+          text: 'After formalizing Six Sigma in 1986, Motorola applied the methodology to its pager assembly lines in Boynton Beach, Florida. The pager division was operating at roughly 3.5 sigma — approximately 22,000 DPMO — driven by inconsistent soldering, component placement errors, and supplier quality variation. Teams used defect tracking, process mapping, and statistical process control to isolate the top contributors. By 1991, the division achieved 5.5 sigma performance (~32 DPMO), reduced warranty claims by 84%, and contributed significantly to Motorola\'s $2.2 billion in documented savings. This result directly supported Motorola\'s 1988 Malcolm Baldrige Award win and became the founding proof of concept for Six Sigma as a business discipline.',
+        },
+        {
+          type: 'paragraph' as const,
+          text: 'The Motorola pager case illustrates how the birth of Six Sigma was not theoretical — it was driven by competitive survival. The link between sigma level, DPMO, and real financial impact (warranty costs, rework, customer satisfaction) proved the business case for systematic quality measurement that Bill Smith had pioneered. Understanding this origin story helps practitioners appreciate why every element of the Six Sigma philosophy — from the sigma scale to the focus on variation — was designed to solve concrete production crises.',
+        },
+        {
+          type: 'list' as const,
+          items: [
+            'Setting an explicit DPMO target (3.4) gave every team a common, measurable quality language',
+            'Winning a prestigious quality award required documented, quantified results — not anecdotal improvements',
+            'The methodology spread to other industries because its financial results were verifiable and replicable',
+          ],
+        },
       ],
     },
     {

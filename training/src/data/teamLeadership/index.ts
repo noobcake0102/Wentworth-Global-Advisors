@@ -64,6 +64,10 @@ const module1 = {
             'Always lead on the "why"; manage on the "how" and "when"',
           ],
         },
+        { type: 'heading' as const, text: 'Real-World Application', level: 2 as const },
+        { type: 'callout' as const, variant: 'example' as const, title: 'Case Study: Lean Transformation at a Regional Hospital System', text: 'A 600-bed regional hospital system launched a Lean transformation initiative with a newly appointed Lean director who held no formal authority over department heads. Early efforts stalled because the director defaulted to management behaviors — issuing directives and tracking compliance — rather than leading through influence. After coaching, the director shifted to clearly articulating the patient-care "why," co-creating improvement goals with department heads, and managing project logistics separately. Within 12 months, voluntary department participation rose from 3 to 14, and the initiative delivered a 22% reduction in ED wait times.' },
+        { type: 'paragraph' as const, text: 'This case illustrates that in cross-functional improvement work, positional authority is rarely available and always insufficient on its own. The shift from a management mindset to a leadership mindset — leading on purpose while managing on process — is what unlocked engagement and results.' },
+        { type: 'list' as const, items: ['Clarify your leadership vs. management role at the start of every improvement initiative', 'When you lack formal authority, invest heavily in shared purpose and relationship credibility', 'Track management deliverables rigorously, but never let task management substitute for people leadership'] },
       ],
     },
     {
@@ -104,6 +108,10 @@ const module1 = {
           type: 'paragraph' as const,
           text: 'Servant leadership is especially powerful in improvement contexts because sustainable change requires people who are intrinsically motivated — not just following orders. When team members feel supported and developed, they bring discretionary effort to the work.',
         },
+        { type: 'heading' as const, text: 'Real-World Application', level: 2 as const },
+        { type: 'callout' as const, variant: 'example' as const, title: 'Case Study: Software Engineering Team at a FinTech Startup', text: 'A FinTech startup struggling with 40% annual engineer turnover hired a new VP of Engineering who adopted a deliberate servant leadership model. She conducted weekly one-on-ones focused exclusively on removing blockers and developing each engineer\'s skills, restructured sprint reviews so engineers presented their own work, and publicly absorbed blame from leadership when sprints failed rather than deflecting to the team. Over 18 months, voluntary turnover dropped to 11%, sprint velocity increased by 34%, and the team self-reported psychological safety scores in the top quartile of the company\'s engagement survey.' },
+        { type: 'paragraph' as const, text: 'The VP\'s results demonstrate that servant leadership generates measurable business outcomes — not just improved morale. By investing in people\'s growth and removing obstacles, she created the conditions for the team\'s intrinsic motivation to drive sustained performance gains.' },
+        { type: 'list' as const, items: ['Serve first: schedule time specifically to remove obstacles your team faces', 'Build capability intentionally — one coaching moment per week compounds over time', 'Protect your team publicly; develop them privately — this builds the trust that enables honest feedback'] },
       ],
     },
     {

@@ -55,6 +55,10 @@ const module1 = {
           title: 'Why This History Matters',
           text: 'Understanding the pressures Toyota faced helps explain why Lean principles are so focused on doing more with less. The system was not invented in a laboratory — it was forged under real constraints that your organization likely faces too.',
         },
+        { type: 'heading' as const, text: 'Real-World Application', level: 2 as const },
+        { type: 'callout' as const, variant: 'example' as const, title: 'Case Study: Post-Recession Automotive Supplier Reinvention', text: 'A mid-sized automotive parts supplier in Ohio faced near-bankruptcy in 2009 after demand collapsed. With cash reserves running out, the CEO initiated a TPS-based transformation: the company eliminated six weeks of finished-goods inventory, cut batch sizes by 70%, and introduced one-piece flow on its stamping lines. Within 18 months, on-time delivery improved from 61% to 94%, floor space shrank by 30%, and cash-to-cash cycle time dropped from 47 days to 19 days — turning a projected $4M operating loss into a $1.2M profit.' },
+        { type: 'paragraph' as const, text: 'The supplier\'s turnaround mirrors Toyota\'s own post-war necessity-driven ingenuity. Resource constraints — in this case a cash crisis rather than material scarcity — forced leaders to question every assumption about batch sizes and inventory buffers. Just as Taiichi Ohno\'s environment demanded a new production logic, the supplier\'s survival pressure created the urgency needed to overcome cultural resistance to change.' },
+        { type: 'list' as const, items: ['Constraint is often the catalyst: the tightest resource limits frequently produce the most creative production solutions', 'TPS principles transfer outside Japan because they address universal economic pressures, not culture-specific habits', 'Inventory reduction and lead-time compression deliver cash flow benefits that fund the next round of improvement'] },
       ],
     },
     {
@@ -109,6 +113,10 @@ const module1 = {
           title: "Ohno's Circle in Practice",
           text: 'A plant manager was asked to stand in a circle Ohno drew on the factory floor for half a day. Initially frustrated, the manager began noticing how often workers left their stations to retrieve parts stored far away — a waste of motion no one had consciously recognized. This observation led to a layout redesign that cut walking distance by 40%.',
         },
+        { type: 'heading' as const, text: 'Real-World Application', level: 2 as const },
+        { type: 'callout' as const, variant: 'example' as const, title: 'Case Study: Denso Corporation Applies Multi-Machine Handling', text: 'Denso Corporation, a Tier-1 automotive supplier based in Aichi, Japan, faced chronic labor shortages in its engine-component machining lines during the 1990s. Drawing directly on Ohno\'s multi-machine handling principle, Denso reconfigured its machining cells so each operator supervised four CNC machines simultaneously rather than one. Industrial engineers mapped every second of operator movement, eliminating unnecessary walks and waits. The result: output per operator-hour rose by 62%, floor space requirements shrank 25%, and defects dropped because each operator developed deep familiarity with a smaller set of machines.' },
+        { type: 'paragraph' as const, text: 'Denso\'s success reflects Ohno\'s core insight that separating human work from machine work — a principle he formalized — unlocks significant productivity gains without requiring new capital investment. By designing the cell layout around the operator\'s movement rather than the machine\'s convenience, Denso embedded TPS thinking at the physical level of the workplace. The same logic applies to any repetitive manufacturing environment where machine cycle time exceeds operator interaction time.' },
+        { type: 'list' as const, items: ['Observe actual movement time before designing cell layouts — assumptions are almost always wrong', 'Multi-machine handling only works when machines have reliable auto-stop (jidoka) capability', 'Cross-training operators on adjacent machines creates flexibility that absorbs demand variation'] },
       ],
     },
     {
@@ -156,6 +164,10 @@ const module1 = {
             'Pure Waste (Muda): Adds no value and should be eliminated immediately',
           ],
         },
+        { type: 'heading' as const, text: 'Real-World Application', level: 2 as const },
+        { type: 'callout' as const, variant: 'example' as const, title: 'Case Study: Boeing 737 Final Assembly Waste Reduction', text: 'Boeing\'s Renton, Washington facility producing 737 aircraft identified overproduction of sub-assemblies as its most costly waste in the early 2000s. Work-in-process riveted assemblies were stockpiled ahead of final assembly, consuming 40,000 square feet of floor space and tying up $180M in inventory. A cross-functional team catalogued every waste type using the TIMWOOD framework, mapping 23 distinct transportation loops and 14 waiting queues. After redesigning material flow and introducing a moving assembly line, WIP dropped 55%, the same floor space was freed for an additional production line, and output increased from 31 to 38 aircraft per month.' },
+        { type: 'paragraph' as const, text: 'Boeing\'s exercise demonstrates that the seven wastes are not merely academic categories — they are quantifiable cost drivers. Overproduction, which Ohno identified as the worst waste, was costing Boeing in both capital (inventory) and capacity (floor space) simultaneously. By naming and measuring each waste type separately, the improvement team could prioritize actions and build a compelling business case that secured executive funding for the moving-line investment.' },
+        { type: 'list' as const, items: ['Naming waste precisely (overproduction vs. inventory vs. transportation) prevents vague improvement efforts', 'Overproduction waste compounds: it generates inventory waste, which generates motion and transportation waste downstream', 'Quantify each waste type in dollars before prioritizing — not all wastes are equally costly in every context'] },
       ],
     },
     {

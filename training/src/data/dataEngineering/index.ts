@@ -81,6 +81,10 @@ export const dataEngineeringCourse: Course = {
                 },
               ],
             },
+            { type: 'heading' as const, text: 'Real-World Application', level: 2 as const },
+            { type: 'callout' as const, variant: 'example' as const, title: 'Case Study: Building a Data Team at a Mid-Size SaaS Company', text: 'A 200-person B2B SaaS company had no dedicated data engineer — analysts pulled data manually from the product database, causing report discrepancies and 3-hour delays every morning. They hired their first data engineer to build a centralized pipeline architecture. Within 90 days the engineer had established a Fivetran → Snowflake → dbt stack, reducing data preparation time from 3 hours to under 15 minutes daily. Analyst productivity increased by an estimated 40% and cross-departmental revenue figures became consistent for the first time.' },
+            { type: 'paragraph' as const, text: 'This case illustrates why the data engineer role is foundational: without reliable pipes, even skilled analysts cannot do their jobs effectively. The separation of concerns — engineers building infrastructure, analysts building insights — is what allows each function to excel.' },
+            { type: 'list' as const, items: ['Data engineers unblock everyone else by building reliable, reusable infrastructure', 'Even a single dedicated data engineer can transform a team\'s analytical capacity', 'Clear role separation between engineering and analysis prevents both bottlenecks and duplicated effort'] },
           ],
         },
         {
