@@ -3,15 +3,22 @@ import { Link, useLocation } from 'react-router-dom';
 
 function WGALogo() {
   return (
-    <svg width="220" height="48" viewBox="0 0 340 72" xmlns="http://www.w3.org/2000/svg">
-      <g transform="translate(0, 8)">
-        <polygon points="0,0 13,0 27,42 41,8 48,8 35,50 19,50 0,0" fill="#c9a84c"/>
-        <polygon points="22,0 35,0 56,50 49,50 35,14 22,0" fill="#e2c47a" opacity="0.6"/>
-        <line x1="70" y1="0" x2="70" y2="50" stroke="#c9a84c" strokeWidth="0.75" opacity="0.4"/>
-        <text x="82" y="32" fontFamily="Georgia, serif" fontSize="28" fontWeight="400" letterSpacing="3" fill="#ffffff">WENTWORTH</text>
-        <text x="83" y="48" fontFamily="Helvetica, Arial, sans-serif" fontSize="9.5" fontWeight="300" letterSpacing="5.5" fill="#c9a84c">GLOBAL ADVISORS</text>
-      </g>
-    </svg>
+    <div className="flex items-center gap-4">
+      <svg width="48" height="48" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
+        <g transform="translate(0, 4)">
+          <polygon points="0,0 10,0 21,34 32,6 38,6 27,40 15,40 0,0" fill="#c9a84c"/>
+          <polygon points="17,0 27,0 43,40 38,40 27,11 17,0" fill="#e2c47a" opacity="0.6"/>
+        </g>
+      </svg>
+      <div>
+        <div className="flex items-center gap-2">
+          <span style={{ fontFamily: 'Georgia, serif', fontSize: '18px', fontWeight: 400, letterSpacing: '2px', color: '#ffffff' }}>WENTWORTH</span>
+        </div>
+        <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '8px', fontWeight: 400, letterSpacing: '4px', color: '#c9a84c', textTransform: 'uppercase' }}>
+          OPERATIONS INSTITUTE
+        </div>
+      </div>
+    </div>
   );
 }
 
