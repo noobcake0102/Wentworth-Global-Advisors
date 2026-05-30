@@ -1525,6 +1525,25 @@ const module6 = {
           variant: 'tip' as const,
           text: 'Recalculate control limits after implementing the improvement to establish a new baseline. Old control limits based on the pre-improvement process will generate false signals in the new, improved process.',
         },
+        { type: 'heading' as const, text: 'Real-World Application', level: 2 as const },
+        {
+          type: 'callout' as const,
+          variant: 'example' as const,
+          title: 'Case Study: Contract Research Organization — SPC Chart Selection Enables 18-Month Sustained Compliance',
+          text: 'A contract research organization (CRO) managing clinical trial data management was implementing Statistical Process Control following a DMAIC project that reduced data query resolution time from 11.4 days to 3.8 days. The Black Belt needed to select a control chart for ongoing monitoring. Daily query resolution time was a single continuous measurement (one average per day) with no subgrouping — indicating an I-MR (Individuals and Moving Range) chart. After implementing the new process, the Black Belt recalculated control limits from 25 new post-improvement data points (UCL = 5.1 days, LCL = 2.5 days). Using the old pre-improvement control limits would have generated a false out-of-control signal on day 3 post-implementation, likely triggering an unnecessary process investigation. The correctly recalculated I-MR chart ran for 18 months with 3 legitimate special-cause signals detected — each investigated and resolved within 24 hours. The process maintained Cpk = 1.58 at the 18-month review, with zero SLA violations in the final 9 months.',
+        },
+        {
+          type: 'paragraph' as const,
+          text: 'The CRO case illustrates two intertwined principles: the importance of selecting the right chart type for the data structure, and the critical need to recalculate control limits after improvement. The I-MR chart was correct because data consisted of individual daily averages without subgrouping — using an X-bar and R chart would have required subgroups that didn\'t exist in the data collection structure. Recalculating limits post-improvement prevented false alarms that would have eroded operator confidence in the SPC system within the first week of deployment — a common failure mode that causes teams to abandon SPC charts as "unreliable" when the charts were actually perfectly calibrated to the wrong process state.',
+        },
+        {
+          type: 'list' as const,
+          items: [
+            'Chart type selection is determined by data structure (individual vs. subgroup, continuous vs. discrete) — using the wrong chart produces invalid control limits regardless of data quality',
+            'Recalculating control limits after improvement is non-negotiable — old limits will generate immediate false signals that undermine operator trust in the monitoring system',
+            'Collect a minimum of 20–25 post-improvement data points before recalculating final control limits to ensure the new limits reflect stable improved performance, not transitional variation',
+          ],
+        },
       ],
     },
     {
@@ -1594,6 +1613,25 @@ const module6 = {
           variant: 'info' as const,
           title: '30/60/90-Day Follow-Up',
           text: 'Schedule formal follow-up reviews at 30, 60, and 90 days post-implementation. These reviews confirm that the process is performing to the new standard, control charts are being maintained, and the process owner has the support needed. Early signs of regression are easiest to address when caught early.',
+        },
+        { type: 'heading' as const, text: 'Real-World Application', level: 2 as const },
+        {
+          type: 'callout' as const,
+          variant: 'example' as const,
+          title: 'Case Study: Managed Care Organization — Structured Handoff Sustains $2.4M Improvement Through Leadership Transition',
+          text: 'A managed care organization completed a DMAIC project that reduced prior authorization processing time from 8.3 days to 2.1 days, saving $2.4M annually in pended claim costs and reducing member complaint volume by 58%. The project closed in March. In September — 6 months later — the process owner (Director of Clinical Operations) resigned. Without a structured handoff, this would typically trigger rapid reversion as institutional knowledge about the improved process departed with the departing director. Because the Black Belt had built a comprehensive handoff package (updated process map, control plan with all reaction plans, I-MR chart templates pre-loaded with new control limits, updated SOPs in the document management system, and a written escalation contact list), the incoming interim director was able to manage the process at full capability within 5 days of starting. The 12-month follow-up showed processing time of 2.3 days — slightly elevated from the 2.1-day baseline but within control limits and well below the original 8.3-day baseline.',
+        },
+        {
+          type: 'paragraph' as const,
+          text: 'The managed care case demonstrates that the handoff package is not documentation for its own sake — it is organizational insurance against the inevitable personnel changes that follow every improvement project. The structured handoff converted the project team\'s knowledge into institutional process knowledge that could survive a full leadership transition. The 30/60/90-day follow-up reviews also played a role: the 30-day review (conducted while the original director was still available) confirmed all controls were operational, and the 60-day review (conducted with the interim director) provided the first opportunity to identify questions and gaps before they became performance problems.',
+        },
+        {
+          type: 'list' as const,
+          items: [
+            'The handoff package is a succession document — write it assuming the process owner will be replaced within 6 months of project closure',
+            '30/60/90-day follow-up reviews should include both a process performance check (are the metrics holding?) and a controls check (are the control charts being maintained? Are SOPs being followed?)',
+            'Financial benefit validation with Finance sign-off at project closure is essential for program ROI reporting — undocumented savings are invisible to leadership and cannot justify future Six Sigma investment',
+          ],
         },
       ],
     },
