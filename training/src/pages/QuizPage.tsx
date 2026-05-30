@@ -16,10 +16,12 @@ type AnswerState = 'unanswered' | 'correct' | 'incorrect';
 export function QuizPage() {
   const { courseId, moduleId } = useParams<{ courseId: string; moduleId: string }>();
   const navigate = useNavigate();
-  const { saveQuizResult, checkAndUnlockCertificate, getModuleProgress } = useProgressContext();
+  const { saveQuizResult, checkAndUnlockCertificate, getModuleProgress, getCourseProgress } = useProgressContext();
 
   const course = getCourseById(courseId ?? '');
   const module = course?.modules.find(m => m.id === moduleId);
+  const mp = course && module ? getModuleProgress(course.id, module.id) : null;
+  const cp = course ? getCourseProgress(course.id) : null;
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selected, setSelected] = useState<number | null>(null);
@@ -99,6 +101,7 @@ export function QuizPage() {
     setScore(0);
   };
 
+  const answeredCount = answers.filter(a => a !== null).length + (revealed ? 0 : 0);
   const progress = ((currentIndex + (revealed ? 1 : 0)) / questions.length) * 100;
 
   // ── Results screen ──
@@ -272,17 +275,22 @@ export function QuizPage() {
               <div className="space-y-3">
                 {question.options.map((opt, idx) => {
                   let stateClass = 'border-border-gold hover:border-border-hover hover:bg-white/[0.02] cursor-pointer';
+                  let indicatorClass = 'bg-white/5 border-white/15 text-dim';
 
                   if (revealed) {
                     if (idx === question.correctIndex) {
                       stateClass = 'border-success/40 bg-success/5';
+                      indicatorClass = 'bg-success/20 border-success/40 text-success';
                     } else if (idx === selected && idx !== question.correctIndex) {
                       stateClass = 'border-danger/40 bg-danger/5';
+                      indicatorClass = 'bg-danger/20 border-danger/40 text-danger';
                     } else {
                       stateClass = 'border-border-gold opacity-50 cursor-default';
                     }
                   } else if (selected === idx) {
                     stateClass = 'border-border-hover bg-white/[0.04] cursor-pointer';
+                    indicatorClass = `border-opacity-60 text-ink`;
+                    indicatorClass = 'text-ink';
                   }
 
                   return (
