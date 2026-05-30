@@ -41,14 +41,18 @@ export interface Module {
 
 export type BeltLevel = 'yellow' | 'green' | 'black';
 export type CourseStatus = 'available' | 'coming-soon';
+export type CourseTrack = 'lss-certification' | 'lean-foundations' | 'leadership';
 
 export interface Course {
   id: string;
-  belt: BeltLevel;
+  belt?: BeltLevel;
+  track: CourseTrack;
   title: string;
   subtitle: string;
   description: string;
   status: CourseStatus;
   estimatedHours: number;
+  color: string;       // accent color for the course card
+  icon: string;        // emoji icon
   modules: Module[];
 }

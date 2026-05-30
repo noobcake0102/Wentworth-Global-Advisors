@@ -25,7 +25,8 @@ export function CoursePage() {
 
   const cp = getCourseProgress(course.id);
   const totalPct = getCourseCompletionPercent(course.id, course);
-  const beltBadge = ({ yellow: 'yellow', green: 'green', black: 'black' }[course.belt] ?? 'gold') as 'yellow' | 'green' | 'black';
+  const beltBadge = (course.belt ? ({ yellow: 'yellow', green: 'green', black: 'black' }[course.belt] ?? 'gold') : 'gold') as 'yellow' | 'green' | 'black';
+  const accentColor = course.color ?? '#c9a84c';
 
   // Find the first incomplete module
   const firstIncompleteModuleIndex = course.modules.findIndex(m => {
@@ -58,7 +59,8 @@ export function CoursePage() {
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div>
               <div className="flex items-center gap-3 mb-3">
-                <Badge variant={beltBadge}>{course.belt} belt</Badge>
+                {course.belt && <Badge variant={beltBadge}>{course.belt} belt</Badge>}
+                <span className="font-sans text-xs tracking-widest uppercase" style={{ color: accentColor }}>{course.subtitle}</span>
                 {cp.certificateUnlocked && <Badge variant="success">Completed</Badge>}
               </div>
               <h1 className="font-serif text-4xl text-ink mb-2">{course.title}</h1>

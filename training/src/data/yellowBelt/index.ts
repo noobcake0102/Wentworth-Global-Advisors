@@ -5,10 +5,13 @@ import { modules5to8 } from './modules5to8';
 export const yellowBeltCourse: Course = {
   id: 'yellow-belt',
   belt: 'yellow',
+  track: 'lss-certification',
   title: 'Yellow Belt',
   subtitle: 'Lean Six Sigma Foundations',
   description: 'Build a solid foundation in Lean Six Sigma principles, the DMAIC framework, process mapping, data analysis, and root cause investigation. Gain the skills to contribute meaningfully to improvement projects and drive change in your daily work.',
   status: 'available',
   estimatedHours: 7,
+  color: '#c9a84c',
+  icon: '🟡',
   modules: [...modules1to4, ...modules5to8],
 };
