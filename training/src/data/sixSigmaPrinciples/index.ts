@@ -125,6 +125,25 @@ const module1 = {
           title: 'DPMO Calculation Example',
           text: 'A call center handles 10,000 calls per month. Each call has 5 opportunities for error (wrong information, long hold, missed callback, incorrect account update, unresolved issue). In a month, 150 errors are logged. DPMO = (150 / (10,000 × 5)) × 1,000,000 = 3,000 DPMO — roughly 4.25 sigma.',
         },
+        { type: 'heading' as const, text: 'Real-World Application', level: 2 as const },
+        {
+          type: 'callout' as const,
+          variant: 'example' as const,
+          title: 'Case Study: Hospital Medication Dispensing — Sigma Level Benchmarking',
+          text: 'A 600-bed regional medical center conducted a sigma benchmarking study on its pharmacy dispensing process. Each dispensed dose had 4 opportunities for error (wrong drug, wrong dose, wrong patient, wrong time). Auditing 30,000 dispensing events revealed 312 errors — yielding 2,600 DPMO, or approximately 4.3 sigma. While this appeared strong on paper, comparison against the Joint Commission\'s 6-sigma target for high-alert medications exposed a critical gap. The hospital prioritized DMAIC projects targeting the two most common error types (wrong dose and wrong time), achieving 680 DPMO (4.7 sigma) within 18 months and reducing adverse medication events by 61%, saving an estimated $1.4M annually in averted harm costs.',
+        },
+        {
+          type: 'paragraph' as const,
+          text: 'This case demonstrates the practical value of sigma level and DPMO as universal quality currencies. Translating dispensing errors into DPMO allowed the hospital to benchmark against industry standards, prioritize resources, and set a credible goal rather than working from vague aspirations. The 1.5 sigma shift concept also clarified why short-term audit results looked better than long-term patient outcome data — process drift over time accounts for the difference.',
+        },
+        {
+          type: 'list' as const,
+          items: [
+            'Defining opportunities consistently (4 per dose) was the critical first step — inconsistent definitions inflate apparent sigma levels',
+            'Sigma levels enable cross-industry and cross-department benchmarking that raw error counts cannot support',
+            'Even a process near 4.3 sigma can represent thousands of real patient harm events annually — scale amplifies DPMO into absolute defect counts that drive urgency',
+          ],
+        },
       ],
     },
     {
@@ -171,6 +190,25 @@ const module1 = {
         {
           type: 'paragraph' as const,
           text: 'Six Sigma operationalizes Deming\'s vision by providing specific tools, project structures, and statistical methods that make quality improvement systematic and repeatable. Where Deming provided the philosophy, Six Sigma provides the engineering.',
+        },
+        { type: 'heading' as const, text: 'Real-World Application', level: 2 as const },
+        {
+          type: 'callout' as const,
+          variant: 'example' as const,
+          title: 'Case Study: Ford Motor Company\'s Quality Resurgence, 2001–2006',
+          text: 'After years of quality struggles in the 1990s, Ford explicitly returned to Deming principles when CEO Jacques Nasser launched the Ford Production System, drawing heavily on Deming\'s emphasis on system-level thinking and common-cause variation reduction. Engineers were trained to distinguish process variation from worker error — applying the 85/15 rule to stop blaming assembly workers for defects rooted in tooling inconsistency and supplier material variation. Ford\'s J.D. Power Initial Quality Score improved from 21st place in 2001 to 5th place in 2006, with warranty costs falling by $1.9 billion over five years. The PDSA cycle was formalized into Ford\'s 8D problem-solving process, directly mirroring Deming\'s iterative improvement model.',
+        },
+        {
+          type: 'paragraph' as const,
+          text: 'Ford\'s turnaround illustrates how Deming\'s philosophical principles become measurable results when translated into process discipline. The 85/15 rule — when actually applied rather than just cited — fundamentally redirects investigation away from individual worker performance and toward process redesign, which is where durable quality gains live. Six Sigma gave Ford\'s engineers the statistical vocabulary to prove that variation was systemic, not human, making the case for capital investments in tooling and supplier development that management had previously resisted.',
+        },
+        {
+          type: 'list' as const,
+          items: [
+            'Common-cause variation requires system redesign; blaming workers for system problems wastes resources and damages morale',
+            'PDSA / DMAIC cycles produce replicable, documented learning — not one-off fixes that disappear when key people leave',
+            'Financial quantification (warranty cost reduction) is essential to sustain executive commitment to philosophical quality principles',
+          ],
         },
       ],
     },
@@ -282,6 +320,25 @@ const module2 = {
             ['Special Cause', 'Investigate the specific incident, identify root cause, correct it', 'Ignore it and hope it goes away'],
           ],
         },
+        { type: 'heading' as const, text: 'Real-World Application', level: 2 as const },
+        {
+          type: 'callout' as const,
+          variant: 'example' as const,
+          title: 'Case Study: Chemical Plant Yield Tampering — A $4M Lesson',
+          text: 'A specialty chemicals manufacturer was experiencing yield fluctuations of ±3% on a continuous reactor process. Supervisors had established a practice of adjusting reaction temperature whenever yield deviated from the 92% target — sometimes making multiple adjustments per shift. A Six Sigma Black Belt ran a control chart analysis and discovered the process was statistically stable: all variation was common cause, naturally distributing around a mean of 91.8%. The supervisor adjustments were classic tampering — each correction introduced additional variation rather than reducing it. After training supervisors to monitor the control chart and intervene only on special causes (points outside 3σ limits), yield variability dropped by 47% and the process averaged 92.3% yield — a 0.5% gain worth $4.1M annually at their production volumes.',
+        },
+        {
+          type: 'paragraph' as const,
+          text: 'This case powerfully demonstrates Deming\'s tampering warning in a real operating context. The supervisors were well-intentioned and hard-working, but their intervention in a stable process was making it worse. The fundamental mistake — treating common cause variation as if it were special cause — is prevalent across industries wherever managers react to every data point rather than observing the statistical trend. Understanding the distinction between these two variation types is the foundational skill that makes all subsequent Six Sigma work possible.',
+        },
+        {
+          type: 'list' as const,
+          items: [
+            'Establish statistical stability before any process intervention — intervening in a stable process adds variation, it does not reduce it',
+            'Control charts are not just monitoring tools; they are decision tools that tell operators when to act and when to leave the process alone',
+            'Training supervisors in variation thinking often delivers ROI faster than deploying new technology or equipment changes',
+          ],
+        },
       ],
     },
     {
@@ -334,6 +391,25 @@ const module2 = {
           variant: 'tip' as const,
           title: 'Choosing the Right Chart',
           text: 'Different control charts apply to different data types. Use X-bar and R charts for subgroups of continuous data. Use Individuals (I-MR) charts for single measurements. Use p-charts for proportion defective, and c-charts for count of defects per unit. Choosing the wrong chart leads to incorrect control limit calculations.',
+        },
+        { type: 'heading' as const, text: 'Real-World Application', level: 2 as const },
+        {
+          type: 'callout' as const,
+          variant: 'example' as const,
+          title: 'Case Study: Semiconductor Fab — Control Chart Saves $2.3M in Wafer Scrap',
+          text: 'A semiconductor fabrication facility was experiencing intermittent elevated defect rates on photolithography wafers, averaging 4.1% scrap. Engineering initially attributed the spikes to environmental contamination and had been running full cleanroom decontamination cycles — at $85,000 each — whenever scrap exceeded 6%. An X-bar and R chart implemented on the photoresist coating thickness data revealed that the scrap spikes were special causes triggered by a run rule violation: a trend of six consecutive points increasing in the R chart, signaling growing within-batch variation. Investigation traced the trend to a resist dispense nozzle degrading over a 72-hour cycle. Replacing the nozzle on a 60-hour preventive maintenance schedule eliminated the trend, reduced scrap to 1.8%, and avoided 12 unnecessary decontamination cycles annually — saving $2.3M in combined scrap and avoidance costs.',
+        },
+        {
+          type: 'paragraph' as const,
+          text: 'This case shows that control charts detect problems that threshold-based alarms miss entirely. The facility\'s "scrap above 6%" alert was a lagging indicator that triggered after the damage was done. The R chart trend rule caught the degradation pattern while it was still developing — enabling preventive action rather than reactive damage control. Applying the correct chart type (X-bar and R for subgrouped continuous data) and monitoring both the mean chart and the range chart were both essential to identifying the root cause.',
+        },
+        {
+          type: 'list' as const,
+          items: [
+            'Run rules beyond the 3-sigma limit (trends, runs) often detect special causes earlier than point-beyond-limits rules',
+            'Monitoring variability (R chart or S chart) separately from the mean can reveal mechanical degradation invisible to average-based monitoring',
+            'Distinguishing special cause (nozzle wear) from common cause (environmental noise) prevented costly, unnecessary interventions',
+          ],
         },
       ],
     },
@@ -391,6 +467,25 @@ const module2 = {
           variant: 'example' as const,
           title: 'Cp vs. Cpk in Practice',
           text: 'A shaft must be 50mm ± 2mm (LSL=48, USL=52). The process has σ=0.5mm and a mean of 51.2mm. Cp = (52-48)/(6×0.5) = 1.33 — looks capable! But Cpk = min[(52-51.2)/(3×0.5), (51.2-48)/(3×0.5)] = min[0.53, 2.13] = 0.53. The process is badly off-center and actually incapable on the upper side. Cpk reveals the real story.',
+        },
+        { type: 'heading' as const, text: 'Real-World Application', level: 2 as const },
+        {
+          type: 'callout' as const,
+          variant: 'example' as const,
+          title: 'Case Study: Automotive Fuel Injector Supplier — Cp/Cpk Gap Reveals Hidden Defects',
+          text: 'A Tier 1 automotive supplier producing fuel injectors was reporting a Cp of 1.65 on injection spray angle — well above the customer\'s 1.33 minimum. However, a routine process capability review for a new OEM contract calculated Cpk at 0.89. The discrepancy was traced to a fixture that had drifted 0.8mm from nominal during a maintenance cycle, shifting the process mean 1.4 sigma toward the upper specification limit. The process spread was excellent but the centering was catastrophically off. At current volumes (2.4 million units/year), a Cpk of 0.89 projected to 23,400 defective injectors annually — field return data later confirmed 19,200 warranty replacements per year at $47 each, totaling $900,000 in annual warranty costs. Re-centering the fixture reduced Cpk to 1.58 and warranty claims dropped 94% within two production quarters.',
+        },
+        {
+          type: 'paragraph' as const,
+          text: 'The fuel injector case is a textbook illustration of why Cp alone is insufficient — and why process centering must be actively controlled, not assumed. A high Cp creates a false sense of security that can persist through audits unless Cpk is calculated and monitored separately. In high-volume manufacturing, even modest Cpk deficiencies translate into millions of dollars in warranty exposure because small defect rates multiply across enormous unit counts.',
+        },
+        {
+          type: 'list' as const,
+          items: [
+            'Always calculate and report Cpk alongside Cp — Cp without Cpk is an incomplete capability picture',
+            'Process centering is an ongoing maintenance requirement, not a one-time setup condition',
+            'Use DPMO projections from Cpk to quantify the financial cost of off-center processes — this converts a statistical metric into a business case for corrective action',
+          ],
         },
       ],
     },
@@ -512,6 +607,25 @@ const module3 = {
           type: 'paragraph' as const,
           text: 'The Measure phase answers: How bad is the problem, exactly, and can we trust our measurement system? Teams identify the key output metric (Y), collect baseline data, calculate the current sigma level, and validate that the measurement system is reliable through Measurement System Analysis (MSA). Without a reliable baseline, you cannot know if an improvement worked.',
         },
+        { type: 'heading' as const, text: 'Real-World Application', level: 2 as const },
+        {
+          type: 'callout' as const,
+          variant: 'example' as const,
+          title: 'Case Study: Insurance Claims Processing — Charter Precision Drives $1.1M Recovery',
+          text: 'A regional property insurer launched a DMAIC project after customer satisfaction surveys ranked claims processing speed as the top dissatisfier. The initial problem statement was vague: "claims are slow." A Black Belt spent two days rewriting the charter with a precise problem statement — "42% of residential property claims exceed the 15-business-day resolution SLA, generating $620,000 in penalty payments and an estimated $480,000 in lost renewal revenue annually." This specific framing changed the project scope: instead of a broad "claims improvement" initiative, the team focused exclusively on the residential property claim type within the 15-day window. This scoping decision reduced the project timeline from an estimated 9 months to 4 months and kept the team focused on the actual high-value problem rather than spreading effort across all claim types.',
+        },
+        {
+          type: 'paragraph' as const,
+          text: 'The charter\'s precision in this case did not just improve documentation quality — it fundamentally altered the financial outcome. By translating a vague complaint into a specific, quantified problem statement with a dollar figure, the Champion could justify dedicated Black Belt resources and cross-functional team involvement. The scope boundary ("residential property claims only") prevented the team from being pulled into adjacent problems and allowed them to deliver measurable results within a timeline that maintained executive engagement.',
+        },
+        {
+          type: 'list' as const,
+          items: [
+            'Problem statements must quantify magnitude — a dollar figure transforms an annoyance into a business priority',
+            'Specific scope boundaries protect team focus and make timelines realistic and achievable',
+            'The Define phase charter is the contract that aligns sponsor expectations with team capacity — ambiguity here cascades into every subsequent phase',
+          ],
+        },
       ],
     },
     {
@@ -557,6 +671,25 @@ const module3 = {
             'Develop implementation and change management plans',
           ],
         },
+        { type: 'heading' as const, text: 'Real-World Application', level: 2 as const },
+        {
+          type: 'callout' as const,
+          variant: 'example' as const,
+          title: 'Case Study: Food & Beverage Manufacturer — Analyze Stops a $750K "Solution"',
+          text: 'A national food manufacturer was experiencing elevated foreign material defects in a packaging line, with customer complaints running at 380 DPMO (~4.2 sigma). The operations VP was convinced the cause was the aging packaging machine and had approved a $750,000 equipment replacement. The DMAIC team conducted the Analyze phase before the purchase order was signed. Using ANOVA to test defect rates across three shifts, two product SKUs, and four operators, they found that defects were statistically concentrated during shift changeover periods (p=0.003) — not machine-dependent. A 5 Whys analysis revealed that changeover cleaning protocols allowed residual material to enter the line. The solution — a revised 8-minute cleaning procedure costing $4,200 to develop and train — reduced defects to 45 DPMO (4.9 sigma) and avoided the equipment replacement entirely, saving $745,800.',
+        },
+        {
+          type: 'paragraph' as const,
+          text: 'This case illustrates the central value of disciplined Analyze-phase work: it prevents expensive solutions from being applied to the wrong problem. DMAIC\'s insistence on statistically confirming root causes before improving creates a firewall against assumption-based decision making. The $750,000 equipment purchase was not wrong because the VP was incompetent — it was wrong because no data linked the equipment to the defect pattern. Data did what authority alone cannot: it identified the actual causal mechanism.',
+        },
+        {
+          type: 'list' as const,
+          items: [
+            'Statistical tools (ANOVA, regression) test hypotheses that intuition cannot reliably evaluate — especially when multiple variables interact',
+            'The cost of DMAIC analysis is almost always a fraction of the cost of implementing the wrong solution',
+            'Analyze phase outputs must reach leadership before capital investment decisions are made — timing the tollgate matters',
+          ],
+        },
       ],
     },
     {
@@ -597,6 +730,25 @@ const module3 = {
           variant: 'info' as const,
           title: 'Tollgate Questions by Phase',
           text: 'Define: Is the problem real, significant, and worth a project? Measure: Do we have reliable baseline data? Analyze: Have we statistically confirmed root causes? Improve: Does pilot data prove the solution works? Control: Are monitoring systems in place and the process handed off?',
+        },
+        { type: 'heading' as const, text: 'Real-World Application', level: 2 as const },
+        {
+          type: 'callout' as const,
+          variant: 'example' as const,
+          title: 'Case Study: Logistics Company — Control Plan Prevents Reversion After $310K Improvement',
+          text: 'A regional logistics company completed a DMAIC project that reduced on-time delivery failures from 18.4% to 4.1% — moving from 3.4 sigma to 4.6 sigma and saving an estimated $310,000 annually in penalty fees and re-delivery costs. Six months after project closure, the Black Belt returned for a follow-up review and found on-time delivery had drifted back to 11.2%. Investigation revealed that the control plan had not been transferred to the dispatch supervisor, the updated routing algorithm had been overridden by a manual workaround introduced during a system upgrade, and no control chart was being maintained. The project had a strong Improve phase but a failed Control phase. Re-implementing the control plan with proper ownership assignment and automated dashboard monitoring restored performance to 4.9% within 60 days.',
+        },
+        {
+          type: 'paragraph' as const,
+          text: 'This case is a cautionary tale about the Control phase being treated as a formality rather than the most operationally critical phase of DMAIC. Improvement without control produces a temporary gain that decays as soon as team attention moves to the next project. The control plan, the response plan, and the ownership transfer are not bureaucratic artifacts — they are the mechanisms that convert a project result into permanent process capability.',
+        },
+        {
+          type: 'list' as const,
+          items: [
+            'A control plan without a named process owner is not a control plan — it is an orphaned document',
+            'System upgrades and process changes after project closure are the most common causes of regression — control plans must include change management triggers',
+            'Scheduled 30/60/90-day tollgate follow-ups are insurance against silent reversion and should be calendar-committed before the project closes',
+          ],
         },
       ],
     },
@@ -695,6 +847,25 @@ const module4 = {
           title: 'Listen for "Verbatims"',
           text: 'In customer interviews, record exact quotes rather than your interpretation. "The checkout took forever" is a verbatim. "Customers want faster checkout" is your interpretation. Start with verbatims — they carry the emotional truth of the customer experience and often reveal needs that interpretation would sanitize away.',
         },
+        { type: 'heading' as const, text: 'Real-World Application', level: 2 as const },
+        {
+          type: 'callout' as const,
+          variant: 'example' as const,
+          title: 'Case Study: Retail Bank — Gemba Observation Uncovers $2.8M in Hidden Wait Time Costs',
+          text: 'A mid-size retail bank was scoring 71% on branch satisfaction surveys. Internal analysis attributed the low score to insufficient staffing and recommended hiring 12 new tellers at a cost of $720,000 annually. A VoC study team conducted 40 exit interviews and 3 days of in-branch observation (gemba). The surveys had asked customers to rate teller speed — but observation revealed that 63% of customer wait time occurred before customers reached the teller, in the queue. Customers who were dissatisfied were not complaining about teller speed; they were standing in lines while 3 of 8 teller windows sat idle because staff was occupied with back-office processing tasks. The VoC interviews surfaced verbatim complaints about "the line never moving even when windows are empty" — a nuance that survey data had buried. Restructuring back-office tasks to a separate team reduced average queue wait time by 4.2 minutes, increased satisfaction to 84%, and retained an estimated $2.8M in deposit value from at-risk customers.',
+        },
+        {
+          type: 'paragraph' as const,
+          text: 'The bank case illustrates the danger of designing VoC programs around the questions you already think you know the answer to. Survey data is filtered through the researcher\'s framing; observation and verbatim interviews reveal what customers actually experience. The hiring recommendation — the obvious solution — would have increased cost without touching the real constraint. Effective VoC collection changes the solution space by revealing the actual problem rather than a proxy for it.',
+        },
+        {
+          type: 'list' as const,
+          items: [
+            'VoC method selection determines which truths you are capable of discovering — use multiple methods, not just surveys',
+            'Gemba observation frequently reveals the gap between where customers say the problem is and where it actually occurs',
+            'Verbatim language preserves emotional intensity and operational specificity that summarized data loses — treat exact quotes as primary evidence',
+          ],
+        },
       ],
     },
     {
@@ -740,6 +911,25 @@ const module4 = {
             'Time-bounded: Includes a timeframe where relevant',
           ],
         },
+        { type: 'heading' as const, text: 'Real-World Application', level: 2 as const },
+        {
+          type: 'callout' as const,
+          variant: 'example' as const,
+          title: 'Case Study: Software-as-a-Service Company — CTQ Translation Prevents Feature Misdirection',
+          text: 'A B2B SaaS company was losing enterprise customers at a 23% annual churn rate, well above the 9% industry benchmark. Exit surveys cited "the system is too slow" as the primary complaint. The product team\'s initial response was to invest $1.2M in database infrastructure upgrades. A Six Sigma team built CTQ trees from 28 customer interviews to translate "slow" into measurable requirements. The CTQ analysis revealed three distinct drivers: dashboard load time (driver 1: CTQ = "initial dashboard renders in under 2.5 seconds, 99% of sessions"), report generation time (driver 2: CTQ = "standard reports generate in under 45 seconds"), and API response time for integration calls (driver 3: CTQ = "API calls complete in under 200ms, 99.5th percentile"). Baseline measurement showed dashboard load averaged 4.1 seconds (failing), reports averaged 38 seconds (passing), and API latency averaged 340ms (failing). The infrastructure investment was scoped to the two failing CTQs — reducing cost from $1.2M to $390,000 — and churn fell from 23% to 14% within two renewal cycles.',
+        },
+        {
+          type: 'paragraph' as const,
+          text: 'The CTQ translation process in this case prevented the company from spending $810,000 improving a system component that was already meeting customer requirements. "The system is too slow" is not actionable — "dashboard renders in under 2.5 seconds, 99% of sessions" is. CTQ trees transform customer emotion into engineering specifications with tolerances, enabling precise investment decisions. The three-driver analysis also revealed that different customer roles had different performance requirements — enterprise admins cared about API latency while operations users cared about dashboard speed.',
+        },
+        {
+          type: 'list' as const,
+          items: [
+            'CTQ translation changes an open-ended improvement mandate into a specific, testable performance target',
+            'Multiple quality drivers often hide within a single customer complaint — building CTQ trees to the third level surfaces this complexity',
+            'Baseline measurement against CTQ specifications reveals which aspects are actually failing, enabling surgically scoped improvement investment',
+          ],
+        },
       ],
     },
     {
@@ -779,6 +969,25 @@ const module4 = {
           variant: 'tip' as const,
           title: 'Practical Implication',
           text: 'Six Sigma projects should first ensure all Must-Be attributes meet baseline requirements (failure here is catastrophic to satisfaction). Then optimize Performance attributes where improvement resources yield the greatest return. Delighters, while valuable for differentiation, should not distract from fixing failing basics.',
+        },
+        { type: 'heading' as const, text: 'Real-World Application', level: 2 as const },
+        {
+          type: 'callout' as const,
+          variant: 'example' as const,
+          title: 'Case Study: Hotel Chain — Kano Model Rescues Misallocated Renovation Budget',
+          text: 'A mid-market hotel chain was planning a $14M renovation program focused on lobby redesign and restaurant upgrades — classified internally as "guest experience enhancements." A Kano study of 1,200 guests across 18 properties categorized attributes by satisfaction impact. The analysis revealed that lobby aesthetics and food quality were Performance attributes with moderate satisfaction leverage — but three Must-Be attributes were actively failing: in-room Wi-Fi reliability (speeds below 5 Mbps in 34% of rooms), HVAC responsiveness (average 48-minute temperature correction time), and shower water pressure (below guest threshold in 22% of rooms). Each failing Must-Be was generating an average NPS deduction of 18 points per incident. The renovation budget was reallocated: $7.2M to the failing Must-Bes and $4.8M to high-ROI Performance attributes, reducing the lobby spend to $2M. Post-renovation NPS improved 24 points versus the 8-point gain projected under the original plan, with estimated revenue lift of $6.3M from improved retention.',
+        },
+        {
+          type: 'paragraph' as const,
+          text: 'The hotel renovation case demonstrates that the Kano model is not just a framework for customer insight — it is a capital allocation tool. Investing in Performance attributes while Must-Be attributes are failing produces minimal satisfaction return because customers\'s baseline needs are unmet. The NPS data in this case was particularly powerful: it quantified the satisfaction cost of each Must-Be failure, enabling the finance team to build a direct ROI case for infrastructure investment over aesthetics.',
+        },
+        {
+          type: 'list' as const,
+          items: [
+            'Failing Must-Be attributes impose a ceiling on satisfaction regardless of how well Performance and Delighter attributes perform',
+            'Kano studies should be conducted before major investment decisions — the model\'s value is in redirecting resources, not just categorizing features',
+            'Delighter attributes from competitor launches can become Must-Bes within 24-36 months — Kano surveys should be repeated every 2 years for dynamic markets',
+          ],
         },
       ],
     },
@@ -887,6 +1096,25 @@ const module5 = {
           title: 'How to Use a Fishbone Effectively',
           text: 'Place the problem (effect) at the fish\'s head. Draw the major cause categories as bones. Brainstorm specific potential causes under each category using "why" questions. Then — critically — use data to test which causes are actually correlated with the problem. A fishbone generates hypotheses; data tests them.',
         },
+        { type: 'heading' as const, text: 'Real-World Application', level: 2 as const },
+        {
+          type: 'callout' as const,
+          variant: 'example' as const,
+          title: 'Case Study: Medical Device Assembly — Fishbone Redirects Investigation, Saves 8 Weeks',
+          text: 'A medical device manufacturer was experiencing a 6.8% defect rate on catheter tip bonding assemblies — well above its 1.0% CTQ specification. The operations team\'s prevailing hypothesis was that the UV curing equipment (Machine category) was the cause, and a $210,000 equipment replacement had been budgeted. A Black Belt facilitated a 6M fishbone session with cross-functional team members, including QA, materials, and a process engineer who rarely attended root-cause meetings. The Materials bone revealed that a new adhesive lot from an alternate supplier had been introduced 6 weeks earlier — precisely when the defect rate climbed. Data collection stratified by adhesive lot confirmed that Lot A (original supplier) showed 0.8% defect rate versus 7.1% for Lot B (alternate supplier). The root cause was adhesive viscosity out of specification for the cure process parameters. Returning to the original supplier reduced the defect rate to 0.7% within one production week — at zero capital cost.',
+        },
+        {
+          type: 'paragraph' as const,
+          text: 'The fishbone\'s value in this case was structural: it forced the team to systematically consider causes across all six categories before committing to the intuitive Machine hypothesis. The Materials bone created space for the new adhesive supplier information to emerge from a team member who might not have volunteered it in an unstructured discussion. Without the fishbone framework, the team\'s confirmation bias toward the Machine category would likely have led to an expensive equipment replacement that did not address the actual root cause.',
+        },
+        {
+          type: 'list' as const,
+          items: [
+            'Fishbone diagrams are most valuable when they include people closest to the process — their operational knowledge surfaces causes that statistical analysis alone cannot identify',
+            'All 6M categories must be populated before investigation priorities are set — skipping categories introduces systematic blind spots',
+            'The fishbone generates hypotheses; it does not confirm them — every potential cause requires data validation before conclusions are drawn',
+          ],
+        },
       ],
     },
     {
@@ -928,6 +1156,25 @@ const module5 = {
             'Collect data and apply the appropriate statistical test',
             'Interpret the p-value: if p < 0.05, reject H0 and accept the relationship',
             'Confirm practical significance — statistical significance alone is not enough',
+          ],
+        },
+        { type: 'heading' as const, text: 'Real-World Application', level: 2 as const },
+        {
+          type: 'callout' as const,
+          variant: 'example' as const,
+          title: 'Case Study: Call Center — Hypothesis Testing Overturns Consensus Root Cause',
+          text: 'A telecommunications call center had an average handle time (AHT) of 8.4 minutes against a target of 6.0 minutes. Management and supervisors unanimously believed the cause was agent inexperience — the center had hired 140 new agents in the past 18 months. A 5 Whys analysis supported this hypothesis: AHT is high → agents don\'t know the system → they were recently hired → training was compressed due to rapid growth. The DMAIC team formed the hypothesis statistically: H0 = no difference in AHT between agents with < 6 months tenure and ≥ 6 months tenure; H1 = experienced agents have lower AHT. A two-sample t-test on 4,200 call records produced p = 0.41 — failing to reject H0. Tenure had no statistically significant effect on handle time. A subsequent regression analysis identified billing dispute call types (constituting 29% of volume) as the significant predictor (R² = 0.68, p < 0.001). Billing dispute calls averaged 13.7 minutes due to a 4-step manual account lookup process. Redesigning the lookup tool reduced billing dispute AHT to 7.2 minutes, bringing overall AHT to 5.9 minutes and saving $1.6M in annual staffing costs.',
+        },
+        {
+          type: 'paragraph' as const,
+          text: 'The call center case demonstrates hypothesis testing\'s most important function: protecting the team from implementing solutions based on compelling but incorrect narratives. The "new agent" hypothesis was logical, supported by subject-matter experts, and confirmed by 5 Whys — yet the data rejected it. Statistical hypothesis testing is the safeguard that prevents consensus from becoming a substitute for evidence. The practical significance check also mattered: the regression identified billing disputes as statistically significant and practically significant (29% of call volume, 13.7-minute average) — a combination that justified the tool redesign investment.',
+        },
+        {
+          type: 'list' as const,
+          items: [
+            'Hypothesis testing must be conducted even when the root cause seems obvious — strong consensus often prevents teams from finding the actual cause',
+            'A statistically non-significant result (p > 0.05) is informative — it rules out a suspected cause and redirects the investigation',
+            'Practical significance (effect size, business impact) must accompany statistical significance — a statistically real but tiny effect may not justify an improvement investment',
           ],
         },
       ],
@@ -973,6 +1220,25 @@ const module5 = {
             ['Occurrence (O)', 'How often does this failure mode happen?', '1=Rare → 10=Inevitable'],
             ['Detection (D)', 'How likely are current controls to catch this before it reaches the customer?', '1=Always detected → 10=Never detected'],
             ['RPN', 'Overall risk priority (S × O × D)', 'Higher RPN = higher priority'],
+          ],
+        },
+        { type: 'heading' as const, text: 'Real-World Application', level: 2 as const },
+        {
+          type: 'callout' as const,
+          variant: 'example' as const,
+          title: 'Case Study: Aerospace Fastener Manufacturer — Stratification Identifies Shift-3 Root Cause',
+          text: 'An aerospace fastener manufacturer supplying critical airframe components had an aggregate non-conformance rate of 3.1% — exceeding the customer\'s 1.5% CTQ limit. FMEA had identified dimensional tolerance drift as the highest-RPN failure mode (S=9, O=4, D=3, RPN=108). Before investing in the FMEA-prioritized mitigation actions, the team stratified dimensional non-conformance data by shift, machine, and operator. The stratification revealed that Shift 3 alone accounted for 71% of all non-conformances (8.9% rate versus 0.7% and 0.8% for Shifts 1 and 2). Further stratification within Shift 3 by machine showed the pattern was machine-independent — all four machines showed the same elevated rate on Shift 3. The root cause was found in the coolant concentration check: Shift 3\'s lead operator had been diluting the coolant mixture incorrectly for 14 weeks, accelerating tool wear uniformly across all machines. Correcting the coolant procedure reduced overall non-conformance to 0.9% within 3 weeks, achieving 4.5 sigma performance.',
+        },
+        {
+          type: 'paragraph' as const,
+          text: 'This case shows stratification and FMEA working together as complementary tools. The FMEA correctly identified dimensional tolerance drift as the highest-risk failure mode — but stratification was needed to explain why the drift was occurring and in which operational context it concentrated. Stratifying by shift, then by machine within shift, produced a Sherlock Holmes-style deductive sequence that pinpointed the root cause in hours rather than weeks. Without stratification, the team would have invested in general maintenance across all machines and all shifts — expensive, slow, and unlikely to fully resolve the concentrated problem.',
+        },
+        {
+          type: 'list' as const,
+          items: [
+            'Always stratify before concluding that a problem is uniformly distributed — concentration in a specific segment is the most actionable form of data',
+            'FMEA identifies what can fail; stratification identifies where and when it actually fails — combining them accelerates root-cause confirmation',
+            'Machine-independent variation within a single shift is a powerful signature that points to shift-specific practices rather than equipment-specific causes',
           ],
         },
       ],
@@ -1090,6 +1356,25 @@ const module6 = {
           variant: 'info' as const,
           title: 'Typical Project Financial Targets by Belt',
           text: 'While organizations vary, common targets are: Green Belt projects — $50,000 to $150,000 in annual savings; Black Belt projects — $150,000 to $500,000+ in annual savings. Master Black Belts focus on strategic impact and capability development rather than single project savings.',
+        },
+        { type: 'heading' as const, text: 'Real-World Application', level: 2 as const },
+        {
+          type: 'callout' as const,
+          variant: 'example' as const,
+          title: 'Case Study: Healthcare System — Belt Structure Scales Quality Impact Across 14 Hospitals',
+          text: 'A multi-hospital healthcare system launched a Six Sigma deployment in 2018 with 4 Master Black Belts, 22 Black Belts, and a goal of certifying 180 Green Belts across 14 facilities over 3 years. The MBBs developed standardized training and scoped the Black Belt project portfolio to 8 high-priority strategic initiatives — including sepsis mortality reduction, OR scheduling efficiency, and supply chain waste. Green Belts led 94 smaller projects within departments, typically targeting $40,000–$120,000 in annual savings. After 3 years, the system documented $31M in validated financial benefits: $18.4M from the 8 Black Belt projects and $12.6M from 94 Green Belt projects. The sepsis project alone (a Black Belt / MBB collaboration) reduced 30-day mortality by 18% and saved $4.2M in avoided ICU days. Champions — Chief Medical Officers at each hospital — held monthly tollgate reviews that maintained project momentum and prevented scope drift.',
+        },
+        {
+          type: 'paragraph' as const,
+          text: 'The healthcare system deployment illustrates how the belt hierarchy creates a scalable, tiered quality capability rather than a centralized expert team. MBBs provided the intellectual infrastructure (tools, training, portfolio strategy); Black Belts tackled the high-complexity, high-impact problems; Green Belts generated distributed improvements across every department. The Champion role at the executive level was the critical enabling factor — without CMO-level engagement, the projects would have faced institutional resistance that no technical methodology could overcome.',
+        },
+        {
+          type: 'list' as const,
+          items: [
+            'The belt hierarchy works only when each level has clearly defined project scope and accountability — ambiguity about who leads which project produces conflict and stalled work',
+            'MBBs deliver disproportionate value through capability development and portfolio strategy rather than individual projects — measure their impact by the output of the belts they develop',
+            'Champion engagement is the highest-leverage factor in deployment ROI — executive sponsorship clears organizational obstacles that technical skill alone cannot remove',
+          ],
         },
       ],
     },
