@@ -1416,6 +1416,25 @@ const module6 = {
           title: 'Project Selection in Practice',
           text: 'A financial services firm identifies three candidate projects: (1) Reduce loan application processing time from 12 days to 5 days — $800K annual revenue impact, (2) Reduce paper usage in the mailroom — $15K annual savings, (3) Improve quarterly report formatting — subjective benefit. Project 1 is the right Six Sigma project. Project 2 might be a quick win. Project 3 is not a Six Sigma project at all.',
         },
+        { type: 'heading' as const, text: 'Real-World Application', level: 2 as const },
+        {
+          type: 'callout' as const,
+          variant: 'example' as const,
+          title: 'Case Study: Global Manufacturer — Project Selection Audit Recovers Stalled Six Sigma Program',
+          text: 'A global industrial equipment manufacturer had 34 active Six Sigma projects across 9 plants but was struggling to demonstrate ROI after two years of investment. An external MBB conducted a project portfolio audit and found that 21 of 34 projects failed at least one key selection criterion: 8 had known solutions being dressed up as DMAIC investigations, 7 had scope exceeding 12 months with no phase gate discipline, and 6 addressed problems with insufficient financial impact (under $30,000 each). The audit recommended closing 19 projects, narrowing the portfolio to 15 well-scoped, strategically aligned projects. The 15 retained projects collectively delivered $4.8M in validated annual savings over the following 12 months — 3.2× the program\'s total two-year return up to that point. The key finding: project selection quality, not project execution quality, was the binding constraint on the program\'s ROI.',
+        },
+        {
+          type: 'paragraph' as const,
+          text: 'The portfolio audit case demonstrates that more projects are not better — well-selected projects are better. The manufacturer\'s program had abundant technical talent but had delegated project selection to local managers who prioritized visibility and activity over strategic impact. Closing 19 projects was politically difficult but financially essential. The criterion "unknown root cause" proved particularly revealing: 8 projects where solutions were already decided were essentially training exercises disguised as DMAIC — consuming Black Belt capacity with no investigative value.',
+        },
+        {
+          type: 'list' as const,
+          items: [
+            'Project selection is a strategic governance function — it should never be fully delegated to individual managers or self-selected by Belt candidates',
+            'The "unknown root cause" criterion is the clearest line between a true DMAIC project and a just-do-it implementation dressed in Six Sigma language',
+            'Portfolio audits should be conducted annually — project quality drifts over time as organizational pressures push teams toward volume over value',
+          ],
+        },
       ],
     },
     {
@@ -1455,6 +1474,25 @@ const module6 = {
             'Lack of Champion engagement: Projects stall when Champions don\'t actively remove barriers',
             'Ignoring change management: Technical solutions fail when people aren\'t brought along',
             'Measuring belt counts, not business impact: Deployments that celebrate certifications without tracking financial results lose executive support quickly',
+          ],
+        },
+        { type: 'heading' as const, text: 'Real-World Application', level: 2 as const },
+        {
+          type: 'callout' as const,
+          variant: 'example' as const,
+          title: 'Case Study: Diversified Financial Services Firm — Hoshin Kanri Alignment Multiplies Six Sigma ROI',
+          text: 'A diversified financial services firm with $9B in assets under management launched Six Sigma in 2015 without strategic alignment — projects were selected by department heads based on internal pain points. By 2017, the program had certified 48 Green Belts and 11 Black Belts but executive support was waning: 38 completed projects had generated only $2.1M in total savings against $3.4M in program investment costs. In 2018, the new COO restructured the deployment using Hoshin Kanri: strategic priorities (reduce operational cost per transaction by 15%, improve client onboarding SLA compliance from 71% to 90%, reduce regulatory finding rate by 40%) were cascaded to Champion-level improvement targets, which then drove project selection. The 2019-2020 portfolio of 19 projects, all directly linked to strategic objectives, delivered $11.4M in validated savings — a 5.4× ROI on program costs.',
+        },
+        {
+          type: 'paragraph' as const,
+          text: 'The financial services case illustrates the difference between a Six Sigma program and a Six Sigma deployment. A program trains people and runs projects; a deployment systematically connects improvement effort to strategic outcomes. Hoshin Kanri provided the mechanism for cascade: each strategic priority had a measurable target, each target had a Champion accountable for it, and each Champion worked with MBBs to scope projects that genuinely moved the strategic needle. The 5.4× ROI was not due to better Black Belts — it was due to better project selection driven by strategic clarity.',
+        },
+        {
+          type: 'list' as const,
+          items: [
+            'Six Sigma ROI is primarily determined by project selection strategy, not individual project execution quality',
+            'Hoshin Kanri creates a visible chain from corporate strategy to individual projects — any project that cannot be traced to a strategic objective should be scrutinized',
+            'Tracking program ROI (savings ÷ total program cost) annually is essential to maintaining executive commitment — programs that cannot demonstrate positive ROI lose funding regardless of their qualitative benefits',
           ],
         },
       ],

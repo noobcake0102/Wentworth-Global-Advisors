@@ -1,20 +1,6 @@
 import type { Course } from '../types/course';
 import { yellowBeltCourse } from './yellowBelt';
-
-// LSS Certification Track
-export const greenBeltCourse: Course = {
-  id: 'green-belt',
-  belt: 'green',
-  track: 'lss-certification',
-  title: 'Green Belt',
-  subtitle: 'Lean Six Sigma Practitioner',
-  description: 'Lead improvement projects with advanced statistical tools, project management skills, and deeper Lean methodology. Designed for practitioners ready to drive cross-functional change.',
-  status: 'coming-soon',
-  estimatedHours: 40,
-  color: '#4caf82',
-  icon: '🟢',
-  modules: [],
-};
+import { greenBeltCourse } from './greenBelt';
 
 export const blackBeltCourse: Course = {
   id: 'black-belt',
