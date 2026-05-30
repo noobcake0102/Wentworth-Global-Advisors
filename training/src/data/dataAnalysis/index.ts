@@ -1,0 +1,1051 @@
+import type { Course } from '../../types/course';
+
+export const dataAnalysisCourse: Course = {
+  id: 'data-analysis',
+  track: 'data-management',
+  title: 'Data Analysis & Visualization',
+  subtitle: 'Turning Data into Decisions',
+  description:
+    'Develop the skills to collect, clean, analyze, and visualize data effectively. Learn SQL, statistical reasoning, visualization best practices, and how to communicate findings to any audience.',
+  status: 'available',
+  estimatedHours: 6,
+  color: '#f5a623',
+  icon: '📊',
+  modules: [
+    {
+      id: 'da-m1',
+      number: 1,
+      title: 'Foundations of Data Analysis',
+      description:
+        'Establish the conceptual groundwork for data analysis: the difference between descriptive and inferential approaches, data types, measurement scales, and how to frame business questions analytically.',
+      estimatedMinutes: 55,
+      learningObjectives: [
+        'Distinguish descriptive from inferential analysis and give examples of each',
+        'Classify data by type: quantitative vs. qualitative, discrete vs. continuous',
+        'Identify the four measurement scales: nominal, ordinal, interval, and ratio',
+        'Map a business question to an analytical approach',
+        'Describe the end-to-end data analysis workflow',
+      ],
+      lessons: [
+        {
+          id: 'da-m1-l1',
+          title: 'Descriptive vs. Inferential Analysis',
+          estimatedMinutes: 14,
+          content: [
+            {
+              type: 'paragraph' as const,
+              text: 'Data analysis broadly divides into two types: descriptive and inferential. Descriptive analysis summarizes what happened — it describes the data in front of you. Inferential analysis goes further, using sample data to draw conclusions or make predictions about a broader population. Both are essential in practice, and the distinction shapes what statistical tools you reach for.',
+            },
+            {
+              type: 'heading' as const,
+              text: 'Descriptive Analysis',
+              level: 2 as const,
+            },
+            {
+              type: 'paragraph' as const,
+              text: 'Descriptive analysis answers questions like "What were our total sales last quarter?" or "What is the average customer age?" It does not attempt to explain why something happened or predict what will happen. Common tools include counts, sums, averages, percentiles, frequency distributions, and visualizations like histograms and bar charts.',
+            },
+            {
+              type: 'heading' as const,
+              text: 'Inferential Analysis',
+              level: 2 as const,
+            },
+            {
+              type: 'paragraph' as const,
+              text: 'Inferential analysis uses a sample to make statements about a population. "Did the A/B test variant significantly increase conversion rate?" requires inference — you\'ve observed a sample, and you want to know if the observed difference is real or just chance. This domain includes hypothesis testing, confidence intervals, regression, and machine learning.',
+            },
+            {
+              type: 'callout' as const,
+              variant: 'info' as const,
+              title: 'Diagnostic & Predictive Analysis',
+              text: 'Beyond descriptive and inferential, analysts often distinguish diagnostic analysis (why did it happen? — root cause investigation) and predictive analysis (what will happen? — forecasting, ML models). Prescriptive analysis goes further: what should we do? These types form a hierarchy of analytical sophistication.',
+            },
+          ],
+        },
+        {
+          id: 'da-m1-l2',
+          title: 'Data Types & Measurement Scales',
+          estimatedMinutes: 14,
+          content: [
+            {
+              type: 'paragraph' as const,
+              text: 'Not all data is the same. Knowing the type and measurement scale of your data determines which statistical operations are valid and which visualizations make sense. Applying the wrong operation — calculating the mean of a categorical variable, for instance — produces meaningless results.',
+            },
+            {
+              type: 'heading' as const,
+              text: 'The Four Measurement Scales',
+              level: 2 as const,
+            },
+            {
+              type: 'table' as const,
+              headers: ['Scale', 'Properties', 'Examples', 'Valid Operations'],
+              rows: [
+                ['Nominal', 'Categories with no order', 'Gender, country, product category', 'Mode, frequency count'],
+                ['Ordinal', 'Ordered categories, unequal intervals', 'Survey ratings (1–5), education level', 'Median, percentiles, mode'],
+                ['Interval', 'Equal intervals, no true zero', 'Temperature (°C/°F), calendar year', 'Mean, standard deviation, addition/subtraction'],
+                ['Ratio', 'Equal intervals + true zero', 'Revenue, age, height, quantity', 'All operations including multiplication/ratios'],
+              ],
+            },
+            {
+              type: 'callout' as const,
+              variant: 'warning' as const,
+              title: 'The Likert Scale Debate',
+              text: 'Customer satisfaction surveys often use Likert scales: "Rate 1–5." Strictly, this is ordinal — the gap between 2 and 3 may not equal the gap between 4 and 5. However, in practice, analysts often treat Likert scales as interval and compute means. This is acceptable for large samples but should be noted as an assumption.',
+            },
+            {
+              type: 'key-terms' as const,
+              terms: [
+                {
+                  term: 'Quantitative Data',
+                  definition: 'Numeric data representing measurable quantities — age, revenue, temperature. Can be continuous (any value in a range) or discrete (whole number counts).',
+                },
+                {
+                  term: 'Qualitative Data',
+                  definition: 'Categorical data describing qualities or characteristics — product type, region, survey response. Also called categorical data.',
+                },
+                {
+                  term: 'True Zero',
+                  definition: 'A meaningful zero that indicates the complete absence of a quantity. Revenue of $0 means no revenue. Temperature of 0°C does NOT mean no temperature — it\'s just a reference point.',
+                },
+              ],
+            },
+          ],
+        },
+        {
+          id: 'da-m1-l3',
+          title: 'The Analysis Workflow',
+          estimatedMinutes: 14,
+          content: [
+            {
+              type: 'paragraph' as const,
+              text: 'Effective data analysis follows a repeatable workflow. Skipping steps — particularly the early ones — is the most common cause of analysis that produces technically correct but practically useless results. Starting with a clear business question anchors everything that follows.',
+            },
+            {
+              type: 'ordered-list' as const,
+              items: [
+                'Define the business question: What decision does this analysis inform? Who will act on it?',
+                'Identify data sources: What data exists? Where is it? How fresh and reliable is it?',
+                'Collect and load data: Extract data into your analysis environment (SQL, Python, Excel)',
+                'Explore and profile: Understand distributions, null rates, outliers, and data quality issues',
+                'Clean and prepare: Handle nulls, fix types, remove duplicates, join tables as needed',
+                'Analyze: Apply statistical methods, build visualizations, identify patterns',
+                'Interpret: Translate findings into business language; acknowledge limitations',
+                'Communicate: Present findings in a format appropriate for the audience',
+              ],
+            },
+            {
+              type: 'callout' as const,
+              variant: 'tip' as const,
+              title: 'Spend 80% on Steps 3–5',
+              text: 'Experienced analysts know that data collection, profiling, and cleaning consume far more time than the actual analysis. Raw data is almost always messier than expected. Rushing past these steps to reach "the interesting part" leads to garbage-in, garbage-out conclusions. Plan for cleaning to take 60–80% of the total project time.',
+            },
+          ],
+        },
+      ],
+      quiz: [
+        {
+          id: 'da-m1-q1',
+          type: 'multiple-choice' as const,
+          question: 'An analyst wants to know "What were total website visits last month?" This is an example of which type of analysis?',
+          options: ['Inferential', 'Predictive', 'Descriptive', 'Prescriptive'],
+          correctIndex: 2,
+          explanation: 'Summarizing what happened — total visits last month — is descriptive analysis. It describes the data without making inferences about a broader population or predicting future events.',
+        },
+        {
+          id: 'da-m1-q2',
+          type: 'multiple-choice' as const,
+          question: 'Which measurement scale has equal intervals between values AND a true zero?',
+          options: ['Nominal', 'Ordinal', 'Interval', 'Ratio'],
+          correctIndex: 3,
+          explanation: 'Ratio scale data has equal intervals and a true zero — meaning zero indicates a complete absence of the quantity. Revenue, age, and height are ratio scale variables.',
+        },
+        {
+          id: 'da-m1-q3',
+          type: 'true-false' as const,
+          question: 'Temperature measured in Celsius is a ratio scale variable because it has a zero point.',
+          options: ['True', 'False'],
+          correctIndex: 1,
+          explanation: 'False. Celsius is an interval scale, not ratio. 0°C does not mean "no temperature" — it\'s an arbitrary reference point. Kelvin (absolute zero = absence of thermal energy) is a ratio scale.',
+        },
+        {
+          id: 'da-m1-q4',
+          type: 'multiple-choice' as const,
+          question: 'Using a sample to determine whether an A/B test result is statistically significant is an example of:',
+          options: ['Descriptive analysis', 'Inferential analysis', 'Diagnostic analysis', 'Exploratory data analysis'],
+          correctIndex: 1,
+          explanation: 'Inferential analysis uses sample data to draw conclusions about a broader population or test hypotheses. Determining A/B test significance uses statistical inference to decide if an observed difference is real.',
+        },
+        {
+          id: 'da-m1-q5',
+          type: 'true-false' as const,
+          question: 'In a typical data analysis project, the data cleaning and preparation phases should take less than 10% of total time.',
+          options: ['True', 'False'],
+          correctIndex: 1,
+          explanation: 'False. In practice, data collection, profiling, and cleaning typically consume 60–80% of a project\'s time. Real-world data is rarely clean, and rushing past these phases undermines the validity of the analysis.',
+        },
+      ],
+    },
+    {
+      id: 'da-m2',
+      number: 2,
+      title: 'Structuring & Querying Data with SQL',
+      description:
+        'Master the SQL skills that analysts use daily: filtering, aggregating, joining tables, using window functions, and structuring complex queries with CTEs.',
+      estimatedMinutes: 65,
+      learningObjectives: [
+        'Write SELECT queries with WHERE, ORDER BY, and LIMIT clauses',
+        'Use GROUP BY with aggregate functions to summarize data',
+        'Perform INNER, LEFT, and other JOIN types to combine tables',
+        'Write subqueries and Common Table Expressions (CTEs)',
+        'Apply window functions for running totals, rankings, and period comparisons',
+      ],
+      lessons: [
+        {
+          id: 'da-m2-l1',
+          title: 'SELECT, WHERE, and Aggregations',
+          estimatedMinutes: 16,
+          content: [
+            {
+              type: 'paragraph' as const,
+              text: 'SQL (Structured Query Language) is the lingua franca of data analysis. Every data analyst, regardless of their preferred tool, needs to be fluent in SQL. The SELECT statement is the foundation: it retrieves rows from one or more tables. Combined with WHERE, GROUP BY, and aggregate functions, SQL can answer almost any business question stored in a relational database.',
+            },
+            {
+              type: 'heading' as const,
+              text: 'Core SELECT Clauses',
+              level: 2 as const,
+            },
+            {
+              type: 'table' as const,
+              headers: ['Clause', 'Purpose', 'Example'],
+              rows: [
+                ['SELECT', 'Choose which columns to return', 'SELECT customer_id, revenue'],
+                ['FROM', 'Specify the source table', 'FROM orders'],
+                ['WHERE', 'Filter rows based on a condition', 'WHERE status = \'completed\''],
+                ['GROUP BY', 'Aggregate rows by one or more columns', 'GROUP BY region'],
+                ['HAVING', 'Filter groups after aggregation (like WHERE for groups)', 'HAVING SUM(revenue) > 10000'],
+                ['ORDER BY', 'Sort the result set', 'ORDER BY total_revenue DESC'],
+                ['LIMIT', 'Restrict number of rows returned', 'LIMIT 100'],
+              ],
+            },
+            {
+              type: 'callout' as const,
+              variant: 'tip' as const,
+              title: 'Aggregate Functions',
+              text: 'The most common aggregate functions are COUNT() (number of rows), SUM() (total), AVG() (average), MIN() and MAX() (extremes). COUNT(*) counts all rows; COUNT(column) counts non-null values only — an important distinction.',
+            },
+            {
+              type: 'paragraph' as const,
+              text: 'The logical order of SQL execution is different from the order you write it: FROM and JOINs run first, then WHERE filters, then GROUP BY aggregates, then HAVING filters groups, then SELECT picks columns, then ORDER BY sorts, and finally LIMIT restricts rows. Understanding this order explains why you cannot use a SELECT alias in a WHERE clause.',
+            },
+          ],
+        },
+        {
+          id: 'da-m2-l2',
+          title: 'JOINs and Subqueries',
+          estimatedMinutes: 17,
+          content: [
+            {
+              type: 'paragraph' as const,
+              text: 'Most analytical questions require combining data from multiple tables. JOINs allow you to combine rows from two or more tables based on a matching column. Understanding the different join types is critical for avoiding silent data errors like unintentionally excluding rows or creating duplicate records.',
+            },
+            {
+              type: 'heading' as const,
+              text: 'JOIN Types',
+              level: 2 as const,
+            },
+            {
+              type: 'table' as const,
+              headers: ['Join Type', 'Returns', 'Use Case'],
+              rows: [
+                ['INNER JOIN', 'Only rows that match in BOTH tables', 'Find customers who have placed orders'],
+                ['LEFT JOIN', 'All rows from left table + matching from right (NULL if no match)', 'All customers, with order data where available'],
+                ['RIGHT JOIN', 'All rows from right table + matching from left', 'Rare — usually rewritten as LEFT JOIN'],
+                ['FULL OUTER JOIN', 'All rows from both tables (NULL where no match)', 'Compare two datasets, find all discrepancies'],
+                ['CROSS JOIN', 'Every combination of rows from both tables', 'Generate date/product combinations'],
+              ],
+            },
+            {
+              type: 'callout' as const,
+              variant: 'warning' as const,
+              title: 'Many-to-Many Joins',
+              text: 'If you join two tables where both sides have multiple matching rows, you get a Cartesian explosion — each left row matches every right row. This silently inflates aggregates. Always check for duplicate keys before joining, or use aggregation to deduplicate first.',
+            },
+            {
+              type: 'paragraph' as const,
+              text: 'Subqueries embed one SELECT inside another. They can appear in WHERE clauses (to filter based on computed values), in FROM clauses (as derived tables), or in SELECT clauses (scalar subqueries). While powerful, deeply nested subqueries become hard to read — CTEs are often a cleaner alternative.',
+            },
+          ],
+        },
+        {
+          id: 'da-m2-l3',
+          title: 'Window Functions & CTEs',
+          estimatedMinutes: 16,
+          content: [
+            {
+              type: 'paragraph' as const,
+              text: 'Window functions perform calculations across rows that are related to the current row — without collapsing the rows together like GROUP BY does. They are among the most powerful tools in SQL for analytical work: running totals, rankings, period-over-period comparisons, and moving averages.',
+            },
+            {
+              type: 'heading' as const,
+              text: 'Common Window Functions',
+              level: 2 as const,
+            },
+            {
+              type: 'list' as const,
+              items: [
+                'ROW_NUMBER(): Assigns a unique sequential number to each row within a partition',
+                'RANK() / DENSE_RANK(): Rank rows by a value; RANK() skips numbers after ties, DENSE_RANK() does not',
+                'SUM() OVER (): Running total — cumulative sum partitioned and ordered by a column',
+                'LAG() / LEAD(): Access values from previous or next rows — ideal for period-over-period comparisons',
+                'NTILE(n): Divide rows into n equal-sized buckets (quartiles, deciles)',
+              ],
+            },
+            {
+              type: 'heading' as const,
+              text: 'Common Table Expressions (CTEs)',
+              level: 2 as const,
+            },
+            {
+              type: 'paragraph' as const,
+              text: 'A CTE (WITH clause) defines a named temporary result set that you can reference later in the same query. CTEs make complex queries dramatically more readable by breaking them into named, logical steps rather than nesting subqueries inside each other. Think of them like named variables in a programming language.',
+            },
+            {
+              type: 'callout' as const,
+              variant: 'example' as const,
+              title: 'CTE Example',
+              text: 'WITH monthly_revenue AS (SELECT DATE_TRUNC(\'month\', order_date) AS month, SUM(amount) AS revenue FROM orders GROUP BY 1), ranked AS (SELECT month, revenue, RANK() OVER (ORDER BY revenue DESC) AS rank FROM monthly_revenue) SELECT * FROM ranked WHERE rank <= 3 — this finds the top 3 revenue months cleanly, in readable steps.',
+            },
+          ],
+        },
+      ],
+      quiz: [
+        {
+          id: 'da-m2-q1',
+          type: 'multiple-choice' as const,
+          question: 'You want to find all customers regardless of whether they have placed orders. Which JOIN type should you use?',
+          options: ['INNER JOIN', 'LEFT JOIN (customers on the left)', 'CROSS JOIN', 'RIGHT JOIN (customers on the left)'],
+          correctIndex: 1,
+          explanation: 'A LEFT JOIN returns all rows from the left table (customers) plus matching rows from the right table (orders). Customers without orders will appear with NULL values in the order columns.',
+        },
+        {
+          id: 'da-m2-q2',
+          type: 'true-false' as const,
+          question: 'The HAVING clause filters individual rows before they are grouped by GROUP BY.',
+          options: ['True', 'False'],
+          correctIndex: 1,
+          explanation: 'False. HAVING filters groups after aggregation — it\'s like WHERE but for aggregate results. To filter individual rows before grouping, use WHERE.',
+        },
+        {
+          id: 'da-m2-q3',
+          type: 'multiple-choice' as const,
+          question: 'Which window function would you use to compare each month\'s revenue to the previous month\'s revenue?',
+          options: ['ROW_NUMBER()', 'NTILE()', 'LAG()', 'RANK()'],
+          correctIndex: 2,
+          explanation: 'LAG() accesses the value from a previous row in the result set. LAG(revenue, 1) OVER (ORDER BY month) retrieves the previous month\'s revenue, enabling period-over-period comparison.',
+        },
+        {
+          id: 'da-m2-q4',
+          type: 'multiple-choice' as const,
+          question: 'What is the primary advantage of CTEs (WITH clauses) over nested subqueries?',
+          options: [
+            'CTEs execute faster than subqueries',
+            'CTEs can only be used in SELECT statements',
+            'CTEs make complex queries more readable by breaking them into named logical steps',
+            'CTEs automatically cache results for reuse across sessions',
+          ],
+          correctIndex: 2,
+          explanation: 'The primary benefit of CTEs is readability. Named CTEs break complex queries into logical steps you can read top-to-bottom, replacing hard-to-follow nested subqueries with clearly named intermediate results.',
+        },
+        {
+          id: 'da-m2-q5',
+          type: 'true-false' as const,
+          question: 'COUNT(*) and COUNT(column_name) always return the same result.',
+          options: ['True', 'False'],
+          correctIndex: 1,
+          explanation: 'False. COUNT(*) counts all rows including those with NULL values. COUNT(column_name) counts only rows where that column is non-null. They differ whenever the column contains NULL values.',
+        },
+      ],
+    },
+    {
+      id: 'da-m3',
+      number: 3,
+      title: 'Statistical Concepts for Analysts',
+      description:
+        'Build the statistical intuition that separates good analysts from great ones: central tendency, spread, distributions, correlation, and the foundations of statistical significance.',
+      estimatedMinutes: 60,
+      learningObjectives: [
+        'Calculate and interpret mean, median, and mode — and know when to use each',
+        'Explain standard deviation and variance as measures of spread',
+        'Describe common statistical distributions and their properties',
+        'Distinguish correlation from causation and identify confounding variables',
+        'Interpret p-values and explain the concept of statistical significance',
+      ],
+      lessons: [
+        {
+          id: 'da-m3-l1',
+          title: 'Central Tendency & Spread',
+          estimatedMinutes: 15,
+          content: [
+            {
+              type: 'paragraph' as const,
+              text: 'Descriptive statistics summarize a dataset with a small number of meaningful values. The most fundamental are measures of central tendency — where is the "center" of the data? — and measures of spread — how dispersed is the data around that center?',
+            },
+            {
+              type: 'heading' as const,
+              text: 'Measures of Central Tendency',
+              level: 2 as const,
+            },
+            {
+              type: 'table' as const,
+              headers: ['Measure', 'Definition', 'Best Used When'],
+              rows: [
+                ['Mean', 'Sum of all values ÷ count', 'Data is symmetric, no extreme outliers'],
+                ['Median', 'Middle value when data is sorted', 'Data is skewed (e.g., incomes, housing prices)'],
+                ['Mode', 'Most frequently occurring value', 'Categorical data; finding the most common value'],
+              ],
+            },
+            {
+              type: 'callout' as const,
+              variant: 'example' as const,
+              title: 'Why Median Income, Not Mean Income?',
+              text: 'If 9 people earn $50,000 and one person earns $5,000,000, the mean income is $545,000 — a wildly misleading representation of typical earnings. The median income is $50,000, which actually reflects what most people earn. Skewed distributions like income make median far more informative than mean.',
+            },
+            {
+              type: 'heading' as const,
+              text: 'Measures of Spread',
+              level: 2 as const,
+            },
+            {
+              type: 'list' as const,
+              items: [
+                'Range: Maximum minus minimum — simplest but heavily influenced by outliers',
+                'Variance: Average of squared deviations from the mean — hard to interpret directly (units are squared)',
+                'Standard Deviation: Square root of variance — in original units, the most used spread measure',
+                'Interquartile Range (IQR): Difference between 75th and 25th percentiles — robust to outliers',
+              ],
+            },
+          ],
+        },
+        {
+          id: 'da-m3-l2',
+          title: 'Distributions & Correlation',
+          estimatedMinutes: 15,
+          content: [
+            {
+              type: 'paragraph' as const,
+              text: 'A distribution describes how values are spread across a range. Understanding the shape of a distribution tells you which statistical methods are appropriate and what patterns to expect. The normal distribution is the most famous — the "bell curve" — but real-world data often follows other patterns.',
+            },
+            {
+              type: 'table' as const,
+              headers: ['Distribution', 'Shape', 'Real-World Examples'],
+              rows: [
+                ['Normal', 'Symmetric bell curve', 'Heights, IQ scores, measurement errors'],
+                ['Right-skewed', 'Long tail to the right', 'Income, sales revenue, house prices'],
+                ['Left-skewed', 'Long tail to the left', 'Age at death in developed countries, exam scores (easy test)'],
+                ['Uniform', 'Flat — all values equally likely', 'Random number generation, dice rolls'],
+                ['Bimodal', 'Two peaks', 'Product ratings (love it / hate it), heights of mixed genders'],
+              ],
+            },
+            {
+              type: 'heading' as const,
+              text: 'Correlation',
+              level: 2 as const,
+            },
+            {
+              type: 'paragraph' as const,
+              text: 'Correlation measures the strength and direction of a linear relationship between two variables. The Pearson correlation coefficient (r) ranges from -1 to +1. r = +1 means perfect positive correlation; r = -1 means perfect negative correlation; r = 0 means no linear relationship. Correlations between 0.7 and 1.0 are generally considered strong.',
+            },
+            {
+              type: 'callout' as const,
+              variant: 'warning' as const,
+              title: 'Correlation ≠ Causation',
+              text: 'Two variables can be correlated without one causing the other. Ice cream sales and drowning rates both rise in summer — because summer is a confounding variable causing both. Before claiming causation, you need experimental evidence (randomized controlled trials) or rigorous statistical controls, not just a correlation.',
+            },
+          ],
+        },
+        {
+          id: 'da-m3-l3',
+          title: 'P-Values & Statistical Significance',
+          estimatedMinutes: 15,
+          content: [
+            {
+              type: 'paragraph' as const,
+              text: 'Statistical significance testing helps analysts determine whether an observed effect is likely to be real or just the result of random chance. The p-value is the probability of observing a result as extreme as the one observed, assuming the null hypothesis is true. Small p-values suggest the result is unlikely to be random.',
+            },
+            {
+              type: 'heading' as const,
+              text: 'Interpreting P-Values',
+              level: 2 as const,
+            },
+            {
+              type: 'callout' as const,
+              variant: 'info' as const,
+              title: 'The 0.05 Threshold',
+              text: 'By convention, a p-value below 0.05 is considered "statistically significant" — meaning there is less than a 5% chance of seeing this result if there were no real effect. This threshold is arbitrary but widely adopted. Many fields now require p < 0.01 or p < 0.001 for stronger evidence.',
+            },
+            {
+              type: 'list' as const,
+              items: [
+                'p < 0.05: Statistically significant at the 5% level — commonly the threshold for "real" effects',
+                'p > 0.05: Fail to reject the null hypothesis — not enough evidence of an effect',
+                'p-value does NOT measure effect size — a tiny, meaningless difference can be statistically significant with a large sample',
+                'Statistical significance ≠ practical significance — always consider effect size and business impact',
+              ],
+            },
+            {
+              type: 'key-terms' as const,
+              terms: [
+                {
+                  term: 'Null Hypothesis',
+                  definition: 'The default assumption that there is no effect or difference. Statistical tests evaluate whether the data provides enough evidence to reject this assumption.',
+                },
+                {
+                  term: 'Confidence Interval',
+                  definition: 'A range of values within which the true population parameter is estimated to fall with a given probability (e.g., "95% CI: 12% to 18% conversion rate increase").',
+                },
+                {
+                  term: 'Type I Error',
+                  definition: 'Falsely rejecting the null hypothesis when it is true — a false positive. The probability of a Type I error equals the significance level (alpha).',
+                },
+              ],
+            },
+          ],
+        },
+      ],
+      quiz: [
+        {
+          id: 'da-m3-q1',
+          type: 'multiple-choice' as const,
+          question: 'You are reporting typical customer purchase value for a dataset with many very large outliers. Which measure of central tendency should you use?',
+          options: ['Mean', 'Median', 'Mode', 'Standard deviation'],
+          correctIndex: 1,
+          explanation: 'Median is the appropriate measure of central tendency for skewed data with outliers. Large outliers pull the mean upward, making it unrepresentative of typical behavior. The median — the middle value — is unaffected by extreme values.',
+        },
+        {
+          id: 'da-m3-q2',
+          type: 'true-false' as const,
+          question: 'A correlation coefficient of -0.85 indicates a weaker relationship than a correlation of +0.60.',
+          options: ['True', 'False'],
+          correctIndex: 1,
+          explanation: 'False. The strength of a correlation is measured by the absolute value of the coefficient. |-0.85| = 0.85 is stronger than |+0.60| = 0.60. The negative sign indicates direction (inverse relationship), not weakness.',
+        },
+        {
+          id: 'da-m3-q3',
+          type: 'multiple-choice' as const,
+          question: 'Ice cream sales and drowning deaths are positively correlated. This most likely means:',
+          options: [
+            'Eating ice cream causes drowning',
+            'Drowning risk causes people to buy more ice cream',
+            'Both are caused by a third variable — summer — making it a spurious correlation',
+            'The correlation is mathematically incorrect',
+          ],
+          correctIndex: 2,
+          explanation: 'This is a classic example of a spurious correlation caused by a confounding variable. Hot summer weather independently increases both ice cream consumption and outdoor swimming (and thus drowning risk). One does not cause the other.',
+        },
+        {
+          id: 'da-m3-q4',
+          type: 'multiple-choice' as const,
+          question: 'A p-value of 0.03 in an A/B test means:',
+          options: [
+            'There is a 3% chance the test variant is better than the control',
+            'There is a 97% chance the result is due to random chance',
+            'There is a 3% probability of observing this result (or more extreme) if there were no real difference',
+            'The effect size is 3%',
+          ],
+          correctIndex: 2,
+          explanation: 'A p-value of 0.03 means: if the null hypothesis were true (no real difference), there would only be a 3% chance of observing a result this extreme or more extreme. Because this is below 0.05, we reject the null hypothesis.',
+        },
+        {
+          id: 'da-m3-q5',
+          type: 'true-false' as const,
+          question: 'A statistically significant result always has practical business significance.',
+          options: ['True', 'False'],
+          correctIndex: 1,
+          explanation: 'False. With large samples, even tiny, meaningless differences become statistically significant. A 0.001% improvement in conversion rate might be statistically significant with millions of users but have zero meaningful business impact. Always evaluate effect size alongside statistical significance.',
+        },
+      ],
+    },
+    {
+      id: 'da-m4',
+      number: 4,
+      title: 'Data Visualization Principles',
+      description:
+        'Learn to choose the right chart type, apply design principles that enhance clarity, use color effectively, and build accessible visualizations that communicate data honestly.',
+      estimatedMinutes: 60,
+      learningObjectives: [
+        'Select the appropriate chart type for different data relationships and questions',
+        'Apply Tufte\'s data-ink ratio principle to reduce visual clutter',
+        'Use color intentionally to encode information without creating confusion',
+        'Design visualizations that are accessible to colorblind users',
+        'Identify common visualization mistakes that mislead audiences',
+      ],
+      lessons: [
+        {
+          id: 'da-m4-l1',
+          title: 'Choosing the Right Chart Type',
+          estimatedMinutes: 15,
+          content: [
+            {
+              type: 'paragraph' as const,
+              text: 'The single most impactful visualization decision is choosing the right chart type for your data and question. A chart type that matches the data relationship communicates immediately; a mismatched chart type obscures the insight or misleads. There is a clear set of guidelines — not rigid rules — for matching charts to analytical purposes.',
+            },
+            {
+              type: 'table' as const,
+              headers: ['Chart Type', 'Best For', 'Avoid When'],
+              rows: [
+                ['Bar Chart', 'Comparing categories', 'Showing continuous change over time'],
+                ['Line Chart', 'Trends over time or continuous data', 'Comparing discrete categories'],
+                ['Scatter Plot', 'Relationship/correlation between two variables', 'Showing proportions of a whole'],
+                ['Pie/Donut Chart', 'Part-to-whole proportions (≤5 slices)', 'Comparing magnitudes; >5 categories'],
+                ['Histogram', 'Distribution of a single variable', 'Comparing categories side by side'],
+                ['Heatmap', 'Patterns in matrix data (time × category)', 'Small datasets where exact values matter'],
+                ['Box Plot', 'Distribution summary with outliers', 'Audiences unfamiliar with statistics'],
+              ],
+            },
+            {
+              type: 'callout' as const,
+              variant: 'warning' as const,
+              title: 'Pie Chart Pitfalls',
+              text: 'Humans are poor at judging angles and areas. Pie charts become unreadable with more than 5 slices and make it difficult to compare similarly sized segments. A sorted bar chart almost always communicates the same information more clearly. Use pie charts sparingly, only when the proportion-of-whole relationship is the central message.',
+            },
+          ],
+        },
+        {
+          id: 'da-m4-l2',
+          title: "Tufte's Principles & Design Best Practices",
+          estimatedMinutes: 15,
+          content: [
+            {
+              type: 'paragraph' as const,
+              text: 'Edward Tufte, a statistician and professor at Yale, revolutionized data visualization with his 1983 book "The Visual Display of Quantitative Information." His principles — particularly the data-ink ratio and chartjunk concept — remain the gold standard for analytical visualization design.',
+            },
+            {
+              type: 'heading' as const,
+              text: "Tufte's Core Principles",
+              level: 2 as const,
+            },
+            {
+              type: 'list' as const,
+              items: [
+                'Data-ink ratio: Maximize the proportion of ink devoted to data; eliminate or lighten all non-data ink',
+                'Chartjunk: Remove decorative elements that do not convey information — 3D effects, gradients, heavy gridlines',
+                'Data density: Show as much data as possible in as small a space as is readable',
+                'Small multiples: Repeat the same chart structure across many subsets for comparison',
+                'Above all: Do not distort what the data says — show the data honestly',
+              ],
+            },
+            {
+              type: 'callout' as const,
+              variant: 'tip' as const,
+              title: 'Practical Decluttering Steps',
+              text: 'To improve any chart: remove the legend if labels can be placed directly on lines or bars; remove or lighten gridlines; use white space instead of borders; remove backgrounds; reduce decimal precision; use direct labeling. Each removal test: "Does this element help the viewer understand the data?" If not, delete it.',
+            },
+            {
+              type: 'paragraph' as const,
+              text: 'Axis manipulation is one of the most common ways visualizations mislead. Truncating the Y-axis at a non-zero value exaggerates small differences. Using inconsistent scales across comparable charts distorts comparisons. Always start bar chart axes at zero; for line charts showing change, truncation can sometimes be appropriate with clear labeling.',
+            },
+          ],
+        },
+        {
+          id: 'da-m4-l3',
+          title: 'Color Theory & Accessibility',
+          estimatedMinutes: 15,
+          content: [
+            {
+              type: 'paragraph' as const,
+              text: 'Color is one of the most powerful — and most misused — visual encoding channels. Used well, color instantly directs attention and encodes meaning. Used poorly, it distracts, misleads, or excludes colorblind users. Approximately 8% of men and 0.5% of women have some form of color vision deficiency, predominantly red-green.',
+            },
+            {
+              type: 'heading' as const,
+              text: 'Types of Color Scales',
+              level: 2 as const,
+            },
+            {
+              type: 'table' as const,
+              headers: ['Scale Type', 'Use Case', 'Example'],
+              rows: [
+                ['Sequential', 'Ordered data from low to high', 'Sales volume — light blue to dark blue'],
+                ['Diverging', 'Data with a meaningful midpoint', 'Profit/loss — red through white to green'],
+                ['Categorical', 'Distinct, unordered categories', 'Product lines — distinct hues'],
+              ],
+            },
+            {
+              type: 'list' as const,
+              items: [
+                'Never use red/green together as the primary encoding — most common colorblindness',
+                'Use ColorBrewer palettes — designed to be accessible and print-friendly',
+                'Limit categorical palettes to 6–8 distinct colors maximum before using other encodings',
+                'Ensure sufficient contrast between text and background (WCAG AA: 4.5:1 ratio)',
+                'Test your charts with a colorblind simulator (e.g., Coblis)',
+              ],
+            },
+            {
+              type: 'callout' as const,
+              variant: 'info' as const,
+              title: 'Dashboard Design',
+              text: 'Effective dashboards answer a specific set of questions for a specific audience. Apply a hierarchy: the most important KPI at top-left (where eyes land first), supporting metrics and context below, drill-down details last. Limit a dashboard to the 5–7 most important metrics — more than that and nothing gets prioritized.',
+            },
+          ],
+        },
+      ],
+      quiz: [
+        {
+          id: 'da-m4-q1',
+          type: 'multiple-choice' as const,
+          question: 'You want to show how monthly revenue has trended over the past 24 months. Which chart type is most appropriate?',
+          options: ['Bar chart', 'Pie chart', 'Line chart', 'Scatter plot'],
+          correctIndex: 2,
+          explanation: 'Line charts are ideal for showing trends over continuous time. The connected line visually communicates the progression and direction of change, which is the core message for a 24-month trend.',
+        },
+        {
+          id: 'da-m4-q2',
+          type: 'true-false' as const,
+          question: 'According to Tufte\'s data-ink ratio principle, decorative elements and 3D effects improve data visualizations by making them more engaging.',
+          options: ['True', 'False'],
+          correctIndex: 1,
+          explanation: 'False. Tufte defines such decorative elements as "chartjunk" — visual noise that distracts from the data without adding information. The data-ink ratio principle advocates maximizing ink devoted to actual data and eliminating non-data ink.',
+        },
+        {
+          id: 'da-m4-q3',
+          type: 'multiple-choice' as const,
+          question: 'Which color scale type is most appropriate for showing a metric that ranges from negative to positive, with a meaningful zero point?',
+          options: ['Sequential', 'Categorical', 'Diverging', 'Monochromatic'],
+          correctIndex: 2,
+          explanation: 'Diverging color scales have two contrasting colors that meet at a neutral midpoint — ideal for data like profit/loss or temperature anomalies where the direction from a neutral point is meaningful.',
+        },
+        {
+          id: 'da-m4-q4',
+          type: 'multiple-choice' as const,
+          question: 'Why should bar charts always start their y-axis at zero?',
+          options: [
+            'To follow SQL conventions',
+            'Because non-zero baselines exaggerate differences, making small variations appear dramatic',
+            'To improve print readability',
+            'Because bar charts cannot display negative values',
+          ],
+          correctIndex: 1,
+          explanation: 'Bar length directly encodes magnitude. Truncating the y-axis at a non-zero value makes bars appear proportionally different than they actually are, exaggerating small differences and potentially misleading viewers about the true magnitude of differences.',
+        },
+        {
+          id: 'da-m4-q5',
+          type: 'true-false' as const,
+          question: 'Using red and green as the primary color encoding in a visualization is accessible for all users.',
+          options: ['True', 'False'],
+          correctIndex: 1,
+          explanation: 'False. Red-green color vision deficiency is the most common form of colorblindness, affecting approximately 8% of men. Using red and green as primary encoding makes these visualizations unreadable for a significant portion of the audience.',
+        },
+      ],
+    },
+    {
+      id: 'da-m5',
+      number: 5,
+      title: 'Tools of the Trade',
+      description:
+        'Survey the analyst\'s toolkit — from Excel and Google Sheets to Tableau, Power BI, Python pandas, and R — and develop a framework for choosing the right tool for each task.',
+      estimatedMinutes: 60,
+      learningObjectives: [
+        'Use Excel/Sheets effectively for quick analysis with pivot tables and formulas',
+        'Identify the core capabilities and appropriate use cases for Tableau and Power BI',
+        'Perform basic data manipulation with Python\'s pandas library',
+        'Understand where R excels relative to Python for analytical work',
+        'Apply a decision framework to choose the right tool for a given task',
+      ],
+      lessons: [
+        {
+          id: 'da-m5-l1',
+          title: 'Excel & Spreadsheets',
+          estimatedMinutes: 15,
+          content: [
+            {
+              type: 'paragraph' as const,
+              text: 'Despite the rise of sophisticated data tools, Excel and Google Sheets remain indispensable. They are the fastest way to answer a quick question, prototype an analysis, or share a small dataset. Every analyst should be highly proficient in spreadsheets — underestimating them is a mistake.',
+            },
+            {
+              type: 'heading' as const,
+              text: 'Essential Excel/Sheets Capabilities',
+              level: 2 as const,
+            },
+            {
+              type: 'list' as const,
+              items: [
+                'VLOOKUP / XLOOKUP / INDEX-MATCH: Look up values from another table by key',
+                'Pivot tables: Summarize large datasets with drag-and-drop grouping and aggregation',
+                'SUMIF / COUNTIF / AVERAGEIF: Conditional aggregations — fundamental for segmented analysis',
+                'Conditional formatting: Highlight cells based on values — quick visual scanning',
+                'Data validation: Create dropdown menus to prevent input errors in shared sheets',
+                'Power Query (Excel) / Connected sheets (Sheets): Pull data from external sources without copy-pasting',
+              ],
+            },
+            {
+              type: 'callout' as const,
+              variant: 'warning' as const,
+              title: 'When to Graduate Beyond Spreadsheets',
+              text: 'Spreadsheets become a liability when: datasets exceed ~100K rows, analysis needs to be reproducible and auditable, multiple people edit the same file, or analysis feeds automated reports. At that point, SQL + a BI tool or Python offers better maintainability.',
+            },
+          ],
+        },
+        {
+          id: 'da-m5-l2',
+          title: 'Tableau & Power BI',
+          estimatedMinutes: 15,
+          content: [
+            {
+              type: 'paragraph' as const,
+              text: 'Tableau and Power BI are the two dominant self-service BI platforms. Both allow analysts to connect to data sources, build interactive visualizations, and publish dashboards for business users without writing application code. The choice between them usually comes down to organizational ecosystem.',
+            },
+            {
+              type: 'table' as const,
+              headers: ['Aspect', 'Tableau', 'Power BI'],
+              rows: [
+                ['Best for', 'Exploratory visualization, design flexibility', 'Organizational reporting, Microsoft integration'],
+                ['Data connection', 'Broad connector library, Tableau Prep for ETL', 'Power Query for ETL, deep Azure/M365 integration'],
+                ['Calculation language', 'Tableau Calculated Fields', 'DAX (Data Analysis Expressions)'],
+                ['Pricing', 'Per-user, premium tiers', 'Free desktop; Power BI Pro/Premium per user/org'],
+                ['Strengths', 'Beautiful, flexible charts; drag-and-drop exploration', 'Cost-effective for Microsoft shops; powerful DAX'],
+                ['Weaknesses', 'Expensive; requires data prep outside Tableau', 'Weaker custom visualization; DAX has steep learning curve'],
+              ],
+            },
+            {
+              type: 'callout' as const,
+              variant: 'tip' as const,
+              title: 'Start with the Data, Not the Tool',
+              text: 'The best BI tool is the one your organization uses and supports. Tableau skills from one company transfer poorly if your next employer is Power BI-native. Focus on mastering the underlying analytical thinking — chart design, KPI definition, data modeling — which transfers across all tools.',
+            },
+          ],
+        },
+        {
+          id: 'da-m5-l3',
+          title: 'Python pandas & R Basics',
+          estimatedMinutes: 15,
+          content: [
+            {
+              type: 'paragraph' as const,
+              text: 'For analysts who need to go beyond the limits of spreadsheets and BI tools — handling large files, automating repetitive tasks, applying statistical models, or building custom charts — Python and R are the dominant programming languages. Python, with its pandas library, has become the standard for data manipulation; R remains strong in statistics and academic research.',
+            },
+            {
+              type: 'heading' as const,
+              text: 'Core pandas Operations',
+              level: 2 as const,
+            },
+            {
+              type: 'list' as const,
+              items: [
+                'pd.read_csv() / pd.read_sql(): Load data from files or databases into a DataFrame',
+                'df.head(), df.info(), df.describe(): Quick data profiling',
+                'df[df[\'column\'] > value]: Boolean filtering — equivalent to SQL WHERE',
+                'df.groupby(\'col\').agg({\'value\': \'sum\'}): Grouping and aggregation — equivalent to SQL GROUP BY',
+                'df.merge(other_df, on=\'key\'): Join two DataFrames — equivalent to SQL JOIN',
+                'df.pivot_table(): Create pivot tables programmatically',
+              ],
+            },
+            {
+              type: 'callout' as const,
+              variant: 'info' as const,
+              title: 'Python vs. R: When to Use Which',
+              text: 'Python is more versatile — it excels at data wrangling, automation, machine learning, and integrating with production systems. R has superior built-in statistical functions, better support for academic statistical methods, and ggplot2 is widely considered the best data visualization library. For analysts doing heavy statistical work or working in academia/research, R is often the better choice.',
+            },
+          ],
+        },
+      ],
+      quiz: [
+        {
+          id: 'da-m5-q1',
+          type: 'multiple-choice' as const,
+          question: 'Which Excel function is most appropriate for looking up a customer\'s region from a separate reference table using their customer ID?',
+          options: ['SUMIF', 'VLOOKUP / XLOOKUP', 'COUNTIF', 'AVERAGEIF'],
+          correctIndex: 1,
+          explanation: 'VLOOKUP or the newer XLOOKUP function look up a value in one table and return a corresponding value from another column — exactly the right tool for retrieving a customer\'s region using their ID as a key.',
+        },
+        {
+          id: 'da-m5-q2',
+          type: 'true-false' as const,
+          question: 'Power BI is the best BI tool for every organization regardless of their existing technology investments.',
+          options: ['True', 'False'],
+          correctIndex: 1,
+          explanation: 'False. Tool selection should be based on organizational ecosystem, existing investments, and team skills. Tableau may be better for exploratory analysis, and Power BI may be better for Microsoft-centric organizations. There is no universally "best" BI tool.',
+        },
+        {
+          id: 'da-m5-q3',
+          type: 'multiple-choice' as const,
+          question: 'In Python pandas, which method is equivalent to a SQL GROUP BY with a SUM aggregation?',
+          options: ['df.merge()', 'df.pivot()', 'df.groupby().agg()', 'df.describe()'],
+          correctIndex: 2,
+          explanation: 'df.groupby(\'column\').agg({\'value\': \'sum\'}) groups a DataFrame by a column and computes aggregations — directly equivalent to SQL\'s GROUP BY with SUM.',
+        },
+        {
+          id: 'da-m5-q4',
+          type: 'multiple-choice' as const,
+          question: 'When should an analyst consider switching from Excel to Python or SQL for their analysis?',
+          options: [
+            'When they have more than 100 rows of data',
+            'When they want to create colorful charts',
+            'When datasets are large, analysis needs to be reproducible, or multiple people collaborate on the same logic',
+            'When they need to calculate a simple average',
+          ],
+          correctIndex: 2,
+          explanation: 'Excel becomes a liability at scale and for reproducibility. Switching to SQL + Python is warranted when datasets exceed ~100K rows, when analysis must be auditable and reproducible, or when multiple people need to maintain the same analytical logic.',
+        },
+        {
+          id: 'da-m5-q5',
+          type: 'true-false' as const,
+          question: 'R is generally considered a stronger choice than Python for building production machine learning APIs and web applications.',
+          options: ['True', 'False'],
+          correctIndex: 1,
+          explanation: 'False. Python is dominant for production ML systems and APIs due to its broader ecosystem (FastAPI, Flask, scikit-learn, TensorFlow, PyTorch). R excels at statistical analysis and is preferred in academic and research settings, but Python is the standard for production ML engineering.',
+        },
+      ],
+    },
+    {
+      id: 'da-m6',
+      number: 6,
+      title: 'Communicating with Data',
+      description:
+        'Transform analysis into action by mastering data storytelling: building narratives, designing executive dashboards, presenting findings effectively, and avoiding common communication pitfalls.',
+      estimatedMinutes: 55,
+      learningObjectives: [
+        'Apply the narrative arc to structure data stories with a clear beginning, conflict, and resolution',
+        'Tailor data communication to different audience types: executives, technical peers, and operational teams',
+        'Design an executive dashboard that drives decisions',
+        'Present analytical findings with appropriate confidence and caveats',
+        'Identify and avoid common data communication pitfalls',
+      ],
+      lessons: [
+        {
+          id: 'da-m6-l1',
+          title: 'Storytelling with Data',
+          estimatedMinutes: 14,
+          content: [
+            {
+              type: 'paragraph' as const,
+              text: 'An analysis that cannot be understood and acted upon has no value. The best analysts are also effective communicators who can translate complex findings into clear, compelling narratives. Data storytelling is the art of combining data, visuals, and narrative to drive understanding and action.',
+            },
+            {
+              type: 'heading' as const,
+              text: 'The Data Story Structure',
+              level: 2 as const,
+            },
+            {
+              type: 'ordered-list' as const,
+              items: [
+                'Context: Who is the audience? What decision are they trying to make?',
+                'Setup: What was the situation before? What is the baseline?',
+                'Conflict: What problem, anomaly, or opportunity did the analysis reveal?',
+                'Resolution: What does the data say we should do? What is the recommendation?',
+                'Call to action: What specific next step do you want the audience to take?',
+              ],
+            },
+            {
+              type: 'callout' as const,
+              variant: 'tip' as const,
+              title: 'Lead with the Insight, Not the Methodology',
+              text: 'Most business audiences do not care how you did the analysis — they care what it means and what to do. Start with the most important finding: "Customer churn increased 12% in Q3, primarily driven by first-year customers in the Southeast." Then provide supporting evidence. Save methodology for appendices or if asked.',
+            },
+            {
+              type: 'paragraph' as const,
+              text: 'Audience tailoring is critical. An executive presentation needs 3–5 key findings and clear recommendations. A technical peer review needs methodology, assumptions, and reproducible code. An operational team needs actionable specifics: which customers, which actions, in what timeframe. The same analysis produces three very different documents.',
+            },
+          ],
+        },
+        {
+          id: 'da-m6-l2',
+          title: 'Presenting Findings & Common Pitfalls',
+          estimatedMinutes: 14,
+          content: [
+            {
+              type: 'paragraph' as const,
+              text: 'Presenting analytical findings requires communicating both what the data shows and the limits of what it can tell us. Overconfident presentation of uncertain findings erodes trust when predictions miss; excessive hedging makes recommendations useless. The goal is calibrated confidence.',
+            },
+            {
+              type: 'heading' as const,
+              text: 'Communicating Uncertainty',
+              level: 2 as const,
+            },
+            {
+              type: 'list' as const,
+              items: [
+                'Show confidence intervals alongside point estimates when relevant',
+                'State data quality limitations prominently — not buried in footnotes',
+                'Distinguish between "the data shows X" and "X is likely caused by Y"',
+                'Acknowledge what the analysis cannot answer as well as what it can',
+                'Use language that reflects confidence level: "strong evidence" vs. "suggests" vs. "preliminary indication"',
+              ],
+            },
+            {
+              type: 'heading' as const,
+              text: 'Common Communication Pitfalls',
+              level: 2 as const,
+            },
+            {
+              type: 'callout' as const,
+              variant: 'warning' as const,
+              title: 'Cherry-Picking',
+              text: 'Cherry-picking — selecting only the data that supports a pre-existing conclusion — is one of the most corrosive habits in data analysis. It produces findings that seem compelling but cannot withstand scrutiny. Intellectual honesty requires presenting data that contradicts your hypothesis alongside data that supports it, then reasoning about the full picture.',
+            },
+            {
+              type: 'list' as const,
+              items: [
+                'Survivorship bias: Analyzing only successful outcomes, ignoring failures',
+                'Confirmation bias: Seeking data that confirms what you already believe',
+                'Base rate neglect: Focusing on rates without considering base population sizes',
+                'Misleading visuals: Truncated axes, 3D charts, inconsistent scales',
+                'Overloaded slides: Too many metrics, no clear priority, forces audience to decide what matters',
+              ],
+            },
+          ],
+        },
+      ],
+      quiz: [
+        {
+          id: 'da-m6-q1',
+          type: 'multiple-choice' as const,
+          question: 'When presenting findings to a C-suite executive, what should you lead with?',
+          options: [
+            'A detailed description of your data cleaning methodology',
+            'The most important insight and its business implication or recommendation',
+            'A comprehensive list of all data sources used',
+            'The statistical tests you ran and their p-values',
+          ],
+          correctIndex: 1,
+          explanation: 'Executive audiences need the "so what" immediately. Lead with the key finding and its business implication. Methodology, data sources, and statistical details belong in supporting slides or appendices for those who want to dig deeper.',
+        },
+        {
+          id: 'da-m6-q2',
+          type: 'true-false' as const,
+          question: 'Survivorship bias occurs when analysis only considers cases that successfully completed a process, ignoring those that did not.',
+          options: ['True', 'False'],
+          correctIndex: 0,
+          explanation: 'True. Survivorship bias is the logical error of focusing on cases that "survived" some selection process and ignoring those that did not. Analyzing only successful startups to find success factors, for example, ignores the far larger population of startups that failed.',
+        },
+        {
+          id: 'da-m6-q3',
+          type: 'multiple-choice' as const,
+          question: 'Which of the following represents appropriate communication of uncertainty in a finding?',
+          options: [
+            '"Our analysis conclusively proves that the new feature increased revenue by 15%."',
+            '"The A/B test shows a 15% revenue increase (95% CI: 8%–22%), assuming consistent user behavior across test groups."',
+            '"Revenue might have gone up or down, we can\'t really say."',
+            '"Trust me, the new feature works great."',
+          ],
+          correctIndex: 1,
+          explanation: 'Option B communicates both the finding (15% increase) and appropriate uncertainty (95% confidence interval of 8%–22%) while noting a key assumption. This gives decision-makers accurate information without false precision or excessive hedging.',
+        },
+        {
+          id: 'da-m6-q4',
+          type: 'multiple-choice' as const,
+          question: 'An analyst presents only the data that supports the hypothesis their manager favors, ignoring contradictory evidence. This is an example of:',
+          options: ['Survivorship bias', 'Base rate neglect', 'Cherry-picking / confirmation bias', 'Overfitting'],
+          correctIndex: 2,
+          explanation: 'Selectively presenting data that supports a pre-existing conclusion while ignoring contradictory evidence is cherry-picking — a form of confirmation bias. It produces misleading analyses that cannot withstand scrutiny.',
+        },
+        {
+          id: 'da-m6-q5',
+          type: 'true-false' as const,
+          question: 'The same analytical findings should always be presented the same way regardless of the audience.',
+          options: ['True', 'False'],
+          correctIndex: 1,
+          explanation: 'False. Effective communication requires tailoring the presentation to the audience. Executives need concise findings and recommendations; technical peers need methodology and reproducibility; operational teams need actionable specifics. The same analysis produces different presentations for different audiences.',
+        },
+      ],
+    },
+  ],
+};
