@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #09090f;
+  --color-surface: #0f0f18;
+  --color-card: #131320;
+  --color-gold: #c9a84c;
+  --color-gold-light: #e8c97a;
+  --color-gold-subtle: rgba(201,168,76,0.08);
+  --color-border-gold: rgba(201,168,76,0.12);
+  --color-border-hover: rgba(201,168,76,0.28);
+  --color-ink: #f0ece6;
+  --color-muted: #8a899a;
+  --color-dim: #52515f;
+  --color-success: #4caf82;
+  --color-danger: #e05c5c;
+  --color-warning: #e8a84c;
+
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "DM Sans", system-ui, sans-serif;
+
+  --shadow-gold: 0 8px 32px rgba(201,168,76,0.18);
+  --shadow-gold-lg: 0 16px 48px rgba(201,168,76,0.22);
+  --shadow-card: 0 2px 16px rgba(0,0,0,0.4);
+
+  --border-radius-sm: 2px;
+  --border-radius-md: 4px;
+  --border-radius-lg: 8px;
+
+  --letter-spacing-widest: 0.22em;
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-weight: 300;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    line-height: 1.12;
+  }
+  #root {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    text-align: left;
+    border: none;
+    min-height: 100svh;
+    display: block;
+  }
+}
+
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+.eyebrow::before {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 1px;
+  background: var(--color-gold);
+  flex-shrink: 0;
+}
+
+.divider {
+  width: 44px;
+  height: 1px;
+  background: var(--color-gold);
+  margin: 1.5rem 0;
+}
+
+@media print {
+  .no-print { display: none !important; }
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #09090f; }
+::-webkit-scrollbar-thumb { background: rgba(201,168,76,0.3); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(201,168,76,0.5); }
