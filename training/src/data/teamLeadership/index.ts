@@ -20,16 +20,16 @@ const module1 = {
       estimatedMinutes: 12,
       content: [
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'Leadership and management are often used interchangeably, but they represent fundamentally different activities. Management focuses on systems, processes, and getting predictable results through existing structures. Leadership focuses on people, vision, and inspiring change. Both are necessary — but knowing when to lead versus when to manage is a critical competency.',
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'Core Distinctions',
-          level: 3,
+          level: 3 as const,
         },
         {
-          type: 'table',
+          type: 'table' as const,
           headers: ['Dimension', 'Management', 'Leadership'],
           rows: [
             ['Focus', 'Systems and processes', 'People and vision'],
@@ -40,22 +40,22 @@ const module1 = {
           ],
         },
         {
-          type: 'callout',
-          variant: 'info',
+          type: 'callout' as const,
+          variant: 'info' as const,
           title: 'Key Insight',
           text: 'Warren Bennis captured this well: "Managers do things right; leaders do the right things." In improvement work, you must do both — manage the project rigorously while leading the people through change.',
         },
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'In Lean and Six Sigma contexts, project leaders often hold no formal authority over team members. This makes leadership skills — influence, motivation, clarity of purpose — even more critical than managerial control.',
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'When to Lead, When to Manage',
-          level: 3,
+          level: 3 as const,
         },
         {
-          type: 'list',
+          type: 'list' as const,
           items: [
             'Lead when the team needs direction, motivation, or a sense of shared purpose',
             'Manage when tasks need coordination, deadlines must be tracked, or resources allocated',
@@ -72,16 +72,16 @@ const module1 = {
       estimatedMinutes: 13,
       content: [
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'Servant leadership, popularized by Robert Greenleaf, inverts the traditional power structure: instead of the leader being served, the leader serves the team. In improvement work, this means removing barriers, developing people\'s capabilities, and creating the conditions for success rather than directing every action.',
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'Pillars of Servant Leadership',
-          level: 3,
+          level: 3 as const,
         },
         {
-          type: 'ordered-list',
+          type: 'ordered-list' as const,
           items: [
             'Listening — Genuinely understand what the team needs, not just what you think they need',
             'Empathy — See challenges from the team member\'s perspective',
@@ -95,13 +95,13 @@ const module1 = {
           ],
         },
         {
-          type: 'callout',
-          variant: 'example',
+          type: 'callout' as const,
+          variant: 'example' as const,
           title: 'Servant Leadership in Action',
           text: 'A Lean project leader notices that a team member is struggling with data analysis. Rather than doing it for them or escalating, she spends 30 minutes walking through the approach together, building the person\'s capability for future projects. This is servant leadership: investing time now to grow the person, not just solve today\'s problem.',
         },
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'Servant leadership is especially powerful in improvement contexts because sustainable change requires people who are intrinsically motivated — not just following orders. When team members feel supported and developed, they bring discretionary effort to the work.',
         },
       ],
@@ -112,20 +112,20 @@ const module1 = {
       estimatedMinutes: 12,
       content: [
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'Two dominant leadership frameworks shape how leaders engage their teams: transactional and transformational. Neither is universally superior — effective leaders move fluidly between both depending on context.',
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'Transactional Leadership',
-          level: 3,
+          level: 3 as const,
         },
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'Transactional leadership operates through exchange: you complete this task, you receive this reward (or avoid this consequence). It works well for routine work, clear deliverables, and short-term performance goals.',
         },
         {
-          type: 'list',
+          type: 'list' as const,
           items: [
             'Clear expectations and defined metrics',
             'Rewards tied to specific performance outcomes',
@@ -135,16 +135,16 @@ const module1 = {
           ],
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'Transformational Leadership',
-          level: 3,
+          level: 3 as const,
         },
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'Transformational leaders inspire followers to exceed their own self-interest for the good of the team or organization. They connect work to meaning, develop people\'s capabilities, and model the behaviors they seek.',
         },
         {
-          type: 'list',
+          type: 'list' as const,
           items: [
             'Idealized influence — modeling values and inspiring trust',
             'Inspirational motivation — articulating a compelling vision',
@@ -153,8 +153,8 @@ const module1 = {
           ],
         },
         {
-          type: 'callout',
-          variant: 'tip',
+          type: 'callout' as const,
+          variant: 'tip' as const,
           title: 'Practical Balance',
           text: 'Use transactional approaches to establish clear project expectations and accountability. Use transformational approaches to build commitment, develop capability, and sustain motivation over long improvement initiatives.',
         },
@@ -166,16 +166,16 @@ const module1 = {
       estimatedMinutes: 13,
       content: [
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'Amy Edmondson\'s research identified psychological safety — the belief that one will not be punished or humiliated for speaking up with ideas, questions, concerns, or mistakes — as the single biggest predictor of team learning and performance. Without it, improvement stalls.',
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'Why Psychological Safety Matters for CI',
-          level: 3,
+          level: 3 as const,
         },
         {
-          type: 'list',
+          type: 'list' as const,
           items: [
             'People will not surface problems if they fear blame',
             'Root cause analysis requires honest disclosure of what went wrong',
@@ -185,12 +185,12 @@ const module1 = {
           ],
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'How Leaders Build Psychological Safety',
-          level: 3,
+          level: 3 as const,
         },
         {
-          type: 'ordered-list',
+          type: 'ordered-list' as const,
           items: [
             'Frame work as a learning problem, not a performance judgment',
             'Acknowledge your own uncertainty and limitations openly',
@@ -202,8 +202,8 @@ const module1 = {
           ],
         },
         {
-          type: 'callout',
-          variant: 'warning',
+          type: 'callout' as const,
+          variant: 'warning' as const,
           title: 'Warning Sign',
           text: 'If your team never surfaces problems, doesn\'t challenge assumptions, or always agrees with your ideas — psychological safety is likely low. High-performing improvement teams are characterized by healthy debate and frank problem identification.',
         },
@@ -213,7 +213,7 @@ const module1 = {
   quiz: [
     {
       id: 'tl-m1-q1',
-      type: 'multiple-choice',
+      type: 'multiple-choice' as const,
       question: 'Which best describes the primary focus of leadership compared to management?',
       options: [
         'Controlling systems and tracking metrics',
@@ -226,7 +226,7 @@ const module1 = {
     },
     {
       id: 'tl-m1-q2',
-      type: 'multiple-choice',
+      type: 'multiple-choice' as const,
       question: 'Which of the following is a core characteristic of servant leadership?',
       options: [
         'Directing team members through positional authority',
@@ -239,7 +239,7 @@ const module1 = {
     },
     {
       id: 'tl-m1-q3',
-      type: 'multiple-choice',
+      type: 'multiple-choice' as const,
       question: 'Transformational leadership is MOST effective for which of the following situations?',
       options: [
         'Enforcing compliance with safety protocols',
@@ -252,7 +252,7 @@ const module1 = {
     },
     {
       id: 'tl-m1-q4',
-      type: 'true-false',
+      type: 'true-false' as const,
       question: 'Psychological safety means that team members are protected from all consequences for poor performance.',
       options: ['True', 'False'],
       correctIndex: 1,
@@ -260,7 +260,7 @@ const module1 = {
     },
     {
       id: 'tl-m1-q5',
-      type: 'multiple-choice',
+      type: 'multiple-choice' as const,
       question: 'A Lean project leader holds no formal authority over team members. Which leadership approach is most critical in this situation?',
       options: [
         'Transactional — use rewards and consequences to drive compliance',
@@ -294,11 +294,11 @@ const module2 = {
       estimatedMinutes: 13,
       content: [
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'A facilitator guides a group toward its goal without imposing their own agenda. Unlike a presenter or meeting chair, the facilitator\'s job is to create the conditions for the group to think clearly, collaborate effectively, and reach sound decisions.',
         },
         {
-          type: 'key-terms',
+          type: 'key-terms' as const,
           terms: [
             { term: 'Facilitation', definition: 'The process of designing and guiding group processes to help teams achieve their goals more effectively' },
             { term: 'Neutrality', definition: 'The facilitator\'s stance of not advocating for particular content outcomes while caring deeply about the quality of the group process' },
@@ -306,12 +306,12 @@ const module2 = {
           ],
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'Core Facilitation Techniques',
-          level: 3,
+          level: 3 as const,
         },
         {
-          type: 'ordered-list',
+          type: 'ordered-list' as const,
           items: [
             'Active listening — Paraphrase and reflect back what you hear to ensure understanding',
             'Questioning — Use open questions to draw out ideas; use closed questions to confirm decisions',
@@ -323,8 +323,8 @@ const module2 = {
           ],
         },
         {
-          type: 'callout',
-          variant: 'tip',
+          type: 'callout' as const,
+          variant: 'tip' as const,
           title: 'Facilitator Tip',
           text: 'When you are both the facilitator and a content expert, be transparent about shifting roles. Say, "I\'m going to step out of my facilitator role for a moment to share a perspective..." then step back into facilitation. This preserves trust and neutrality.',
         },
@@ -336,16 +336,16 @@ const module2 = {
       estimatedMinutes: 12,
       content: [
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'Poor meetings are one of the greatest drains on organizational productivity. Research consistently shows that most professionals consider more than half their meetings to be wasted time. The antidote is intentional meeting design.',
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'The Meeting Design Framework',
-          level: 3,
+          level: 3 as const,
         },
         {
-          type: 'ordered-list',
+          type: 'ordered-list' as const,
           items: [
             'Define the purpose — Is this meeting for information sharing, problem-solving, or decision-making? Each requires a different design.',
             'Set clear outcomes — What specific decisions, agreements, or outputs will result from this meeting?',
@@ -357,18 +357,18 @@ const module2 = {
           ],
         },
         {
-          type: 'callout',
-          variant: 'example',
+          type: 'callout' as const,
+          variant: 'example' as const,
           title: 'Meeting Outcome Statement',
           text: 'Weak: "Discuss the new process." Strong: "By the end of this meeting, we will have selected one of three process redesign options and assigned owners for the next three action steps." The strong version creates accountability and focus.',
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'Closing Meetings Effectively',
-          level: 3,
+          level: 3 as const,
         },
         {
-          type: 'list',
+          type: 'list' as const,
           items: [
             'Summarize decisions made and agreements reached',
             'Review action items with clear owners and due dates',
@@ -385,39 +385,39 @@ const module2 = {
       estimatedMinutes: 12,
       content: [
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'Traditional brainstorming — shouting out ideas in a group — is often dominated by the loudest voices and produces fewer, lower-quality ideas than structured alternatives. Research-backed techniques generate better results.',
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'Brainwriting (6-3-5 Method)',
-          level: 3,
+          level: 3 as const,
         },
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: '6 people each write 3 ideas in 5 minutes on a sheet, then pass to the next person, who builds on or adds to those ideas. After 6 rounds, the group has generated up to 108 ideas. Silent generation removes social pressure and dominant voices.',
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'Round-Robin Brainstorming',
-          level: 3,
+          level: 3 as const,
         },
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'Each person shares one idea in turn. Anyone who has no new idea says "pass." Continue until all passes are reached. This ensures equal participation and prevents groupthink.',
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'Reverse Brainstorming',
-          level: 3,
+          level: 3 as const,
         },
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'Instead of asking "How do we solve this problem?" ask "How could we make this problem worse?" Then reverse those ideas into solutions. This technique breaks mental blocks and often generates creative approaches missed by direct brainstorming.',
         },
         {
-          type: 'callout',
-          variant: 'info',
+          type: 'callout' as const,
+          variant: 'info' as const,
           title: 'Brainstorming Ground Rules',
           text: 'Defer judgment (no criticism during idea generation), go for quantity, encourage wild ideas, build on others\' ideas, and keep one conversation at a time. Post these visibly during the session.',
         },
@@ -429,20 +429,20 @@ const module2 = {
       estimatedMinutes: 13,
       content: [
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'After generating ideas, teams need structured tools to evaluate, prioritize, and organize them. Multi-voting and affinity diagrams are two of the most widely used facilitation tools for this purpose.',
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'Multi-Voting',
-          level: 3,
+          level: 3 as const,
         },
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'Multi-voting reduces a long list of options to a manageable shortlist through structured group voting. Each participant receives a set number of votes (typically one-third of the total options) and distributes them across their preferred items. Items with the most votes rise to the top.',
         },
         {
-          type: 'ordered-list',
+          type: 'ordered-list' as const,
           items: [
             'List all options (from brainstorming or problem identification)',
             'Give each participant N/3 votes (where N = number of options)',
@@ -453,16 +453,16 @@ const module2 = {
           ],
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'Affinity Diagrams',
-          level: 3,
+          level: 3 as const,
         },
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'Affinity diagrams organize large amounts of qualitative data into natural groupings based on their affinity (relationship) to each other. They are particularly useful after brainstorming sessions or when analyzing voice of the customer data.',
         },
         {
-          type: 'ordered-list',
+          type: 'ordered-list' as const,
           items: [
             'Write each idea or data point on a separate sticky note',
             'In silence, participants begin grouping notes that seem related',
@@ -473,8 +473,8 @@ const module2 = {
           ],
         },
         {
-          type: 'callout',
-          variant: 'tip',
+          type: 'callout' as const,
+          variant: 'tip' as const,
           title: 'Silence is Powerful',
           text: 'Affinity diagramming works best when the initial grouping is done silently. This prevents verbal dominance and allows the natural structure of the data to emerge without social influence.',
         },
@@ -484,7 +484,7 @@ const module2 = {
   quiz: [
     {
       id: 'tl-m2-q1',
-      type: 'multiple-choice',
+      type: 'multiple-choice' as const,
       question: 'What is the primary distinction between a facilitator\'s role and a presenter\'s role?',
       options: [
         'Facilitators are responsible for making final decisions',
@@ -497,7 +497,7 @@ const module2 = {
     },
     {
       id: 'tl-m2-q2',
-      type: 'multiple-choice',
+      type: 'multiple-choice' as const,
       question: 'Which meeting design practice most directly ensures that a meeting produces actionable results?',
       options: [
         'Sending the agenda 24 hours in advance',
@@ -510,7 +510,7 @@ const module2 = {
     },
     {
       id: 'tl-m2-q3',
-      type: 'multiple-choice',
+      type: 'multiple-choice' as const,
       question: 'In the 6-3-5 brainwriting method, what does each number represent?',
       options: [
         '6 ideas, 3 rounds, 5 minutes per round',
@@ -523,7 +523,7 @@ const module2 = {
     },
     {
       id: 'tl-m2-q4',
-      type: 'true-false',
+      type: 'true-false' as const,
       question: 'Affinity diagramming works best when participants openly discuss and debate which group each idea belongs to as they sort.',
       options: ['True', 'False'],
       correctIndex: 1,
@@ -531,7 +531,7 @@ const module2 = {
     },
     {
       id: 'tl-m2-q5',
-      type: 'multiple-choice',
+      type: 'multiple-choice' as const,
       question: 'In multi-voting, how many votes does each participant typically receive?',
       options: [
         'One vote per person regardless of options',
@@ -565,11 +565,11 @@ const module3 = {
       estimatedMinutes: 13,
       content: [
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'John Kotter\'s 8-step model, developed from studying over 100 change initiatives, remains the most widely used framework for leading organizational change. Most change failures, Kotter found, can be traced to skipping or rushing one of these steps.',
         },
         {
-          type: 'ordered-list',
+          type: 'ordered-list' as const,
           items: [
             'Create urgency — Help others see the need for change through compelling data, stories, and honest dialogue about consequences of inaction',
             'Build a guiding coalition — Assemble a diverse group with credibility, influence, and commitment to lead the change',
@@ -582,8 +582,8 @@ const module3 = {
           ],
         },
         {
-          type: 'callout',
-          variant: 'warning',
+          type: 'callout' as const,
+          variant: 'warning' as const,
           title: 'Most Common Failure Points',
           text: 'Kotter found that the most common mistakes are: declaring victory too soon (step 7), underestimating the power of vision (step 3), and failing to anchor changes in culture (step 8). Improvement initiatives that succeed technically but don\'t change culture are not sustained.',
         },
@@ -595,11 +595,11 @@ const module3 = {
       estimatedMinutes: 12,
       content: [
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'While Kotter focuses on organizational-level change, the ADKAR model (developed by Prosci) addresses change at the individual level. Organizations change only when enough individuals change, so understanding where a person is in their change journey is essential.',
         },
         {
-          type: 'key-terms',
+          type: 'key-terms' as const,
           terms: [
             { term: 'Awareness', definition: 'The individual understands why the change is needed and what will happen if nothing changes' },
             { term: 'Desire', definition: 'The individual is personally motivated to support and participate in the change' },
@@ -609,18 +609,18 @@ const module3 = {
           ],
         },
         {
-          type: 'callout',
-          variant: 'info',
+          type: 'callout' as const,
+          variant: 'info' as const,
           title: 'Using ADKAR Diagnostically',
           text: 'ADKAR is sequential — a person cannot progress to Desire without Awareness, or to Ability without Knowledge. When someone is resisting change, identify where they are stuck in the model and address that specific barrier rather than applying a one-size-fits-all response.',
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'ADKAR in Practice',
-          level: 3,
+          level: 3 as const,
         },
         {
-          type: 'table',
+          type: 'table' as const,
           headers: ['ADKAR Stage', 'Signs of a Gap', 'Leader Response'],
           rows: [
             ['Awareness', 'Doesn\'t understand why change is needed', 'Share data, stories, burning platform'],
@@ -638,16 +638,16 @@ const module3 = {
       estimatedMinutes: 12,
       content: [
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'Every change initiative affects different people in different ways. Stakeholder engagement is the discipline of identifying who is affected, understanding their interests, and actively working to build support and manage opposition.',
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'Stakeholder Analysis',
-          level: 3,
+          level: 3 as const,
         },
         {
-          type: 'ordered-list',
+          type: 'ordered-list' as const,
           items: [
             'Identify all stakeholders — everyone who affects or is affected by the change',
             'Assess current position — supporter, neutral, or resistant',
@@ -657,16 +657,16 @@ const module3 = {
           ],
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'Understanding Resistance',
-          level: 3,
+          level: 3 as const,
         },
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'Resistance is not irrational. It is a signal that someone has unmet needs, legitimate concerns, or unanswered questions. Effective change leaders treat resistance as information, not opposition.',
         },
         {
-          type: 'list',
+          type: 'list' as const,
           items: [
             'Fear of job loss or role change',
             'Lack of confidence in ability to perform in the new way',
@@ -677,8 +677,8 @@ const module3 = {
           ],
         },
         {
-          type: 'callout',
-          variant: 'tip',
+          type: 'callout' as const,
+          variant: 'tip' as const,
           title: 'Engaging Resisters',
           text: 'Invite vocal resisters into the process. Give them a role in shaping the solution. People who help design a change are far less likely to resist it. Resistance often contains the most valuable information about implementation risks.',
         },
@@ -690,16 +690,16 @@ const module3 = {
       estimatedMinutes: 13,
       content: [
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'The single most cited failure factor in change initiatives is poor communication. Not too little communication — though that is common — but communication that fails to reach people where they are or address what they actually care about.',
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'Principles of Effective Change Communication',
-          level: 3,
+          level: 3 as const,
         },
         {
-          type: 'list',
+          type: 'list' as const,
           items: [
             'Start with "why" — people commit to purpose before they follow process',
             'Communicate seven times in seven different ways — messages need reinforcement across channels',
@@ -710,12 +710,12 @@ const module3 = {
           ],
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'Building a Communication Plan',
-          level: 3,
+          level: 3 as const,
         },
         {
-          type: 'table',
+          type: 'table' as const,
           headers: ['Element', 'Questions to Answer'],
           rows: [
             ['Audiences', 'Who needs to know? What do they care about?'],
@@ -732,7 +732,7 @@ const module3 = {
   quiz: [
     {
       id: 'tl-m3-q1',
-      type: 'multiple-choice',
+      type: 'multiple-choice' as const,
       question: 'According to Kotter, which step is most commonly skipped and leads to premature celebration of success?',
       options: [
         'Building a guiding coalition',
@@ -745,7 +745,7 @@ const module3 = {
     },
     {
       id: 'tl-m3-q2',
-      type: 'multiple-choice',
+      type: 'multiple-choice' as const,
       question: 'In the ADKAR model, a team member knows exactly why the change is needed and supports it, but consistently reverts to old behaviors after weeks. Which stage is the barrier?',
       options: [
         'Awareness',
@@ -758,7 +758,7 @@ const module3 = {
     },
     {
       id: 'tl-m3-q3',
-      type: 'true-false',
+      type: 'true-false' as const,
       question: 'Resistance to change is generally irrational and should be managed by clearly explaining the change until resisters comply.',
       options: ['True', 'False'],
       correctIndex: 1,
@@ -766,7 +766,7 @@ const module3 = {
     },
     {
       id: 'tl-m3-q4',
-      type: 'multiple-choice',
+      type: 'multiple-choice' as const,
       question: 'Which communication principle most directly addresses why different audiences need different messages?',
       options: [
         'Start with why',
@@ -779,7 +779,7 @@ const module3 = {
     },
     {
       id: 'tl-m3-q5',
-      type: 'multiple-choice',
+      type: 'multiple-choice' as const,
       question: 'A stakeholder was initially resistant but after being invited to join the design team became one of the initiative\'s strongest advocates. This illustrates which principle?',
       options: [
         'ADKAR Awareness building',
@@ -813,16 +813,16 @@ const module4 = {
       estimatedMinutes: 13,
       content: [
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'Bruce Tuckman\'s model of group development describes the predictable stages teams move through on their way to high performance. Understanding these stages helps leaders normalize conflict, provide appropriate support, and accelerate the team\'s development.',
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'The Four Stages',
-          level: 3,
+          level: 3 as const,
         },
         {
-          type: 'table',
+          type: 'table' as const,
           headers: ['Stage', 'Team Characteristics', 'Leader\'s Focus'],
           rows: [
             ['Forming', 'Polite, uncertain, dependent on leader for direction', 'Provide clarity on purpose, roles, and norms'],
@@ -832,13 +832,13 @@ const module4 = {
           ],
         },
         {
-          type: 'callout',
-          variant: 'info',
+          type: 'callout' as const,
+          variant: 'info' as const,
           title: 'Storming is Normal',
           text: 'Many leaders try to prevent or suppress the Storming stage. This is a mistake. Productive conflict about how to work together is necessary for teams to develop authentic norms and trust. The goal is to navigate Storming well, not avoid it.',
         },
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'Teams can regress to earlier stages when membership changes, the task changes significantly, or a major disruption occurs. A Performing team that loses key members or takes on a new challenge may cycle back through Forming and Storming briefly.',
         },
       ],
@@ -849,16 +849,16 @@ const module4 = {
       estimatedMinutes: 11,
       content: [
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'Effective teams have clarity about who does what and who decides what. Without this clarity, important work falls through the cracks, duplication wastes effort, and conflict arises over territory.',
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'Functional Roles in Improvement Teams',
-          level: 3,
+          level: 3 as const,
         },
         {
-          type: 'list',
+          type: 'list' as const,
           items: [
             'Project sponsor — Provides resources, removes organizational barriers, and champions the initiative at the leadership level',
             'Project leader/Black Belt — Leads the improvement effort, owns the methodology, and drives results',
@@ -869,8 +869,8 @@ const module4 = {
           ],
         },
         {
-          type: 'callout',
-          variant: 'warning',
+          type: 'callout' as const,
+          variant: 'warning' as const,
           title: 'The Critical Role of the Process Owner',
           text: 'A common failure in improvement projects is delivering a solution that the process owner doesn\'t own. Involve the process owner early and continuously. Without their commitment, solutions are rarely sustained after the project closes.',
         },
@@ -882,11 +882,11 @@ const module4 = {
       estimatedMinutes: 11,
       content: [
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'A RACI matrix maps tasks or decisions to roles, clarifying who is Responsible, Accountable, Consulted, and Informed for each. It is one of the simplest and most effective tools for eliminating the confusion that causes missed handoffs and duplicated work.',
         },
         {
-          type: 'key-terms',
+          type: 'key-terms' as const,
           terms: [
             { term: 'Responsible (R)', definition: 'Does the work. Multiple people can be Responsible for a task.' },
             { term: 'Accountable (A)', definition: 'Owns the outcome and has final decision authority. Only one person should be Accountable per task.' },
@@ -895,18 +895,18 @@ const module4 = {
           ],
         },
         {
-          type: 'callout',
-          variant: 'tip',
+          type: 'callout' as const,
+          variant: 'tip' as const,
           title: 'RACI Clarity Rule',
           text: 'Every task must have exactly one Accountable owner. If multiple people are Accountable, no one truly is. When building a RACI, flag any row with no A, multiple A\'s, or no R as a structural problem to resolve.',
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'Common RACI Mistakes',
-          level: 3,
+          level: 3 as const,
         },
         {
-          type: 'list',
+          type: 'list' as const,
           items: [
             'Too many R\'s — diffuses responsibility',
             'Multiple A\'s — creates authority ambiguity',
@@ -922,16 +922,16 @@ const module4 = {
       estimatedMinutes: 10,
       content: [
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'A team charter is a document the team creates together that defines how they will work together. Unlike a project charter (which defines what will be done), a team charter defines behavioral and operational norms.',
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'Elements of an Effective Team Charter',
-          level: 3,
+          level: 3 as const,
         },
         {
-          type: 'ordered-list',
+          type: 'ordered-list' as const,
           items: [
             'Purpose and goals — Why does this team exist and what does success look like?',
             'Roles and responsibilities — Who does what (can reference the RACI)',
@@ -943,8 +943,8 @@ const module4 = {
           ],
         },
         {
-          type: 'callout',
-          variant: 'example',
+          type: 'callout' as const,
+          variant: 'example' as const,
           title: 'Team Charter in Practice',
           text: 'A Six Sigma team uses their charter to agree that decisions within the project scope are made by majority vote with the project leader having a tiebreaker, all members come to meetings having reviewed shared documents, and conflicts are first discussed directly between the parties before bringing to the project leader. These agreements prevent many common dysfunctions before they emerge.',
         },
@@ -954,7 +954,7 @@ const module4 = {
   quiz: [
     {
       id: 'tl-m4-q1',
-      type: 'multiple-choice',
+      type: 'multiple-choice' as const,
       question: 'A newly formed improvement team is experiencing significant conflict over roles and how to approach the problem. According to Tuckman\'s model, this team is in which stage?',
       options: [
         'Forming',
@@ -967,7 +967,7 @@ const module4 = {
     },
     {
       id: 'tl-m4-q2',
-      type: 'true-false',
+      type: 'true-false' as const,
       question: 'In a RACI matrix, it is acceptable and sometimes preferable to assign multiple people as Accountable for a complex task to ensure adequate oversight.',
       options: ['True', 'False'],
       correctIndex: 1,
@@ -975,7 +975,7 @@ const module4 = {
     },
     {
       id: 'tl-m4-q3',
-      type: 'multiple-choice',
+      type: 'multiple-choice' as const,
       question: 'Which stakeholder is most critical to involve early in an improvement project to ensure solutions are sustained after the project closes?',
       options: [
         'The executive sponsor',
@@ -988,7 +988,7 @@ const module4 = {
     },
     {
       id: 'tl-m4-q4',
-      type: 'multiple-choice',
+      type: 'multiple-choice' as const,
       question: 'What distinguishes a team charter from a project charter?',
       options: [
         'A team charter defines the project scope and timeline; a project charter defines team roles',
@@ -1001,7 +1001,7 @@ const module4 = {
     },
     {
       id: 'tl-m4-q5',
-      type: 'multiple-choice',
+      type: 'multiple-choice' as const,
       question: 'A Performing team onboards three new members and immediately begins experiencing confusion about roles and direction. This best illustrates:',
       options: [
         'A failure of the team charter to define norms',
@@ -1035,11 +1035,11 @@ const module5 = {
       estimatedMinutes: 12,
       content: [
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'Coaching and directing are both valid leadership tools — but they serve different purposes. Choosing the wrong approach for a situation frustrates both the leader and the team member.',
         },
         {
-          type: 'table',
+          type: 'table' as const,
           headers: ['Dimension', 'Directing', 'Coaching'],
           rows: [
             ['Leader\'s role', 'Expert providing answers', 'Partner helping the person discover answers'],
@@ -1050,13 +1050,13 @@ const module5 = {
           ],
         },
         {
-          type: 'callout',
-          variant: 'info',
+          type: 'callout' as const,
+          variant: 'info' as const,
           title: 'The Coaching Mindset',
           text: 'Coaching assumes the person has the capacity to find the answer themselves. The coach\'s job is to ask better questions, not provide better answers. This shift in mindset is harder than learning the techniques — it requires resisting the urge to fix and advise.',
         },
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'A situational leadership approach suggests that leaders adapt their style to the person\'s readiness level. A new team member working on an unfamiliar task needs more directing. An experienced person who is motivated but stuck on a complex problem benefits from coaching.',
         },
       ],
@@ -1067,11 +1067,11 @@ const module5 = {
       estimatedMinutes: 13,
       content: [
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'The GROW model provides a simple, powerful framework for structuring coaching conversations. Developed by Sir John Whitmore, GROW stands for Goal, Reality, Options, and Will (or Way Forward).',
         },
         {
-          type: 'key-terms',
+          type: 'key-terms' as const,
           terms: [
             { term: 'Goal', definition: 'What does the person want to achieve? Establish a specific, meaningful goal for the conversation and the broader situation.' },
             { term: 'Reality', definition: 'What is currently happening? Explore the current situation honestly, including obstacles and contributing factors.' },
@@ -1080,12 +1080,12 @@ const module5 = {
           ],
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'Powerful Coaching Questions by Stage',
-          level: 3,
+          level: 3 as const,
         },
         {
-          type: 'table',
+          type: 'table' as const,
           headers: ['Stage', 'Example Questions'],
           rows: [
             ['Goal', '"What do you want to achieve?" / "What would a great outcome look like?" / "How will you know you\'ve succeeded?"'],
@@ -1095,8 +1095,8 @@ const module5 = {
           ],
         },
         {
-          type: 'callout',
-          variant: 'tip',
+          type: 'callout' as const,
+          variant: 'tip' as const,
           title: 'The Power of "What Else?"',
           text: '"What else?" is one of the most valuable questions in a coaching conversation. It pushes beyond the first obvious answer to deeper thinking. Ask "What else?" at least three times in the Options stage before evaluating options.',
         },
@@ -1108,16 +1108,16 @@ const module5 = {
       estimatedMinutes: 13,
       content: [
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'Feedback is one of the most powerful tools for developing people — and one of the most commonly misused. Vague, delayed, or emotionally loaded feedback fails to change behavior. Specific, timely, behavioral feedback does.',
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'Characteristics of Effective Feedback',
-          level: 3,
+          level: 3 as const,
         },
         {
-          type: 'list',
+          type: 'list' as const,
           items: [
             'Specific — Describes the exact behavior, not a general personality judgment',
             'Behavioral — References observable actions, not intentions or character',
@@ -1129,17 +1129,17 @@ const module5 = {
           ],
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'The SBI Feedback Model',
-          level: 3,
+          level: 3 as const,
         },
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'Situation-Behavior-Impact (SBI) is a clean, non-judgmental feedback structure: describe the situation, describe the specific behavior, and describe the impact of that behavior.',
         },
         {
-          type: 'callout',
-          variant: 'example',
+          type: 'callout' as const,
+          variant: 'example' as const,
           title: 'SBI in Practice',
           text: 'Weak: "You\'re always negative in meetings." SBI: "In yesterday\'s project review [Situation], when you said \'this will never work\' before we finished presenting the data [Behavior], it shut down the discussion and two people stopped contributing ideas [Impact]. Can we talk about how to raise concerns more constructively?"',
         },
@@ -1151,16 +1151,16 @@ const module5 = {
       estimatedMinutes: 12,
       content: [
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'Difficult conversations — about performance gaps, behavior issues, or interpersonal conflict — are ones most leaders avoid or handle poorly. But avoiding them compounds the problem, damages trust with those affected, and signals that poor performance is acceptable.',
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'Framework for Difficult Conversations',
-          level: 3,
+          level: 3 as const,
         },
         {
-          type: 'ordered-list',
+          type: 'ordered-list' as const,
           items: [
             'Prepare — Clarify the specific issue, the impact, and the outcome you want from the conversation',
             'Open with curiosity — State what you\'ve observed and ask for their perspective before presenting your conclusions',
@@ -1172,16 +1172,16 @@ const module5 = {
           ],
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'Strategic Recognition',
-          level: 3,
+          level: 3 as const,
         },
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'Recognition is not just about making people feel good — it is a behavioral reinforcement tool. Specific, timely recognition connected to the behaviors and results you want to see more of is far more powerful than generic praise.',
         },
         {
-          type: 'list',
+          type: 'list' as const,
           items: [
             'Recognize specific behaviors, not just outcomes — "The way you handled that customer complaint..." not just "Great job this month"',
             'Public recognition for team-visible behaviors reinforces cultural norms',
@@ -1196,7 +1196,7 @@ const module5 = {
   quiz: [
     {
       id: 'tl-m5-q1',
-      type: 'multiple-choice',
+      type: 'multiple-choice' as const,
       question: 'A new team member is unfamiliar with a critical safety procedure that must be followed immediately. Which approach is most appropriate?',
       options: [
         'Coaching — ask questions to help them figure out the right approach',
@@ -1209,7 +1209,7 @@ const module5 = {
     },
     {
       id: 'tl-m5-q2',
-      type: 'multiple-choice',
+      type: 'multiple-choice' as const,
       question: 'In the GROW model, what is the primary purpose of the "Options" stage?',
       options: [
         'Evaluate the single best solution to the problem',
@@ -1222,7 +1222,7 @@ const module5 = {
     },
     {
       id: 'tl-m5-q3',
-      type: 'multiple-choice',
+      type: 'multiple-choice' as const,
       question: 'Which of the following is an example of effective SBI feedback?',
       options: [
         '"You always dominate meetings and don\'t let others speak."',
@@ -1235,7 +1235,7 @@ const module5 = {
     },
     {
       id: 'tl-m5-q4',
-      type: 'true-false',
+      type: 'true-false' as const,
       question: 'Recognition is most effective when it is specific, timely, and tied to the exact behaviors and results you want reinforced.',
       options: ['True', 'False'],
       correctIndex: 0,
@@ -1243,7 +1243,7 @@ const module5 = {
     },
     {
       id: 'tl-m5-q5',
-      type: 'multiple-choice',
+      type: 'multiple-choice' as const,
       question: 'When opening a difficult performance conversation, which approach best sets the right tone?',
       options: [
         'Present your conclusions about the problem directly to show clarity and confidence',
@@ -1277,16 +1277,16 @@ const module6 = {
       estimatedMinutes: 12,
       content: [
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'A daily management system (DMS) is a structured set of routines, visual displays, and review meetings that help teams monitor performance, identify problems, and take corrective action in real time. Rather than waiting for monthly reviews, teams address issues when they are small.',
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'Components of an Effective Daily Management System',
-          level: 3,
+          level: 3 as const,
         },
         {
-          type: 'list',
+          type: 'list' as const,
           items: [
             'Visual performance boards — Display key metrics, targets, and status at a glance',
             'Daily stand-up meetings — Brief (15 minutes or less), structured, standing meetings to review yesterday\'s performance and today\'s priorities',
@@ -1296,13 +1296,13 @@ const module6 = {
           ],
         },
         {
-          type: 'callout',
-          variant: 'info',
+          type: 'callout' as const,
+          variant: 'info' as const,
           title: 'Tiered Daily Management',
           text: 'Effective DMS operates in tiers: Team level (daily, 15 min), Department level (daily or weekly, 30 min), and Site/Leadership level (weekly, focused on cross-functional issues). Each tier reviews what the tier below could not resolve.',
         },
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'The key discipline in daily management is keeping the meetings short, focused on exceptions (not routine updates), and action-oriented. When every meeting covers everything, attention dilutes and urgency fades.',
         },
       ],
@@ -1313,16 +1313,16 @@ const module6 = {
       estimatedMinutes: 11,
       content: [
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'Leader standard work (LSW) defines the routines that leaders commit to performing consistently. Just as standard work on the shop floor defines how a process is performed, LSW defines how leadership is practiced — making it visible, auditable, and improvable.',
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'Why Leader Standard Work Matters',
-          level: 3,
+          level: 3 as const,
         },
         {
-          type: 'list',
+          type: 'list' as const,
           items: [
             'Prevents leadership from being consumed by reactive fire-fighting',
             'Makes the leader\'s contributions visible to the team',
@@ -1332,12 +1332,12 @@ const module6 = {
           ],
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'Elements of Leader Standard Work',
-          level: 3,
+          level: 3 as const,
         },
         {
-          type: 'table',
+          type: 'table' as const,
           headers: ['Frequency', 'Example Routines'],
           rows: [
             ['Daily', 'Gemba walk, stand-up attendance, safety check, board review'],
@@ -1347,8 +1347,8 @@ const module6 = {
           ],
         },
         {
-          type: 'callout',
-          variant: 'tip',
+          type: 'callout' as const,
+          variant: 'tip' as const,
           title: 'Start Small',
           text: 'Don\'t create a 40-item leader standard work checklist. Start with 5-8 high-impact routines you can actually sustain. A short checklist executed consistently beats a comprehensive one ignored.',
         },
@@ -1360,16 +1360,16 @@ const module6 = {
       estimatedMinutes: 11,
       content: [
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'Gemba is the Japanese term for "the actual place" — in manufacturing and service contexts, the place where value is created. Gemba walks are structured visits by leaders to the point of work, with the purpose of seeing, understanding, and supporting the people who do the work.',
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'Principles of Effective Gemba Walks',
-          level: 3,
+          level: 3 as const,
         },
         {
-          type: 'list',
+          type: 'list' as const,
           items: [
             'Go to see — Visit regularly with genuine curiosity, not to inspect or criticize',
             'Ask to understand — Lead with questions, not answers',
@@ -1379,13 +1379,13 @@ const module6 = {
           ],
         },
         {
-          type: 'callout',
-          variant: 'warning',
+          type: 'callout' as const,
+          variant: 'warning' as const,
           title: 'Common Gemba Walk Mistakes',
           text: 'Gemba walks lose their value when leaders: use them to inspect and criticize rather than learn; solve problems on the spot (bypassing the team\'s problem-solving process); go infrequently or only when there is a crisis; or fail to follow up on what was observed.',
         },
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'The most powerful question a leader can ask on a gemba walk is: "What is one thing that makes your work harder than it should be?" This surfaces improvement opportunities while demonstrating respect for the team\'s experience.',
         },
       ],
@@ -1396,16 +1396,16 @@ const module6 = {
       estimatedMinutes: 11,
       content: [
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'Visual management makes the state of work — performance, problems, priorities — visible at a glance without requiring reports or meetings. When people can see their own performance in real time, they are better positioned to identify problems and take ownership of improvement.',
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'Elements of Visual Management Boards',
-          level: 3,
+          level: 3 as const,
         },
         {
-          type: 'list',
+          type: 'list' as const,
           items: [
             'Safety metrics — Incidents, near-misses, days without incident',
             'Quality metrics — Defect rates, first-pass yield, customer complaints',
@@ -1416,16 +1416,16 @@ const module6 = {
           ],
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'Making Continuous Improvement a Habit',
-          level: 3,
+          level: 3 as const,
         },
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'Habits form through consistent routines tied to cues and reinforced by rewards. To make CI a habit, embed it into existing routines rather than creating separate improvement activities.',
         },
         {
-          type: 'ordered-list',
+          type: 'ordered-list' as const,
           items: [
             'Integrate CI questions into daily stand-ups: "What waste did you see yesterday? What could be improved?"',
             'Make idea submission easy — physical cards, digital apps, five-minute conversations',
@@ -1436,8 +1436,8 @@ const module6 = {
           ],
         },
         {
-          type: 'callout',
-          variant: 'example',
+          type: 'callout' as const,
+          variant: 'example' as const,
           title: 'CI Habit in Action',
           text: 'A healthcare team adds two standing questions to their daily huddle: "What went wrong yesterday and what did we do about it?" and "What can we make better today?" Over 90 days, this 5-minute addition produces 47 implemented improvements and measurably raises team engagement scores.',
         },
@@ -1447,7 +1447,7 @@ const module6 = {
   quiz: [
     {
       id: 'tl-m6-q1',
-      type: 'multiple-choice',
+      type: 'multiple-choice' as const,
       question: 'What is the primary purpose of a daily management system?',
       options: [
         'Replace monthly performance reviews with more frequent meetings',
@@ -1460,7 +1460,7 @@ const module6 = {
     },
     {
       id: 'tl-m6-q2',
-      type: 'multiple-choice',
+      type: 'multiple-choice' as const,
       question: 'Which best describes the purpose of leader standard work?',
       options: [
         'Define standard operating procedures for the processes leaders oversee',
@@ -1473,7 +1473,7 @@ const module6 = {
     },
     {
       id: 'tl-m6-q3',
-      type: 'true-false',
+      type: 'true-false' as const,
       question: 'Effective gemba walks focus primarily on identifying which team members are responsible for the problems observed.',
       options: ['True', 'False'],
       correctIndex: 1,
@@ -1481,7 +1481,7 @@ const module6 = {
     },
     {
       id: 'tl-m6-q4',
-      type: 'multiple-choice',
+      type: 'multiple-choice' as const,
       question: 'A tiered daily management system escalates unresolved issues from team level to department level to leadership level. What is the primary benefit of this structure?',
       options: [
         'It ensures leadership is informed of all team-level issues daily',
@@ -1494,7 +1494,7 @@ const module6 = {
     },
     {
       id: 'tl-m6-q5',
-      type: 'multiple-choice',
+      type: 'multiple-choice' as const,
       question: 'Which practice is most effective for sustaining a continuous improvement culture over time?',
       options: [
         'Running annual kaizen events to generate large numbers of improvement ideas',

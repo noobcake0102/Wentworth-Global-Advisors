@@ -19,16 +19,16 @@ const module1 = {
       estimatedMinutes: 15,
       content: [
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'A project is a temporary endeavor undertaken to create a unique product, service, or result. The word "temporary" is key — every project has a defined beginning and end. This distinguishes it from the routine, repetitive work that keeps an organization running day to day.',
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'Defining Characteristics of a Project',
-          level: 2,
+          level: 2 as const,
         },
         {
-          type: 'list',
+          type: 'list' as const,
           items: [
             'Temporary — has a start date and an end date',
             'Unique — produces something that has not existed before in exactly this form',
@@ -38,12 +38,12 @@ const module1 = {
           ],
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'Projects vs. Operations',
-          level: 2,
+          level: 2 as const,
         },
         {
-          type: 'table',
+          type: 'table' as const,
           headers: ['Dimension', 'Project', 'Operations'],
           rows: [
             ['Duration', 'Temporary', 'Ongoing'],
@@ -53,8 +53,8 @@ const module1 = {
           ],
         },
         {
-          type: 'callout',
-          variant: 'example',
+          type: 'callout' as const,
+          variant: 'example' as const,
           title: 'Real-World Example',
           text: 'Implementing a new CRM system is a project — it has a clear end state and will not be repeated. Using that CRM daily to track client interactions is an operation.',
         },
@@ -66,11 +66,11 @@ const module1 = {
       estimatedMinutes: 20,
       content: [
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'The PM lifecycle organizes work into sequential phases that guide a project from idea to closure. While different frameworks use different names, the five-phase model is widely recognized and practical for most contexts.',
         },
         {
-          type: 'ordered-list',
+          type: 'ordered-list' as const,
           items: [
             'Initiate — Define the project at a high level, identify stakeholders, and obtain authorization to proceed (often formalized in a Project Charter).',
             'Plan — Develop the roadmap: scope, schedule, budget, resource plan, risk register, and communication plan. The more thorough the plan, the fewer surprises later.',
@@ -80,18 +80,18 @@ const module1 = {
           ],
         },
         {
-          type: 'callout',
-          variant: 'tip',
+          type: 'callout' as const,
+          variant: 'tip' as const,
           title: 'Planning Is Not a One-Time Event',
           text: 'Many new PMs treat planning as a phase they pass through once. In practice, plans are living documents. As conditions change, you revisit and update them — especially the schedule, risk register, and budget forecast.',
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'Key Outputs by Phase',
-          level: 2,
+          level: 2 as const,
         },
         {
-          type: 'table',
+          type: 'table' as const,
           headers: ['Phase', 'Key Outputs'],
           rows: [
             ['Initiate', 'Project Charter, Stakeholder Register'],
@@ -109,11 +109,11 @@ const module1 = {
       estimatedMinutes: 20,
       content: [
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'Every project operates within constraints. The classic "triple constraint" — scope, time, and cost — is often depicted as a triangle. Change one side and you affect the others. Quality is sometimes called the fourth constraint: it sits at the center, determined by how well you balance the three sides.',
         },
         {
-          type: 'key-terms',
+          type: 'key-terms' as const,
           terms: [
             { term: 'Scope', definition: 'The work that must be done to deliver the project\'s product or result. Includes features, functions, and deliverables.' },
             { term: 'Time', definition: 'The schedule — when activities will occur and when the project will be complete.' },
@@ -122,18 +122,18 @@ const module1 = {
           ],
         },
         {
-          type: 'callout',
-          variant: 'warning',
+          type: 'callout' as const,
+          variant: 'warning' as const,
           title: 'The Constraint Trade-Off',
           text: 'If a client asks to add features (scope increases), you must either extend the timeline, increase the budget, or accept a quality reduction. There is no free lunch. Making these trade-offs visible and explicit is one of the most valuable things a PM does.',
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'The Role of the Project Manager',
-          level: 2,
+          level: 2 as const,
         },
         {
-          type: 'list',
+          type: 'list' as const,
           items: [
             'Define and protect scope',
             'Build and maintain a realistic schedule',
@@ -145,8 +145,8 @@ const module1 = {
           ],
         },
         {
-          type: 'callout',
-          variant: 'info',
+          type: 'callout' as const,
+          variant: 'info' as const,
           title: 'PM as Integrator',
           text: 'More than any technical skill, effective project management is about integration — connecting people, processes, and information so the team can deliver as a coordinated unit rather than isolated contributors.',
         },
@@ -156,7 +156,7 @@ const module1 = {
   quiz: [
     {
       id: 'pm-m1-q1',
-      type: 'multiple-choice',
+      type: 'multiple-choice' as const,
       question: 'Which of the following best distinguishes a project from an operation?',
       options: [
         'Projects always cost more than operations',
@@ -169,7 +169,7 @@ const module1 = {
     },
     {
       id: 'pm-m1-q2',
-      type: 'multiple-choice',
+      type: 'multiple-choice' as const,
       question: 'During which project phase is the Project Charter typically created?',
       options: ['Plan', 'Execute', 'Initiate', 'Close'],
       correctIndex: 2,
@@ -177,7 +177,7 @@ const module1 = {
     },
     {
       id: 'pm-m1-q3',
-      type: 'true-false',
+      type: 'true-false' as const,
       question: 'The Monitor & Control phase only occurs after the Execute phase is complete.',
       options: ['True', 'False'],
       correctIndex: 1,
@@ -185,7 +185,7 @@ const module1 = {
     },
     {
       id: 'pm-m1-q4',
-      type: 'multiple-choice',
+      type: 'multiple-choice' as const,
       question: 'A client requests new features mid-project without changing the deadline or budget. Which constraint is most at risk?',
       options: ['Time', 'Cost', 'Quality', 'Stakeholder satisfaction'],
       correctIndex: 2,
@@ -193,7 +193,7 @@ const module1 = {
     },
     {
       id: 'pm-m1-q5',
-      type: 'multiple-choice',
+      type: 'multiple-choice' as const,
       question: 'Which output is most associated with the Close phase?',
       options: ['Risk Register', 'Project Charter', 'Lessons Learned', 'Gantt Chart'],
       correctIndex: 2,
@@ -221,16 +221,16 @@ const module2 = {
       estimatedMinutes: 15,
       content: [
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'A scope statement is the foundation of your project plan. It defines what the project will deliver, and equally important, what it will not deliver. Ambiguous scope is one of the leading causes of project failure.',
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'Elements of a Scope Statement',
-          level: 2,
+          level: 2 as const,
         },
         {
-          type: 'ordered-list',
+          type: 'ordered-list' as const,
           items: [
             'Project Objectives — What the project is intended to achieve and why it matters to the organization.',
             'Deliverables — Specific outputs, products, or results the project will produce.',
@@ -241,8 +241,8 @@ const module2 = {
           ],
         },
         {
-          type: 'callout',
-          variant: 'tip',
+          type: 'callout' as const,
+          variant: 'tip' as const,
           title: 'Be Explicit About Exclusions',
           text: 'Listing what is out of scope is just as valuable as listing what is in scope. If a stakeholder later requests something not mentioned, you can point to the exclusions list and initiate a formal change request rather than absorbing the work silently.',
         },
@@ -254,16 +254,16 @@ const module2 = {
       estimatedMinutes: 20,
       content: [
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'A Work Breakdown Structure decomposes the total scope of a project into smaller, manageable components called work packages. The WBS is hierarchical — starting from the project as a whole, breaking down into phases or major deliverables, then further into tasks that can be assigned, estimated, and tracked.',
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'WBS Principles',
-          level: 2,
+          level: 2 as const,
         },
         {
-          type: 'list',
+          type: 'list' as const,
           items: [
             '100% Rule — The WBS must capture 100% of the work. Nothing should be left out, and nothing in the WBS should be outside the scope.',
             'Mutually Exclusive — Work packages should not overlap. Each unit of work belongs to exactly one place in the hierarchy.',
@@ -272,14 +272,14 @@ const module2 = {
           ],
         },
         {
-          type: 'callout',
-          variant: 'example',
+          type: 'callout' as const,
+          variant: 'example' as const,
           title: 'WBS Example: Website Redesign Project',
           text: 'Level 1: Website Redesign | Level 2: Discovery, Design, Development, Testing, Launch | Level 3 (under Design): Wireframes, Visual Style Guide, Page Mockups, Stakeholder Review | Level 4 (under Wireframes): Homepage Wireframe, About Page Wireframe, Contact Page Wireframe',
         },
         {
-          type: 'callout',
-          variant: 'info',
+          type: 'callout' as const,
+          variant: 'info' as const,
           title: 'WBS and Scheduling',
           text: 'Once the WBS is complete, you can sequence the work packages, estimate durations, assign resources, and build your schedule. The WBS is the skeleton that the rest of the plan hangs on.',
         },
@@ -291,16 +291,16 @@ const module2 = {
       estimatedMinutes: 25,
       content: [
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'Requirements gathering is the process of eliciting, analyzing, and documenting what stakeholders need from the project\'s outputs. Poor requirements are a root cause of rework, delays, and dissatisfied clients.',
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'Requirements Gathering Techniques',
-          level: 2,
+          level: 2 as const,
         },
         {
-          type: 'table',
+          type: 'table' as const,
           headers: ['Technique', 'Best Used When', 'Watch Out For'],
           rows: [
             ['Interviews', 'Gathering in-depth input from key individuals', 'Groupthink if done in groups too early'],
@@ -312,27 +312,27 @@ const module2 = {
           ],
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'Scope Creep',
-          level: 2,
+          level: 2 as const,
         },
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'Scope creep is the gradual, uncontrolled expansion of project scope without corresponding adjustments to time, budget, or resources. It often happens through small, seemingly reasonable additions that accumulate into significant unplanned work.',
         },
         {
-          type: 'callout',
-          variant: 'warning',
+          type: 'callout' as const,
+          variant: 'warning' as const,
           title: 'Scope Creep Is Rarely Dramatic',
           text: '"Can we just add one more field to that report?" "While you\'re at it, could you also…?" These small requests feel harmless individually but collectively derail timelines. Every change, no matter how small, deserves a change request.',
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'Change Control Process',
-          level: 2,
+          level: 2 as const,
         },
         {
-          type: 'ordered-list',
+          type: 'ordered-list' as const,
           items: [
             'Change Request Submitted — Anyone can submit a change request, describing what they want changed and why.',
             'Impact Analysis — The PM assesses impact on scope, schedule, cost, and quality.',
@@ -347,7 +347,7 @@ const module2 = {
   quiz: [
     {
       id: 'pm-m2-q1',
-      type: 'multiple-choice',
+      type: 'multiple-choice' as const,
       question: 'Which element of a scope statement explicitly lists what the project will NOT deliver?',
       options: ['Constraints', 'Assumptions', 'Exclusions', 'Acceptance Criteria'],
       correctIndex: 2,
@@ -355,7 +355,7 @@ const module2 = {
     },
     {
       id: 'pm-m2-q2',
-      type: 'true-false',
+      type: 'true-false' as const,
       question: 'In a Work Breakdown Structure, the same work package can appear in two different branches to reflect shared effort.',
       options: ['True', 'False'],
       correctIndex: 1,
@@ -363,7 +363,7 @@ const module2 = {
     },
     {
       id: 'pm-m2-q3',
-      type: 'multiple-choice',
+      type: 'multiple-choice' as const,
       question: 'A stakeholder asks to add a new feature mid-project with no change to the deadline or budget. What should the PM do first?',
       options: [
         'Absorb the work and work overtime to deliver it',
@@ -376,7 +376,7 @@ const module2 = {
     },
     {
       id: 'pm-m2-q4',
-      type: 'multiple-choice',
+      type: 'multiple-choice' as const,
       question: 'Which requirements-gathering technique is best suited to understanding how users actually perform their current tasks?',
       options: ['Surveys', 'Observation / Job Shadowing', 'Document Analysis', 'Interviews'],
       correctIndex: 1,
@@ -384,7 +384,7 @@ const module2 = {
     },
     {
       id: 'pm-m2-q5',
-      type: 'multiple-choice',
+      type: 'multiple-choice' as const,
       question: 'What does the "100% Rule" mean in the context of a WBS?',
       options: [
         'Every team member must be assigned to at least one work package',
@@ -418,16 +418,16 @@ const module3 = {
       estimatedMinutes: 20,
       content: [
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'A Gantt chart is a horizontal bar chart that visualizes a project schedule. Each bar represents a task, its length shows duration, and its position shows when it starts and ends. Gantt charts are the most widely used scheduling tool in project management.',
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'Reading a Gantt Chart',
-          level: 2,
+          level: 2 as const,
         },
         {
-          type: 'list',
+          type: 'list' as const,
           items: [
             'Rows — Each row represents a task or work package',
             'Bars — The horizontal bar spans from the task\'s start to end date',
@@ -437,12 +437,12 @@ const module3 = {
           ],
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'Types of Task Dependencies',
-          level: 2,
+          level: 2 as const,
         },
         {
-          type: 'table',
+          type: 'table' as const,
           headers: ['Dependency Type', 'Meaning', 'Example'],
           rows: [
             ['Finish-to-Start (FS)', 'Task B cannot start until Task A finishes', 'Requirements must finish before design begins'],
@@ -452,8 +452,8 @@ const module3 = {
           ],
         },
         {
-          type: 'callout',
-          variant: 'tip',
+          type: 'callout' as const,
+          variant: 'tip' as const,
           title: 'Leads and Lags',
           text: 'A lead shortens the gap between dependent tasks (you can start Task B 2 days before Task A finishes). A lag adds a waiting period (Task B must wait 3 days after Task A finishes). Use these to build more realistic schedules.',
         },
@@ -465,16 +465,16 @@ const module3 = {
       estimatedMinutes: 25,
       content: [
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'The Critical Path Method (CPM) identifies the longest sequence of dependent tasks that determines the minimum project duration. Any delay on the critical path directly delays the project end date.',
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'Key Concepts',
-          level: 2,
+          level: 2 as const,
         },
         {
-          type: 'key-terms',
+          type: 'key-terms' as const,
           terms: [
             { term: 'Critical Path', definition: 'The longest path through the network of tasks. Total float on critical path tasks is zero.' },
             { term: 'Float (Slack)', definition: 'The amount of time a task can be delayed without delaying the project end date. Critical path tasks have zero float.' },
@@ -484,14 +484,14 @@ const module3 = {
           ],
         },
         {
-          type: 'callout',
-          variant: 'info',
+          type: 'callout' as const,
+          variant: 'info' as const,
           title: 'Why CPM Matters',
           text: 'CPM tells you where to focus. If a critical path task is running late, you need to act immediately — add resources, reduce scope, or negotiate the deadline. A non-critical task running a week late may have no impact if it has sufficient float.',
         },
         {
-          type: 'callout',
-          variant: 'example',
+          type: 'callout' as const,
+          variant: 'example' as const,
           title: 'Schedule Compression Techniques',
           text: 'When you need to shorten the schedule: (1) Crashing — add resources to critical path tasks to reduce their duration, at increased cost. (2) Fast-tracking — overlap tasks that were originally sequential, increasing risk. Always analyze trade-offs before compressing.',
         },
@@ -503,20 +503,20 @@ const module3 = {
       estimatedMinutes: 20,
       content: [
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'A schedule is only realistic if the resources required are actually available. Resource planning ensures that people and materials are assigned appropriately and that no one is over-committed.',
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'Resource Leveling',
-          level: 2,
+          level: 2 as const,
         },
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'Resource leveling adjusts the schedule to eliminate over-allocation — situations where a team member is assigned more work than they can handle in a given period. Leveling may extend the project end date but produces a more realistic and sustainable plan.',
         },
         {
-          type: 'list',
+          type: 'list' as const,
           items: [
             'Identify over-allocated resources by viewing resource usage across time',
             'Delay non-critical tasks that are consuming the over-allocated resource',
@@ -526,23 +526,23 @@ const module3 = {
           ],
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'Baseline vs. Actual',
-          level: 2,
+          level: 2 as const,
         },
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'Once the schedule is approved, you save it as the baseline. The baseline is a frozen snapshot of the original plan — start dates, end dates, and durations for every task. As the project progresses, you track actual progress against the baseline to identify variances.',
         },
         {
-          type: 'callout',
-          variant: 'warning',
+          type: 'callout' as const,
+          variant: 'warning' as const,
           title: 'Protect Your Baseline',
           text: 'Only update the baseline through a formal change control process. If you continuously reset the baseline to match actuals, you lose the ability to measure true schedule performance and identify trends.',
         },
         {
-          type: 'callout',
-          variant: 'info',
+          type: 'callout' as const,
+          variant: 'info' as const,
           title: 'Earned Value Key Metrics',
           text: 'Schedule Variance (SV = Earned Value − Planned Value): negative means behind schedule. Schedule Performance Index (SPI = EV ÷ PV): below 1.0 means the project is progressing slower than planned.',
         },
@@ -552,7 +552,7 @@ const module3 = {
   quiz: [
     {
       id: 'pm-m3-q1',
-      type: 'multiple-choice',
+      type: 'multiple-choice' as const,
       question: 'A task on the critical path is delayed by 3 days. What is the effect on the project end date?',
       options: [
         'No effect — only milestones affect the end date',
@@ -565,7 +565,7 @@ const module3 = {
     },
     {
       id: 'pm-m3-q2',
-      type: 'multiple-choice',
+      type: 'multiple-choice' as const,
       question: 'Which dependency type means "Task B cannot start until Task A finishes"?',
       options: ['Start-to-Start', 'Finish-to-Finish', 'Finish-to-Start', 'Start-to-Finish'],
       correctIndex: 2,
@@ -573,7 +573,7 @@ const module3 = {
     },
     {
       id: 'pm-m3-q3',
-      type: 'true-false',
+      type: 'true-false' as const,
       question: 'Resource leveling can extend the project end date.',
       options: ['True', 'False'],
       correctIndex: 0,
@@ -581,7 +581,7 @@ const module3 = {
     },
     {
       id: 'pm-m3-q4',
-      type: 'multiple-choice',
+      type: 'multiple-choice' as const,
       question: 'What is the purpose of saving a schedule baseline?',
       options: [
         'To share with external stakeholders as a contract',
@@ -594,7 +594,7 @@ const module3 = {
     },
     {
       id: 'pm-m3-q5',
-      type: 'multiple-choice',
+      type: 'multiple-choice' as const,
       question: 'Fast-tracking a schedule means:',
       options: [
         'Adding resources to shorten task durations',
@@ -627,16 +627,16 @@ const module4 = {
       estimatedMinutes: 20,
       content: [
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'A risk is an uncertain event that, if it occurs, will have a positive or negative effect on the project. Risks are future-oriented — they may or may not happen. An issue is a risk that has already materialized and must be resolved now.',
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'Risk Identification Techniques',
-          level: 2,
+          level: 2 as const,
         },
         {
-          type: 'list',
+          type: 'list' as const,
           items: [
             'Brainstorming — Gather the team to freely generate risks without judgment',
             'Expert Interviews — Talk to people with experience on similar projects',
@@ -647,16 +647,16 @@ const module4 = {
           ],
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'Probability-Impact Matrix',
-          level: 2,
+          level: 2 as const,
         },
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'Once risks are identified, prioritize them using a probability-impact (P×I) matrix. Assess each risk on two dimensions: how likely it is to occur (probability) and how severe the effect would be (impact). Multiply the two scores to get a risk score.',
         },
         {
-          type: 'table',
+          type: 'table' as const,
           headers: ['Risk Score', 'Priority', 'Response Approach'],
           rows: [
             ['High (P×I > 0.5)', 'Critical', 'Active mitigation required; assign an owner immediately'],
@@ -665,8 +665,8 @@ const module4 = {
           ],
         },
         {
-          type: 'callout',
-          variant: 'tip',
+          type: 'callout' as const,
+          variant: 'tip' as const,
           title: 'Include Positive Risks',
           text: 'Not all risks are threats. A positive risk (opportunity) might be: "If we complete Phase 1 early, we may be able to add the bonus feature." Capture and actively pursue opportunities just as you manage threats.',
         },
@@ -678,16 +678,16 @@ const module4 = {
       estimatedMinutes: 20,
       content: [
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'The risk register is a living document that captures all identified risks and their management strategies. It is reviewed and updated throughout the project — typically at every status meeting.',
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'Risk Register Fields',
-          level: 2,
+          level: 2 as const,
         },
         {
-          type: 'table',
+          type: 'table' as const,
           headers: ['Field', 'Description'],
           rows: [
             ['Risk ID', 'Unique identifier for tracking'],
@@ -704,12 +704,12 @@ const module4 = {
           ],
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'Response Strategies for Threats',
-          level: 2,
+          level: 2 as const,
         },
         {
-          type: 'key-terms',
+          type: 'key-terms' as const,
           terms: [
             { term: 'Avoid', definition: 'Eliminate the threat by changing the plan. Example: remove a dependency on an unreliable vendor.' },
             { term: 'Transfer', definition: 'Shift the financial impact to a third party. Example: purchase insurance or include penalty clauses in contracts.' },
@@ -725,16 +725,16 @@ const module4 = {
       estimatedMinutes: 15,
       content: [
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'When a risk materializes or an unexpected problem arises, it becomes an issue. Issues require immediate attention and a resolution plan. Unlike risks, which are managed proactively, issues demand reactive problem-solving.',
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'Issue Log',
-          level: 2,
+          level: 2 as const,
         },
         {
-          type: 'list',
+          type: 'list' as const,
           items: [
             'Issue ID and description',
             'Date identified and reported by',
@@ -746,12 +746,12 @@ const module4 = {
           ],
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'Escalation Process',
-          level: 2,
+          level: 2 as const,
         },
         {
-          type: 'ordered-list',
+          type: 'ordered-list' as const,
           items: [
             'Attempt resolution within the team — give the owner a defined time window to resolve independently.',
             'Escalate to the PM — if the owner cannot resolve within the window, the PM steps in with additional resources or authority.',
@@ -760,8 +760,8 @@ const module4 = {
           ],
         },
         {
-          type: 'callout',
-          variant: 'warning',
+          type: 'callout' as const,
+          variant: 'warning' as const,
           title: 'Avoid Escalation Avoidance',
           text: 'Many project teams wait too long to escalate, hoping the issue will resolve itself. Define escalation thresholds upfront (e.g., "any issue unresolved for more than 48 hours escalates to PM") and stick to them.',
         },
@@ -771,7 +771,7 @@ const module4 = {
   quiz: [
     {
       id: 'pm-m4-q1',
-      type: 'multiple-choice',
+      type: 'multiple-choice' as const,
       question: 'What is the difference between a risk and an issue?',
       options: [
         'Risks are more serious than issues',
@@ -784,7 +784,7 @@ const module4 = {
     },
     {
       id: 'pm-m4-q2',
-      type: 'multiple-choice',
+      type: 'multiple-choice' as const,
       question: 'Which risk response strategy involves purchasing insurance to cover potential losses?',
       options: ['Avoid', 'Mitigate', 'Accept', 'Transfer'],
       correctIndex: 3,
@@ -792,7 +792,7 @@ const module4 = {
     },
     {
       id: 'pm-m4-q3',
-      type: 'true-false',
+      type: 'true-false' as const,
       question: 'A risk with high probability but low impact should always be escalated to the project sponsor immediately.',
       options: ['True', 'False'],
       correctIndex: 1,
@@ -800,7 +800,7 @@ const module4 = {
     },
     {
       id: 'pm-m4-q4',
-      type: 'multiple-choice',
+      type: 'multiple-choice' as const,
       question: 'What is a risk trigger?',
       options: [
         'The event that causes a risk to be added to the register',
@@ -813,7 +813,7 @@ const module4 = {
     },
     {
       id: 'pm-m4-q5',
-      type: 'multiple-choice',
+      type: 'multiple-choice' as const,
       question: 'What distinguishes active acceptance of a risk from passive acceptance?',
       options: [
         'Active acceptance involves documenting the risk; passive acceptance ignores it',
@@ -847,16 +847,16 @@ const module5 = {
       estimatedMinutes: 15,
       content: [
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'A stakeholder is anyone who is affected by or can affect the project. Effective stakeholder management begins with identifying who they are, understanding their interests and concerns, and tailoring your engagement accordingly.',
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'Power-Interest Grid',
-          level: 2,
+          level: 2 as const,
         },
         {
-          type: 'table',
+          type: 'table' as const,
           headers: ['Quadrant', 'Power', 'Interest', 'Strategy'],
           rows: [
             ['Manage Closely', 'High', 'High', 'Engage frequently; involve in key decisions'],
@@ -866,18 +866,18 @@ const module5 = {
           ],
         },
         {
-          type: 'callout',
-          variant: 'tip',
+          type: 'callout' as const,
+          variant: 'tip' as const,
           title: 'Stakeholder Positions Can Shift',
           text: 'A quiet stakeholder can become highly vocal if they feel blindsided by a project development. Reassess your stakeholder map at major project milestones and whenever significant changes occur.',
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'Understanding Stakeholder Interests',
-          level: 2,
+          level: 2 as const,
         },
         {
-          type: 'list',
+          type: 'list' as const,
           items: [
             'What does this stakeholder gain if the project succeeds?',
             'What do they lose or risk if it fails?',
@@ -894,16 +894,16 @@ const module5 = {
       estimatedMinutes: 25,
       content: [
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'A communication plan defines who needs what information, when, in what format, and through which channel. It prevents information overload for some stakeholders and information gaps for others.',
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'Communication Plan Elements',
-          level: 2,
+          level: 2 as const,
         },
         {
-          type: 'table',
+          type: 'table' as const,
           headers: ['Element', 'Questions to Answer'],
           rows: [
             ['Audience', 'Who needs this communication?'],
@@ -915,16 +915,16 @@ const module5 = {
           ],
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'Writing an Effective Status Report',
-          level: 2,
+          level: 2 as const,
         },
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'A good status report is concise, honest, and action-oriented. It should take less than five minutes to read and leave the reader with a clear picture of where the project stands.',
         },
         {
-          type: 'ordered-list',
+          type: 'ordered-list' as const,
           items: [
             'Overall Status — Red / Yellow / Green with a one-sentence summary of why',
             'Accomplishments This Period — What was completed since the last report',
@@ -935,8 +935,8 @@ const module5 = {
           ],
         },
         {
-          type: 'callout',
-          variant: 'warning',
+          type: 'callout' as const,
+          variant: 'warning' as const,
           title: 'Be Honest About Red Status',
           text: 'Many PMs are reluctant to report Red status, fearing it reflects poorly on them. In reality, stakeholders appreciate transparency — they can help solve problems they know about. A project that shows Yellow for months and then suddenly fails is far more damaging than one that proactively raised concerns.',
         },
@@ -948,16 +948,16 @@ const module5 = {
       estimatedMinutes: 15,
       content: [
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'A project dashboard provides a visual, at-a-glance view of project health. Well-designed dashboards enable faster decision-making by surfacing the right information without requiring stakeholders to dig through detailed reports.',
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'Dashboard Design Principles',
-          level: 2,
+          level: 2 as const,
         },
         {
-          type: 'list',
+          type: 'list' as const,
           items: [
             'Lead with status — Overall RAG (Red/Amber/Green) status should be immediately visible',
             'Show trends, not just snapshots — Is the project improving or declining?',
@@ -968,18 +968,18 @@ const module5 = {
           ],
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'Communicating with Executives',
-          level: 2,
+          level: 2 as const,
         },
         {
-          type: 'callout',
-          variant: 'info',
+          type: 'callout' as const,
+          variant: 'info' as const,
           title: 'The BLUF Principle',
           text: 'Bottom Line Up Front (BLUF): state your key message in the first sentence, then provide supporting detail. Executives are time-constrained and decision-focused. Lead with the answer, not the narrative.',
         },
         {
-          type: 'list',
+          type: 'list' as const,
           items: [
             'Lead with impact on business objectives, not project activities',
             'Quantify — "We are 2 weeks behind schedule" not "there have been some delays"',
@@ -994,7 +994,7 @@ const module5 = {
   quiz: [
     {
       id: 'pm-m5-q1',
-      type: 'multiple-choice',
+      type: 'multiple-choice' as const,
       question: 'A stakeholder with high power but low interest in the project should be:',
       options: [
         'Kept informed with regular detailed updates',
@@ -1007,7 +1007,7 @@ const module5 = {
     },
     {
       id: 'pm-m5-q2',
-      type: 'true-false',
+      type: 'true-false' as const,
       question: 'A project status report should always show Green status to maintain stakeholder confidence.',
       options: ['True', 'False'],
       correctIndex: 1,
@@ -1015,7 +1015,7 @@ const module5 = {
     },
     {
       id: 'pm-m5-q3',
-      type: 'multiple-choice',
+      type: 'multiple-choice' as const,
       question: 'What does BLUF stand for in executive communication?',
       options: [
         'Budget, Labor, Utilization, Forecast',
@@ -1028,7 +1028,7 @@ const module5 = {
     },
     {
       id: 'pm-m5-q4',
-      type: 'multiple-choice',
+      type: 'multiple-choice' as const,
       question: 'Which of the following is NOT a recommended principle of dashboard design?',
       options: [
         'Show overall RAG status prominently',
@@ -1041,7 +1041,7 @@ const module5 = {
     },
     {
       id: 'pm-m5-q5',
-      type: 'multiple-choice',
+      type: 'multiple-choice' as const,
       question: 'A stakeholder\'s position on the power-interest grid can change during a project.',
       options: ['True — stakeholder dynamics shift as the project evolves', 'False — stakeholder power and interest are fixed attributes'],
       correctIndex: 0,
@@ -1070,16 +1070,16 @@ const module6 = {
       estimatedMinutes: 20,
       content: [
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'Smartsheet is a cloud-based work management platform that combines the familiarity of a spreadsheet with powerful project management capabilities including scheduling, automation, collaboration, and reporting. It is particularly well-suited to organizations that manage multiple concurrent projects and need real-time visibility across teams.',
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'Core Building Blocks',
-          level: 2,
+          level: 2 as const,
         },
         {
-          type: 'key-terms',
+          type: 'key-terms' as const,
           terms: [
             { term: 'Sheet', definition: 'The primary workspace in Smartsheet. A sheet looks like a spreadsheet but supports task hierarchies, Gantt views, card views, and calendar views. Each row is typically a task; columns hold attributes like owner, due date, status, and percent complete.' },
             { term: 'Report', definition: 'A cross-sheet view that aggregates rows from multiple sheets based on criteria you define. Reports are live — when underlying data changes, the report updates automatically. Use reports to see all tasks due this week across 10 projects, or all items assigned to one team member.' },
@@ -1088,16 +1088,16 @@ const module6 = {
           ],
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'Structuring a Project Tracking Sheet',
-          level: 2,
+          level: 2 as const,
         },
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'The structure of your sheet determines how useful it will be throughout the project. Think of the sheet as your WBS made interactive.',
         },
         {
-          type: 'list',
+          type: 'list' as const,
           items: [
             'Use parent rows for phases or major deliverables and indent child rows for individual tasks — Smartsheet automatically rolls up dates and percent-complete values from children to parents',
             'Include a Status column with a dropdown (Not Started / In Progress / Complete / Blocked) so you can filter and report by status',
@@ -1109,8 +1109,8 @@ const module6 = {
           ],
         },
         {
-          type: 'callout',
-          variant: 'tip',
+          type: 'callout' as const,
+          variant: 'tip' as const,
           title: 'Consistency Across Projects',
           text: 'Create a standard project template in Smartsheet and use it for every project. Consistent column names and structures make cross-project reporting much easier and reduce the learning curve for team members who join new projects.',
         },
@@ -1122,16 +1122,16 @@ const module6 = {
       estimatedMinutes: 20,
       content: [
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'One of Smartsheet\'s most powerful features is its automation engine, which allows you to trigger actions based on conditions in your sheet — without manual intervention. Automation reduces administrative overhead and ensures that the right people are notified at the right time.',
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'Anatomy of an Automation Workflow',
-          level: 2,
+          level: 2 as const,
         },
         {
-          type: 'ordered-list',
+          type: 'ordered-list' as const,
           items: [
             'Trigger — What event starts the workflow? Options include: when a row is added or changed, when a date arrives, on a recurring schedule, or when a form is submitted.',
             'Condition (optional) — Filter to specific rows. Example: only trigger when Status = "Blocked" and Owner is not empty.',
@@ -1139,12 +1139,12 @@ const module6 = {
           ],
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'Practical Automation Examples',
-          level: 2,
+          level: 2 as const,
         },
         {
-          type: 'table',
+          type: 'table' as const,
           headers: ['Use Case', 'Trigger', 'Condition', 'Action'],
           rows: [
             ['Overdue task alert', 'Daily schedule', 'End Date < Today AND Status ≠ Complete', 'Notify task owner and PM'],
@@ -1155,14 +1155,14 @@ const module6 = {
           ],
         },
         {
-          type: 'callout',
-          variant: 'info',
+          type: 'callout' as const,
+          variant: 'info' as const,
           title: 'Automation Reduces Follow-Up Fatigue',
           text: 'PMs often spend significant time manually chasing status updates and reminders. Well-designed automation handles routine follow-up, freeing the PM to focus on decisions, relationships, and risk management — the work that requires human judgment.',
         },
         {
-          type: 'callout',
-          variant: 'warning',
+          type: 'callout' as const,
+          variant: 'warning' as const,
           title: 'Audit Your Automations Regularly',
           text: 'Automation that fires incorrectly or too frequently erodes trust. Review your workflows at each project phase to ensure triggers, conditions, and recipients are still appropriate. Remove or disable automations that are no longer relevant.',
         },
@@ -1174,16 +1174,16 @@ const module6 = {
       estimatedMinutes: 25,
       content: [
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'Smartsheet dashboards bring together data from multiple sheets and reports into a single, stakeholder-friendly view. Unlike the raw sheets, dashboards are designed for consumption — they present summaries, trends, and key metrics without exposing the underlying complexity.',
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'Building an Effective Project Dashboard',
-          level: 2,
+          level: 2 as const,
         },
         {
-          type: 'list',
+          type: 'list' as const,
           items: [
             'Start with a metrics widget showing overall project health (on track / at risk / off track)',
             'Add a chart widget visualizing tasks by status — a bar or donut chart showing Not Started / In Progress / Complete / Blocked gives an immediate sense of momentum',
@@ -1194,22 +1194,22 @@ const module6 = {
           ],
         },
         {
-          type: 'callout',
-          variant: 'example',
+          type: 'callout' as const,
+          variant: 'example' as const,
           title: 'Dashboard Audience Design',
           text: 'Consider building two versions: an Executive Dashboard (3–4 high-level widgets: overall status, milestone timeline, budget vs. actuals, open issues count) and a Team Dashboard (detailed task list, upcoming deadlines, blockers by owner). Both pull from the same underlying sheets.',
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'Agile Boards in Smartsheet',
-          level: 2,
+          level: 2 as const,
         },
         {
-          type: 'paragraph',
+          type: 'paragraph' as const,
           text: 'Smartsheet\'s Card View transforms a standard sheet into a Kanban-style board, allowing teams to visualize work in progress and manage flow. Each row becomes a card; you organize cards into columns based on a status or phase field.',
         },
         {
-          type: 'list',
+          type: 'list' as const,
           items: [
             'Use Card View for sprint planning, content calendars, or any workflow with distinct stages',
             'Drag cards between columns to update status — the underlying sheet row updates automatically',
@@ -1218,12 +1218,12 @@ const module6 = {
           ],
         },
         {
-          type: 'heading',
+          type: 'heading' as const,
           text: 'Best Practices for Distributed Teams',
-          level: 2,
+          level: 2 as const,
         },
         {
-          type: 'ordered-list',
+          type: 'ordered-list' as const,
           items: [
             'Establish a single source of truth — All project information lives in Smartsheet. Meeting notes, decisions, and updates go into the relevant sheet or a linked document, not scattered across email threads.',
             'Define update cadence and expectations — Specify when team members should update their task status (e.g., every Friday by 4 PM). Automate reminders to reinforce the habit.',
@@ -1234,8 +1234,8 @@ const module6 = {
           ],
         },
         {
-          type: 'callout',
-          variant: 'tip',
+          type: 'callout' as const,
+          variant: 'tip' as const,
           title: 'Integrations Extend Smartsheet\'s Value',
           text: 'Smartsheet integrates with tools your organization likely already uses: Microsoft 365 (sync tasks with Teams and Outlook), Google Workspace, Salesforce, Jira, DocuSign, and more. The goal is to reduce context-switching — surface project data where people already work, rather than requiring them to log into yet another tool.',
         },
@@ -1245,7 +1245,7 @@ const module6 = {
   quiz: [
     {
       id: 'pm-m6-q1',
-      type: 'multiple-choice',
+      type: 'multiple-choice' as const,
       question: 'In Smartsheet, what is a Report?',
       options: [
         'A printed summary of a single sheet exported to PDF',
@@ -1258,7 +1258,7 @@ const module6 = {
     },
     {
       id: 'pm-m6-q2',
-      type: 'multiple-choice',
+      type: 'multiple-choice' as const,
       question: 'Which Smartsheet automation trigger would you use to send a reminder when a task\'s due date arrives?',
       options: [
         'When a row is added',
@@ -1271,7 +1271,7 @@ const module6 = {
     },
     {
       id: 'pm-m6-q3',
-      type: 'true-false',
+      type: 'true-false' as const,
       question: 'Smartsheet\'s Card View and Gantt View pull from the same underlying sheet data.',
       options: ['True', 'False'],
       correctIndex: 0,
@@ -1279,7 +1279,7 @@ const module6 = {
     },
     {
       id: 'pm-m6-q4',
-      type: 'multiple-choice',
+      type: 'multiple-choice' as const,
       question: 'What is the primary advantage of using a Smartsheet form for collecting change requests?',
       options: [
         'Forms automatically approve change requests without PM review',
@@ -1292,7 +1292,7 @@ const module6 = {
     },
     {
       id: 'pm-m6-q5',
-      type: 'multiple-choice',
+      type: 'multiple-choice' as const,
       question: 'Which best practice helps distributed teams maintain a single source of truth?',
       options: [
         'Store project information across multiple tools to ensure redundancy',
