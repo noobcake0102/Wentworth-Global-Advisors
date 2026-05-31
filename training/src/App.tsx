@@ -9,7 +9,6 @@ import { DashboardPage } from './pages/DashboardPage';
 import { CertificatePage } from './pages/CertificatePage';
 import { LoginPage } from './pages/LoginPage';
 import { ProfilePage } from './pages/ProfilePage';
-import { DefenseContractingPage } from './pages/DefenseContractingPage';
 
 export default function App() {
   return (
@@ -25,7 +24,6 @@ export default function App() {
           <Route path="/courses/:courseId/certificate" element={<CertificatePage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/profile" element={<ProfilePage />} />
-          <Route path="/defense" element={<DefenseContractingPage />} />
         </Routes>
       </ProgressProvider>
     </AuthProvider>
