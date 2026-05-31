@@ -1,7 +1,7 @@
 import type { Course } from '../types/course';
 import { yellowBeltCourse } from './yellowBelt';
 import { greenBeltCourse } from './greenBelt';
-import { blackBeltCourse } from './blackBelt';
+import { blackBeltCourseData as blackBeltCourse } from './blackBelt';
 
 // Lean Foundations Track
 import { leanManufacturingCourse } from './leanManufacturing';

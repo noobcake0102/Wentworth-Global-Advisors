@@ -1,4 +1,4 @@
-import type { Course, Module } from '../../types/course';
+import type { Module } from '../../types/course';
 
 export const module1: Module = {
   id: 'gb-project-charter',
