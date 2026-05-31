@@ -1,7 +1,7 @@
 import type { ReactElement } from 'react';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Clock, ChevronRight, Lock } from 'lucide-react';
 import { PageLayout } from '../components/layout/PageLayout';
 import { Badge } from '../components/ui/Badge';
@@ -132,12 +132,13 @@ function CourseIcon({ courseId, color, size = 40 }: { courseId: string; color: s
 }
 
 // ── Track tab definitions ──
-const TRACKS: { id: 'all' | CourseTrack; label: string; shortLabel: string }[] = [
+const TRACKS: { id: 'all' | CourseTrack | 'defense-landing'; label: string; shortLabel: string }[] = [
   { id: 'all', label: 'All Courses', shortLabel: 'All' },
   { id: 'lss-certification', label: 'Six Sigma Certification', shortLabel: 'LSS Cert' },
   { id: 'lean-foundations', label: 'Lean Principles', shortLabel: 'Lean' },
   { id: 'leadership', label: 'Leadership', shortLabel: 'Leadership' },
   { id: 'data-management', label: 'Data Management', shortLabel: 'Data' },
+  { id: 'defense-landing', label: 'Defense Contracting', shortLabel: 'Defense' },
 ];
 
 const TRACK_META: Record<string, { title: string; description: string }> = {
@@ -156,6 +157,10 @@ const TRACK_META: Record<string, { title: string; description: string }> = {
   'data-management': {
     title: 'Data Management',
     description: 'From data engineering and SQL to CRM/ERP systems and business intelligence — the full data landscape.',
+  },
+  'defense-contracting': {
+    title: 'Defense Contracting Mastery Series',
+    description: 'Three practitioner tracks for executives, program managers, and BD teams — built on 35 years of lived defense experience.',
   },
 };
 
@@ -231,10 +236,11 @@ function CourseCard({ course, index }: { course: Course; index: number }) {
 }
 
 export function CatalogPage() {
-  const [activeTrack, setActiveTrack] = useState<'all' | CourseTrack>('all');
+  const [activeTrack, setActiveTrack] = useState<'all' | CourseTrack | 'defense-landing'>('all');
+  const navigate = useNavigate();
 
   const allCoursesList = Object.values(coursesByTrack).flat();
-  const filteredCourses = activeTrack === 'all' ? allCoursesList : (coursesByTrack[activeTrack as CourseTrack] ?? []);
+  const filteredCourses = (activeTrack === 'all' || activeTrack === 'defense-landing') ? allCoursesList : (coursesByTrack[activeTrack as CourseTrack] ?? []);
 
   const totalCourses = allCoursesList.length;
   const totalModules = allCoursesList.reduce((acc, c) => acc + c.modules.length, 0);
@@ -248,7 +254,7 @@ export function CatalogPage() {
             <p className="eyebrow mb-4">Course Catalog</p>
             <h1 className="font-serif text-4xl md:text-5xl text-ink mb-5 max-w-2xl">
               Wentworth<br />
-              <span className="text-gold">Operations Institute</span>
+              <span className="text-gold">Operations Academy</span>
             </h1>
             <p className="text-muted text-lg max-w-xl leading-relaxed">
               Practitioner-focused courses spanning Lean, Six Sigma, DMAIC, leadership, and data management — built for real-world impact.
@@ -283,7 +289,7 @@ export function CatalogPage() {
             {TRACKS.map(track => (
               <button
                 key={track.id}
-                onClick={() => setActiveTrack(track.id)}
+                onClick={() => track.id === 'defense-landing' ? navigate('/defense') : setActiveTrack(track.id as 'all' | CourseTrack)}
                 className={`relative flex-shrink-0 px-5 py-3 font-sans text-xs font-medium tracking-widest uppercase transition-all duration-200 rounded-sm
                   ${activeTrack === track.id ? 'text-gold' : 'text-muted hover:text-ink'}`}
               >
@@ -371,7 +377,7 @@ export function CatalogPage() {
       <section className="py-16 border-t border-border-gold bg-surface/30">
         <div className="max-w-7xl mx-auto px-8 text-center">
           <div className="font-sans text-xs font-medium tracking-widest uppercase text-gold mb-4">
-            Wentworth Operations Institute
+            Wentworth Operations Academy
           </div>
           <h2 className="font-serif text-3xl text-ink mb-4">Practical. Rigorous. Results-Driven.</h2>
           <p className="text-muted max-w-xl mx-auto leading-relaxed">
