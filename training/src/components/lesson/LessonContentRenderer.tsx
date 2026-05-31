@@ -14,6 +14,21 @@ import { SigmaLevelChart } from '../diagrams/SigmaLevelChart';
 import { NormalDistributionChart } from '../diagrams/NormalDistributionChart';
 import { RunChartExample } from '../diagrams/RunChartExample';
 import { ImprovementJourneyDiagram } from '../diagrams/ImprovementJourneyDiagram';
+import { LeanHouseDiagram } from '../diagrams/LeanHouseDiagram';
+import { FiveSCycleDiagram } from '../diagrams/FiveSCycleDiagram';
+import { KanbanFlowDiagram } from '../diagrams/KanbanFlowDiagram';
+import { TuckmanModelDiagram } from '../diagrams/TuckmanModelDiagram';
+import { ADKARDiagram } from '../diagrams/ADKARDiagram';
+import { PMLifecycleDiagram } from '../diagrams/PMLifecycleDiagram';
+import { RiskMatrixDiagram } from '../diagrams/RiskMatrixDiagram';
+import { ModernDataStackDiagram } from '../diagrams/ModernDataStackDiagram';
+import { DataPipelineDiagram } from '../diagrams/DataPipelineDiagram';
+import { AnalysisWorkflowDiagram } from '../diagrams/AnalysisWorkflowDiagram';
+import { ChartSelectionDiagram } from '../diagrams/ChartSelectionDiagram';
+import { CRMLifecycleDiagram } from '../diagrams/CRMLifecycleDiagram';
+import { ERPModulesDiagram } from '../diagrams/ERPModulesDiagram';
+import { BIStackDiagram } from '../diagrams/BIStackDiagram';
+import { StarSchemaDiagram } from '../diagrams/StarSchemaDiagram';
 
 function SimulationBlock({ id, description }: { id: string; title: string; description: string }) {
   const map: Record<string, React.ReactNode> = {
@@ -43,6 +58,21 @@ function DiagramBlock({ id, title }: { id: string; title: string }) {
     'ctq-tree': <CTQTreeDiagram />,
     'kano-model': <KanoModelDiagram />,
     'improvement-journey': <ImprovementJourneyDiagram />,
+    'lean-house': <LeanHouseDiagram />,
+    'five-s-cycle': <FiveSCycleDiagram />,
+    'kanban-flow': <KanbanFlowDiagram />,
+    'tuckman-model': <TuckmanModelDiagram />,
+    'adkar-model': <ADKARDiagram />,
+    'pm-lifecycle': <PMLifecycleDiagram />,
+    'risk-matrix': <RiskMatrixDiagram />,
+    'modern-data-stack': <ModernDataStackDiagram />,
+    'data-pipeline': <DataPipelineDiagram />,
+    'analysis-workflow': <AnalysisWorkflowDiagram />,
+    'chart-selection': <ChartSelectionDiagram />,
+    'crm-lifecycle': <CRMLifecycleDiagram />,
+    'erp-modules': <ERPModulesDiagram />,
+    'bi-stack': <BIStackDiagram />,
+    'star-schema': <StarSchemaDiagram />,
   };
   const component = map[id];
   if (!component) return null;

@@ -41,6 +41,11 @@ const module1 = {
           ],
         },
         {
+          type: 'diagram' as const,
+          diagramId: 'dmaic-phases',
+          title: 'DMAIC Phase Overview',
+        },
+        {
           type: 'callout' as const,
           variant: 'info' as const,
           title: 'Why Sequence Matters',
@@ -63,6 +68,25 @@ const module1 = {
           type: 'callout' as const,
           variant: 'tip' as const,
           text: 'If you cannot measure the problem, you cannot confirm that your solution worked. Investining time in Measure pays dividends in every subsequent phase.',
+        },
+        { type: 'heading' as const, text: 'Real-World Application', level: 2 as const },
+        {
+          type: 'callout' as const,
+          variant: 'example' as const,
+          title: 'Case Study: Global Shipping Company — DMAIC Structure Rescues a Stalled Quality Initiative',
+          text: 'A global freight forwarding company was experiencing a 19% billing error rate on international shipments, generating $3.2M annually in credits, adjustments, and customer churn. Two previous improvement initiatives had failed: the first introduced a new billing software that reduced errors by only 2%; the second was a training program that showed no measurable improvement after 6 months. Both initiatives had skipped the Measure and Analyze phases entirely — jumping from problem identification directly to solution implementation. The company launched a formal DMAIC project with gate reviews at each phase. The Measure phase revealed the actual baseline was 22.4% (not 19% — the previous measurement definition had excluded partial errors). The Analyze phase identified that 78% of errors originated from a single data handoff between the customs documentation team and the billing system, not from billing staff errors as previously assumed. The Improve solution — a structured data validation step at the handoff point — reduced errors to 3.1% within 8 weeks, saving $2.7M annually.',
+        },
+        {
+          type: 'paragraph' as const,
+          text: 'The shipping company case demonstrates DMAIC\'s core value proposition: it prevents organizations from investing in the wrong solutions by demanding evidence at every phase transition. Both previous initiatives had logical rationale — the software addressed system limitations, and the training addressed staff capability — but neither had confirmed the actual root cause with data. The DMAIC gate structure forced the team to establish a reliable baseline before analysis and to confirm root causes before designing a solution, transforming a $5M failure pattern into a focused, effective fix.',
+        },
+        {
+          type: 'list' as const,
+          items: [
+            'Gate reviews are not administrative overhead — they are the mechanism that prevents teams from advancing on assumptions rather than evidence',
+            'Prior failed initiatives are often the most important diagnostic data available: they identify hypotheses that have already been tested and rejected',
+            'Baseline measurement in Measure frequently reveals that the problem scope differs from the initial estimate — adjust the charter before proceeding',
+          ],
         },
       ],
     },
@@ -110,6 +134,25 @@ const module1 = {
             'Process capability index (Cpk) below 0.5 despite root-cause fixes',
             'Voice of Customer requirements have shifted beyond current process design limits',
             'Technology or regulatory changes require a ground-up redesign',
+          ],
+        },
+        { type: 'heading' as const, text: 'Real-World Application', level: 2 as const },
+        {
+          type: 'callout' as const,
+          variant: 'example' as const,
+          title: 'Case Study: Regional Hospital — PDCA vs. DMAIC Framework Choice Determines Outcome Speed',
+          text: 'A regional hospital was managing two simultaneous quality problems: (1) a sudden spike in patient fall incidents following a new flooring installation in 3 wards (18 incidents in 6 weeks versus a baseline of 2/week), and (2) a chronic medication reconciliation error rate of 8.3% that had persisted for 4 years without improvement despite 3 training interventions. The quality improvement director correctly deployed PDCA for the falls spike — the hypothesis was clear (new flooring surface coefficient of friction), the fix was testable (anti-slip mats), and the cycle completed in 11 days with a 94% reduction in falls. For medication reconciliation, DMAIC was selected: the problem was chronic, root causes were genuinely unknown despite multiple attempts, and the 4-year history indicated systemic causes. The DMAIC project ran 5 months, identified 3 verified root causes (incomplete medication lists at admission, no pharmacist review trigger for high-risk patients, handoff documentation gaps), and reduced errors to 1.4% — saving an estimated $890,000 in averted adverse drug events annually.',
+        },
+        {
+          type: 'paragraph' as const,
+          text: 'The hospital case demonstrates that framework selection is not about prestige or sophistication — it is about matching methodology complexity to problem complexity. PDCA delivered superior speed for the falls spike because the problem had a clear hypothesis that warranted rapid testing rather than systematic investigation. Using DMAIC for the falls spike would have wasted 5 months on analysis; using PDCA for medication reconciliation would have produced a 4th failed training program. The ability to make this distinction is itself a core DMAIC competency.',
+        },
+        {
+          type: 'list' as const,
+          items: [
+            'Use PDCA when the hypothesis is clear and testable within days to weeks; use DMAIC when root causes are genuinely unknown and require systematic investigation',
+            'Chronic problems with failed prior interventions are the clearest signal that DMAIC is needed — repeated failures indicate a systemic cause that quick cycles cannot surface',
+            'Framework selection should be documented in the project charter to ensure sponsor agreement and prevent mid-project methodology debates',
           ],
         },
       ],
@@ -170,6 +213,25 @@ const module1 = {
         {
           type: 'paragraph' as const,
           text: 'The charter is a living document. If new information in Analyze reveals that the root cause lies outside the original scope, the team must return to the sponsor for a formal charter amendment rather than silently expanding the project.',
+        },
+        { type: 'heading' as const, text: 'Real-World Application', level: 2 as const },
+        {
+          type: 'callout' as const,
+          variant: 'example' as const,
+          title: 'Case Study: Consumer Goods Manufacturer — SMART Goal Statement Unlocks $420K in Savings',
+          text: 'A consumer goods manufacturer launched a DMAIC project to "improve production efficiency on Line 7." After 3 months of work, the team presented findings that showed a 6% yield improvement — but the sponsor rejected the project closure because there was no way to validate financial impact against an undefined baseline. The project was rechartered with a SMART goal: "Increase first-pass yield on Line 7 from 81.4% to 91.0% by December 15, reducing scrap material cost by a minimum of $280,000 annually." With the SMART goal in place, the team\'s existing data analysis was reanalyzed against the specific baseline, confirmed a 9.6% yield improvement (exceeding the 9.6-point target), and Finance independently validated $423,000 in annual scrap savings. The project delivered the same technical improvement — but only the SMART-framed version was creditable, closeable, and financeable for future program investment.',
+        },
+        {
+          type: 'paragraph' as const,
+          text: 'The consumer goods case illustrates that SMART goals are not a bureaucratic requirement — they are the mechanism that makes improvement work financially creditable and organizationally legitimate. A vague goal like "improve efficiency" produces a vague result that cannot be evaluated, compared, or used to justify further Six Sigma investment. The SMART framework — particularly the Measurable component specifying a quantified baseline and target — transforms a subjective narrative of improvement into an auditable financial claim.',
+        },
+        {
+          type: 'list' as const,
+          items: [
+            'The baseline value in a SMART goal must come from validated Measure phase data — goals written before the baseline is confirmed are aspirational, not SMART',
+            'Including a dollar value in the goal statement enables Finance to validate results and adds organizational weight to the project',
+            'Scope statements must be explicit on what is out of bounds — "Line 7 only" prevents team energy from dispersing into adjacent lines that were not part of the original analysis',
+          ],
         },
       ],
     },
@@ -277,6 +339,25 @@ const module2 = {
           type: 'paragraph' as const,
           text: 'A well-written problem statement passes the "stranger test": a knowledgeable outsider who reads it should immediately understand the nature and scale of the problem without needing additional context.',
         },
+        { type: 'heading' as const, text: 'Real-World Application', level: 2 as const },
+        {
+          type: 'callout' as const,
+          variant: 'example' as const,
+          title: 'Case Study: E-Commerce Retailer — Problem Statement Precision Changes the Solution',
+          text: 'An e-commerce retailer was experiencing customer satisfaction scores below target and launched a DMAIC project. The initial problem statement was: "Customer satisfaction is low because our returns process is confusing." The Black Belt rewrote it using the four-element framework: "Customer satisfaction scores (object) for post-purchase service interactions (location) averaged 3.1/5.0 against the 4.2/5.0 target (defect/magnitude) during Q3 2024, contributing to an estimated 8% reduction in repeat purchase rate worth $1.4M annually." This rewrite changed everything. Removing the embedded cause ("returns process is confusing") opened the investigation: the Measure phase revealed that return-related contacts comprised only 23% of low-scored interactions. The majority — 61% — were shipping delay inquiries. The actual solution was a proactive shipment delay notification system, not a returns redesign. Implementing automated delay notifications cost $34,000 to develop and raised satisfaction scores to 4.3/5.0, recovering an estimated $1.6M in annual repeat purchase revenue.',
+        },
+        {
+          type: 'paragraph' as const,
+          text: 'The e-commerce case shows that an embedded cause in the problem statement is not just a drafting error — it is a decision to skip the Analyze phase. The moment "returns process is confusing" appeared in the problem statement, the team\'s investigation was predetermined. By eliminating the cause and focusing on what, where, when, and how much, the Black Belt preserved the team\'s ability to discover the actual driver. This discipline — writing a problem statement that a stranger would find factual and complete without knowing the cause — is one of the most practically valuable skills in DMAIC.',
+        },
+        {
+          type: 'list' as const,
+          items: [
+            'Test every problem statement by asking: does this contain a cause or a solution? If yes, remove it',
+            'Magnitude expressed in dollar terms (not just percentages) creates urgency and justifies project resource allocation',
+            'The "location / when" element often reveals that the problem is more concentrated than the initial description suggests — precision here constrains scope appropriately',
+          ],
+        },
       ],
     },
     {
@@ -317,6 +398,25 @@ const module2 = {
           type: 'callout' as const,
           variant: 'info' as const,
           text: 'SIPOC is not a swim-lane process map. It intentionally hides sub-steps. If your SIPOC has more than 8 process steps, you have zoomed in too far—combine steps until you are back at the macro level.',
+        },
+        { type: 'heading' as const, text: 'Real-World Application', level: 2 as const },
+        {
+          type: 'callout' as const,
+          variant: 'example' as const,
+          title: 'Case Study: Government Agency — SIPOC Resolves 4-Month Scope Dispute in 90 Minutes',
+          text: 'A federal government agency launched a DMAIC project to reduce permit processing cycle time from 47 days to the new legislative mandate of 21 days. The project had been stalled for 4 months in a scope dispute: the IT department insisted the problem was in the document management system, the compliance division insisted it was in the review approval chain, and the director\'s office believed it was an intake queue problem. A Master Black Belt facilitated a SIPOC session with representatives from all three groups. Building the SIPOC in sequence — Process first, then Outputs, Customers, Inputs, Suppliers — produced a shared map in 90 minutes that placed the process boundary clearly from "applicant submission received" through "permit decision issued." The SIPOC revealed that all three groups were partially correct: the process had 6 macro steps, and the document management system was a supplier input to Step 2, the approval chain spanned Steps 4 and 5, and the intake queue was Step 1. The SIPOC\'s scope boundaries aligned the groups and enabled the project to begin, eventually reducing cycle time to 18 days.',
+        },
+        {
+          type: 'paragraph' as const,
+          text: 'The government agency case demonstrates SIPOC\'s often-overlooked role as a conflict resolution tool. When stakeholders from different functional areas have incompatible views of where a problem lives, building a SIPOC together creates a shared process model that contextualizes each perspective without invalidating any of them. The SIPOC\'s deliberate high-level view — 5 to 7 steps — was precisely what allowed the three groups to see their pieces as parts of a whole rather than competing for ownership of the "real" problem.',
+        },
+        {
+          type: 'list' as const,
+          items: [
+            'Building SIPOC in sequence (Process → Outputs → Customers → Inputs → Suppliers) prevents the common pattern of spending 45 minutes debating supplier details before the process steps are defined',
+            'The first and last process steps define project scope boundaries — any activity outside these steps is explicitly supplier or customer territory and out of scope',
+            'SIPOC is most valuable in cross-functional projects where team members have different mental models of the process — the shared construction creates alignment that no slide presentation achieves',
+          ],
         },
       ],
     },
@@ -372,9 +472,33 @@ const module2 = {
           text: 'Raw VOC data ("the forms are confusing") must be translated into Critical-to-Quality (CTQ) requirements—specific, measurable standards ("form completion time must be under 4 minutes with zero required fields left blank").',
         },
         {
+          type: 'diagram' as const,
+          diagramId: 'ctq-tree',
+          title: 'CTQ Tree: From Voice to Requirement',
+        },
+        {
           type: 'callout' as const,
           variant: 'tip' as const,
           text: 'Use a CTQ tree to drill down from a broad customer need to a measurable requirement. Start with the need, identify the drivers of that need, and then specify measurable performance standards for each driver.',
+        },
+        { type: 'heading' as const, text: 'Real-World Application', level: 2 as const },
+        {
+          type: 'callout' as const,
+          variant: 'example' as const,
+          title: 'Case Study: Telecom Provider — Stakeholder Analysis Prevents $1.8M IT Implementation Failure',
+          text: 'A telecommunications provider launched a DMAIC project to reduce network provisioning errors from 14.2% to below 3%. The Black Belt conducted a stakeholder influence-interest analysis and identified a high-influence / low-interest stakeholder: the VP of Network Operations who had final approval authority over system configurations. The VP had a history of reversing improvements 6–12 months post-implementation during budget reviews. Rather than the minimal "keep satisfied" engagement, the Black Belt scheduled quarterly 20-minute briefings with the VP that connected each project milestone to the VP\'s budget KPIs — specifically, cost per provisioning event ($47 at baseline). By Control phase, the VP had become an active advocate: when IT proposed a competing system migration that would have overwritten the DMAIC improvements, the VP blocked it, protecting $1.8M in annualized savings. The DMAIC solution ultimately reduced errors to 2.1% and cost per provisioning to $28.',
+        },
+        {
+          type: 'paragraph' as const,
+          text: 'The telecom case illustrates that stakeholder analysis is not a one-time Define phase activity — it is an ongoing engagement strategy that must be maintained through Control. The high-influence / low-interest VP classification was accurate but incomplete: the engagement strategy needed to convert the VP from a passive approver to an informed advocate before the control plan was at risk. Connecting the improvement to the VP\'s own budget metrics was the translation that made the project relevant to someone whose natural interest lay elsewhere.',
+        },
+        {
+          type: 'list' as const,
+          items: [
+            'High-influence stakeholders require proactive management even when their current interest is low — their indifference can become active resistance if surprises occur',
+            'Translate project metrics into stakeholder-specific terms — a VP of Operations cares about cost per event, not DPMO',
+            'Stakeholder analysis must be revisited at each phase gate, not just in Define — new stakeholders emerge and influence levels shift as projects progress',
+          ],
         },
       ],
     },
@@ -490,6 +614,25 @@ const module3 = {
           type: 'paragraph' as const,
           text: 'Collect data stratified by shift, operator, machine, day of week, and product type. Without stratification, average performance hides the segmented patterns that reveal root causes. A defect rate of 8% overall might be 2% on first shift and 18% on third shift—actionable information that the average erases.',
         },
+        { type: 'heading' as const, text: 'Real-World Application', level: 2 as const },
+        {
+          type: 'callout' as const,
+          variant: 'example' as const,
+          title: 'Case Study: Pharmaceutical Manufacturer — Data Collection Plan Prevents 12 Weeks of Invalid Data',
+          text: 'A pharmaceutical manufacturer was measuring tablet weight as the primary quality output (Y) for a DMAIC project targeting Cpk improvement from 0.91 to 1.33. The initial data collection plan specified that "QA technicians will weigh tablets from each batch." During the Measure phase tollgate, the Black Belt discovered that different technicians were using different scale models, weighing different numbers of tablets per batch (some 5, some 20), and recording results at different times post-compression (immediately versus after 2-hour settling). These undocumented inconsistencies introduced an estimated 34% measurement error into the data — making root-cause analysis impossible. The team spent 3 weeks redoing data collection with a standardized plan: same model scale (calibrated daily), 15 tablets per batch sampled at the 30-minute post-compression mark, by a single trained QA role. The corrected data immediately revealed a 4.3× higher weight variance on afternoon batches — a stratification signal that pointed directly to temperature-related material flow variation.',
+        },
+        {
+          type: 'paragraph' as const,
+          text: 'The pharmaceutical case illustrates that data collection plan quality determines whether the subsequent 4 months of DMAIC work produces valid conclusions or artifact-driven false leads. The measurement inconsistencies in this case were not obvious errors — each individual choice (5 tablets vs. 20, immediate vs. 30-minute weighing) was defensible in isolation. The data collection plan\'s value is precisely that it forces these choices to be made explicitly and consistently, preventing the silent accumulation of variation sources that compound into unreliable data.',
+        },
+        {
+          type: 'list' as const,
+          items: [
+            'Operational definitions for every variable must be written before data collection begins — ambiguous definitions produce inconsistent data that looks valid but is not',
+            'Stratification variables (shift, time, operator, equipment) must be recorded alongside the Y measurement from the first data point — adding them retroactively is rarely possible',
+            'Pilot the data collection plan for 2–3 data points before full collection to confirm that the instructions produce consistent results across different collectors',
+          ],
+        },
       ],
     },
     {
@@ -534,6 +677,25 @@ const module3 = {
         {
           type: 'paragraph' as const,
           text: 'For attribute data (pass/fail judgments), the equivalent study is an Attribute Agreement Analysis (also called a Kappa study). It measures how consistently appraisers agree with each other and with a known standard.',
+        },
+        { type: 'heading' as const, text: 'Real-World Application', level: 2 as const },
+        {
+          type: 'callout' as const,
+          variant: 'example' as const,
+          title: 'Case Study: Precision Machining Shop — Gage R&R Exposes False Root Cause',
+          text: 'A precision machining shop was running a DMAIC project on dimensional variation in a critical bearing race bore diameter (specification: 45.000mm ± 0.010mm). The process appeared to be operating at Cpk = 0.74 — significantly below the 1.33 minimum. The team was preparing to invest $180,000 in a new CNC machining center, believing the equipment was the source of variation. Before approving the capital request, the Champion requested an MSA on the measurement system: a Gage R&R study using 3 operators, 10 parts, and 2 replicates. The study revealed %Study Variation = 58% — more than half of the apparent process variation was actually measurement noise from the manual air gauge used by operators. After replacing the air gauge with a digital electronic gauge (%GR&R = 7.1%), the true process Cpk was recalculated at 1.41 — already meeting the target. The $180,000 equipment purchase was cancelled, and the project was closed with a $4,500 gauge investment.',
+        },
+        {
+          type: 'paragraph' as const,
+          text: 'The machining case is one of the most instructive examples of why MSA must precede root-cause analysis. The team had built a compelling narrative about equipment wear driving dimensional variation — supported by real data showing Cpk = 0.74. But that data was dominated by measurement noise, not process noise. The capital investment decision based on unchecked data would have been a textbook case of solving the measurement system\'s problem with a $180,000 machine. Conducting the Gage R&R early — before Analyze phase investment — is not just a methodology requirement; it is financial risk management.',
+        },
+        {
+          type: 'list' as const,
+          items: [
+            'Run Gage R&R before collecting baseline data, not after — discovering a failed measurement system after 8 weeks of data collection means starting over',
+            'A %Study Variation above 30% means the data collected so far cannot support reliable conclusions — report this at the Measure tollgate and fix it before proceeding',
+            'Repeatability vs. reproducibility decomposition reveals whether to invest in equipment calibration (repeatability issue) or operator training/procedure standardization (reproducibility issue)',
+          ],
         },
       ],
     },
@@ -586,9 +748,34 @@ const module3 = {
           ],
         },
         {
+          type: 'chart' as const,
+          chartId: 'run-chart-example',
+          title: 'Run Chart: Tracking Process Over Time',
+          description: 'A run chart helps identify trends and shifts in process performance',
+        },
+        {
           type: 'callout' as const,
           variant: 'tip' as const,
           text: 'Add the data from your collection plan to the process map. Posting defect rates, cycle times, and error frequencies next to the steps where they occur creates a powerful visual that immediately shows where problems concentrate.',
+        },
+        { type: 'heading' as const, text: 'Real-World Application', level: 2 as const },
+        {
+          type: 'callout' as const,
+          variant: 'example' as const,
+          title: 'Case Study: Insurance Back Office — Gemba Process Map Reveals 67% Hidden Wait Time',
+          text: 'An insurance company\'s claims back office had a documented process cycle time of 4.5 business days based on the official procedure document. The DMAIC team\'s goal was to reduce this to 2.5 days to meet a new SLA. When the Black Belt walked the actual process (gemba) and built a current-state swim-lane map, the actual end-to-end cycle time measured 11.3 business days — 2.5× the documented version. The map revealed 6 rework loops not shown in the procedure document, 3 waiting queues between departments where work sat idle for an average of 1.8 days each, and 2 redundant review steps added by supervisors that were never documented. Value-added time was 1.7 days (15% of total). The baseline sigma level was recalculated from the true cycle time: 2.1 sigma, not the 3.4 sigma that had been reported using the procedure document cycle time. This dramatically changed the SMART goal and project scope.',
+        },
+        {
+          type: 'paragraph' as const,
+          text: 'The insurance case illustrates the fundamental principle that current-state maps must be built from observation, not documentation. The 4.5-day documented cycle time had never been verified against reality and had become organizational mythology — used in SLA negotiations, staffing models, and performance dashboards without anyone questioning it. The gemba walk not only corrected the baseline but also revealed the specific process steps where cycle time was consumed, enabling the team to target root-cause investigation precisely rather than searching across the entire process.',
+        },
+        {
+          type: 'list' as const,
+          items: [
+            'Current-state maps are always built by walking the process, not from memory or procedure documents — the gap between documented and actual process is often the project\'s most important finding',
+            'Rework loops and waiting queues represent the majority of cycle time in most service processes and are rarely captured in official documentation',
+            'The ratio of value-added time to total lead time (often below 20% in service processes) is a powerful executive communication tool that builds urgency for improvement',
+          ],
         },
       ],
     },
@@ -707,6 +894,25 @@ const module4 = {
           variant: 'warning' as const,
           text: 'Stop at the root cause, not at "human error." Human error is almost always a symptom. Ask why the error was possible: what system, process, or training gap allowed it?',
         },
+        { type: 'heading' as const, text: 'Real-World Application', level: 2 as const },
+        {
+          type: 'callout' as const,
+          variant: 'example' as const,
+          title: 'Case Study: Logistics Carrier — 5 Whys Prevents 3rd Recurrence of Same Problem',
+          text: 'A regional logistics carrier had experienced two separate DMAIC projects targeting package mis-sorting errors — both had implemented solutions (additional scanner verification in 2021, supervisor spot-checks in 2022) that produced short-term improvements but experienced relapse within 6 months. When the problem resurged in 2023 (mis-sort rate climbing to 5.8% against a 1.0% target), the Black Belt applied 5 Whys with a deliberate focus on asking why the previous solutions had failed. The chain: mis-sorts are high → scanners aren\'t being used consistently → operators bypass the scanner when the line backs up → no standard defines acceptable line backup behavior → there is no escalation trigger that alerts supervisors before backup reaches the scan-bypass threshold → the process relies entirely on operator judgment under pressure. Root cause: missing escalation protocol. A 3-level backup alert system was implemented with automated supervisor notification. 18 months post-implementation: mis-sort rate at 0.7%, no reversion, and 3 prior escalation near-misses caught and corrected before errors occurred.',
+        },
+        {
+          type: 'paragraph' as const,
+          text: 'The logistics case demonstrates 5 Whys used at its most sophisticated: starting not from the problem\'s origin but from the failure of prior solutions. When a problem recurs after two improvement interventions, it is strong evidence that the root cause has not been reached — prior solutions addressed symptoms. The focus on "why did the previous solutions fail" directed the 5 Whys toward the systemic gap (missing escalation protocol) rather than the operational symptom (scanner bypass). This distinction — between the cause of the problem and the cause of the prior solution\'s failure — is the key to breaking recurrence cycles.',
+        },
+        {
+          type: 'list' as const,
+          items: [
+            'When analyzing a recurring problem, ask 5 Whys starting from "why did the previous solution fail" — this targets the systemic gap that surface-level fixes cannot reach',
+            'Solutions that rely on consistent human judgment under pressure are inherently fragile — robust solutions remove the need for judgment or provide automated support when judgment is required',
+            'Document the full 5 Whys chain in the project record so future teams can understand what systemic path was followed to reach the root cause',
+          ],
+        },
       ],
     },
     {
@@ -767,6 +973,25 @@ const module4 = {
           variant: 'tip' as const,
           text: 'Common hypothesis tests used in Analyze: t-test (compare two group means), ANOVA (compare three or more means), chi-square (compare proportions), and correlation/regression (quantify relationships between continuous variables).',
         },
+        { type: 'heading' as const, text: 'Real-World Application', level: 2 as const },
+        {
+          type: 'callout' as const,
+          variant: 'example' as const,
+          title: 'Case Study: Specialty Printer Manufacturer — Pareto + Hypothesis Testing Focuses $380K Solution',
+          text: 'A specialty printer manufacturer was experiencing a customer return rate of 8.4% — nearly 4× the industry benchmark of 2.2%. A Pareto chart of return reasons showed that 3 defect categories (print head alignment, color calibration, and firmware crashes) accounted for 82% of all returns. The team ran separate Pareto charts by product model and discovered the print head alignment defect — 39% of total returns — was entirely concentrated in the Model X Pro (91% of alignment defects, 3% alignment defect rate on all other models). A two-proportion z-test confirmed the Model X Pro alignment defect rate was statistically different from other models (p < 0.001). ANOVA across 4 assembly lines showed alignment defects were concentrated on Lines 2 and 3 (p=0.004). Physical investigation of Lines 2 and 3 found a fixture with 0.15mm of play introduced during a tooling change 4 months earlier — precisely when the return rate spike began. Fixture replacement cost $8,400. Return rate fell to 1.9% within 2 production months, saving an estimated $380,000 annually in warranty and return processing costs.',
+        },
+        {
+          type: 'paragraph' as const,
+          text: 'The printer case shows Pareto analysis and hypothesis testing working as an investigation cascade: each tool narrows the focus for the next. The first Pareto identified the vital few defect types. Stratified Pareto charts by model isolated the alignment defect to one product. Hypothesis testing (z-test) confirmed the concentration was statistically real, not random. ANOVA within the product narrowed the cause to two assembly lines. This sequential narrowing — from 8.4% aggregate return rate to a specific fixture on two lines — is the Analyze phase working exactly as designed, transforming an overwhelming problem into a precise, cost-effective fix.',
+        },
+        {
+          type: 'list' as const,
+          items: [
+            'Run Pareto charts stratified by product, customer, location, and time period — the vital few causes often differ dramatically across strata',
+            'Use hypothesis testing to confirm that concentrations seen in Pareto charts are statistically real before committing investigation resources to them',
+            'The Analyze phase should end with a specific, verified root cause statement supported by both Pareto visual evidence and a statistical test result',
+          ],
+        },
       ],
     },
     {
@@ -810,6 +1035,25 @@ const module4 = {
           type: 'callout' as const,
           variant: 'tip' as const,
           text: 'The Analyze gate review deliverable is a prioritized, evidence-based list of verified root causes. Do not proceed to Improve until leadership agrees that the root causes are confirmed, not just hypothesized.',
+        },
+        { type: 'heading' as const, text: 'Real-World Application', level: 2 as const },
+        {
+          type: 'callout' as const,
+          variant: 'example' as const,
+          title: 'Case Study: Distribution Center — Value Stream Waste Identification Cuts Cycle Time by 58%',
+          text: 'A distribution center for a national grocery chain was experiencing pick-to-ship cycle times of 6.4 hours against a customer requirement of 3.0 hours. The Analyze phase waste identification overlay on the current-state process map quantified waste across all seven categories. The team discovered that value-added time was only 47 minutes (12% of total). The remaining 5 hours and 53 minutes was consumed by: Waiting — 2.1 hours (pallets queued for stretch-wrap machine, which processed 1 pallet/minute but received pallets in bursts of 30); Transport — 1.3 hours (pick paths requiring 3 separate trips to the far warehouse zone due to slotting layout); Overprocessing — 1.4 hours (weight verification required on every pallet despite only 3% of pallets having weight issues); Motion — 1.1 hours (supervisors walking to a central printer to retrieve pick tickets). The team targeted the top 3 wastes: re-slotting the warehouse (eliminating 70% of far-zone trips), installing 4 portable label printers (eliminating motion waste), and applying weight verification only to flagged SKUs (eliminating 96% of overprocessing). New cycle time: 2.7 hours, saving $1.1M annually in overtime and contracted carrier charges.',
+        },
+        {
+          type: 'paragraph' as const,
+          text: 'The distribution center case illustrates that value stream waste identification transforms a complex, multi-variable problem into a prioritized, financially quantified action list. The 12% value-added ratio is characteristic of service and logistics processes — customers wait 88% of the time while nothing of value is being added to their order. Quantifying each waste type in hours and dollars enabled the team to rank improvement opportunities by ROI rather than opinion, and to make a clear business case to leadership for the slotting reorganization (the highest-cost intervention) before the tollgate review.',
+        },
+        {
+          type: 'list' as const,
+          items: [
+            'Calculate value-added time as a percentage of total lead time — this ratio is a universal process health metric that transcends industry and process type',
+            'Waiting and overprocessing are the largest waste categories in most service and logistics processes and are often invisible until systematically mapped and timed',
+            'Target the highest-waste categories first, not the easiest ones — ease of implementation is a valid secondary criterion, not a primary one',
+          ],
         },
       ],
     },
@@ -923,6 +1167,25 @@ const module5 = {
           variant: 'warning' as const,
           text: 'Resist the temptation to implement solutions during Measure or Analyze. "Just fixing it" before root causes are verified often treats a symptom, allows the real problem to reappear, and undermines the team\'s credibility.',
         },
+        { type: 'heading' as const, text: 'Real-World Application', level: 2 as const },
+        {
+          type: 'callout' as const,
+          variant: 'example' as const,
+          title: 'Case Study: Wealth Management Firm — Structured Brainstorming Uncovers $640K Non-Obvious Solution',
+          text: 'A wealth management firm was experiencing 12.3% error rates on client account setup documentation — well above its 2% CTQ target. The Analyze phase confirmed three root causes: incomplete intake forms (41% of errors), transcription errors during data entry (33%), and mismatched regulatory document versions (26%). The team brainstormed solutions in a Brainwriting 6-3-5 session to avoid senior partners dominating the ideation with their preferred technology solution (a new CRM). The brainwriting session produced 108 distinct ideas across 6 participants. The senior partner\'s idea (CRM replacement at $620,000 implementation cost) appeared in 4 submissions. However, two junior associates independently proposed a structured digital intake form with conditional logic and pre-population of known client data — eliminating the transcription step entirely. This idea had not been shared in any prior verbal discussions. Implementing the structured intake form cost $18,000 and reduced errors to 1.4% within 6 weeks. The CRM project was deferred, saving $620,000 in near-term capital.',
+        },
+        {
+          type: 'paragraph' as const,
+          text: 'The wealth management case demonstrates why brainstorming technique matters as much as brainstorming participation. In a verbal session, the senior partner\'s CRM preference would have anchored the group within the first 5 minutes — other ideas would have been evaluated against "or we could just do the CRM." Brainwriting created psychological safety for junior team members to propose the same idea independently, which, when it appeared twice from different participants, signaled it was worth serious evaluation. The connection to root causes was also critical: both the structured form and the CRM addressed the transcription error root cause, but the form addressed it at 3% of the cost.',
+        },
+        {
+          type: 'list' as const,
+          items: [
+            'Every solution idea must be explicitly mapped to the root causes it addresses — ideas that do not address verified root causes should be flagged as out-of-scope',
+            'Brainwriting produces more diverse ideas than verbal brainstorming in hierarchical organizations because it decouples idea generation from social dynamics',
+            'Set a minimum of 15–20 distinct solution ideas before beginning evaluation — premature narrowing to the first good idea is the most common brainstorming failure mode',
+          ],
+        },
       ],
     },
     {
@@ -979,6 +1242,25 @@ const module5 = {
           title: 'Pilot Design Example',
           text: 'A team piloting a new invoice verification step runs it on one regional processing center (10% of volume) for 4 weeks, targeting a reduction in pricing errors from 14% to below 4%. If the pilot achieves below 5% with no increase in cycle time, they proceed to full deployment.',
         },
+        { type: 'heading' as const, text: 'Real-World Application', level: 2 as const },
+        {
+          type: 'callout' as const,
+          variant: 'example' as const,
+          title: 'Case Study: Commercial Bank — Pilot Test Prevents Full-Scale Deployment Failure',
+          text: 'A commercial bank was implementing a DMAIC solution to reduce loan underwriting cycle time from 14.2 days to 7 days. The solution matrix had selected a bundle of 3 changes: centralized document collection team, standardized checklist-based credit analysis template, and direct underwriter access to the bank\'s collateral valuation system. The pilot was run in 1 of 6 regional centers (17% of volume) for 6 weeks with a go/no-go criterion of achieving cycle time below 8 days. The pilot achieved 6.8 days — meeting the target — but surfaced two critical implementation issues: the collateral valuation system required a VPN login that added 12 minutes per access (not apparent in a test environment), and the checklist template had 3 fields that conflicted with commercial lending regulations in 2 of the 5 remaining regions. Both issues were resolved before full deployment at a cost of $28,000 in additional development. Full deployment achieved 6.4 days average cycle time across all 6 regions, saving $2.1M annually in capacity costs and reducing customer attrition attributed to slow decisions by 34%.',
+        },
+        {
+          type: 'paragraph' as const,
+          text: 'The commercial bank case illustrates that pilot tests reveal not just whether a solution works technically, but whether it works operationally — in the real environment, with real users, connected to real systems. The VPN latency issue and the regulatory conflict were both invisible in the design phase and would have derailed full deployment if not discovered in the pilot. The go/no-go criterion — cycle time below 8 days — provided clear, objective language for the decision to proceed, preventing the pilot from becoming an endless iteration cycle or being shut down prematurely based on subjective impressions.',
+        },
+        {
+          type: 'list' as const,
+          items: [
+            'Define go/no-go criteria before the pilot begins, not after — post-hoc criteria interpretation introduces bias and undermines the pilot\'s decision authority',
+            'Pilot scope should be representative of full deployment conditions, not optimized — using the best site, the most experienced staff, or the cleanest data produces results that do not transfer',
+            'Document every implementation problem discovered during the pilot as a required fix before full deployment — pilots that reveal issues and ignore them produce failed rollouts',
+          ],
+        },
       ],
     },
     {
@@ -1031,6 +1313,25 @@ const module5 = {
           type: 'callout' as const,
           variant: 'warning' as const,
           text: 'Do not set an arbitrary RPN cutoff (e.g., "only address RPNs above 100"). A failure mode with Severity = 10 (catastrophic) should receive attention regardless of its total RPN score.',
+        },
+        { type: 'heading' as const, text: 'Real-World Application', level: 2 as const },
+        {
+          type: 'callout' as const,
+          variant: 'example' as const,
+          title: 'Case Study: Food Processing Plant — Poka-Yoke and FMEA Eliminate Allergen Cross-Contact Risk',
+          text: 'A contract food processing plant was preparing to launch a new peanut-containing product line on shared equipment. A pre-launch FMEA identified 14 failure modes for the changeover process, with the highest RPN of 360 (S=10, O=6, D=6) on the failure mode "peanut residue remains on shared conveyors after cleaning." This was a Severity 10 failure (allergen cross-contact, potential anaphylaxis). The team designed a prevention Poka-Yoke: a mandatory ATP (adenosine triphosphate) bioluminescence swab test at 5 defined points on the conveyor before any non-peanut run could begin, with the production line physically locked by a software interlock until all 5 swab results logged below 50 RLU (Relative Light Units). A detection Poka-Yoke was added as backup: an inline allergen sensor on the product line triggered an automatic conveyor stop if peanut protein was detected at any concentration above 5 ppm. After 14 months of operation with the Poka-Yoke controls in place: zero allergen incidents, zero FDA findings, and a $440,000 reduction in product liability insurance premiums.',
+        },
+        {
+          type: 'paragraph' as const,
+          text: 'The food processing case demonstrates why FMEA and Poka-Yoke are inseparable in safety-critical Improve phase design. The FMEA\'s Severity scoring identified the failure mode that required mistake-proofing intervention regardless of occurrence frequency — no RPN threshold-based cutoff would have been appropriate when Severity = 10. The layered Poka-Yoke design (prevention ATP test + detection allergen sensor) followed the hierarchy of controls: prevention first, detection as backup. Both controls were physical or system-based, not reliant on operator memory or attention — the highest-reliability form of Poka-Yoke.',
+        },
+        {
+          type: 'list' as const,
+          items: [
+            'Any FMEA failure mode with Severity = 9 or 10 must receive mitigation action regardless of RPN — high-severity failures require controls even when occurrence is rare',
+            'Layer Poka-Yoke controls (prevention + detection) for high-severity failure modes rather than relying on a single control',
+            'Physical or system-based Poka-Yokes are more reliable than procedure-based ones — if the wrong action is physically possible, operators will eventually make it',
+          ],
         },
       ],
     },
@@ -1147,6 +1448,25 @@ const module6 = {
           variant: 'tip' as const,
           text: 'Focus the control plan on the critical few inputs (vital Xs) verified as root causes in Analyze. Trying to monitor everything is as ineffective as monitoring nothing.',
         },
+        { type: 'heading' as const, text: 'Real-World Application', level: 2 as const },
+        {
+          type: 'callout' as const,
+          variant: 'example' as const,
+          title: 'Case Study: Aerospace Component Supplier — Control Plan Granularity Determines Audit Outcome',
+          text: 'An aerospace component supplier had successfully completed a DMAIC project that improved surface finish compliance from 71% to 96% on precision turbine blades. Six months after project closure, a major customer\'s supply chain audit rated the supplier\'s control plan as "inadequate" — not because the process was performing poorly, but because the control plan lacked reaction plans for 4 of its 7 monitored characteristics and had no named process owner for 2 others. The audit finding put a $6.8M annual contract at risk. The supplier revised the control plan in 3 days: each characteristic received a specific reaction plan written to operator level (not engineer level), each monitoring responsibility was assigned to a named role with a backup, and reaction plan steps were tested with a tabletop exercise. The revised control plan passed re-audit, the contract was renewed, and the process continued performing at 96.2% compliance through the 12-month follow-up period.',
+        },
+        {
+          type: 'paragraph' as const,
+          text: 'The aerospace case demonstrates that control plan quality is assessed on its operational completeness, not its length or visual appearance. A control plan that monitors 7 characteristics but lacks reaction plans for 4 of them is 43% incomplete — operators who encounter an out-of-control signal on those 4 characteristics have no defined response pathway. The audit criterion — would an operator know exactly what to do at 3am without calling anyone? — is the right standard for evaluating reaction plan adequacy. Control plans that require engineering judgment to interpret are not process owner documents; they are project artifacts.',
+        },
+        {
+          type: 'list' as const,
+          items: [
+            'Every monitored characteristic in a control plan must have a complete reaction plan — partial control plans create unpredictable responses to out-of-control conditions',
+            'Reaction plans must be written at the operator\'s action level, not the engineer\'s analytical level — "investigate the root cause" is not a reaction plan',
+            'Test reaction plans with tabletop exercises before the project closes — this surfaces gaps and ambiguities that document review alone misses',
+          ],
+        },
       ],
     },
     {
@@ -1204,6 +1524,25 @@ const module6 = {
           type: 'callout' as const,
           variant: 'tip' as const,
           text: 'Recalculate control limits after implementing the improvement to establish a new baseline. Old control limits based on the pre-improvement process will generate false signals in the new, improved process.',
+        },
+        { type: 'heading' as const, text: 'Real-World Application', level: 2 as const },
+        {
+          type: 'callout' as const,
+          variant: 'example' as const,
+          title: 'Case Study: Contract Research Organization — SPC Chart Selection Enables 18-Month Sustained Compliance',
+          text: 'A contract research organization (CRO) managing clinical trial data management was implementing Statistical Process Control following a DMAIC project that reduced data query resolution time from 11.4 days to 3.8 days. The Black Belt needed to select a control chart for ongoing monitoring. Daily query resolution time was a single continuous measurement (one average per day) with no subgrouping — indicating an I-MR (Individuals and Moving Range) chart. After implementing the new process, the Black Belt recalculated control limits from 25 new post-improvement data points (UCL = 5.1 days, LCL = 2.5 days). Using the old pre-improvement control limits would have generated a false out-of-control signal on day 3 post-implementation, likely triggering an unnecessary process investigation. The correctly recalculated I-MR chart ran for 18 months with 3 legitimate special-cause signals detected — each investigated and resolved within 24 hours. The process maintained Cpk = 1.58 at the 18-month review, with zero SLA violations in the final 9 months.',
+        },
+        {
+          type: 'paragraph' as const,
+          text: 'The CRO case illustrates two intertwined principles: the importance of selecting the right chart type for the data structure, and the critical need to recalculate control limits after improvement. The I-MR chart was correct because data consisted of individual daily averages without subgrouping — using an X-bar and R chart would have required subgroups that didn\'t exist in the data collection structure. Recalculating limits post-improvement prevented false alarms that would have eroded operator confidence in the SPC system within the first week of deployment — a common failure mode that causes teams to abandon SPC charts as "unreliable" when the charts were actually perfectly calibrated to the wrong process state.',
+        },
+        {
+          type: 'list' as const,
+          items: [
+            'Chart type selection is determined by data structure (individual vs. subgroup, continuous vs. discrete) — using the wrong chart produces invalid control limits regardless of data quality',
+            'Recalculating control limits after improvement is non-negotiable — old limits will generate immediate false signals that undermine operator trust in the monitoring system',
+            'Collect a minimum of 20–25 post-improvement data points before recalculating final control limits to ensure the new limits reflect stable improved performance, not transitional variation',
+          ],
         },
       ],
     },
@@ -1274,6 +1613,25 @@ const module6 = {
           variant: 'info' as const,
           title: '30/60/90-Day Follow-Up',
           text: 'Schedule formal follow-up reviews at 30, 60, and 90 days post-implementation. These reviews confirm that the process is performing to the new standard, control charts are being maintained, and the process owner has the support needed. Early signs of regression are easiest to address when caught early.',
+        },
+        { type: 'heading' as const, text: 'Real-World Application', level: 2 as const },
+        {
+          type: 'callout' as const,
+          variant: 'example' as const,
+          title: 'Case Study: Managed Care Organization — Structured Handoff Sustains $2.4M Improvement Through Leadership Transition',
+          text: 'A managed care organization completed a DMAIC project that reduced prior authorization processing time from 8.3 days to 2.1 days, saving $2.4M annually in pended claim costs and reducing member complaint volume by 58%. The project closed in March. In September — 6 months later — the process owner (Director of Clinical Operations) resigned. Without a structured handoff, this would typically trigger rapid reversion as institutional knowledge about the improved process departed with the departing director. Because the Black Belt had built a comprehensive handoff package (updated process map, control plan with all reaction plans, I-MR chart templates pre-loaded with new control limits, updated SOPs in the document management system, and a written escalation contact list), the incoming interim director was able to manage the process at full capability within 5 days of starting. The 12-month follow-up showed processing time of 2.3 days — slightly elevated from the 2.1-day baseline but within control limits and well below the original 8.3-day baseline.',
+        },
+        {
+          type: 'paragraph' as const,
+          text: 'The managed care case demonstrates that the handoff package is not documentation for its own sake — it is organizational insurance against the inevitable personnel changes that follow every improvement project. The structured handoff converted the project team\'s knowledge into institutional process knowledge that could survive a full leadership transition. The 30/60/90-day follow-up reviews also played a role: the 30-day review (conducted while the original director was still available) confirmed all controls were operational, and the 60-day review (conducted with the interim director) provided the first opportunity to identify questions and gaps before they became performance problems.',
+        },
+        {
+          type: 'list' as const,
+          items: [
+            'The handoff package is a succession document — write it assuming the process owner will be replaced within 6 months of project closure',
+            '30/60/90-day follow-up reviews should include both a process performance check (are the metrics holding?) and a controls check (are the control charts being maintained? Are SOPs being followed?)',
+            'Financial benefit validation with Finance sign-off at project closure is essential for program ROI reporting — undocumented savings are invisible to leadership and cannot justify future Six Sigma investment',
+          ],
         },
       ],
     },
