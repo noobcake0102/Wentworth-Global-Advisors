@@ -18,6 +18,21 @@ import { dataAnalysisCourse } from './dataAnalysis';
 import { crmErpSystemsCourse } from './crmErpSystems';
 import { businessIntelligenceCourse } from './businessIntelligence';
 
+// Defense Contracting Track — Track A (Executive)
+import { defenseExecAwarenessCourse } from './defenseContractingA1';
+import { defenseExecPracticalCourse } from './defenseContractingA2';
+import { defenseExecDeepCourse } from './defenseContractingA3';
+
+// Defense Contracting Track — Track B (Operations)
+import { defenseOpsAwarenessCourse } from './defenseContractingB1';
+import { defenseOpsPracticalCourse } from './defenseContractingB2';
+import { defenseOpsDeepCourse } from './defenseContractingB3';
+
+// Defense Contracting Track — Track C (BD)
+import { defenseBDAwarenessCourse } from './defenseContractingC1';
+import { defenseBDPracticalCourse } from './defenseContractingC2';
+import { defenseBDDeepCourse } from './defenseContractingC3';
+
 export const allCourses: Course[] = [
   yellowBeltCourse,
   greenBeltCourse,
@@ -31,6 +46,18 @@ export const allCourses: Course[] = [
   dataAnalysisCourse,
   crmErpSystemsCourse,
   businessIntelligenceCourse,
+  // Defense Contracting — Track A
+  defenseExecAwarenessCourse,
+  defenseExecPracticalCourse,
+  defenseExecDeepCourse,
+  // Defense Contracting — Track B
+  defenseOpsAwarenessCourse,
+  defenseOpsPracticalCourse,
+  defenseOpsDeepCourse,
+  // Defense Contracting — Track C
+  defenseBDAwarenessCourse,
+  defenseBDPracticalCourse,
+  defenseBDDeepCourse,
 ];
 
 export const coursesByTrack = {
@@ -38,6 +65,7 @@ export const coursesByTrack = {
   'lean-foundations': allCourses.filter(c => c.track === 'lean-foundations'),
   'leadership': allCourses.filter(c => c.track === 'leadership'),
   'data-management': allCourses.filter(c => c.track === 'data-management'),
+  'defense-contracting': allCourses.filter(c => c.track === 'defense-contracting'),
 };
 
 export function getCourseById(id: string): Course | undefined {

@@ -7,6 +7,14 @@ import { SpotTheWaste } from '../simulations/SpotTheWaste';
 import { VariationDemo } from '../simulations/VariationDemo';
 import { ParetoBuilder } from '../simulations/ParetoBuilder';
 import { FishboneBuilder } from '../simulations/FishboneBuilder';
+import { DefenseGoNoGo } from '../simulations/DefenseGoNoGo';
+import { DefenseContractRisk } from '../simulations/DefenseContractRisk';
+import { DefenseAuditReadiness } from '../simulations/DefenseAuditReadiness';
+import { DefenseProgramCrisis } from '../simulations/DefenseProgramCrisis';
+import { DefenseProgramReview } from '../simulations/DefenseProgramReview';
+import { DefenseProposalCompliance } from '../simulations/DefenseProposalCompliance';
+import { DefenseCaptureExercise } from '../simulations/DefenseCaptureExercise';
+import { DefenseBidNoBid } from '../simulations/DefenseBidNoBid';
 import { DMAICPhaseDiagram } from '../diagrams/DMAICPhaseDiagram';
 import { CTQTreeDiagram } from '../diagrams/CTQTreeDiagram';
 import { KanoModelDiagram } from '../diagrams/KanoModelDiagram';
@@ -38,6 +46,14 @@ function SimulationBlock({ id, description }: { id: string; title: string; descr
     'variation-demo': <VariationDemo />,
     'pareto-builder': <ParetoBuilder />,
     'fishbone-builder': <FishboneBuilder />,
+    'defense-go-nogo': <DefenseGoNoGo />,
+    'defense-contract-risk': <DefenseContractRisk />,
+    'defense-audit-readiness': <DefenseAuditReadiness />,
+    'defense-program-crisis': <DefenseProgramCrisis />,
+    'defense-program-review': <DefenseProgramReview />,
+    'defense-proposal-compliance': <DefenseProposalCompliance />,
+    'defense-capture-exercise': <DefenseCaptureExercise />,
+    'defense-bid-nobid': <DefenseBidNoBid />,
   };
   const component = map[id];
   if (!component) return null;
