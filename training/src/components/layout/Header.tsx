@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { useAuth } from '../../context/AuthContext';
 
 function WGALogo() {
   return (
@@ -15,9 +16,18 @@ function WGALogo() {
           <span style={{ fontFamily: 'Georgia, serif', fontSize: '18px', fontWeight: 400, letterSpacing: '2px', color: '#ffffff' }}>WENTWORTH</span>
         </div>
         <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '8px', fontWeight: 400, letterSpacing: '4px', color: '#c9a84c', textTransform: 'uppercase' }}>
-          OPERATIONS INSTITUTE
+          OPERATIONS ACADEMY
         </div>
       </div>
+    </div>
+  );
+}
+
+function UserAvatar({ name, color }: { name: string; color: string }) {
+  const initials = name.split(' ').map(w => w[0]).join('').toUpperCase().slice(0, 2);
+  return (
+    <div style={{ width: 34, height: 34, borderRadius: '50%', backgroundColor: color + '22', border: `1.5px solid ${color}`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 12, fontWeight: 600, color }}>
+      {initials}
     </div>
   );
 }
@@ -25,6 +35,7 @@ function WGALogo() {
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const { user } = useAuth();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -56,6 +67,18 @@ export function Header() {
         <div className="ml-auto flex items-center gap-1">
           {navLink('/courses', 'Courses')}
           {navLink('/dashboard', 'Dashboard')}
+          {user ? (
+            <Link to="/profile" className="ml-2 hover:opacity-80 transition-opacity">
+              <UserAvatar name={user.name} color={user.avatarColor} />
+            </Link>
+          ) : (
+            <Link
+              to="/login"
+              className="ml-2 font-sans text-xs font-medium tracking-widest uppercase px-4 py-2 rounded-sm bg-gold/10 border border-gold/30 text-gold hover:bg-gold/20 transition-all duration-200"
+            >
+              Sign In
+            </Link>
+          )}
         </div>
       </div>
     </header>
