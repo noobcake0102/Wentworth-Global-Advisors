@@ -14,6 +14,7 @@ import { SixSigmaCertPage } from './pages/programs/SixSigmaCertPage';
 import { LeanFoundationsPage } from './pages/programs/LeanFoundationsPage';
 import { LeadershipPage } from './pages/programs/LeadershipPage';
 import { DataManagementPage } from './pages/programs/DataManagementPage';
+import { FactoryFlowPage } from './pages/FactoryFlowPage';
 
 function ProtectedRoute({ children }: { children: React.ReactNode }) {
   const { user, loading } = useAuth();
@@ -63,6 +64,7 @@ function AppRoutes() {
       <Route path="/programs/lean-foundations" element={<ProtectedRoute><LeanFoundationsPage /></ProtectedRoute>} />
       <Route path="/programs/leadership" element={<ProtectedRoute><LeadershipPage /></ProtectedRoute>} />
       <Route path="/programs/data-management" element={<ProtectedRoute><DataManagementPage /></ProtectedRoute>} />
+      <Route path="/simulations/factory-flow" element={<ProtectedRoute><FactoryFlowPage /></ProtectedRoute>} />
     </Routes>
   );
 }

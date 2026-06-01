@@ -2,7 +2,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { useProgressContext } from '../../context/ProgressContext';
 import { useMemo } from 'react';
-import { LayoutDashboard, BookOpen, Shield, User, Award, Lightbulb, Users, Database } from 'lucide-react';
+import { LayoutDashboard, BookOpen, Shield, User, Award, Lightbulb, Users, Database, FlaskConical } from 'lucide-react';
 import type { ProgressStore } from '../../types/progress';
 
 const XP_PER_LESSON = 10;
@@ -136,6 +136,9 @@ export function Sidebar() {
         <NavItem to="/programs/leadership" icon={<Users size={15} />} label="Leadership & Mgmt" exact />
         <NavItem to="/programs/data-management" icon={<Database size={15} />} label="Data Management" exact />
         <NavItem to="/defense" icon={<Shield size={15} />} label="Defense Contracting" exact />
+
+        <SectionLabel label="Simulations" />
+        <NavItem to="/simulations/factory-flow" icon={<FlaskConical size={15} />} label="Factory Flow" exact />
 
         <SectionLabel label="Account" />
         <NavItem to="/profile" icon={<User size={15} />} label="Profile" exact />
