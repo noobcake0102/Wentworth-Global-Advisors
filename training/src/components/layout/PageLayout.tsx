@@ -1,18 +1,16 @@
 import { type ReactNode } from 'react';
-import { Header } from './Header';
+import { AppLayout } from './AppLayout';
 
 interface PageLayoutProps {
   children: ReactNode;
   className?: string;
+  title?: string;
 }
 
-export function PageLayout({ children, className = '' }: PageLayoutProps) {
+export function PageLayout({ children, title }: PageLayoutProps) {
   return (
-    <div className="min-h-screen bg-bg">
-      <Header />
-      <main className={`pt-20 ${className}`}>
-        {children}
-      </main>
-    </div>
+    <AppLayout title={title}>
+      {children}
+    </AppLayout>
   );
 }
