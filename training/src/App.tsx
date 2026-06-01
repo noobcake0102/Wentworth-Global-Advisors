@@ -10,6 +10,10 @@ import { CertificatePage } from './pages/CertificatePage';
 import { LoginPage } from './pages/LoginPage';
 import { ProfilePage } from './pages/ProfilePage';
 import { DefenseContractingPage } from './pages/DefenseContractingPage';
+import { SixSigmaCertPage } from './pages/programs/SixSigmaCertPage';
+import { LeanFoundationsPage } from './pages/programs/LeanFoundationsPage';
+import { LeadershipPage } from './pages/programs/LeadershipPage';
+import { DataManagementPage } from './pages/programs/DataManagementPage';
 
 function AppRoutes() {
   const { loading } = useAuth();
@@ -25,7 +29,7 @@ function AppRoutes() {
 
   return (
     <Routes>
-      <Route path="/" element={<Navigate to="/courses" replace />} />
+      <Route path="/" element={<Navigate to="/dashboard" replace />} />
       <Route path="/courses" element={<CatalogPage />} />
       <Route path="/courses/:courseId" element={<CoursePage />} />
       <Route path="/courses/:courseId/modules/:moduleId/lessons/:lessonId" element={<LessonPage />} />
@@ -35,6 +39,10 @@ function AppRoutes() {
       <Route path="/login" element={<LoginPage />} />
       <Route path="/profile" element={<ProfilePage />} />
       <Route path="/defense" element={<DefenseContractingPage />} />
+      <Route path="/programs/six-sigma" element={<SixSigmaCertPage />} />
+      <Route path="/programs/lean-foundations" element={<LeanFoundationsPage />} />
+      <Route path="/programs/leadership" element={<LeadershipPage />} />
+      <Route path="/programs/data-management" element={<DataManagementPage />} />
     </Routes>
   );
 }

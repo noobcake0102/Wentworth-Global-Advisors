@@ -61,27 +61,21 @@ interface NavItemProps {
 
 function NavItem({ to, icon, label, exact }: NavItemProps) {
   const location = useLocation();
-  const toUrl = new URL(to, 'http://x');
   const active = exact
-    ? location.pathname === toUrl.pathname && location.search === (toUrl.search || '')
-    : location.pathname === toUrl.pathname || location.pathname.startsWith(toUrl.pathname + '/');
+    ? location.pathname === to
+    : location.pathname === to || location.pathname.startsWith(to + '/');
 
   return (
     <Link
       to={to}
       style={{
-        display: 'flex',
-        alignItems: 'center',
-        gap: 10,
-        padding: '9px 18px',
-        fontSize: 13,
-        fontWeight: 500,
+        display: 'flex', alignItems: 'center', gap: 10,
+        padding: '9px 18px', fontSize: 13, fontWeight: 500,
         fontFamily: 'DM Sans, sans-serif',
         color: active ? '#c9a84c' : '#9ca3af',
         background: active ? 'rgba(201,168,76,0.08)' : 'transparent',
         borderLeft: `2px solid ${active ? '#c9a84c' : 'transparent'}`,
-        transition: 'all 0.15s',
-        textDecoration: 'none',
+        transition: 'all 0.15s', textDecoration: 'none',
       }}
       onMouseEnter={e => {
         if (!active) {
@@ -105,12 +99,8 @@ function NavItem({ to, icon, label, exact }: NavItemProps) {
 function SectionLabel({ label }: { label: string }) {
   return (
     <div style={{
-      fontSize: 9,
-      letterSpacing: '0.2em',
-      textTransform: 'uppercase',
-      color: '#6b7280',
-      padding: '14px 18px 6px',
-      fontFamily: 'DM Sans, sans-serif',
+      fontSize: 9, letterSpacing: '0.2em', textTransform: 'uppercase',
+      color: '#6b7280', padding: '14px 18px 6px', fontFamily: 'DM Sans, sans-serif',
     }}>
       {label}
     </div>
@@ -125,50 +115,34 @@ export function Sidebar() {
 
   return (
     <aside style={{
-      width: 220,
-      minWidth: 220,
-      height: '100vh',
-      background: '#111111',
-      borderRight: '1px solid rgba(201,168,76,0.15)',
-      display: 'flex',
-      flexDirection: 'column',
-      overflow: 'hidden',
-      flexShrink: 0,
-      zIndex: 50,
+      width: 220, minWidth: 220, height: '100vh',
+      background: '#111111', borderRight: '1px solid rgba(201,168,76,0.15)',
+      display: 'flex', flexDirection: 'column', overflow: 'hidden', flexShrink: 0, zIndex: 50,
     }}>
-      {/* Logo */}
-      <div style={{
-        padding: '20px 18px 16px',
-        borderBottom: '1px solid rgba(201,168,76,0.12)',
-      }}>
+      <div style={{ padding: '20px 18px 16px', borderBottom: '1px solid rgba(201,168,76,0.12)' }}>
         <Link to="/" style={{ textDecoration: 'none' }}>
           <WGALogo />
         </Link>
       </div>
 
-      {/* Nav */}
       <nav style={{ flex: 1, overflowY: 'auto', padding: '10px 0' }}>
         <SectionLabel label="Main" />
         <NavItem to="/dashboard" icon={<LayoutDashboard size={15} />} label="Dashboard" exact />
+        <NavItem to="/courses" icon={<BookOpen size={15} />} label="All Courses" exact />
 
         <SectionLabel label="Programs" />
-        <NavItem to="/courses" icon={<BookOpen size={15} />} label="All Courses" />
-        <NavItem to="/courses?path=lss-cert" icon={<Award size={15} />} label="Six Sigma Certification" exact />
-        <NavItem to="/courses?path=lean-foundations" icon={<Lightbulb size={15} />} label="Foundations of Lean LSS" exact />
-        <NavItem to="/courses?path=leadership" icon={<Users size={15} />} label="Leadership & Management" exact />
-        <NavItem to="/courses?path=data" icon={<Database size={15} />} label="Data Management" exact />
+        <NavItem to="/programs/six-sigma" icon={<Award size={15} />} label="Six Sigma Cert" exact />
+        <NavItem to="/programs/lean-foundations" icon={<Lightbulb size={15} />} label="Lean Six Sigma" exact />
+        <NavItem to="/programs/leadership" icon={<Users size={15} />} label="Leadership & Mgmt" exact />
+        <NavItem to="/programs/data-management" icon={<Database size={15} />} label="Data Management" exact />
         <NavItem to="/defense" icon={<Shield size={15} />} label="Defense Contracting" exact />
 
         <SectionLabel label="Account" />
         <NavItem to="/profile" icon={<User size={15} />} label="Profile" exact />
       </nav>
 
-      {/* User section */}
       {user ? (
-        <div style={{
-          borderTop: '1px solid rgba(201,168,76,0.12)',
-          padding: '14px 16px',
-        }}>
+        <div style={{ borderTop: '1px solid rgba(201,168,76,0.12)', padding: '14px 16px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 10 }}>
             <UserAvatar name={user.name} color={user.avatarColor} />
             <div style={{ minWidth: 0 }}>
@@ -180,7 +154,6 @@ export function Sidebar() {
               </div>
             </div>
           </div>
-          {/* XP bar */}
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 4 }}>
             <span style={{ fontSize: 10, color: '#c9a84c', fontFamily: 'DM Sans, sans-serif', fontWeight: 600 }}>
               ⚡ {xp.toLocaleString()} XP
@@ -195,15 +168,12 @@ export function Sidebar() {
         </div>
       ) : (
         <div style={{ borderTop: '1px solid rgba(201,168,76,0.12)', padding: '14px 16px' }}>
-          <Link
-            to="/login"
-            style={{
-              display: 'block', textAlign: 'center', fontSize: 12, fontWeight: 600,
-              fontFamily: 'DM Sans, sans-serif', color: '#c9a84c',
-              background: 'rgba(201,168,76,0.1)', border: '1px solid rgba(201,168,76,0.3)',
-              borderRadius: 6, padding: '8px 12px', textDecoration: 'none',
-            }}
-          >
+          <Link to="/login" style={{
+            display: 'block', textAlign: 'center', fontSize: 12, fontWeight: 600,
+            fontFamily: 'DM Sans, sans-serif', color: '#c9a84c',
+            background: 'rgba(201,168,76,0.1)', border: '1px solid rgba(201,168,76,0.3)',
+            borderRadius: 6, padding: '8px 12px', textDecoration: 'none',
+          }}>
             Sign In
           </Link>
         </div>
