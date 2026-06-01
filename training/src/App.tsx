@@ -1,4 +1,4 @@
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { ProgressProvider } from './context/ProgressContext';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { CatalogPage } from './pages/CatalogPage';
@@ -15,6 +15,26 @@ import { LeanFoundationsPage } from './pages/programs/LeanFoundationsPage';
 import { LeadershipPage } from './pages/programs/LeadershipPage';
 import { DataManagementPage } from './pages/programs/DataManagementPage';
 
+function ProtectedRoute({ children }: { children: React.ReactNode }) {
+  const { user, loading } = useAuth();
+  const location = useLocation();
+
+  if (loading) {
+    return (
+      <div style={{ display: 'flex', height: '100vh', alignItems: 'center', justifyContent: 'center', background: '#0d0d0d' }}>
+        <div style={{ width: 32, height: 32, border: '2px solid rgba(201,168,76,0.2)', borderTopColor: '#c9a84c', borderRadius: '50%', animation: 'spin 0.8s linear infinite' }} />
+        <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
+      </div>
+    );
+  }
+
+  if (!user) {
+    return <Navigate to="/login" state={{ from: location }} replace />;
+  }
+
+  return <>{children}</>;
+}
+
 function AppRoutes() {
   const { loading } = useAuth();
 
@@ -29,20 +49,20 @@ function AppRoutes() {
 
   return (
     <Routes>
-      <Route path="/" element={<Navigate to="/dashboard" replace />} />
-      <Route path="/courses" element={<CatalogPage />} />
-      <Route path="/courses/:courseId" element={<CoursePage />} />
-      <Route path="/courses/:courseId/modules/:moduleId/lessons/:lessonId" element={<LessonPage />} />
-      <Route path="/courses/:courseId/modules/:moduleId/quiz" element={<QuizPage />} />
-      <Route path="/dashboard" element={<DashboardPage />} />
-      <Route path="/courses/:courseId/certificate" element={<CertificatePage />} />
       <Route path="/login" element={<LoginPage />} />
-      <Route path="/profile" element={<ProfilePage />} />
-      <Route path="/defense" element={<DefenseContractingPage />} />
-      <Route path="/programs/six-sigma" element={<SixSigmaCertPage />} />
-      <Route path="/programs/lean-foundations" element={<LeanFoundationsPage />} />
-      <Route path="/programs/leadership" element={<LeadershipPage />} />
-      <Route path="/programs/data-management" element={<DataManagementPage />} />
+      <Route path="/" element={<Navigate to="/dashboard" replace />} />
+      <Route path="/dashboard" element={<ProtectedRoute><DashboardPage /></ProtectedRoute>} />
+      <Route path="/courses" element={<ProtectedRoute><CatalogPage /></ProtectedRoute>} />
+      <Route path="/courses/:courseId" element={<ProtectedRoute><CoursePage /></ProtectedRoute>} />
+      <Route path="/courses/:courseId/modules/:moduleId/lessons/:lessonId" element={<ProtectedRoute><LessonPage /></ProtectedRoute>} />
+      <Route path="/courses/:courseId/modules/:moduleId/quiz" element={<ProtectedRoute><QuizPage /></ProtectedRoute>} />
+      <Route path="/courses/:courseId/certificate" element={<ProtectedRoute><CertificatePage /></ProtectedRoute>} />
+      <Route path="/profile" element={<ProtectedRoute><ProfilePage /></ProtectedRoute>} />
+      <Route path="/defense" element={<ProtectedRoute><DefenseContractingPage /></ProtectedRoute>} />
+      <Route path="/programs/six-sigma" element={<ProtectedRoute><SixSigmaCertPage /></ProtectedRoute>} />
+      <Route path="/programs/lean-foundations" element={<ProtectedRoute><LeanFoundationsPage /></ProtectedRoute>} />
+      <Route path="/programs/leadership" element={<ProtectedRoute><LeadershipPage /></ProtectedRoute>} />
+      <Route path="/programs/data-management" element={<ProtectedRoute><DataManagementPage /></ProtectedRoute>} />
     </Routes>
   );
 }
