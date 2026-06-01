@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate, useLocation, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 
 function WGALogo() {
@@ -22,27 +22,58 @@ function WGALogo() {
 export function LoginPage() {
   const { signIn, signUp } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = (location.state as { from?: { pathname: string } })?.from?.pathname ?? '/dashboard';
   const [mode, setMode] = useState<'signin' | 'signup'>('signin');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const [confirmationSent, setConfirmationSent] = useState(false);
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setError('');
     setLoading(true);
-    const result = mode === 'signin'
-      ? await signIn(email, password)
-      : await signUp(email, password, name);
-    setLoading(false);
-    if (result.error) { setError(result.error); return; }
-    navigate('/dashboard');
+    if (mode === 'signup') {
+      const result = await signUp(email, password, name);
+      setLoading(false);
+      if (result.error) { setError(result.error); return; }
+      setConfirmationSent(true);
+    } else {
+      const result = await signIn(email, password);
+      setLoading(false);
+      if (result.error) { setError(result.error); return; }
+      navigate(from, { replace: true });
+    }
   };
 
   const inputClass = `w-full bg-surface border border-border-gold rounded px-4 py-3 text-ink text-sm
     placeholder:text-muted/50 focus:outline-none focus:border-gold/60 transition-colors`;
+
+  if (confirmationSent) {
+    return (
+      <div className="min-h-screen bg-bg flex flex-col items-center justify-center px-4">
+        <div className="w-full max-w-sm text-center">
+          <div className="mb-8 flex justify-center"><WGALogo /></div>
+          <div className="bg-card border border-border-gold rounded-lg p-8">
+            <div style={{ fontSize: 36, marginBottom: 12 }}>✉️</div>
+            <h2 style={{ fontFamily: 'Georgia, serif', fontSize: 20, color: '#f0ece6', marginBottom: 8 }}>Check your email</h2>
+            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#9ca3af', lineHeight: 1.6 }}>
+              We sent a confirmation link to <strong style={{ color: '#c9a84c' }}>{email}</strong>. Click the link to activate your account, then come back to sign in.
+            </p>
+            <button
+              onClick={() => { setConfirmationSent(false); setMode('signin'); }}
+              className="mt-6 w-full bg-gold/10 border border-gold/40 text-gold font-sans text-xs font-medium tracking-widest uppercase px-6 py-3 rounded hover:bg-gold/20 transition-all duration-200"
+            >
+              Back to Sign In
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-bg flex flex-col items-center justify-center px-4">
