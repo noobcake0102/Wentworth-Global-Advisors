@@ -2,7 +2,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { useProgressContext } from '../../context/ProgressContext';
 import { useMemo } from 'react';
-import { LayoutDashboard, BookOpen, Shield, User } from 'lucide-react';
+import { LayoutDashboard, BookOpen, Shield, User, Award, Lightbulb, Users, Database } from 'lucide-react';
 import type { ProgressStore } from '../../types/progress';
 
 const XP_PER_LESSON = 10;
@@ -61,9 +61,10 @@ interface NavItemProps {
 
 function NavItem({ to, icon, label, exact }: NavItemProps) {
   const location = useLocation();
+  const toUrl = new URL(to, 'http://x');
   const active = exact
-    ? location.pathname === to
-    : location.pathname === to || location.pathname.startsWith(to + '/');
+    ? location.pathname === toUrl.pathname && location.search === (toUrl.search || '')
+    : location.pathname === toUrl.pathname || location.pathname.startsWith(toUrl.pathname + '/');
 
   return (
     <Link
@@ -149,9 +150,13 @@ export function Sidebar() {
       <nav style={{ flex: 1, overflowY: 'auto', padding: '10px 0' }}>
         <SectionLabel label="Main" />
         <NavItem to="/dashboard" icon={<LayoutDashboard size={15} />} label="Dashboard" exact />
-        <NavItem to="/courses" icon={<BookOpen size={15} />} label="Courses" />
 
         <SectionLabel label="Programs" />
+        <NavItem to="/courses" icon={<BookOpen size={15} />} label="All Courses" />
+        <NavItem to="/courses?path=lss-cert" icon={<Award size={15} />} label="Six Sigma Certification" exact />
+        <NavItem to="/courses?path=lean-foundations" icon={<Lightbulb size={15} />} label="Foundations of Lean LSS" exact />
+        <NavItem to="/courses?path=leadership" icon={<Users size={15} />} label="Leadership & Management" exact />
+        <NavItem to="/courses?path=data" icon={<Database size={15} />} label="Data Management" exact />
         <NavItem to="/defense" icon={<Shield size={15} />} label="Defense Contracting" exact />
 
         <SectionLabel label="Account" />
