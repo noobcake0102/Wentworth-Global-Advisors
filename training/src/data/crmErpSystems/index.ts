@@ -8,7 +8,7 @@ export const crmErpSystemsCourse: Course = {
   description:
     'Understand the enterprise software that runs modern organizations. From CRM platforms that manage customer relationships to ERP systems that coordinate finance, supply chain, and HR, this course covers the full landscape of enterprise systems.',
   status: 'available',
-  estimatedHours: 5,
+  estimatedHours: 7,
   color: '#e85d75',
   icon: '🏢',
   modules: [
@@ -1438,6 +1438,691 @@ export const crmErpSystemsCourse: Course = {
           options: ['True', 'False'],
           correctIndex: 1,
           explanation: 'False. Native connectors significantly reduce integration effort by providing pre-built data mappings and authentication, but still require configuration, field mapping to match your specific data model, testing, and ongoing maintenance. They are not zero-effort plug-and-play solutions.',
+        },
+      ],
+    },
+    // ─── Module 7: CRM, MRP & SIOP ───────────────────────────────────────────
+    {
+      id: 'ce-m7',
+      number: 7,
+      title: 'CRM, MRP & SIOP — Manufacturing Operations Integration',
+      description:
+        'How CRM demand signals feed Manufacturing Resource Planning, and how SIOP (Sales, Inventory & Operations Planning) aligns the entire value chain. Covers push vs pull production logic and how enterprise systems encode these decisions.',
+      estimatedMinutes: 60,
+      learningObjectives: [
+        'Explain how CRM demand data feeds into MRP calculations',
+        'Define SIOP and describe the monthly planning cycle',
+        'Compare push and pull production systems and their trade-offs',
+        'Identify which ERP modules support each planning horizon',
+        'Describe how system misalignment between CRM and MRP creates operational problems',
+      ],
+      lessons: [
+        {
+          id: 'ce-m7-l1',
+          title: 'From CRM to MRP — How Demand Becomes a Production Plan',
+          estimatedMinutes: 15,
+          content: [
+            {
+              type: 'paragraph' as const,
+              text: 'The gap between a sales forecast and a production schedule is where most operational chaos originates. A sales rep closes a deal in the CRM. That deal creates a demand signal. Somewhere downstream, a factory has to build the product — but if the CRM and the manufacturing planning system are not connected, the factory finds out too late, builds the wrong mix, or builds too much of what nobody ordered. Understanding how CRM demand flows into Manufacturing Resource Planning (MRP) is one of the most practically valuable things an operations leader can learn.',
+            },
+            {
+              type: 'heading' as const,
+              text: 'What MRP Actually Does',
+              level: 2 as const,
+            },
+            {
+              type: 'paragraph' as const,
+              text: 'Manufacturing Resource Planning (MRP) is the planning engine inside an ERP system that answers three questions: What do we need to make? How much of each component do we need? When do we need to start? MRP takes the demand plan — customer orders, sales forecasts, or both — and explodes it through the Bill of Materials (BOM) to calculate the raw materials and sub-assemblies required at each level. It then offsets these requirements against current inventory and open purchase orders, generating net requirements: what you actually need to buy or make.',
+            },
+            {
+              type: 'paragraph' as const,
+              text: 'MRP operates on three inputs: the Master Production Schedule (MPS), the Bill of Materials (BOM), and current inventory records. The MPS defines what finished goods are needed and when. The BOM defines what components are required to build one unit of each finished good. Inventory records tell the system what is already on hand or on order. Without accurate data in all three, the MRP output is unreliable — and unreliable plans lead to either shortages or excess inventory.',
+            },
+            {
+              type: 'callout' as const,
+              variant: 'info' as const,
+              title: 'MRP vs. MRP II vs. ERP',
+              text: 'Original MRP (1960s–70s) handled materials planning only. MRP II (1980s) expanded to include capacity planning, labour, and machine scheduling. Modern ERP absorbed MRP II and added financials, supply chain, CRM, and HR in one integrated platform. When someone says "our ERP runs MRP," they mean the planning engine is one module of a broader system.',
+            },
+            {
+              type: 'heading' as const,
+              text: 'How CRM Connects to MRP',
+              level: 2 as const,
+            },
+            {
+              type: 'paragraph' as const,
+              text: 'The connection between CRM and MRP runs through the demand plan. In a well-integrated system, when a sales opportunity in the CRM reaches a defined stage — typically "Commit" or "Closed Won" — it either creates a sales order automatically or updates the forecast that feeds into the Master Production Schedule. The MPS then drives MRP. This means a deal closed on Monday can be reflected in Tuesday\'s production plan, rather than discovered by manufacturing three weeks later when the customer is already expecting delivery.',
+            },
+            {
+              type: 'paragraph' as const,
+              text: 'In practice, the integration has two modes. Order-driven mode: a confirmed customer order in CRM becomes a sales order in ERP, which creates firm demand for MRP. Forecast-driven mode: pipeline data from CRM — weighted by stage probability — feeds a statistical forecast that informs the MPS for longer-horizon planning. Mature operations use both simultaneously: firm orders for short-horizon execution, probabilistic forecasts for medium-horizon capacity and procurement.',
+            },
+            {
+              type: 'table' as const,
+              headers: ['Planning Horizon', 'Demand Source', 'Planning Tool', 'Decision Made'],
+              rows: [
+                ['0–4 weeks', 'Confirmed CRM orders', 'MRP (firm)', 'Production schedule, raw material releases'],
+                ['1–3 months', 'CRM commit-stage pipeline', 'Master Production Schedule', 'Capacity reservations, supplier commitments'],
+                ['3–18 months', 'CRM forecast + market data', 'S&OP / SIOP', 'Headcount, capital investment, supplier contracts'],
+              ],
+            },
+            {
+              type: 'heading' as const,
+              text: 'The Data Quality Problem',
+              level: 2 as const,
+            },
+            {
+              type: 'paragraph' as const,
+              text: 'MRP is only as good as the data it runs on. The three most common sources of MRP failure are: inaccurate inventory records (phantom inventory — the system thinks stock exists but it does not), outdated BOMs (components changed but BOM not updated), and unreliable CRM forecasts (sales teams gaming probability percentages). Each of these problems has a system solution — cycle counting for inventory, BOM change-management workflows for engineering changes, and forecast discipline enforced by the SIOP process for CRM accuracy.',
+            },
+            {
+              type: 'callout' as const,
+              variant: 'warning' as const,
+              title: 'The Forecast Accuracy Loop',
+              text: 'If your CRM forecast is inaccurate, your MRP plans are wrong. Wrong plans create shortages or excess inventory. Shortages cause expediting and premium freight costs. Excess inventory ties up cash and creates write-off risk. The cost of bad CRM forecast data compounds across the entire supply chain — this is why SIOP exists.',
+            },
+            {
+              type: 'key-terms' as const,
+              terms: [
+                {
+                  term: 'MRP (Manufacturing Resource Planning)',
+                  definition: 'The planning engine that calculates what materials and components are needed, in what quantities, and when — derived from the Master Production Schedule exploded through the Bill of Materials against current inventory.',
+                },
+                {
+                  term: 'Master Production Schedule (MPS)',
+                  definition: 'The plan specifying which finished products will be produced and in what quantities across a planning horizon, typically 4–26 weeks. The MPS is the primary input to MRP.',
+                },
+                {
+                  term: 'Bill of Materials (BOM)',
+                  definition: 'A structured list of all components, sub-assemblies, and raw materials required to build one unit of a finished product, including quantities and levels of assembly.',
+                },
+                {
+                  term: 'Net Requirements',
+                  definition: 'The actual quantity of materials or components that need to be purchased or manufactured, after subtracting on-hand inventory and open purchase orders from gross requirements.',
+                },
+              ],
+            },
+          ],
+        },
+        {
+          id: 'ce-m7-l2',
+          title: 'SIOP — Sales, Inventory & Operations Planning',
+          estimatedMinutes: 16,
+          content: [
+            {
+              type: 'paragraph' as const,
+              text: 'SIOP — Sales, Inventory & Operations Planning — is the monthly executive process that aligns what the business expects to sell with what operations can realistically produce, at a cost the business can afford. It is sometimes called S&OP (Sales & Operations Planning), but the explicit inclusion of Inventory in the name reflects a critical reality: inventory is the buffer between demand variability and supply variability, and managing it deliberately is central to the process.',
+            },
+            {
+              type: 'paragraph' as const,
+              text: 'SIOP is a cross-functional process, not a software feature. CRM, ERP, and planning tools provide the data; the process is owned by people — sales, operations, supply chain, and finance — meeting regularly with a shared fact base to make trade-off decisions that no single function can make alone. The output of SIOP is a single agreed production plan that all functions commit to for the planning horizon.',
+            },
+            {
+              type: 'heading' as const,
+              text: 'The Monthly SIOP Cycle',
+              level: 2 as const,
+            },
+            {
+              type: 'table' as const,
+              headers: ['Week', 'Step', 'Owner', 'System Used', 'Output'],
+              rows: [
+                ['Week 1', 'Demand Review', 'Sales / Commercial', 'CRM + forecasting tool', 'Updated demand plan by product family'],
+                ['Week 2', 'Supply Review', 'Operations / Supply Chain', 'ERP / MRP', 'Capacity analysis, constraint identification'],
+                ['Week 2', 'Inventory Review', 'Operations / Finance', 'ERP inventory module', 'Inventory projection vs. target'],
+                ['Week 3', 'Pre-SIOP Reconciliation', 'Operations leader', 'All systems', 'Gaps identified, scenarios modelled'],
+                ['Week 4', 'Executive SIOP', 'Executive team', 'Summary dashboards', 'Decisions made, plan approved'],
+              ],
+            },
+            {
+              type: 'heading' as const,
+              text: 'What SIOP Decisions Look Like in Practice',
+              level: 2 as const,
+            },
+            {
+              type: 'paragraph' as const,
+              text: 'At the Demand Review, sales updates the forecast based on CRM pipeline, customer conversations, and market intelligence. The key discipline: the forecast must be unconstrained — what the business could sell if supply were unlimited. This prevents operations from sandbagging supply capacity based on a pre-constrained forecast, which creates a self-fulfilling cycle of underperformance.',
+            },
+            {
+              type: 'paragraph' as const,
+              text: 'At the Supply Review, operations compares the unconstrained demand plan against available capacity. Constraints surface: a forming machine running at 97% utilisation cannot absorb a 15% demand increase without additional shifts or capital. Operations presents options — overtime, outsourcing, inventory build-ahead — with cost and lead-time implications.',
+            },
+            {
+              type: 'paragraph' as const,
+              text: 'At the Executive SIOP, the leadership team makes the trade-off decisions that the process surfaces. Accept the demand? Invest in capacity? Build inventory? Delay a product launch? These decisions, made with a full information picture, are far better than the ad-hoc crisis decisions made when SIOP does not exist.',
+            },
+            {
+              type: 'callout' as const,
+              variant: 'info' as const,
+              title: 'How CRM Data Powers SIOP',
+              text: 'The quality of the Demand Review is entirely dependent on CRM data quality. Pipeline accuracy, opportunity stage discipline, and probability weighting in the CRM directly determine how reliable the SIOP demand plan is. This is why operations leaders should care deeply about CRM hygiene — it is not just a sales tool; it is the input to their production plan.',
+            },
+            {
+              type: 'heading' as const,
+              text: 'Inventory as the Balancing Variable',
+              level: 2 as const,
+            },
+            {
+              type: 'paragraph' as const,
+              text: 'Inventory sits between the supply plan and the demand plan. When demand exceeds short-term supply capacity, inventory absorbs the gap — if you planned ahead. When supply produces more than demand requires, inventory grows — and cash gets tied up. The SIOP process sets explicit inventory targets by product family: safety stock levels, maximum levels, and build-ahead strategies for known seasonal peaks. These targets are not set by the warehouse manager; they are a strategic decision made by the executive team based on service level goals, cash constraints, and supply risk.',
+            },
+            {
+              type: 'key-terms' as const,
+              terms: [
+                {
+                  term: 'SIOP (Sales, Inventory & Operations Planning)',
+                  definition: 'The monthly cross-functional executive process that aligns the demand plan (sales forecast) with the supply plan (production capacity) and inventory strategy, producing a single agreed production plan.',
+                },
+                {
+                  term: 'Unconstrained Demand Plan',
+                  definition: 'A forecast of what the business could sell if supply were unlimited — used as the starting point for SIOP so supply constraints can be explicitly evaluated rather than silently embedded in the forecast.',
+                },
+                {
+                  term: 'Safety Stock',
+                  definition: 'Inventory held as a buffer against demand variability and supply uncertainty — a deliberate financial decision, not simply "extra inventory we happened to build."',
+                },
+                {
+                  term: 'Build-Ahead',
+                  definition: 'Planned production in advance of actual demand to absorb a known future demand spike or compensate for constrained capacity during peak periods.',
+                },
+              ],
+            },
+          ],
+        },
+        {
+          id: 'ce-m7-l3',
+          title: 'Push vs. Pull — Production Logic and System Implications',
+          estimatedMinutes: 15,
+          content: [
+            {
+              type: 'paragraph' as const,
+              text: 'One of the most consequential decisions in production system design is whether to push or pull. The choice determines how work moves through the factory, where inventory accumulates, and how the system responds to variability. It also determines how you configure your ERP and whether CRM demand signals drive production in real time or through a planning lag. Most manufacturers operate some blend of both — understanding each is essential to designing and running an effective operation.',
+            },
+            {
+              type: 'heading' as const,
+              text: 'Push Systems',
+              level: 2 as const,
+            },
+            {
+              type: 'paragraph' as const,
+              text: 'In a push system, production is driven by a plan — typically generated by MRP. The plan says: make 500 units of Product A this week. Each workstation produces to schedule and pushes output to the next station regardless of whether the next station is ready to receive it. Materials and WIP accumulate wherever the downstream station cannot absorb them at the rate the upstream station produces.',
+            },
+            {
+              type: 'paragraph' as const,
+              text: 'Push systems work well when demand is stable and predictable, lead times are long relative to the planning cycle, and products have high BOM complexity requiring extensive advance material procurement. Aerospace, defence, and engineer-to-order manufacturers often operate predominantly push systems because the nature of their products requires it — long lead-time components must be ordered before demand is firm.',
+            },
+            {
+              type: 'callout' as const,
+              variant: 'warning' as const,
+              title: 'The Bullwhip Effect in Push Systems',
+              text: 'Push systems amplify demand variability upstream. A 10% swing in customer demand can translate to a 40–60% swing in raw material orders as each level of the supply chain adds safety buffers. This is the Bullwhip Effect — and it is why forecast accuracy is so operationally expensive to get wrong. Better CRM forecasting directly reduces bullwhip-driven inventory costs.',
+            },
+            {
+              type: 'heading' as const,
+              text: 'Pull Systems',
+              level: 2 as const,
+            },
+            {
+              type: 'paragraph' as const,
+              text: 'In a pull system, production is triggered by actual consumption — a downstream station signals the upstream station to produce only when it has consumed what was already there. The signal is called a kanban. Nothing is produced without a pull signal; this prevents overproduction, limits WIP accumulation, and makes problems visible immediately because there is no buffer to hide behind.',
+            },
+            {
+              type: 'paragraph' as const,
+              text: 'Pull systems work best when demand is relatively stable, product variety is manageable, lead times are short, and the goal is to minimise WIP and flow time. High-volume repetitive manufacturing — beverages, consumer goods, electronics assembly — is classically well-suited to pull. The constraint is that pull requires tightly managed replenishment loops and very reliable process steps. High defect rates or unpredictable machine downtime disrupt pull flow because there is no cushion.',
+            },
+            {
+              type: 'heading' as const,
+              text: 'Hybrid Systems and Decoupling Points',
+              level: 2 as const,
+            },
+            {
+              type: 'paragraph' as const,
+              text: 'Most real manufacturing environments use a hybrid. The decoupling point is where the system transitions from push to pull. Upstream of the decoupling point, long-lead-time materials are pushed based on forecasts. Downstream of the decoupling point — typically a finished goods buffer or a semi-finished "supermarket" — production is pulled by actual customer demand. The location of the decoupling point is a strategic decision driven by customer lead-time expectations and the manufacturing lead time of each stage.',
+            },
+            {
+              type: 'table' as const,
+              headers: ['Characteristic', 'Push System', 'Pull System'],
+              rows: [
+                ['Trigger', 'MRP plan / schedule', 'Actual consumption (kanban signal)'],
+                ['WIP Level', 'High — buffers everywhere', 'Low — controlled by kanban quantity'],
+                ['Response to demand change', 'Slow — requires re-planning cycle', 'Fast — signal adjusts immediately'],
+                ['Risk', 'Overproduction, obsolescence', 'Stockout if replenishment fails'],
+                ['Best fit', 'Complex BOM, long lead times, make-to-order', 'High volume, repetitive, make-to-stock'],
+                ['ERP configuration', 'MRP-driven work orders', 'Kanban / replenishment orders'],
+              ],
+            },
+            {
+              type: 'heading' as const,
+              text: 'What This Means for Your ERP and CRM Configuration',
+              level: 2 as const,
+            },
+            {
+              type: 'paragraph' as const,
+              text: 'The push/pull decision is not just a production floor philosophy — it shapes how you configure your enterprise systems. In a push environment, the ERP\'s MRP engine runs frequently (daily or weekly), CRM forecast accuracy is critical because it drives production plans, and work orders are issued in advance. In a pull environment, the ERP manages kanban card quantities and replenishment triggers, CRM orders drop directly into a production queue without planning lag, and the MRP engine plays a smaller role — it is used primarily for capacity planning and material procurement, not for scheduling production.',
+            },
+            {
+              type: 'key-terms' as const,
+              terms: [
+                {
+                  term: 'Push System',
+                  definition: 'A production system where output is driven by a forecast-based schedule (MRP plan), with each station producing and pushing work to the next regardless of downstream demand signals.',
+                },
+                {
+                  term: 'Pull System',
+                  definition: 'A production system where each station produces only in response to a signal from the downstream station indicating that capacity and need exist, preventing overproduction and limiting WIP.',
+                },
+                {
+                  term: 'Kanban',
+                  definition: 'The signal mechanism in a pull system — a card, container, or electronic signal that authorises and triggers production or replenishment of a specific item in a specific quantity.',
+                },
+                {
+                  term: 'Decoupling Point',
+                  definition: 'The point in the value stream where push transitions to pull — typically a strategic buffer that separates forecast-driven upstream procurement from demand-driven downstream production.',
+                },
+                {
+                  term: 'Bullwhip Effect',
+                  definition: 'The amplification of demand variability upstream through a supply chain — small fluctuations in end-customer demand create increasingly large oscillations in orders placed on suppliers at each tier.',
+                },
+              ],
+            },
+          ],
+        },
+      ],
+      quiz: [
+        {
+          id: 'ce-m7-q1',
+          type: 'multiple-choice' as const,
+          question: 'Which of the following best describes the primary input that connects CRM to MRP?',
+          options: [
+            'Customer contact records from the CRM account module',
+            'Confirmed or forecast demand signals that feed into the Master Production Schedule',
+            'Sales commission data from closed opportunities',
+            'Support ticket volume from the CRM service module',
+          ],
+          correctIndex: 1,
+          explanation: 'CRM connects to MRP through demand — either firm sales orders from closed CRM opportunities or probabilistic forecasts from the CRM pipeline. This demand feeds the Master Production Schedule, which MRP then explodes through the BOM to calculate material and capacity requirements.',
+        },
+        {
+          id: 'ce-m7-q2',
+          type: 'multiple-choice' as const,
+          question: 'In the SIOP monthly cycle, why is the demand plan initially kept "unconstrained"?',
+          options: [
+            'To simplify the planning process by ignoring operational details',
+            'So that supply constraints are explicitly identified and trade-off decisions can be made by leadership rather than embedded invisibly in the forecast',
+            'Because sales teams are not aware of manufacturing capacity limits',
+            'To maximise inventory levels as a precaution',
+          ],
+          correctIndex: 1,
+          explanation: 'An unconstrained demand plan reflects what the business could sell if supply were unlimited. If the demand plan is already constrained by operations\' assumptions, leadership never sees the true gap — and never makes the investment decisions needed to close it. The SIOP process explicitly surfaces the gap for executive decision-making.',
+        },
+        {
+          id: 'ce-m7-q3',
+          type: 'multiple-choice' as const,
+          question: 'A beverage manufacturer wants to minimise WIP and respond quickly to actual customer orders with minimal planning lag. Which production logic is most appropriate?',
+          options: [
+            'Push — driven by MRP plan issued weekly',
+            'Pull — triggered by consumption signals from downstream stations',
+            'Engineer-to-order with long procurement lead times',
+            'Batch production with monthly scheduling cycles',
+          ],
+          correctIndex: 1,
+          explanation: 'Pull systems minimise WIP and respond directly to actual consumption rather than forecast-driven schedules. High-volume, repetitive manufacturing like beverages is well-suited to pull because product variety is manageable and production steps are predictable.',
+        },
+        {
+          id: 'ce-m7-q4',
+          type: 'true-false' as const,
+          question: 'The Bullwhip Effect means that small swings in end-customer demand are amplified into larger swings in upstream supplier orders.',
+          options: ['True', 'False'],
+          correctIndex: 0,
+          explanation: 'True. The Bullwhip Effect describes how demand variability amplifies as it moves upstream through the supply chain. Each tier adds safety buffers based on the variability it experiences, compounding the effect. Better CRM forecast accuracy and SIOP discipline directly reduce bullwhip-driven inventory and procurement costs.',
+        },
+        {
+          id: 'ce-m7-q5',
+          type: 'multiple-choice' as const,
+          question: 'Which of the following is the most common reason MRP generates unreliable output?',
+          options: [
+            'MRP software is too complex for most ERP systems to run accurately',
+            'Inaccurate input data — phantom inventory, outdated BOMs, or unreliable CRM forecasts',
+            'MRP does not account for machine downtime',
+            'MRP can only plan one product family at a time',
+          ],
+          correctIndex: 1,
+          explanation: 'MRP is a deterministic calculation — given accurate inputs, it produces an accurate plan. The most common failure mode is data quality: inventory records showing stock that does not exist (phantom inventory), BOMs that do not reflect current product design, or CRM forecasts that sales teams do not maintain with discipline.',
+        },
+      ],
+    },
+    // ─── Module 8: Cycle Time — The Process Health Indicator ─────────────────
+    {
+      id: 'ce-m8',
+      number: 8,
+      title: 'Cycle Time — The Definitive Process Health Indicator',
+      description:
+        'Cycle time is not just a speed metric — it is the most honest indicator of how well your process and product are designed. This module covers Continuous Flow Manufacturing, the WIP/Exits method for measuring cycle time, and how to use cycle time data to drive improvement.',
+      estimatedMinutes: 55,
+      learningObjectives: [
+        'Define cycle time and explain why it reflects both process and product quality',
+        'Apply Little\'s Law (WIP/Exits) to measure cycle time from operational data',
+        'Describe the principles of Continuous Flow Manufacturing and how it differs from batch production',
+        'Identify the operational signals that indicate cycle time problems',
+        'Use cycle time analysis to target improvement investments',
+      ],
+      lessons: [
+        {
+          id: 'ce-m8-l1',
+          title: 'Cycle Time as a Process Health Indicator',
+          estimatedMinutes: 14,
+          content: [
+            {
+              type: 'paragraph' as const,
+              text: 'Cycle time is the elapsed time from when work enters a process to when it exits as a completed unit. It sounds simple. In practice, it is the single most revealing indicator of how a process and a product are performing — and it is underused in most operations because it requires honest measurement rather than comfortable assumptions.',
+            },
+            {
+              type: 'paragraph' as const,
+              text: 'Here is what makes cycle time diagnostic rather than just descriptive: a long cycle time is almost never caused by one thing. It is the accumulated effect of waiting time, rework loops, batch size decisions, handoff delays, machine downtime, and process complexity. When you measure cycle time and find it much longer than the sum of your process step times, you have just proven that your process has hidden waste. The gap between actual cycle time and theoretical cycle time is the improvement opportunity.',
+            },
+            {
+              type: 'callout' as const,
+              variant: 'info' as const,
+              title: 'Cycle Time Tells You How Good Your Process and Product Are',
+              text: 'A product that is difficult to manufacture — complex assembly, tight tolerances, fragile components — will have a longer cycle time regardless of how efficient your process is. A process riddled with rework, waiting, and handoff friction will have a long cycle time even with a simple product. Cycle time integrates both signals. If cycle time is long, either the product design needs improvement, the process needs improvement, or both.',
+            },
+            {
+              type: 'heading' as const,
+              text: 'The Three Components of Cycle Time',
+              level: 2 as const,
+            },
+            {
+              type: 'paragraph' as const,
+              text: 'Cycle time is the sum of three components. Value-added time: time during which the product is actually being transformed — machined, assembled, filled, tested. This is typically 5–30% of total cycle time in most manufacturing environments. Non-value-added necessary time: waiting for a machine to be set up, inspection time required by a customer, cooling time that physics demands. These cannot be eliminated immediately but should be minimised. Non-value-added unnecessary time: waiting in a queue, batch accumulation before moving to the next station, time spent in rework loops. This is pure waste and the primary target of cycle time reduction efforts.',
+            },
+            {
+              type: 'paragraph' as const,
+              text: 'The ratio of value-added time to total cycle time is called Process Cycle Efficiency (PCE). In a typical manufacturing environment, PCE is 10–30%. In a mature Continuous Flow environment, PCE can reach 50–80%. The gap between where you are and where a well-run flow process operates represents the untapped capacity and speed in your operation.',
+            },
+            {
+              type: 'table' as const,
+              headers: ['Component', 'Description', 'Target', 'Example'],
+              rows: [
+                ['Value-Added Time', 'Transformation of the product', 'Maximise as % of total', 'Filling machine running, assembly in progress'],
+                ['NVA Necessary', 'Required but not transformative', 'Minimise where possible', 'Quality inspection, mandatory cure time'],
+                ['NVA Unnecessary', 'Pure waste — waiting and rework', 'Eliminate', 'WIP queue waiting, rework loop, batch waiting'],
+              ],
+            },
+            {
+              type: 'heading' as const,
+              text: 'Why Cycle Time Reflects Product Quality',
+              level: 2 as const,
+            },
+            {
+              type: 'paragraph' as const,
+              text: 'Product design directly drives cycle time through three mechanisms. Complexity: more components, more assembly steps, more cycle time — each step is an opportunity for error and waiting. Defect sensitivity: a product with tight tolerances or fragile materials generates more rework loops, each adding cycle time. Testability: a product that is difficult to test requires longer inspection steps or multiple test iterations, inflating the total cycle time.',
+            },
+            {
+              type: 'paragraph' as const,
+              text: 'This is why cycle time is a shared metric between manufacturing and product engineering — not solely a manufacturing KPI. When cycle time is stubbornly high despite process improvements, the answer is often found in the product design. Design for Manufacturability (DFM) is the practice of designing products with cycle time, assembly simplicity, and process capability explicitly in mind.',
+            },
+            {
+              type: 'key-terms' as const,
+              terms: [
+                {
+                  term: 'Cycle Time',
+                  definition: 'The total elapsed time from when a unit enters a process to when it exits as a completed output — including all waiting, processing, inspection, and rework time.',
+                },
+                {
+                  term: 'Process Cycle Efficiency (PCE)',
+                  definition: 'The ratio of value-added time to total cycle time, expressed as a percentage. A PCE below 10% indicates highly inefficient flow; above 50% represents world-class flow performance.',
+                },
+                {
+                  term: 'Design for Manufacturability (DFM)',
+                  definition: 'The practice of designing products with manufacturing cycle time, process capability, and assembly simplicity as explicit design constraints — not afterthoughts.',
+                },
+                {
+                  term: 'Theoretical Cycle Time',
+                  definition: 'The minimum possible cycle time if a unit moved through every process step with zero waiting — the sum of all value-added and NVA-necessary times only.',
+                },
+              ],
+            },
+          ],
+        },
+        {
+          id: 'ce-m8-l2',
+          title: "WIP/Exits — Measuring Cycle Time with Little's Law",
+          estimatedMinutes: 14,
+          content: [
+            {
+              type: 'paragraph' as const,
+              text: "You do not always need a stopwatch on every unit to measure cycle time. One of the most powerful results in operations management — Little's Law — tells you that cycle time is always equal to the average Work-in-Process inventory divided by the average throughput rate. This relationship holds for any stable process, regardless of the distribution of individual unit times. It is not an approximation; it is a mathematical identity.",
+            },
+            {
+              type: 'callout' as const,
+              variant: 'info' as const,
+              title: "Little's Law",
+              text: 'Cycle Time = WIP ÷ Exits (Throughput Rate)\n\nWhere WIP is the average number of units in the process at any point, and Exits is the average number of units completing the process per unit of time. If your process averages 40 units of WIP and exits 10 units per hour, your average cycle time is 4 hours — regardless of what the individual unit times look like.',
+            },
+            {
+              type: 'heading' as const,
+              text: 'Why WIP/Exits is the Most Practical Cycle Time Measure',
+              level: 2 as const,
+            },
+            {
+              type: 'paragraph' as const,
+              text: 'Tracking individual units through a process requires either sophisticated tracking systems or significant manual effort. WIP counts and exit counts, by contrast, are often already captured in ERP systems — as work order quantities in process and units reported complete. In many operations, the data needed to calculate cycle time via Little\'s Law is already available; it just is not being used that way.',
+            },
+            {
+              type: 'paragraph' as const,
+              text: 'The WIP/Exits method also surfaces problems automatically. If your exit rate stays constant but your WIP level rises, your cycle time is increasing — something has changed in the process. If WIP is high and exit rate is low, you have a significant flow problem: inventory is accumulating but not converting to completed product. This is often the first detectable signal of a bottleneck forming or a process degrading.',
+            },
+            {
+              type: 'heading' as const,
+              text: 'Reading the WIP/Exits Signals',
+              level: 2 as const,
+            },
+            {
+              type: 'table' as const,
+              headers: ['WIP Level', 'Exit Rate', 'Cycle Time', 'Diagnosis'],
+              rows: [
+                ['Low', 'High', 'Short ✓', 'Healthy flow — process is working well'],
+                ['Low', 'Low', 'Normal', 'Under-loaded — demand may be low, or upstream is constrained'],
+                ['High', 'High', 'Long ⚠', 'Throughput maintained but flow is inefficient — large batches or long queues'],
+                ['High', 'Low', 'Very long ✗', 'Critical — WIP accumulating, exits falling — likely a bottleneck or quality crisis'],
+                ['Rising', 'Constant', 'Increasing ⚠', 'Early warning — something in the process is slowing; investigate now'],
+              ],
+            },
+            {
+              type: 'paragraph' as const,
+              text: 'The most dangerous combination is high WIP and low exits. This is not an efficiency problem — it is a system problem. Units are entering the process but not completing it. The causes are typically: a bottleneck machine with high downtime, a rework loop absorbing units, a quality crisis causing holds, or a process step failing and creating a pileup. WIP/Exits as a daily metric would have detected the Bottle Forming constraint in the Factory Flow simulation before it became a crisis.',
+            },
+            {
+              type: 'heading' as const,
+              text: 'Applying Little\'s Law in Your ERP Data',
+              level: 2 as const,
+            },
+            {
+              type: 'paragraph' as const,
+              text: 'In most ERP systems, the data for Little\'s Law is present in the work order module. Open work orders (or work orders in specific statuses like "Released" or "In Process") represent WIP. Work order completions per day or per shift represent exits. Pulling a weekly average of both gives you a reliable cycle time estimate for any production area without individual unit tracking.',
+            },
+            {
+              type: 'paragraph' as const,
+              text: 'Set a cycle time target for each production area based on customer lead-time requirements and competitive benchmarks. Plot actual cycle time (WIP/Exits) against target weekly. When cycle time exceeds target, trigger a structured investigation — do not wait for a customer complaint or a financial variance to surface the problem.',
+            },
+            {
+              type: 'callout' as const,
+              variant: 'warning' as const,
+              title: 'The WIP Reduction Trap',
+              text: "Reducing WIP without also reducing cycle time causes exits to drop — you have less inventory to convert. Always improve the process first (reduce cycle time), then watch WIP fall naturally as flow improves. Cutting WIP administratively without process improvement just starves downstream stations. Little's Law works in both directions.",
+            },
+            {
+              type: 'key-terms' as const,
+              terms: [
+                {
+                  term: "Little's Law",
+                  definition: 'The mathematical relationship: Cycle Time = WIP ÷ Throughput Rate. Holds for any stable process and enables cycle time estimation from inventory and exit count data already available in most ERP systems.',
+                },
+                {
+                  term: 'WIP (Work-in-Process)',
+                  definition: 'Units that have entered a process but have not yet exited as completed output — the inventory within the process itself.',
+                },
+                {
+                  term: 'Exits (Throughput Rate)',
+                  definition: 'The number of completed units leaving the process per unit of time — the denominator in the Little\'s Law cycle time calculation.',
+                },
+                {
+                  term: 'Cycle Time Target',
+                  definition: 'The maximum acceptable cycle time for a process area, derived from customer lead-time commitments and competitive positioning — the standard against which actual WIP/Exits performance is measured.',
+                },
+              ],
+            },
+          ],
+        },
+        {
+          id: 'ce-m8-l3',
+          title: 'Continuous Flow Manufacturing — Moving Beyond Batch',
+          estimatedMinutes: 14,
+          content: [
+            {
+              type: 'paragraph' as const,
+              text: 'Continuous Flow Manufacturing (CFM) is the design of production systems so that products move through every process step one unit at a time, or in very small batches, with minimal waiting between steps. It is the operational realisation of the pull system philosophy taken to its logical conclusion: WIP approaches zero, cycle time approaches theoretical minimum, and problems become immediately visible because there is no buffer to hide them.',
+            },
+            {
+              type: 'paragraph' as const,
+              text: "CFM is not Toyota's invention — continuous flow has roots in Ford's Highland Park assembly plant (1913), the US defence industry's wartime production lines, and process industries like chemicals and oil refining that have always operated in true continuous flow. What lean manufacturing contributed was the systematic application of continuous flow principles to discrete manufacturing environments where batch production had become the default.",
+            },
+            {
+              type: 'callout' as const,
+              variant: 'info' as const,
+              title: 'CFM vs. Batch Production',
+              text: 'In batch production, 100 units are processed at Station 1, then the entire batch moves to Station 2, waits, is processed, then moves to Station 3. Each unit waits while the rest of the batch is processed. In CFM, each unit moves to Station 2 as soon as Station 1 is complete — no batch accumulation. Cycle time in CFM approaches the sum of individual step times; in batch production, it approaches the sum of step times plus all the waiting time between batches.',
+            },
+            {
+              type: 'heading' as const,
+              text: 'The Core Principles of CFM',
+              level: 2 as const,
+            },
+            {
+              type: 'paragraph' as const,
+              text: 'One-piece flow: the ideal unit batch size in CFM is one. Each unit moves individually through every process step. This is not always physically possible, but it is the design target. Every departure from one-piece flow must be justified by a physical constraint — not by habit or convenience.',
+            },
+            {
+              type: 'paragraph' as const,
+              text: 'Takt time alignment: in a flow system, every workstation must be designed to complete its work within the takt time — the maximum time available per unit based on customer demand rate. Takt time = available production time ÷ customer demand rate. If takt time is 60 seconds and a station takes 90 seconds, that station is the constraint. The design response is to either reduce the station\'s cycle time below takt or add parallel capacity.',
+            },
+            {
+              type: 'paragraph' as const,
+              text: 'Balanced workloads: in a flow line, variation in workstation cycle times creates waiting — the faster stations idle while the slower stations catch up. CFM design seeks to balance workloads so that every station operates within takt time with minimal imbalance. In practice, perfect balance is unachievable, but approaching it dramatically reduces WIP and cycle time.',
+            },
+            {
+              type: 'paragraph' as const,
+              text: 'Built-in quality: CFM cannot tolerate defects because there is no WIP buffer to absorb them. If a unit at Station 3 is defective, the line stops — there is nothing else to process. This makes quality problems immediately visible and extremely costly, which is exactly the design intent. The pain of stopping creates powerful incentive to solve quality problems at their source rather than inspecting them out at the end.',
+            },
+            {
+              type: 'table' as const,
+              headers: ['Dimension', 'Batch Production', 'Continuous Flow Manufacturing'],
+              rows: [
+                ['Unit batch size', 'Large — optimised for equipment efficiency', 'One or very small — optimised for flow'],
+                ['WIP level', 'High — between every station', 'Minimal — one unit between stations'],
+                ['Cycle time', 'Long — dominated by queue wait', 'Short — approaches theoretical minimum'],
+                ['Quality feedback', 'Delayed — defects found at final inspection', 'Immediate — defects stop flow at source'],
+                ['Flexibility', 'Higher — large WIP buffers absorb disruptions', 'Lower — disruptions propagate immediately'],
+                ['Capital efficiency', 'Lower — cash tied up in WIP', 'Higher — faster conversion of material to revenue'],
+              ],
+            },
+            {
+              type: 'heading' as const,
+              text: 'CFM in a Manufacturing + ERP Context',
+              level: 2 as const,
+            },
+            {
+              type: 'paragraph' as const,
+              text: 'Implementing CFM changes how you use your ERP. In a batch environment, work orders are released in large batches, WIP is tracked in bulk, and production reporting happens at the end of shifts or days. In a CFM environment, the ERP needs to support backflushing — automatically reporting material consumption and labour when a unit exits the line, rather than reporting at each individual step. This dramatically reduces transaction overhead while keeping inventory records accurate.',
+            },
+            {
+              type: 'paragraph' as const,
+              text: 'CFM also changes your capacity planning model. In batch production, machine utilisation is the primary capacity metric — you want machines running as much as possible. In CFM, flow rate (units per hour through the complete line) and cycle time are the primary metrics. A machine running at 70% utilisation in a flow system may be performing perfectly — if its output matches the takt time. Optimising individual machine utilisation at the expense of flow is one of the most common mistakes in operations.',
+            },
+            {
+              type: 'callout' as const,
+              variant: 'info' as const,
+              title: 'Cycle Time as the CFM Scorecard',
+              text: 'In a Continuous Flow environment, cycle time is the primary scorecard metric — more informative than individual machine utilisation, more actionable than OEE alone. When cycle time trends up, something in the flow is degrading. When cycle time is stable at or below takt time, the system is performing. When cycle time is falling over time, the improvement programme is working. Track it daily. Post it where the team can see it.',
+            },
+            {
+              type: 'key-terms' as const,
+              terms: [
+                {
+                  term: 'Continuous Flow Manufacturing (CFM)',
+                  definition: 'A production system design in which products move through every process step individually or in minimal batches with no accumulation between steps, minimising WIP and cycle time.',
+                },
+                {
+                  term: 'Takt Time',
+                  definition: 'The maximum time available to produce one unit in order to meet customer demand — calculated as available production time divided by customer demand rate. Every workstation in a flow line must operate within takt time.',
+                },
+                {
+                  term: 'One-Piece Flow',
+                  definition: 'The CFM design ideal where each unit moves individually through every process step with zero batch accumulation — eliminating queue waiting time from cycle time entirely.',
+                },
+                {
+                  term: 'Backflushing',
+                  definition: 'An ERP reporting method that automatically records material consumption and labour cost when a unit exits a production stage, rather than at each individual step — enabling CFM without excessive transaction overhead.',
+                },
+                {
+                  term: 'Takt Time Alignment',
+                  definition: 'The design process of ensuring every workstation in a flow line can complete its assigned work within takt time, so that the entire line operates in synchrony with customer demand rate.',
+                },
+              ],
+            },
+          ],
+        },
+      ],
+      quiz: [
+        {
+          id: 'ce-m8-q1',
+          type: 'multiple-choice' as const,
+          question: 'A production area averages 60 units of WIP and completes 20 units per hour. What is the average cycle time?',
+          options: ['20 minutes', '1 hour', '3 hours', '60 hours'],
+          correctIndex: 2,
+          explanation: "By Little's Law: Cycle Time = WIP ÷ Exits = 60 units ÷ 20 units/hour = 3 hours. This calculation works for any stable process regardless of individual unit variability.",
+        },
+        {
+          id: 'ce-m8-q2',
+          type: 'multiple-choice' as const,
+          question: 'WIP in a process area is rising while the exit rate stays constant. What does this indicate?',
+          options: [
+            'The process is becoming more efficient',
+            'Customer demand has increased',
+            'Cycle time is increasing — something in the process is slowing',
+            'The ERP system is reporting incorrectly',
+          ],
+          correctIndex: 2,
+          explanation: "By Little's Law, if exits (throughput) stay constant and WIP rises, cycle time must be increasing. This is an early warning signal that something has changed in the process — investigate before exits begin to fall.",
+        },
+        {
+          id: 'ce-m8-q3',
+          type: 'multiple-choice' as const,
+          question: 'Which of the following best explains why cycle time reflects product quality as well as process quality?',
+          options: [
+            'Products with more features are always harder to test',
+            'Complex product designs create more assembly steps, tighter tolerances, and more rework loops — all of which inflate cycle time regardless of process efficiency',
+            'Cycle time is measured by quality inspectors, not process engineers',
+            'High-quality products always have shorter cycle times',
+          ],
+          correctIndex: 1,
+          explanation: 'Cycle time integrates both process and product signals. A product with complex assembly, fragile components, or difficult tolerances drives longer cycle times through more steps, higher defect rates, and more rework — even in a well-run process. This is why Design for Manufacturability matters.',
+        },
+        {
+          id: 'ce-m8-q4',
+          type: 'multiple-choice' as const,
+          question: 'In a Continuous Flow Manufacturing line, customer demand is 240 units per 8-hour shift. What is the takt time?',
+          options: ['30 seconds per unit', '2 minutes per unit', '8 minutes per unit', '30 minutes per unit'],
+          correctIndex: 1,
+          explanation: 'Takt time = available time ÷ demand rate = 480 minutes ÷ 240 units = 2 minutes per unit. Every workstation in the flow line must complete its assigned tasks within 2 minutes per unit for the line to meet customer demand without overtime.',
+        },
+        {
+          id: 'ce-m8-q5',
+          type: 'true-false' as const,
+          question: 'In a Continuous Flow Manufacturing environment, maximising individual machine utilisation is the primary capacity management goal.',
+          options: ['True', 'False'],
+          correctIndex: 1,
+          explanation: 'False. In CFM, flow rate and cycle time are the primary metrics. A machine at 70% utilisation may be performing correctly if it is operating at takt time. Pushing individual machines to higher utilisation creates excess output that becomes WIP, extends cycle time, and disrupts flow — defeating the purpose of CFM.',
         },
       ],
     },
