@@ -1,10 +1,21 @@
 import { createClient } from '@supabase/supabase-js';
 
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL as string;
-const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY as string;
+// Strip any trailing path (e.g. /rest/v1/) — the client needs the bare origin
+function normalizeUrl(url: string): string {
+  try {
+    const { origin } = new URL(url);
+    return origin;
+  } catch {
+    return url;
+  }
+}
 
-if (!supabaseUrl || supabaseUrl === 'https://placeholder.supabase.co') {
-  console.warn('[WGA] Supabase not configured — set VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY in .env');
+const rawUrl = import.meta.env.VITE_SUPABASE_URL as string;
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY as string;
+const supabaseUrl = normalizeUrl(rawUrl);
+
+if (!rawUrl) {
+  console.warn('[WGA] VITE_SUPABASE_URL is not set — set it in .env or Netlify environment variables');
 }
 
 export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
