@@ -1,10 +1,6 @@
-/**
- * Mock auth context — mirrors the Supabase Auth API shape.
- * To swap in real Supabase auth, replace the localStorage operations
- * in signIn / signUp / signOut / updateProfile with the equivalent
- * supabase.auth.* calls and set `user` from supabase.auth.getUser().
- */
-import { createContext, useContext, useState, useCallback, type ReactNode } from 'react';
+import { createContext, useContext, useState, useEffect, useCallback, type ReactNode } from 'react';
+import { supabase } from '../lib/supabase';
+import type { Session, User } from '@supabase/supabase-js';
 
 export interface AuthUser {
   id: string;
@@ -18,92 +14,97 @@ export interface AuthUser {
 
 interface AuthContextType {
   user: AuthUser | null;
+  session: Session | null;
+  loading: boolean;
   signIn: (email: string, password: string) => Promise<{ error: string | null }>;
   signUp: (email: string, password: string, name: string) => Promise<{ error: string | null }>;
-  signOut: () => void;
-  updateProfile: (data: Partial<Pick<AuthUser, 'name' | 'title' | 'organization' | 'avatarColor'>>) => void;
+  signOut: () => Promise<void>;
+  updateProfile: (data: Partial<Pick<AuthUser, 'name' | 'title' | 'organization' | 'avatarColor'>>) => Promise<void>;
 }
-
-const STORAGE_KEY = 'wga-auth';
-const USERS_KEY = 'wga-users';
 
 const AVATAR_COLORS = [
   '#c9a84c', '#6b8ed1', '#4caf82', '#9b6bbf', '#e05c5c', '#e8a84c',
 ];
 
-function loadUser(): AuthUser | null {
-  try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    return raw ? JSON.parse(raw) : null;
-  } catch { return null; }
+function randomAvatarColor() {
+  return AVATAR_COLORS[Math.floor(Math.random() * AVATAR_COLORS.length)];
 }
 
-function loadUsers(): Record<string, { password: string; user: AuthUser }> {
-  try {
-    const raw = localStorage.getItem(USERS_KEY);
-    return raw ? JSON.parse(raw) : {};
-  } catch { return {}; }
-}
-
-function saveUser(user: AuthUser | null) {
-  if (user) localStorage.setItem(STORAGE_KEY, JSON.stringify(user));
-  else localStorage.removeItem(STORAGE_KEY);
+function buildAuthUser(sbUser: User): AuthUser {
+  const m = sbUser.user_metadata ?? {};
+  return {
+    id: sbUser.id,
+    email: sbUser.email ?? '',
+    name: (m.name as string) ?? sbUser.email?.split('@')[0] ?? 'Learner',
+    avatarColor: (m.avatar_color as string) ?? randomAvatarColor(),
+    joinedAt: (m.joined_at as string) ?? sbUser.created_at,
+    title: m.title as string | undefined,
+    organization: m.organization as string | undefined,
+  };
 }
 
 const AuthContext = createContext<AuthContextType | null>(null);
 
 export function AuthProvider({ children }: { children: ReactNode }) {
-  const [user, setUser] = useState<AuthUser | null>(loadUser);
+  const [user, setUser] = useState<AuthUser | null>(null);
+  const [session, setSession] = useState<Session | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data }) => {
+      const s = data.session;
+      setSession(s);
+      setUser(s?.user ? buildAuthUser(s.user) : null);
+      setLoading(false);
+    });
+
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, s) => {
+      setSession(s);
+      setUser(s?.user ? buildAuthUser(s.user) : null);
+    });
+
+    return () => subscription.unsubscribe();
+  }, []);
 
   const signIn = useCallback(async (email: string, password: string) => {
-    const users = loadUsers();
-    const entry = users[email.toLowerCase()];
-    if (!entry || entry.password !== password) {
-      return { error: 'Invalid email or password.' };
-    }
-    saveUser(entry.user);
-    setUser(entry.user);
+    const { error } = await supabase.auth.signInWithPassword({ email, password });
+    if (error) return { error: error.message };
     return { error: null };
   }, []);
 
   const signUp = useCallback(async (email: string, password: string, name: string) => {
-    const users = loadUsers();
-    if (users[email.toLowerCase()]) {
-      return { error: 'An account with this email already exists.' };
-    }
-    const newUser: AuthUser = {
-      id: crypto.randomUUID(),
-      email: email.toLowerCase(),
-      name: name.trim(),
-      avatarColor: AVATAR_COLORS[Math.floor(Math.random() * AVATAR_COLORS.length)],
-      joinedAt: new Date().toISOString(),
-    };
-    users[email.toLowerCase()] = { password, user: newUser };
-    localStorage.setItem(USERS_KEY, JSON.stringify(users));
-    saveUser(newUser);
-    setUser(newUser);
+    const { error } = await supabase.auth.signUp({
+      email,
+      password,
+      options: {
+        data: {
+          name,
+          avatar_color: randomAvatarColor(),
+          joined_at: new Date().toISOString(),
+        },
+      },
+    });
+    if (error) return { error: error.message };
     return { error: null };
   }, []);
 
-  const signOut = useCallback(() => {
-    saveUser(null);
-    setUser(null);
+  const signOut = useCallback(async () => {
+    await supabase.auth.signOut();
   }, []);
 
-  const updateProfile = useCallback((data: Partial<Pick<AuthUser, 'name' | 'title' | 'organization' | 'avatarColor'>>) => {
-    setUser(prev => {
-      if (!prev) return prev;
-      const updated = { ...prev, ...data };
-      const users = loadUsers();
-      if (users[prev.email]) users[prev.email].user = updated;
-      localStorage.setItem(USERS_KEY, JSON.stringify(users));
-      saveUser(updated);
-      return updated;
-    });
+  const updateProfile = useCallback(async (data: Partial<Pick<AuthUser, 'name' | 'title' | 'organization' | 'avatarColor'>>) => {
+    const metaUpdate: Record<string, unknown> = {};
+    if (data.name !== undefined) metaUpdate.name = data.name;
+    if (data.title !== undefined) metaUpdate.title = data.title;
+    if (data.organization !== undefined) metaUpdate.organization = data.organization;
+    if (data.avatarColor !== undefined) metaUpdate.avatar_color = data.avatarColor;
+
+    const { data: updated, error } = await supabase.auth.updateUser({ data: metaUpdate });
+    if (!error && updated.user) setUser(buildAuthUser(updated.user));
   }, []);
 
   return (
-    <AuthContext.Provider value={{ user, signIn, signUp, signOut, updateProfile }}>
+    <AuthContext.Provider value={{ user, session, loading, signIn, signUp, signOut, updateProfile }}>
       {children}
     </AuthContext.Provider>
   );
