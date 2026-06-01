@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { Header } from '../components/layout/Header';
+import { PageLayout } from '../components/layout/PageLayout';
 
 const AVATAR_COLORS = [
   { value: '#c9a84c', label: 'Gold' },
@@ -38,14 +38,14 @@ export function ProfilePage() {
     return null;
   }
 
-  const handleSave = () => {
-    updateProfile({ name: name.trim() || user.name, title: title.trim() || undefined, organization: organization.trim() || undefined, avatarColor });
+  const handleSave = async () => {
+    await updateProfile({ name: name.trim() || user.name, title: title.trim() || undefined, organization: organization.trim() || undefined, avatarColor });
     setSaved(true);
     setTimeout(() => setSaved(false), 2000);
   };
 
-  const handleSignOut = () => {
-    signOut();
+  const handleSignOut = async () => {
+    await signOut();
     navigate('/courses');
   };
 
@@ -53,9 +53,8 @@ export function ProfilePage() {
   const labelClass = `block text-xs font-sans font-medium tracking-widest uppercase text-muted mb-2`;
 
   return (
-    <div className="min-h-screen bg-bg">
-      <Header />
-      <div className="max-w-2xl mx-auto px-6 pt-32 pb-20">
+    <PageLayout title="Profile">
+      <div className="max-w-2xl mx-auto">
         <h1 className="font-serif text-3xl text-ink mb-1">Profile</h1>
         <p className="text-muted text-sm mb-10">Manage your account and learning identity.</p>
 
@@ -126,6 +125,6 @@ export function ProfilePage() {
           </button>
         </div>
       </div>
-    </div>
+    </PageLayout>
   );
 }
