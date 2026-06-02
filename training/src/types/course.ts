@@ -41,7 +41,7 @@ export interface Module {
 
 export type BeltLevel = 'yellow' | 'green' | 'black';
 export type CourseStatus = 'available' | 'coming-soon';
-export type CourseTrack = 'lss-certification' | 'lean-foundations' | 'leadership' | 'data-management' | 'defense-contracting';
+export type CourseTrack = 'lss-certification' | 'lean-foundations' | 'leadership' | 'data-management' | 'defense-contracting' | 'accounting';
 
 export interface Course {
   id: string;
@@ -55,4 +55,5 @@ export interface Course {
   color: string;       // accent color for the course card
   icon: string;        // emoji icon
   modules: Module[];
+  finalExam?: QuizQuestion[];
 }
