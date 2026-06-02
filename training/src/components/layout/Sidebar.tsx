@@ -139,7 +139,6 @@ export function Sidebar() {
         <NavItem to="/programs/accounting" icon={<BookOpen size={15} />} label="Accounting" exact />
 
         <SectionLabel label="Simulations" />
-        <NavItem to="/simulations/factory-flow" icon={<FlaskConical size={15} />} label="Factory Flow" exact />
         <NavItem to="/simulations/factory-optimizer" icon={<FlaskConical size={15} />} label="Factory Optimizer" exact />
 
         <SectionLabel label="Account" />

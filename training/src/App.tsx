@@ -14,7 +14,6 @@ import { SixSigmaCertPage } from './pages/programs/SixSigmaCertPage';
 import { LeanFoundationsPage } from './pages/programs/LeanFoundationsPage';
 import { LeadershipPage } from './pages/programs/LeadershipPage';
 import { DataManagementPage } from './pages/programs/DataManagementPage';
-import { FactoryFlowPage } from './pages/FactoryFlowPage';
 import { AccountingPage } from './pages/programs/AccountingPage';
 import { FactoryOptimizerPage } from './pages/simulations/FactoryOptimizerPage';
 
@@ -67,7 +66,6 @@ function AppRoutes() {
       <Route path="/programs/leadership" element={<ProtectedRoute><LeadershipPage /></ProtectedRoute>} />
       <Route path="/programs/data-management" element={<ProtectedRoute><DataManagementPage /></ProtectedRoute>} />
       <Route path="/programs/accounting" element={<ProtectedRoute><AccountingPage /></ProtectedRoute>} />
-      <Route path="/simulations/factory-flow" element={<ProtectedRoute><FactoryFlowPage /></ProtectedRoute>} />
       <Route path="/simulations/factory-optimizer" element={<ProtectedRoute><FactoryOptimizerPage /></ProtectedRoute>} />
     </Routes>
   );
