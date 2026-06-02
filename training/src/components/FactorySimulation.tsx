@@ -761,9 +761,11 @@ const styles: Record<string, React.CSSProperties> = {
     background: '#0f172a',
     color: '#e2e8f0',
     fontFamily: 'system-ui, -apple-system, sans-serif',
-    minHeight: '100vh',
+    height: '100%',
+    width: '100%',
     display: 'flex',
     flexDirection: 'column',
+    overflow: 'hidden',
   },
   header: {
     background: '#1e293b',
@@ -784,6 +786,8 @@ const styles: Record<string, React.CSSProperties> = {
   canvasWrap: {
     background: '#0f172a',
     borderBottom: '1px solid #334155',
+    width: '100%',
+    overflow: 'hidden',
   },
   controlBar: {
     background: '#1e293b',
@@ -798,25 +802,28 @@ const styles: Record<string, React.CSSProperties> = {
     display: 'flex',
     flex: 1,
     minHeight: 0,
+    overflow: 'hidden',
   },
   sidebar: {
-    width: 280,
-    minWidth: 260,
+    width: 260,
+    minWidth: 220,
     background: '#1e293b',
     borderRight: '1px solid #334155',
     overflowY: 'auto',
-    padding: 16,
+    padding: 12,
     display: 'flex',
     flexDirection: 'column',
-    gap: 16,
+    gap: 12,
+    flexShrink: 0,
   },
   content: {
     flex: 1,
     overflowY: 'auto',
-    padding: 20,
+    padding: 16,
     display: 'flex',
     flexDirection: 'column',
-    gap: 16,
+    gap: 14,
+    minWidth: 0,
   },
   btn: {
     background: '#334155',
@@ -976,6 +983,7 @@ const FactorySimulation: React.FC<FactorySimulationProps> = ({
   scenario: scenarioProp = 'baseline',
 }) => {
   // ── Resolve scenario ──
+  const [showIntro, setShowIntro] = useState(true);
   const [scenarioKey, setScenarioKey] = useState<ScenarioKey>(scenarioProp);
   const scenario = SCENARIOS[scenarioKey];
   const [params, setParams] = useState<SimParams>({ ...scenario.params });
@@ -1196,6 +1204,115 @@ const FactorySimulation: React.FC<FactorySimulationProps> = ({
 
   const currentPhaseData = DMAIC_PHASES.find(p => p.key === phase)!;
 
+  // ── Intro / startup screen ──
+  if (showIntro) {
+    return (
+      <div style={{ ...styles.root, alignItems: 'center', justifyContent: 'center', padding: 24, overflowY: 'auto' }}>
+        <div style={{ maxWidth: 780, width: '100%' }}>
+          {/* Title */}
+          <div style={{ textAlign: 'center', marginBottom: 32 }}>
+            <div style={{ fontSize: 48, marginBottom: 8 }}>⚙️</div>
+            <h1 style={{ fontSize: 28, fontWeight: 800, color: '#e2e8f0', margin: 0 }}>Wentworth Factory Optimizer</h1>
+            <p style={{ color: '#64748b', marginTop: 8, fontSize: 14 }}>
+              An interactive Lean Six Sigma simulation — identify waste, apply improvements, and bring your factory to Six Sigma quality.
+            </p>
+          </div>
+
+          {/* How to play */}
+          <div style={{ background: '#1e293b', borderRadius: 12, padding: 24, marginBottom: 20, border: '1px solid #334155' }}>
+            <h2 style={{ fontSize: 15, fontWeight: 700, color: '#e2e8f0', marginTop: 0, marginBottom: 16 }}>How to Play</h2>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 14 }}>
+              {[
+                { step: '1', icon: '▶', title: 'Press Play', desc: 'Start the factory. Products flow along the conveyor through Assembly → Testing → QC → Packaging.' },
+                { step: '2', icon: '💎', title: 'Earn Points', desc: 'Improvement points accumulate while the factory runs. You\'ll need them to apply fixes.' },
+                { step: '3', icon: '📊', title: 'Work Through DMAIC', desc: 'Navigate the 5 phase tabs. Each phase unlocks different tools and guidance.' },
+                { step: '4', icon: '⚡', title: 'Apply Improvements', desc: 'In the Improve phase, spend points on 5S, Kaizen, Poka-Yoke, Training, and more.' },
+                { step: '5', icon: '🏆', title: 'Hit the Sigma Target', desc: 'Watch your Sigma Level rise. Reach the target to complete the scenario and win.' },
+              ].map(item => (
+                <div key={item.step} style={{ background: '#0f172a', borderRadius: 8, padding: '12px 14px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
+                    <span style={{ background: '#2563eb', color: '#fff', borderRadius: 999, width: 22, height: 22, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 11, fontWeight: 800, flexShrink: 0 }}>{item.step}</span>
+                    <span style={{ fontSize: 16 }}>{item.icon}</span>
+                    <span style={{ fontWeight: 700, fontSize: 13, color: '#e2e8f0' }}>{item.title}</span>
+                  </div>
+                  <p style={{ color: '#94a3b8', fontSize: 12, margin: 0, lineHeight: 1.5 }}>{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Key concepts */}
+          <div style={{ background: '#1e293b', borderRadius: 12, padding: 20, marginBottom: 20, border: '1px solid #334155' }}>
+            <h2 style={{ fontSize: 15, fontWeight: 700, color: '#e2e8f0', marginTop: 0, marginBottom: 14 }}>Key Concepts You'll Apply</h2>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 10 }}>
+              {[
+                { term: 'OEE', def: 'Overall Equipment Effectiveness = Availability × Performance × Quality. The gold standard for factory efficiency.' },
+                { term: 'Sigma Level', def: 'Measures how many defects escape per million opportunities. Six Sigma = 3.4 DPMO.' },
+                { term: 'DMAIC', def: 'Define → Measure → Analyze → Improve → Control. The Six Sigma improvement roadmap.' },
+                { term: 'Poka-Yoke', def: 'Mistake-proofing devices that make defects physically impossible or immediately visible.' },
+                { term: 'Cycle Time', def: 'Total time to complete one unit. Tracks flow health. Lower is better.' },
+                { term: 'Kaizen', def: 'Continuous improvement events. Small, focused changes that accumulate into big gains.' },
+              ].map(c => (
+                <div key={c.term} style={{ background: '#0f172a', borderRadius: 8, padding: '10px 12px', borderLeft: '3px solid #3b82f6' }}>
+                  <div style={{ fontWeight: 700, fontSize: 12, color: '#3b82f6', marginBottom: 4 }}>{c.term}</div>
+                  <div style={{ fontSize: 11, color: '#94a3b8', lineHeight: 1.5 }}>{c.def}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Scenario picker */}
+          <div style={{ background: '#1e293b', borderRadius: 12, padding: 20, marginBottom: 24, border: '1px solid #334155' }}>
+            <h2 style={{ fontSize: 15, fontWeight: 700, color: '#e2e8f0', marginTop: 0, marginBottom: 14 }}>Choose Your Scenario</h2>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 10 }}>
+              {(Object.keys(SCENARIOS) as ScenarioKey[]).map(key => {
+                const sc = SCENARIOS[key];
+                const diffColor = sc.difficulty === 'Beginner' ? '#22c55e' : sc.difficulty === 'Intermediate' ? '#f59e0b' : '#ef4444';
+                return (
+                  <button
+                    key={key}
+                    onClick={() => { setScenarioKey(key); setParams({ ...sc.params }); }}
+                    style={{
+                      background: scenarioKey === key ? '#1e3a5f' : '#0f172a',
+                      border: `2px solid ${scenarioKey === key ? '#3b82f6' : '#334155'}`,
+                      borderRadius: 10,
+                      padding: '12px 14px',
+                      textAlign: 'left',
+                      cursor: 'pointer',
+                      color: '#e2e8f0',
+                      transition: 'all 0.15s',
+                    }}
+                  >
+                    <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6 }}>
+                      <span style={{ fontWeight: 700, fontSize: 13 }}>{sc.name}</span>
+                      {scenarioKey === key && <span style={{ color: '#3b82f6', fontSize: 14 }}>✓</span>}
+                    </div>
+                    <div style={{ fontSize: 11, color: '#94a3b8', lineHeight: 1.4, marginBottom: 8 }}>{sc.description}</div>
+                    <div style={{ display: 'flex', gap: 6 }}>
+                      <span style={{ fontSize: 10, fontWeight: 700, color: diffColor, background: diffColor + '20', border: `1px solid ${diffColor}40`, borderRadius: 999, padding: '1px 7px' }}>{sc.difficulty}</span>
+                      <span style={{ fontSize: 10, color: '#f59e0b', background: '#f59e0b20', border: '1px solid #f59e0b40', borderRadius: 999, padding: '1px 7px', fontWeight: 700 }}>Target {sc.targetSigma}σ</span>
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Start button */}
+          <div style={{ textAlign: 'center' }}>
+            <button
+              onClick={() => setShowIntro(false)}
+              style={{ background: '#2563eb', color: '#fff', border: 'none', borderRadius: 10, padding: '14px 48px', fontSize: 16, fontWeight: 800, cursor: 'pointer', letterSpacing: '0.02em' }}
+            >
+              ▶ Start Simulation
+            </button>
+            <p style={{ color: '#475569', fontSize: 11, marginTop: 10 }}>Progress auto-saves to your browser. You can return anytime.</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div style={styles.root}>
       {/* ── Header ── */}
@@ -1217,6 +1334,7 @@ const FactorySimulation: React.FC<FactorySimulationProps> = ({
             ))}
           </select>
           <button style={styles.btn} onClick={handleSave}>💾 Save</button>
+          <button style={{ ...styles.btn, padding: '6px 10px' }} onClick={() => setShowIntro(true)} title="How to play">❓</button>
         </div>
       </div>
 
@@ -1251,7 +1369,7 @@ const FactorySimulation: React.FC<FactorySimulationProps> = ({
             ref={canvasRef}
             width={CANVAS_W}
             height={CANVAS_H}
-            style={{ display: 'block', width: '100%', maxHeight: CANVAS_H }}
+            style={{ display: 'block', width: '100%', height: 'auto' }}
           />
         </div>
 
