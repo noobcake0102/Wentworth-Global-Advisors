@@ -140,6 +140,7 @@ export function Sidebar() {
 
         <SectionLabel label="Simulations" />
         <NavItem to="/simulations/factory-flow" icon={<FlaskConical size={15} />} label="Factory Flow" exact />
+        <NavItem to="/simulations/factory-optimizer" icon={<FlaskConical size={15} />} label="Factory Optimizer" exact />
 
         <SectionLabel label="Account" />
         <NavItem to="/profile" icon={<User size={15} />} label="Profile" exact />

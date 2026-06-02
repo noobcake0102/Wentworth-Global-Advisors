@@ -16,6 +16,7 @@ import { LeadershipPage } from './pages/programs/LeadershipPage';
 import { DataManagementPage } from './pages/programs/DataManagementPage';
 import { FactoryFlowPage } from './pages/FactoryFlowPage';
 import { AccountingPage } from './pages/programs/AccountingPage';
+import { FactoryOptimizerPage } from './pages/simulations/FactoryOptimizerPage';
 
 function ProtectedRoute({ children }: { children: React.ReactNode }) {
   const { user, loading } = useAuth();
@@ -67,6 +68,7 @@ function AppRoutes() {
       <Route path="/programs/data-management" element={<ProtectedRoute><DataManagementPage /></ProtectedRoute>} />
       <Route path="/programs/accounting" element={<ProtectedRoute><AccountingPage /></ProtectedRoute>} />
       <Route path="/simulations/factory-flow" element={<ProtectedRoute><FactoryFlowPage /></ProtectedRoute>} />
+      <Route path="/simulations/factory-optimizer" element={<ProtectedRoute><FactoryOptimizerPage /></ProtectedRoute>} />
     </Routes>
   );
 }
