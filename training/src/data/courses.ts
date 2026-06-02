@@ -33,6 +33,14 @@ import { defenseBDAwarenessCourse } from './defenseContractingC1';
 import { defenseBDPracticalCourse } from './defenseContractingC2';
 import { defenseBDDeepCourse } from './defenseContractingC3';
 
+// Accounting Track
+import { businessAccountingL1Course } from './businessAccountingL1';
+import { businessAccountingL2Course } from './businessAccountingL2';
+import { businessAccountingL3Course } from './businessAccountingL3';
+
+// Business Law (Leadership Track)
+import { businessLawCourse } from './businessLaw';
+
 export const allCourses: Course[] = [
   yellowBeltCourse,
   greenBeltCourse,
@@ -58,6 +66,12 @@ export const allCourses: Course[] = [
   defenseBDAwarenessCourse,
   defenseBDPracticalCourse,
   defenseBDDeepCourse,
+  // Accounting Track
+  businessAccountingL1Course,
+  businessAccountingL2Course,
+  businessAccountingL3Course,
+  // Business Law
+  businessLawCourse,
 ];
 
 export const coursesByTrack = {
@@ -66,6 +80,7 @@ export const coursesByTrack = {
   'leadership': allCourses.filter(c => c.track === 'leadership'),
   'data-management': allCourses.filter(c => c.track === 'data-management'),
   'defense-contracting': allCourses.filter(c => c.track === 'defense-contracting'),
+  'accounting': allCourses.filter(c => c.track === 'accounting'),
 };
 
 export function getCourseById(id: string): Course | undefined {
