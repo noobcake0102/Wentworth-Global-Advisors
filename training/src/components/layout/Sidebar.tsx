@@ -2,7 +2,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { useProgressContext } from '../../context/ProgressContext';
 import { useMemo } from 'react';
-import { LayoutDashboard, BookOpen, Shield, User, Award, Lightbulb, Users, Database, FlaskConical } from 'lucide-react';
+import { LayoutDashboard, BookOpen, Shield, User, Award, Lightbulb, Users, Database, FlaskConical, Route } from 'lucide-react';
 import type { ProgressStore } from '../../types/progress';
 
 const XP_PER_LESSON = 10;
@@ -128,6 +128,7 @@ export function Sidebar() {
       <nav style={{ flex: 1, overflowY: 'auto', padding: '10px 0' }}>
         <SectionLabel label="Main" />
         <NavItem to="/dashboard" icon={<LayoutDashboard size={15} />} label="Dashboard" exact />
+        <NavItem to="/paths" icon={<Route size={15} />} label="Learning Paths" />
         <NavItem to="/courses" icon={<BookOpen size={15} />} label="All Courses" exact />
 
         <SectionLabel label="Programs" />

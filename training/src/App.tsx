@@ -16,6 +16,8 @@ import { LeadershipPage } from './pages/programs/LeadershipPage';
 import { DataManagementPage } from './pages/programs/DataManagementPage';
 import { AccountingPage } from './pages/programs/AccountingPage';
 import { FactoryOptimizerPage } from './pages/simulations/FactoryOptimizerPage';
+import { PathsPage } from './pages/PathsPage';
+import { PathPage } from './pages/PathPage';
 
 function ProtectedRoute({ children }: { children: React.ReactNode }) {
   const { user, loading } = useAuth();
@@ -55,6 +57,8 @@ function AppRoutes() {
       <Route path="/" element={<Navigate to="/dashboard" replace />} />
       <Route path="/dashboard" element={<ProtectedRoute><DashboardPage /></ProtectedRoute>} />
       <Route path="/courses" element={<ProtectedRoute><CatalogPage /></ProtectedRoute>} />
+      <Route path="/paths" element={<ProtectedRoute><PathsPage /></ProtectedRoute>} />
+      <Route path="/paths/:pathId" element={<ProtectedRoute><PathPage /></ProtectedRoute>} />
       <Route path="/courses/:courseId" element={<ProtectedRoute><CoursePage /></ProtectedRoute>} />
       <Route path="/courses/:courseId/modules/:moduleId/lessons/:lessonId" element={<ProtectedRoute><LessonPage /></ProtectedRoute>} />
       <Route path="/courses/:courseId/modules/:moduleId/quiz" element={<ProtectedRoute><QuizPage /></ProtectedRoute>} />
