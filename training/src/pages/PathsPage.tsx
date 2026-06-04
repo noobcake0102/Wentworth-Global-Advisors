@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ChevronRight, Clock, BookOpen, Target } from 'lucide-react';
 import { PageLayout } from '../components/layout/PageLayout';
 import { ProgressBar } from '../components/ui/ProgressBar';
+import { PathIcon } from '../components/PathIcon';
 import { useProgressContext } from '../context/ProgressContext';
 import { allCourses } from '../data/courses';
 import { learningPaths } from '../data/paths';
@@ -51,7 +52,13 @@ export function PathsPage() {
                 <div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: 3, background: path.color }} />
                 <div className="p-6 pl-8 flex flex-col h-full">
                   <div className="flex items-center gap-3 mb-3">
-                    <span style={{ fontSize: 28 }}>{path.icon}</span>
+                    <div style={{
+                      width: 44, height: 44, borderRadius: 10, flexShrink: 0,
+                      background: `${path.color}14`, border: `1px solid ${path.color}30`,
+                      display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    }}>
+                      <PathIcon pathId={path.id} color={path.color} size={28} />
+                    </div>
                     <div>
                       <p className="font-sans text-[10px] font-medium tracking-[0.15em] uppercase mb-0.5" style={{ color: path.color }}>
                         {path.eyebrow}
@@ -80,7 +87,7 @@ export function PathsPage() {
                     )}
 
                     <span className="flex items-center gap-2 font-sans font-medium text-xs tracking-widest uppercase" style={{ color: path.color }}>
-                      {overall === 0 ? 'Begin path' : overall === 100 ? 'Review path' : 'Continue path'}
+                      {overall === 0 ? 'Begin path' : overall === 100 ? 'View certificate' : 'Continue path'}
                       <ChevronRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                     </span>
                   </div>

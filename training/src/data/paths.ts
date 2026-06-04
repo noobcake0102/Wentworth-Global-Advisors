@@ -6,7 +6,6 @@ export interface LearningPath {
   description: string;
   outcome: string;       // what you can do after
   color: string;
-  icon: string;          // emoji
   courseIds: string[];   // ordered sequence
 }
 
@@ -20,7 +19,6 @@ export const learningPaths: LearningPath[] = [
       'The flagship Lean Six Sigma journey. Build the foundations of Lean and Six Sigma, master the DMAIC method, then climb the belt ladder from Yellow to Black.',
     outcome: 'Independently scope, lead, and deliver data-driven improvement projects across an organization.',
     color: '#4caf82',
-    icon: '🥋',
     courseIds: [
       'yellow-belt',
       'lean-manufacturing',
@@ -39,7 +37,6 @@ export const learningPaths: LearningPath[] = [
       'Everything a new leader needs in one path: how to lead a team, run a project to completion, read the numbers, manage legal risk, and understand the improvement mindset.',
     outcome: 'Lead a team, run a project, read a P&L, and recognize legal and operational risk with confidence.',
     color: '#9b8ec4',
-    icon: '🧭',
     courseIds: [
       'team-leadership',
       'project-management',
@@ -57,7 +54,6 @@ export const learningPaths: LearningPath[] = [
       'Move from raw data to trusted insight. Start with the engineering foundations of reliable data, learn to analyze and visualize it, deliver self-service BI, and understand the enterprise systems data flows through.',
     outcome: 'Build reliable data pipelines and deliver self-service reporting that drives decisions.',
     color: '#6b8ed1',
-    icon: '📊',
     courseIds: [
       'data-engineering',
       'data-analysis',
@@ -74,7 +70,6 @@ export const learningPaths: LearningPath[] = [
       'Go from accounting fundamentals to enterprise finance. Understand financial statements, how leaders use financial information, ERP and revenue recognition, and the legal context around business decisions.',
     outcome: 'Interpret financial statements, understand enterprise accounting, and hold your own in a conversation with a CFO.',
     color: '#4A90D9',
-    icon: '💰',
     courseIds: [
       'business-accounting-l1',
       'business-accounting-l2',
@@ -91,7 +86,6 @@ export const learningPaths: LearningPath[] = [
       'A deliberately blended starter path spanning process, data, and finance — the three lenses every operations analyst needs early. A fast on-ramp before specializing.',
     outcome: 'A broad operational foundation across process improvement, data analysis, and financial literacy.',
     color: '#e8a84c',
-    icon: '🌱',
     courseIds: [
       'yellow-belt',
       'lean-manufacturing',
@@ -108,7 +102,6 @@ export const learningPaths: LearningPath[] = [
       'The executive path through defense contracting: assess the fit, structure your business to win, and learn what it takes to run a defense business day to day.',
     outcome: 'Make an informed go/no-go on defense and lead a company that can win and deliver contracts.',
     color: '#5a7d5a',
-    icon: '🛡️',
     courseIds: [
       'defense-exec-awareness',
       'defense-exec-practical',
@@ -124,7 +117,6 @@ export const learningPaths: LearningPath[] = [
       'The operations path: understand the defense program lifecycle, execute a contract to standard, and master earned value management when a program is under pressure.',
     outcome: 'Execute defense contracts to standard and manage program performance with earned value.',
     color: '#4a6b7d',
-    icon: '⚙️',
     courseIds: [
       'defense-ops-awareness',
       'defense-ops-practical',
@@ -140,7 +132,6 @@ export const learningPaths: LearningPath[] = [
       'The business development path: learn how defense contracts are won, how to pursue and capture opportunities, and how to scale a winning BD operation.',
     outcome: 'Identify, pursue, and win defense contracts — and build a repeatable BD engine.',
     color: '#7d6b4a',
-    icon: '🎯',
     courseIds: [
       'defense-bd-awareness',
       'defense-bd-practical',
