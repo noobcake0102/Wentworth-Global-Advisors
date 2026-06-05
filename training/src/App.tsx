@@ -18,6 +18,7 @@ import { AccountingPage } from './pages/programs/AccountingPage';
 import { FactoryOptimizerPage } from './pages/simulations/FactoryOptimizerPage';
 import { PathsPage } from './pages/PathsPage';
 import { PathPage } from './pages/PathPage';
+import { SidebarProvider } from './context/SidebarContext';
 
 function ProtectedRoute({ children }: { children: React.ReactNode }) {
   const { user, loading } = useAuth();
@@ -79,7 +80,9 @@ export default function App() {
   return (
     <AuthProvider>
       <ProgressProvider>
-        <AppRoutes />
+        <SidebarProvider>
+          <AppRoutes />
+        </SidebarProvider>
       </ProgressProvider>
     </AuthProvider>
   );
