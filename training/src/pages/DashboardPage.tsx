@@ -235,7 +235,7 @@ export function DashboardPage() {
 
   return (
     <PageLayout>
-      <div className="max-w-6xl mx-auto px-6 py-12">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
 
         {/* ── Hero ── */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 mb-10">
@@ -261,7 +261,7 @@ export function DashboardPage() {
             { label: 'Completed', value: completed.length, sub: 'courses' },
             { label: 'In Progress', value: inProgress.length, sub: 'courses' },
           ].map(s => (
-            <div key={s.label} className="bg-card border border-border-gold rounded-lg px-5 py-4">
+            <div key={s.label} className="bg-card border border-border-gold rounded-lg px-3 sm:px-5 py-3 sm:py-4">
               <p className="text-xs font-sans font-medium tracking-widest uppercase text-muted mb-1">{s.label}</p>
               <p className="font-serif text-2xl text-ink">{s.value}</p>
               <p className="text-xs text-muted/60 mt-0.5">{s.sub}</p>
