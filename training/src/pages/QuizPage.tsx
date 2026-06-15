@@ -115,7 +115,7 @@ export function QuizPage() {
 
     return (
       <PageLayout>
-        <div className="max-w-2xl mx-auto px-8 py-16">
+        <div className="max-w-2xl mx-auto px-4 sm:px-8 py-10 sm:py-16">
           <motion.div
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -224,7 +224,7 @@ export function QuizPage() {
 
   return (
     <PageLayout>
-      <div className="max-w-2xl mx-auto px-8 py-12">
+      <div className="max-w-2xl mx-auto px-4 sm:px-8 py-8 sm:py-12">
         {/* Header */}
         <div className="mb-8">
           <Link
@@ -260,7 +260,7 @@ export function QuizPage() {
             exit={{ opacity: 0, x: -20 }}
             transition={{ duration: 0.25 }}
           >
-            <div className="rounded-md border border-border-gold bg-card p-8 mb-6">
+            <div className="rounded-md border border-border-gold bg-card p-4 sm:p-8 mb-6">
               <div className="flex items-start gap-3 mb-6">
                 <span className="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-xs font-sans font-medium"
                   style={{ background: `${accentColor}20`, color: accentColor, border: `1px solid ${accentColor}40` }}>
@@ -289,7 +289,7 @@ export function QuizPage() {
                     <button
                       key={idx}
                       onClick={() => handleSelect(idx)}
-                      className={`w-full text-left flex items-center gap-4 px-5 py-4 rounded-sm border transition-all duration-150 ${stateClass}`}
+                      className={`w-full text-left flex items-center gap-3 px-3 sm:px-5 py-3 sm:py-4 rounded-sm border transition-all duration-150 ${stateClass}`}
                     >
                       <span className={`flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-xs font-sans font-medium border transition-all
                         ${revealed && idx === question.correctIndex ? 'bg-success/20 border-success/40 text-success' :

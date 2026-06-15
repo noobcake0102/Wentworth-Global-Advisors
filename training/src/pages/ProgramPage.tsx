@@ -59,7 +59,7 @@ function StackedCourseCard({ course, index, accentColor }: { course: Course; ind
       {/* Accent bar left */}
       <div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: 3, background: accentColor }} />
 
-      <div className="flex items-start gap-6 p-6 pl-8">
+      <div className="flex items-start gap-4 p-4 sm:p-6 sm:pl-8 pl-6">
         {/* Step number + icon */}
         <div className="flex-shrink-0 flex flex-col items-center gap-2 pt-1">
           <div style={{
@@ -89,7 +89,7 @@ function StackedCourseCard({ course, index, accentColor }: { course: Course; ind
 
           <p className="text-sm text-muted leading-relaxed mb-4 max-w-2xl">{course.description}</p>
 
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-3 sm:gap-6 flex-wrap">
             <div className="flex items-center gap-4 text-xs font-sans text-muted">
               <span className="flex items-center gap-1.5">
                 <Clock className="w-3.5 h-3.5" />{course.estimatedHours}h

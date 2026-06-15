@@ -51,22 +51,22 @@ export function CoursePage() {
     <PageLayout>
       {/* Header */}
       <div className="border-b border-border-gold bg-surface/50">
-        <div className="max-w-7xl mx-auto px-8 py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 py-8 sm:py-12">
           <Link to="/courses" className="inline-flex items-center gap-2 text-muted text-sm font-sans hover:text-gold transition-colors mb-6">
             <ArrowLeft className="w-4 h-4" />
             All Courses
           </Link>
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6">
             <div>
-              <div className="flex items-center gap-3 mb-3">
+              <div className="flex flex-wrap items-center gap-2 mb-3">
                 {course.belt && <Badge variant={beltBadge}>{course.belt} belt</Badge>}
                 <span className="font-sans text-xs tracking-widest uppercase" style={{ color: accentColor }}>{course.subtitle}</span>
                 {cp.certificateUnlocked && <Badge variant="success">Completed</Badge>}
               </div>
-              <h1 className="font-serif text-4xl text-ink mb-2">{course.title}</h1>
+              <h1 className="font-serif text-3xl sm:text-4xl text-ink mb-2">{course.title}</h1>
               <p className="text-muted text-base">{course.subtitle}</p>
             </div>
-            <div className="flex flex-col items-start md:items-end gap-3">
+            <div className="flex flex-row md:flex-col items-center md:items-end gap-3 flex-wrap">
               <div className="flex items-center gap-4 text-sm text-muted font-sans">
                 <span className="flex items-center gap-1.5">
                   <Clock className="w-4 h-4" />
@@ -75,7 +75,7 @@ export function CoursePage() {
                 <span>{course.modules.length} modules</span>
               </div>
               {totalPct > 0 && (
-                <ProgressBar value={totalPct} size="md" showLabel className="w-40" />
+                <ProgressBar value={totalPct} size="md" showLabel className="w-36" />
               )}
               {course.modules.length > 0 && (
                 <Button onClick={handleStartContinue}>
@@ -88,8 +88,8 @@ export function CoursePage() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-8 py-12">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 py-8 sm:py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
           {/* Module list */}
           <div className="lg:col-span-2">
             <h2 className="font-serif text-2xl text-ink mb-6">Course Modules</h2>
