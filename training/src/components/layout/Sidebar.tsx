@@ -147,7 +147,7 @@ export function Sidebar({ onMobileClose }: SidebarProps) {
     <aside style={{
       width, minWidth: width, height: '100vh',
       background: '#111111', borderRight: '1px solid rgba(201,168,76,0.15)',
-      display: 'flex', flexDirection: 'column', overflow: 'hidden', flexShrink: 0, zIndex: 50,
+      display: 'flex', flexDirection: 'column', overflow: 'hidden', flexShrink: 0,
       transition: 'width 0.22s ease, min-width 0.22s ease',
     }}>
       {/* Header: logo + close (mobile) or collapse toggle (desktop) */}
