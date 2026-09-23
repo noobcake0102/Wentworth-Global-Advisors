@@ -440,6 +440,40 @@ section{padding:6rem 0}
 }
 .footer-bottom p{font-size:.8125rem;color:var(--text-dim)}
 
+/* --- Federal contracting credentials --- */
+.contractor-strip{
+  padding:0;background:var(--surface);border-top:1px solid var(--border);
+}
+.contractor-strip-inner{
+  min-height:132px;display:grid;grid-template-columns:1.1fr 1.4fr;
+  align-items:stretch;gap:3rem;
+}
+.contractor-certification{display:flex;align-items:center;gap:1.5rem}
+.contractor-certification img{
+  width:82px;height:92px;object-fit:contain;background:#fff;
+  border:1px solid var(--border);
+}
+.contractor-certification .eyebrow{margin-bottom:.5rem}
+.contractor-certification p{font-size:.875rem;color:var(--text-muted)}
+.contractor-identifiers{
+  display:grid;grid-template-columns:repeat(3,1fr);margin:0;
+  border-left:1px solid var(--border);
+}
+.contractor-identifiers div{
+  display:flex;align-items:center;padding:1.5rem;border-right:1px solid var(--border);
+}
+.contractor-identifiers div:last-child{border-right:0}
+.contractor-identifiers div{flex-direction:column;justify-content:center;align-items:flex-start;gap:.4rem}
+.contractor-identifiers dt{
+  color:var(--text-dim);font-size:.65rem;font-weight:500;
+  letter-spacing:.16em;text-transform:uppercase;
+}
+.contractor-identifiers dd{
+  margin:0;
+  color:var(--text);font-family:var(--sans);font-size:1.05rem;font-weight:500;
+  letter-spacing:.025em;
+}
+
 /* ─── Image Slot System ──────────────────────────────────────────
    Slots maintain layout space and show a labeled placeholder until
    the real photo is dropped into images/. No JS required for layout;
@@ -634,6 +668,11 @@ section{padding:6rem 0}
   .sd-num{font-size:3.5rem}
   .cta-section{padding:5rem 0}
   .page-hero{padding-top:calc(var(--nav-h) + 3rem);padding-bottom:3rem}
+  .contractor-strip-inner{grid-template-columns:1fr;gap:0;padding-top:2rem}
+  .contractor-certification{padding-bottom:2rem}
+  .contractor-identifiers{border-top:1px solid var(--border);border-left:0}
+  .contractor-identifiers div{padding:1.25rem .75rem}
+  .contractor-identifiers dd{font-size:1rem}
 }
 @media(max-width:480px){
   .hero-stats{grid-template-columns:1fr}
@@ -646,4 +685,15 @@ section{padding:6rem 0}
   section{padding:3rem 0}
   .footer-brand img{height:32px}
   .btn{padding:.875rem 1.5rem}
+  .contractor-identifiers{grid-template-columns:1fr}
+  .contractor-identifiers div{border-right:0;border-bottom:1px solid var(--border)}
+  .contractor-identifiers div:last-child{border-bottom:0}
+}
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-delay:0ms!important;transition-duration:.01ms!important}
+  .hero-eyebrow,.hero h1,.hero-lede,.hero-actions,.hero-stats,.reveal{
+    opacity:1!important;transform:none!important;
+  }
 }

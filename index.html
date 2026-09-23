@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="/styles.css?v=20260923" />
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"ProfessionalService","name":"Wentworth Global Advisors","description":"Fractional COO and CEO services for manufacturing companies. Operational leadership, post-merger integration, and business turnaround consulting.","url":"https://www.wentworthglobaladvisors.com/","logo":"https://www.wentworthglobaladvisors.com/assets/wentworth-logo-stacked.svg","areaServed":[{"@type":"Country","name":"United States"}],"address":{"@type":"PostalAddress","addressLocality":"Marco Island","addressRegion":"FL","addressCountry":"US"},"founder":{"@type":"Person","name":"Nick Bobay"},"serviceType":["Fractional COO Services","Fractional CEO for Manufacturing","Interim COO Consulting","Post-Merger Integration","Lean Six Sigma Consulting","Business Turnaround Consulting","Supply Chain Optimization"]}
   </script>
@@ -29,10 +29,10 @@
 <header class="site-header">
   <nav class="nav">
     <a class="nav-brand" href="/"><img src="/wentworth-logo-dark.svg" alt="Wentworth Global Advisors" /></a>
-    <button class="nav-toggle" aria-label="Toggle navigation">
+    <button class="nav-toggle" aria-label="Open navigation" aria-controls="primary-navigation" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
-    <ul class="nav-links">
+    <ul class="nav-links" id="primary-navigation">
       <li><a href="/" class="active">Home</a></li>
       <li><a href="/services">Services</a></li>
       <li><a href="/case-studies">Case Studies</a></li>
@@ -100,37 +100,37 @@
           <div class="service-num">01</div>
           <h3>Fractional COO</h3>
           <p>Day-to-day operational command. We own the floor, the supply chain, and the execution — freeing founders and CEOs to lead strategy while we deliver results.</p>
-          <a href="/services" class="arrow-link">Explore Service</a>
+          <a href="/services#fractional-coo" class="arrow-link">Explore Service</a>
         </div>
         <div class="service-card reveal reveal-d2">
           <div class="service-num">02</div>
           <h3>Fractional CEO</h3>
           <p>Strategic direction, board alignment, and organizational authority. Deployed when a company needs decisive C-suite leadership without a permanent search.</p>
-          <a href="/services" class="arrow-link">Explore Service</a>
+          <a href="/services#fractional-ceo" class="arrow-link">Explore Service</a>
         </div>
         <div class="service-card reveal reveal-d3">
           <div class="service-num">03</div>
           <h3>M&amp;A Integration</h3>
           <p>Post-merger execution is where value is won or lost. We lead PMI from day one — aligning operations, culture, and systems before synergies erode.</p>
-          <a href="/services" class="arrow-link">Explore Service</a>
+          <a href="/services#ma-integration" class="arrow-link">Explore Service</a>
         </div>
         <div class="service-card reveal reveal-d1">
           <div class="service-num">04</div>
           <h3>Business Turnaround</h3>
           <p>When the operation is in distress, we step in with a clear-eyed diagnosis, a credible plan, and the authority to execute it — regardless of organizational resistance.</p>
-          <a href="/services" class="arrow-link">Explore Service</a>
+          <a href="/services#business-turnaround" class="arrow-link">Explore Service</a>
         </div>
         <div class="service-card reveal reveal-d2">
           <div class="service-num">05</div>
           <h3>Lean Six Sigma</h3>
           <p>Systematic waste elimination and process standardization. We build the operational muscle that compounds over time — measurable quality and throughput gains.</p>
-          <a href="/services" class="arrow-link">Explore Service</a>
+          <a href="/services#lean-six-sigma" class="arrow-link">Explore Service</a>
         </div>
         <div class="service-card reveal reveal-d3">
           <div class="service-num">06</div>
           <h3>Supply Chain Optimization</h3>
           <p>End-to-end supply chain re-engineering. From sourcing strategy to last-mile delivery, we reduce lead times, costs, and single-point dependencies.</p>
-          <a href="/services" class="arrow-link">Explore Service</a>
+          <a href="/services#supply-chain" class="arrow-link">Explore Service</a>
         </div>
       </div>
     </div>
@@ -238,22 +238,9 @@
             <a href="/about" class="btn btn-outline">Meet the Team</a>
           </div>
         </div>
-        <div class="about-frame about-frame--photo reveal reveal-d2">
-          <div
-            class="about-photo-slot"
-            data-slot-label="DROP PHOTO HERE&#10;images/about/&#10;nick-bobay-portrait.jpg&#10;Portrait · 3:4"
-          >
-            <img
-              src="/images/about/nick-bobay-portrait.jpg"
-              alt="Nick Bobay, Founder and Principal — Wentworth Global Advisors"
-              class="about-photo"
-              onload="this.closest('.about-photo-slot').classList.add('img-loaded')"
-            />
-            <div class="about-photo-overlay">
-              <p class="about-quote">&ldquo;The difference between a consultant and an operator is that the operator is still there when things get hard.&rdquo;</p>
-              <div class="about-attr">Nick Bobay &mdash; Founder, Wentworth Global Advisors</div>
-            </div>
-          </div>
+        <div class="about-frame reveal reveal-d2">
+          <p class="about-quote">&ldquo;The difference between a consultant and an operator is that the operator is still there when things get hard.&rdquo;</p>
+          <div class="about-attr">Nick Bobay &mdash; Founder, Wentworth Global Advisors</div>
         </div>
       </div>
     </div>
@@ -269,6 +256,23 @@
         <a href="/contact" class="btn btn-gold">Schedule a Consultation</a>
         <a href="/services" class="btn btn-outline">Explore Services</a>
       </div>
+    </div>
+  </section>
+
+  <section class="contractor-strip" aria-labelledby="contractor-credentials-title">
+    <div class="container contractor-strip-inner">
+      <div class="contractor-certification">
+        <img src="/assets/veteran-owned-certified.jpg" alt="SBA Veteran-Owned Certified" />
+        <div>
+          <span class="eyebrow" id="contractor-credentials-title">Federal contracting</span>
+          <p>Service-Disabled Veteran-Owned Small Business</p>
+        </div>
+      </div>
+      <dl class="contractor-identifiers">
+        <div><dt>CAGE</dt><dd>22AE5</dd></div>
+        <div><dt>UEI</dt><dd>H6B9D2B9GL35</dd></div>
+        <div><dt>DUNS</dt><dd>10-015-3590</dd></div>
+      </dl>
     </div>
   </section>
 
@@ -315,6 +319,6 @@
   </div>
 </footer>
 
-<script src="/main.js"></script>
+<script src="/main.js?v=20260923"></script>
 </body>
 </html>
