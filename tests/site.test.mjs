@@ -24,8 +24,14 @@ test('public pages do not expose missing-image placeholder instructions', () => 
 
 test('pages request versioned shared assets so the deployed update bypasses immutable caches', () => {
   const html = read('index.html');
-  assert.match(html, /href="\/styles\.css\?v=20260923"/);
+  assert.match(html, /href="\/styles\.css\?v=20260923b"/);
   assert.match(html, /src="\/main\.js\?v=20260923"/);
+});
+
+test('text-bearing buttons inherit the light page text color', () => {
+  const css = read('styles.css');
+  const buttonReset = css.match(/button\{([^}]*)\}/)?.[1] ?? '';
+  assert.match(buttonReset, /(?:^|;)\s*color:\s*inherit\s*(?:;|$)/);
 });
 
 test('homepage service links deep-link to named service sections', () => {
